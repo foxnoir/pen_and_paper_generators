@@ -1,50 +1,52 @@
 #!/usr/bin/env python3
 """
-Dynamischer PDF-Generator für Vampire Journal
-Erstellt die PDF von Grund auf neu, sodass sie später leicht angepasst werden kann.
+Dynamic PDF Generator for Vampire Journal
+Creates the PDF from scratch so it can be easily modified later.
 """
 
 import fitz  # PyMuPDF
 from typing import List, Dict, Tuple, Optional
 import os
 import json
+import random
+import math
 
 
 class DynamicPDFGenerator:
-    """Generiert die PDF dynamisch von Grund auf"""
+    """Generates the PDF dynamically from scratch"""
     
     def __init__(self):
         self.page_width = 595.2755737304688  # A4 width in points
         self.page_height = 841.8897705078125  # A4 height in points
         self.total_pages = 125
         
-        # Tab-Struktur (rechte Seite, Y-Positionen) - von oben nach unten
+        # Tab structure (right side, Y positions) - from top to bottom
         self.tabs = [
-            {"name": "Domäne", "y": 65.0, "target_page": 1, "height": 70.0},  # Korrekt
-            {"name": "Intrigen & Interessen", "y": 143.0, "target_page": 11, "height": 110.0},  # Soll Inhalt von Notizen haben (Seite 11)
-            {"name": "Runden", "y": 261.0, "target_page": 23, "height": 70.0},  # Soll Inhalt von Handouts haben (Seite 23)
-            {"name": "NPCs", "y": 339.0, "target_page": 90, "height": 70.0},  # Soll Inhalt von NPCs haben (Seite 90) - bleibt gleich
-            {"name": "Orte", "y": 417.0, "target_page": 81, "height": 70.0},  # Korrekt
-            {"name": "Karten", "y": 495.0, "target_page": 30, "height": 70.0},  # Soll Inhalt von Karten haben (Seite 30) - bleibt gleich
-            {"name": "Handouts", "y": 573.0, "target_page": 93, "height": 70.0},  # Soll leer sein, zeigt auf leere Seite 93
-            {"name": "Notizen", "y": 651.0, "target_page": 94, "height": 70.0},  # Soll leer sein, zeigt auf leere Seite 94
-            {"name": "Regeln", "y": 729.0, "target_page": 95, "height": 70.0},  # Korrekt
+            {"name": "Domäne", "y": 65.0, "target_page": 1, "height": 70.0},  # Correct
+            {"name": "Intrigen & Interessen", "y": 143.0, "target_page": 11, "height": 110.0},  # Should have content from Notizen (page 11)
+            {"name": "Runden", "y": 261.0, "target_page": 23, "height": 70.0},  # Should have content from Handouts (page 23)
+            {"name": "NPCs", "y": 339.0, "target_page": 90, "height": 70.0},  # Should have content from NPCs (page 90)
+            {"name": "Orte", "y": 417.0, "target_page": 81, "height": 70.0},  # Correct
+            {"name": "Karten", "y": 495.0, "target_page": 30, "height": 70.0},  # Should have content from Karten (page 30)
+            {"name": "Handouts", "y": 573.0, "target_page": 93, "height": 70.0},  # Should be empty, points to empty page 93
+            {"name": "Notizen", "y": 651.0, "target_page": 94, "height": 70.0},  # Should be empty, points to empty page 94
+            {"name": "Regeln", "y": 729.0, "target_page": 95, "height": 70.0},  # Correct
         ]
         
-        # Tab-Breite und Position
-        self.tab_width = 35.0  # Breiter für besseres Design und Text
-        self.tab_x = self.page_width - self.tab_width - 5  # Rechter Rand mit 5pt Abstand
+        # Tab width and position
+        self.tab_width = 35.0  # Wider for better design and text
+        self.tab_x = self.page_width - self.tab_width - 5  # Right margin with 5pt spacing
         
-        # Tab-Design-Farben (RGB 0-1 für PyMuPDF) - Jadegrün
+        # Tab design colors (RGB 0-1 for PyMuPDF) - Jade green
         self.tab_colors = {
-            "background": (0.75, 0.90, 0.80),  # Helles Jadegrün (inaktiv)
-            "border": (0.50, 0.75, 0.60),  # Jadegrün Rahmen
-            "active": (0.50, 0.75, 0.60),  # Dunkleres Jadegrün (aktiv)
-            "text": (0.15, 0.15, 0.15),  # Dunkler Text
-            "shadow": (0.40, 0.65, 0.50)  # Jadegrün Schatten
+            "background": (0.75, 0.90, 0.80),  # Light jade green (inactive)
+            "border": (0.50, 0.75, 0.60),  # Jade green border
+            "active": (0.50, 0.75, 0.60),  # Darker jade green (active)
+            "text": (0.15, 0.15, 0.15),  # Dark text
+            "shadow": (0.40, 0.65, 0.50)  # Jade green shadow
         }
         
-        # Seiten-Struktur
+        # Page structure
         self.page_structure = {
             1: {"section": "Domäne", "subsections": ["Stadt", "Storyline", "Zeitlinien", "Zentraler Konflikt", "Status quo", "Machtstruktur", "Clanlandschaft", "Einfluss & Territorien", "Konfliktherde", "Maskerade & Öffentlichkeit", "Sonstiges"]},
             11: {"section": "Notizen", "subsections": ["Aufträge & Verpflichtungen", "Beziehungen & Schulden", "Geheimnisse", "Gerüchte & Informationen", "Zeitlinien", "Ziele & Ambitionen", "Sonstiges"]},
@@ -57,14 +59,14 @@ class DynamicPDFGenerator:
             95: {"section": "Regeln", "subsections": ["Grundregeln", "Charakter & Blut", "Disziplinen", "Kampf & Konflikt", "Gesellschaft & Politik", "Maskerade"]},
         }
         
-        # Seiten pro Abschnitt
+        # Pages per section
         self.pages_per_section = {
             1: 10, 11: 12, 23: 7, 30: 51, 81: 9, 90: 3, 93: 1, 94: 1, 95: 30
         }
     
     def analyze_source_pdf(self, source_path: str) -> Dict:
-        """Analysiert die Original-PDF und extrahiert alle Strukturen"""
-        print(f"Analysiere Original-PDF: {source_path}")
+        """Analyzes the original PDF and extracts all structures"""
+        print(f"Analyzing original PDF: {source_path}")
         source_doc = fitz.open(source_path)
         
         analysis = {
@@ -73,7 +75,7 @@ class DynamicPDFGenerator:
             "links": {}
         }
         
-        for page_num in range(min(10, len(source_doc))):  # Analysiere erste 10 Seiten als Beispiel
+        for page_num in range(min(10, len(source_doc))):  # Analyze first 10 pages as example
             page = source_doc[page_num]
             text_dict = page.get_text("dict")
             
@@ -83,7 +85,7 @@ class DynamicPDFGenerator:
                 "links": []
             }
             
-            # Extrahiere Text-Elemente
+            # Extract text elements
             for block in text_dict["blocks"]:
                 if "lines" in block:
                     for line in block["lines"]:
@@ -98,7 +100,7 @@ class DynamicPDFGenerator:
                             })
                             analysis["fonts"].add(span['font'])
             
-            # Extrahiere Links
+            # Extract links
             links = page.get_links()
             for link in links:
                 target = link.get('page', 0)
@@ -119,25 +121,123 @@ class DynamicPDFGenerator:
         return analysis
     
     def create_page_with_tabs(self, doc: fitz.Document, page_num: int) -> fitz.Page:
-        """Erstellt eine Seite mit Tab-Navigation"""
+        """Creates a page with tab navigation"""
         page = doc.new_page(width=self.page_width, height=self.page_height)
         
-        # Füge Tabs hinzu (nachdem alle Seiten existieren)
+        # Add tabs (after all pages exist)
         return page
     
+    def draw_blood_splatters(self, page: fitz.Page):
+        """Draws random ink stain clusters in the background (pure grayscale)"""
+        # First light stains (#D4D3D3 = RGB 212/255, 211/255, 211/255)
+        # Average = (212+211+211)/3 = 211.33 -> true grayscale
+        base_gray_light = (212 + 211 + 211) / 3 / 255
+        self._draw_ink_clusters(page, base_gray=base_gray_light, variation=0.05)
+        
+        # Then darker stains (#7C7979 = RGB 124/255, 121/255, 121/255)
+        # Average = (124+121+121)/3 = 122 -> true grayscale
+        base_gray_dark = (124 + 121 + 121) / 3 / 255
+        # Dark ones can overlap the light ones
+        self._draw_ink_clusters(page, base_gray=base_gray_dark, variation=0.06)
+    
+    def _draw_ink_clusters(self, page: fitz.Page, base_gray: float, variation: float):
+        """Draws ink stain clusters with given grayscale value (pure grayscale, no color)"""
+        # Number of clusters per run (1-3 spots, so max. 6 clusters total)
+        num_clusters = random.randint(1, 3)
+        
+        for _ in range(num_clusters):
+            # Random position for cluster center
+            cluster_x = random.uniform(80, self.page_width - 80)
+            cluster_y = random.uniform(80, self.page_height - 80)
+            
+            # Number of spots in this cluster (4-19)
+            num_spots = random.randint(4, 19)
+            
+            # Cluster radius (how far spots are from center)
+            cluster_radius = random.uniform(15, 40)
+            
+            for _ in range(num_spots):
+                # Position relative to cluster center
+                angle = random.uniform(0, 2 * math.pi)
+                distance = random.uniform(0, cluster_radius)
+                x = cluster_x + math.cos(angle) * distance
+                y = cluster_y + math.sin(angle) * distance
+                
+                # Ensure spots are not outside the page
+                x = max(10, min(x, self.page_width - 10))
+                y = max(10, min(y, self.page_height - 10))
+                
+                # Random grayscale value based on base gray with variation
+                # All RGB channels have the same value for pure grayscale
+                gray_value = max(0, min(1, base_gray + random.uniform(-variation, variation)))
+                color = (gray_value, gray_value, gray_value)
+                
+                # Random size (smaller stains)
+                base_size = random.uniform(1.5, 6)
+                
+                # Random form: drop or ink stain
+                splatter_type = random.choice(['drop', 'stain', 'small_stain'])
+                
+                try:
+                    if splatter_type == 'drop':
+                        # Single drop - small and subtle
+                        width = base_size * random.uniform(0.8, 1.2)
+                        height = base_size * random.uniform(1.5, 2.2)
+                        
+                        # Use ellipse for drop shape
+                        rect = fitz.Rect(x - width/2, y - height/2, x + width/2, y + height/2)
+                        page.draw_oval(rect, color=color, fill=color, width=0)
+                        
+                    elif splatter_type == 'stain':
+                        # Ink stain - irregular, organic shape
+                        shape = page.new_shape()
+                        num_points = random.randint(8, 14)
+                        points = []
+                        for i in range(num_points):
+                            angle = (2 * math.pi * i) / num_points
+                            # Irregular radius for organic shape
+                            radius_variation = random.uniform(0.7, 1.2)
+                            radius = base_size * radius_variation
+                            # Slight irregularity
+                            noise = random.uniform(-0.2, 0.2)
+                            px = x + math.cos(angle + noise) * radius
+                            py = y + math.sin(angle + noise) * radius
+                            points.append(fitz.Point(px, py))
+                        
+                        shape.draw_polyline(points)
+                        shape.finish(fill=color, color=color, width=0)
+                        shape.commit()
+                        
+                    elif splatter_type == 'small_stain':
+                        # Small ink stain - compact
+                        width = base_size * random.uniform(0.9, 1.3)
+                        height = base_size * random.uniform(0.9, 1.3)
+                        rect = fitz.Rect(x - width/2, y - height/2, x + width/2, y + height/2)
+                        page.draw_oval(rect, color=color, fill=color, width=0)
+                        
+                except Exception as e:
+                    # Fallback: simple drop
+                    try:
+                        width = base_size * random.uniform(0.7, 1.0)
+                        height = base_size * random.uniform(1.3, 2.0)
+                        rect = fitz.Rect(x - width/2, y - height/2, x + width/2, y + height/2)
+                        page.draw_oval(rect, color=color, fill=color, width=0)
+                    except:
+                        pass
+    
     def draw_rounded_rect(self, page: fitz.Page, rect: fitz.Rect, fill_color: tuple, border_color: tuple = None, radius: float = 8.0, shadow: bool = False):
-        """Zeichnet ein abgerundetes Rechteck mit gegebenem Radius"""
+        """Draws a rounded rectangle with given radius"""
         try:
             import math
             
-            # Berechne die Ecken
+            # Calculate corners
             x0, y0 = rect.x0, rect.y0
             x1, y1 = rect.x1, rect.y1
             
-            # Stelle sicher, dass Radius nicht zu groß ist
+            # Ensure radius is not too large
             radius = min(radius, min(rect.width, rect.height) / 2)
             
-            # Zeichne Schatten zuerst (leicht versetzt nach rechts/unten)
+            # Draw shadow first (slightly offset to right/bottom)
             if shadow:
                 shadow_offset = 1.5
                 shadow_rect = fitz.Rect(
@@ -148,11 +248,11 @@ class DynamicPDFGenerator:
                 )
                 self._draw_rounded_rect_shape(page, shadow_rect, self.tab_colors["shadow"], None, radius)
             
-            # Zeichne Hauptrechteck
+            # Draw main rectangle
             self._draw_rounded_rect_shape(page, rect, fill_color, border_color, radius)
             
         except Exception as e:
-            # Fallback: normales Rechteck wenn Pfad fehlschlägt
+            # Fallback: normal rectangle if path fails
             if shadow:
                 shadow_offset = 1.5
                 shadow_rect = fitz.Rect(
@@ -165,59 +265,59 @@ class DynamicPDFGenerator:
             page.draw_rect(rect, color=border_color if border_color else fill_color, width=0 if not border_color else 1.0, fill=fill_color)
     
     def _draw_rounded_rect_shape(self, page: fitz.Page, rect: fitz.Rect, fill_color: tuple, border_color: tuple, radius: float):
-        """Hilfsfunktion zum Zeichnen eines abgerundeten Rechtecks"""
+        """Helper function to draw a rounded rectangle"""
         try:
             x0, y0 = rect.x0, rect.y0
             x1, y1 = rect.x1, rect.y1
             
-            # Verwende Shape-Objekt für komplexe Pfade
+            # Use Shape object for complex paths
             shape = page.new_shape()
             
-            # Zeichne abgerundetes Rechteck durch Kombination von Rechtecken und Kreisen
-            # Hauptrechteck (ohne Ecken)
+            # Draw rounded rectangle by combining rectangles and circles
+            # Main rectangle (without corners)
             inner_rect = fitz.Rect(x0 + radius, y0, x1 - radius, y1)
             shape.draw_rect(inner_rect)
             
-            # Obere horizontale Rechtecke
+            # Top horizontal rectangles
             top_rect = fitz.Rect(x0 + radius, y0, x1 - radius, y0 + radius)
             shape.draw_rect(top_rect)
             
-            # Untere horizontale Rechtecke
+            # Bottom horizontal rectangles
             bottom_rect = fitz.Rect(x0 + radius, y1 - radius, x1 - radius, y1)
             shape.draw_rect(bottom_rect)
             
-            # Linke vertikale Rechtecke
+            # Left vertical rectangles
             left_rect = fitz.Rect(x0, y0 + radius, x0 + radius, y1 - radius)
             shape.draw_rect(left_rect)
             
-            # Rechte vertikale Rechtecke
+            # Right vertical rectangles
             right_rect = fitz.Rect(x1 - radius, y0 + radius, x1, y1 - radius)
             shape.draw_rect(right_rect)
             
-            # Zeichne Kreise an den Ecken
-            # Obere linke Ecke
+            # Draw circles at corners
+            # Top left corner
             shape.draw_circle(fitz.Point(x0 + radius, y0 + radius), radius)
             
-            # Obere rechte Ecke
+            # Top right corner
             shape.draw_circle(fitz.Point(x1 - radius, y0 + radius), radius)
             
-            # Untere linke Ecke
+            # Bottom left corner
             shape.draw_circle(fitz.Point(x0 + radius, y1 - radius), radius)
             
-            # Untere rechte Ecke
+            # Bottom right corner
             shape.draw_circle(fitz.Point(x1 - radius, y1 - radius), radius)
             
-            # Fülle alles (ohne Rahmen wenn border_color None ist)
+            # Fill everything (without border if border_color is None)
             border_width = 0 if border_color is None else 1.0
             shape.finish(fill=fill_color, color=border_color if border_color else fill_color, width=border_width)
             shape.commit()
             
         except Exception as e:
-            # Fallback: normales Rechteck wenn Pfad fehlschlägt
+            # Fallback: normal rectangle if path fails
             page.draw_rect(rect, color=border_color if border_color else fill_color, width=0 if not border_color else 1.0, fill=fill_color)
     
     def draw_modern_tab(self, page: fitz.Page, tab: Dict, page_num: int, is_active: bool = False, original_text: Dict = None):
-        """Zeichnet einen modernen Journal-Reiter mit Design"""
+        """Draws a modern journal tab with design"""
         tab_rect = fitz.Rect(
             self.tab_x,
             tab["y"],
@@ -225,10 +325,10 @@ class DynamicPDFGenerator:
             tab["y"] + tab["height"]
         )
         
-        # Bestimme Farbe (aktiver Tab ist etwas dunkler)
+        # Determine color (active tab is darker)
         bg_color = self.tab_colors["active"] if is_active else self.tab_colors["background"]
         
-        # Zeichne Schatten (leicht versetzt nach rechts/unten)
+        # Draw shadow (slightly offset to right/bottom)
         shadow_rect = fitz.Rect(
             tab_rect.x0 + 1.5,
             tab_rect.y0 + 1.5,
@@ -237,10 +337,10 @@ class DynamicPDFGenerator:
         )
         page.draw_rect(shadow_rect, color=self.tab_colors["shadow"], width=0, fill=self.tab_colors["shadow"])
         
-        # Zeichne Tab-Hintergrund (normales Rechteck, keine abgerundeten Ecken)
+        # Draw tab background (normal rectangle, no rounded corners)
         page.draw_rect(tab_rect, color=self.tab_colors["border"], width=1.0, fill=bg_color)
         
-        # Zeichne innere Highlight-Linie oben für 3D-Effekt
+        # Draw inner highlight line at top for 3D effect
         highlight_rect = fitz.Rect(
             tab_rect.x0 + 0.5,
             tab_rect.y0 + 0.5,
@@ -249,7 +349,7 @@ class DynamicPDFGenerator:
         )
         page.draw_rect(highlight_rect, color=(1.0, 1.0, 1.0), width=0, fill=(1.0, 1.0, 1.0))
         
-        # Zeichne untere Schatten-Linie für Tiefe
+        # Draw bottom shadow line for depth
         shadow_line = fitz.Rect(
             tab_rect.x0 + 0.5,
             tab_rect.y1 - 2,
@@ -258,16 +358,16 @@ class DynamicPDFGenerator:
         )
         page.draw_rect(shadow_line, color=self.tab_colors["border"], width=0, fill=self.tab_colors["border"])
         
-        # Füge Text hinzu - verwende originalen Text wenn verfügbar
+        # Add text - use original text if available
         if original_text:
-            # Berechne Position für Text - deutlich nach links verschoben
-            # Verschiebe Text um 8-10pt nach links (negativer Wert = nach links)
+            # Calculate position for text - significantly shifted to left
+            # Shift text 8-10pt to left (negative value = to left)
             text_offset_left = -9.0
             
-            # Verwende insert_textbox mit Rotation für vertikalen Text
+            # Use insert_textbox with rotation for vertical text
             try:
                 from fitz import Rect
-                # Text-Rect deutlich nach links verschoben
+                # Text-Rect significantly shifted to left
                 text_rect = Rect(
                     tab_rect.x0 + 2 + text_offset_left,
                     tab_rect.y0 + 2,
@@ -275,20 +375,20 @@ class DynamicPDFGenerator:
                     tab_rect.y1 - 2
                 )
                 
-                # Versuche Text mit Rotation einzufügen
-                # rotate=270 bedeutet 270° im Uhrzeigersinn = 90° gegen Uhrzeigersinn
+                # Try to insert text with rotation
+                # rotate=270 means 270° clockwise = 90° counter-clockwise
                 rc = page.insert_textbox(
                     text_rect,
                     original_text['text'],
                     fontsize=original_text.get('fontsize', 8),
                     fontname=original_text.get('fontname', 'helv-Bold'),
                     color=(0.0, 0.0, 0.0),
-                    align=1,  # Zentriert
-                    rotate=270  # Vertikal
+                    align=1,  # Centered
+                    rotate=270  # Vertical
                 )
                 
                 if rc < 0:
-                    # Fallback: Einfacher Text ohne Rotation, nach links verschoben
+                    # Fallback: Simple text without rotation, shifted to left
                     center_x = tab_rect.x0 + self.tab_width / 2 + text_offset_left
                     center_y = tab_rect.y0 + tab["height"] / 2
                     page.insert_text(
@@ -299,7 +399,7 @@ class DynamicPDFGenerator:
                         color=(0.0, 0.0, 0.0)
                     )
             except Exception as e:
-                # Letzter Fallback: Einfacher Text, nach links verschoben
+                # Last fallback: Simple text, shifted to left
                 try:
                     center_x = tab_rect.x0 + self.tab_width / 2 + text_offset_left
                     center_y = tab_rect.y0 + tab["height"] / 2
@@ -313,7 +413,7 @@ class DynamicPDFGenerator:
                 except:
                     pass
         
-        # Füge Link hinzu
+        # Add link
         link = {
             "kind": fitz.LINK_GOTO,
             "from": tab_rect,
@@ -327,12 +427,12 @@ class DynamicPDFGenerator:
             pass
     
     def extract_tab_texts(self, source_page: fitz.Page) -> List[str]:
-        """Extrahiert Tab-Beschriftungen von der Original-Seite"""
+        """Extracts tab labels from the original page"""
         text_dict = source_page.get_text("dict")
         tab_texts = []
         
-        # Suche Text auf der rechten Seite (Tab-Bereich)
-        # Tabs sind zwischen x=550 und x=595 (rechter Rand)
+        # Search for text on the right side (tab area)
+        # Tabs are between x=550 and x=595 (right edge)
         for block in text_dict["blocks"]:
             if "lines" in block:
                 for line in block["lines"]:
@@ -343,7 +443,7 @@ class DynamicPDFGenerator:
                     
                     for span in line["spans"]:
                         bbox = span['bbox']
-                        # Rechte Seite (x > 550) - Tab-Bereich
+                        # Right side (x > 550) - tab area
                         if bbox[0] > 550:
                             if line_y is None:
                                 line_y = bbox[1]
@@ -357,7 +457,7 @@ class DynamicPDFGenerator:
                     
                     if line_text and line_y is not None:
                         cleaned_text = line_text.strip()
-                        # Filtere sehr kurze Texte (wahrscheinlich keine Tab-Beschriftungen)
+                        # Filter very short texts (probably not tab labels)
                         if len(cleaned_text) > 1:
                             tab_texts.append({
                                 'text': cleaned_text,
@@ -365,18 +465,18 @@ class DynamicPDFGenerator:
                                 'x': line_x_min if line_x_min else 560
                             })
         
-        # Sortiere nach Y-Position (von oben nach unten)
+        # Sort by Y position (from top to bottom)
         tab_texts.sort(key=lambda x: x['y'])
         
-        # Debug: Zeige gefundene Texte
-        print(f"  Gefundene Tab-Texte (vor Filterung): {len(tab_texts)}")
+        # Debug: Show found texts
+        print(f"  Found tab texts (before filtering): {len(tab_texts)}")
         for i, txt in enumerate(tab_texts[:12]):
-            print(f"    {i+1}. '{txt['text']}' bei Y={txt['y']:.1f}")
+            print(f"    {i+1}. '{txt['text']}' at Y={txt['y']:.1f}")
         
-        # Extrahiere nur die Texte
+        # Extract only the texts
         texts = [item['text'] for item in tab_texts]
         
-        # Erwartete Tab-Namen (falls Extraktion fehlschlägt)
+        # Expected tab names (if extraction fails)
         default_tabs = [
             "Domäne",
             "Intrigen & Interessen",
@@ -389,20 +489,20 @@ class DynamicPDFGenerator:
             "Regeln"
         ]
         
-        # Wenn wir weniger als 9 Texte haben, verwende Standard-Namen
+        # If we have less than 9 texts, use default names
         if len(texts) < 9:
-            print(f"  Warnung: Nur {len(texts)} Tab-Texte gefunden, verwende Standard-Namen")
+            print(f"  Warning: Only {len(texts)} tab texts found, using default names")
             return default_tabs[:len(self.tabs)]
         
-        # Nimm die ersten 9 Texte (sollten die Tab-Beschriftungen sein)
+        # Take the first 9 texts (should be the tab labels)
         return texts[:9]
     
     def extract_tab_text_elements(self, source_page: fitz.Page) -> List[Dict]:
-        """Extrahiert Tab-Text-Elemente mit Positionen von der Original-Seite"""
+        """Extracts tab text elements with positions from the original page"""
         text_dict = source_page.get_text("dict")
         tab_texts = []
         
-        # Suche Text auf der rechten Seite (Tab-Bereich)
+        # Search for text on the right side (tab area)
         for block in text_dict["blocks"]:
             if "lines" in block:
                 for line in block["lines"]:
@@ -415,7 +515,7 @@ class DynamicPDFGenerator:
                     
                     for span in line["spans"]:
                         bbox = span['bbox']
-                        # Rechte Seite (x > 550) - Tab-Bereich
+                        # Right side (x > 550) - tab area
                         if bbox[0] > 550:
                             if line_y is None:
                                 line_y = bbox[1]
@@ -443,32 +543,32 @@ class DynamicPDFGenerator:
                                 'fontname': font_name if font_name else 'helv-Bold'
                             })
         
-        # Sortiere nach Y-Position (von oben nach unten)
+        # Sort by Y position (from top to bottom)
         tab_texts.sort(key=lambda x: x['y'])
-        return tab_texts[:9]  # Nimm die ersten 9 (sollten die Tab-Beschriftungen sein)
+        return tab_texts[:9]  # Take the first 9 (should be the tab labels)
     
     def add_tabs_to_page(self, page: fitz.Page, page_num: int, tab_text_elements: List[Dict] = None):
-        """Fügt moderne Tab-Reiter zu einer Seite hinzu"""
-        # Bestimme welche Seite aktiv ist (basierend auf Tab-Zielen)
+        """Adds modern tab tabs to a page"""
+        # Determine which page is active (based on tab targets)
         active_tab = None
         for tab in self.tabs:
             if tab["target_page"] == page_num:
                 active_tab = tab
                 break
         
-        # Zeichne alle Tabs
+        # Draw all tabs
         for i, tab in enumerate(self.tabs):
             is_active = (tab == active_tab)
             self.draw_modern_tab(page, tab, page_num, is_active, tab_text_elements[i] if tab_text_elements and i < len(tab_text_elements) else None)
     
     def add_text_to_page(self, page: fitz.Page, text_elements: List[Dict]):
-        """Fügt Text-Elemente zu einer Seite hinzu"""
+        """Adds text elements to a page"""
         for elem in text_elements:
             try:
                 bbox = elem['bbox']
                 point = fitz.Point(bbox[0], bbox[1])
                 
-                # Bestimme Font
+                # Determine font
                 fontname = "helv"
                 if elem.get('flags', 0) & 16:  # Bold
                     fontname = "helv-Bold"
@@ -480,11 +580,11 @@ class DynamicPDFGenerator:
                     fontname=fontname
                 )
             except Exception as e:
-                # Ignoriere Fehler bei einzelnen Text-Elementen
+                # Ignore errors for individual text elements
                 pass
     
     def add_links_to_page(self, page: fitz.Page, links: List[Dict], total_pages: int):
-        """Fügt Links zu einer Seite hinzu"""
+        """Adds links to a page"""
         for link_data in links:
             try:
                 target_page = link_data['target_page']
@@ -516,54 +616,80 @@ class DynamicPDFGenerator:
                 pass
     
     def generate_from_source(self, source_path: str, output_path: str):
-        """Generiert PDF basierend auf Original-PDF"""
+        """Generates PDF based on original PDF"""
         print("=" * 60)
-        print("DYNAMISCHER PDF-GENERATOR")
+        print("DYNAMIC PDF GENERATOR")
         print("=" * 60)
         print()
         
-        # Lade Original-PDF
+        # Load original PDF
         source_doc = fitz.open(source_path)
         total_pages = len(source_doc)
         
-        print(f"Original hat {total_pages} Seiten")
-        print(f"Erstelle dynamische Kopie...")
+        print(f"Original has {total_pages} pages")
+        print(f"Creating dynamic copy...")
         
-        # Erstelle neue PDF
+        # Create new PDF
         doc = fitz.open()
         
-        print("Extrahiere Tab-Beschriftungen von Original...")
+        print("Extracting tab labels from original...")
         
-        # Extrahiere Tab-Texte von der ersten Seite der Original-PDF
+        # Extract tab texts from the first page of the original PDF
         source_page_0 = source_doc[0]
         tab_texts = self.extract_tab_texts(source_page_0)
         tab_text_elements = self.extract_tab_text_elements(source_page_0)
         
-        # Aktualisiere Tab-Namen mit originalen Texten falls verfügbar
+        # Update tab names with original texts if available
         if len(tab_texts) >= len(self.tabs):
+            # Create mapping from tab names to target_page
+            # Based on description: NPCs and Karten are swapped
+            name_to_target = {
+                "Domäne": 1,
+                "Intrigen & Interessen": 11,
+                "Runden": 23,
+                "NPCs": 90,  # NPCs should point to page 90
+                "Orte": 81,
+                "Karten": 30,  # Karten should point to page 30
+                "Handouts": 93,
+                "Notizen": 94,
+                "Regeln": 95
+            }
+            
             for i, tab in enumerate(self.tabs):
-                tab["name"] = tab_texts[i]
-            print(f"  Gefunden: {len(tab_texts)} Tab-Beschriftungen")
+                if i < len(tab_texts):
+                    extracted_name = tab_texts[i]
+                    tab["name"] = extracted_name
+                    # Set target_page based on extracted name
+                    if extracted_name in name_to_target:
+                        tab["target_page"] = name_to_target[extracted_name]
+            print(f"  Found: {len(tab_texts)} tab labels")
         else:
-            print(f"  Warnung: Nur {len(tab_texts)} Tab-Texte gefunden, verwende Standard-Namen")
+            print(f"  Warning: Only {len(tab_texts)} tab texts found, using default names")
         
-        # Kopiere alle Seiten - insert_pdf kopiert Inhalte und Design
+        # Copy all pages - insert_pdf copies content and design
         doc.insert_pdf(source_doc, from_page=0, to_page=total_pages - 1)
         
-        print("Zeichne moderne Tab-Reiter...")
+        print("Drawing blood splatters in background...")
         
-        # Zeichne moderne Tabs auf allen Seiten
+        # Draw blood splatters on all pages (BEFORE tabs are drawn)
+        for page_num in range(total_pages):
+            target_page = doc[page_num]
+            self.draw_blood_splatters(target_page)
+        
+        print("Drawing modern tab tabs...")
+        
+        # Draw modern tabs on all pages
         for page_num in range(total_pages):
             target_page = doc[page_num]
             self.add_tabs_to_page(target_page, page_num + 1, tab_text_elements)
         
-        print("Kopiere und repariere Links...")
+        print("Copying and repairing links...")
         
-        # Ziel-Position für obere Links: 10px von links, 20px von oben
+        # Target position for upper links: 10px from left, 20px from top
         target_x = 10.0
         target_y = 20.0
         
-        # Kopiere alle Links von Original und setze sie neu (außer Tab-Links, die sind schon gesetzt)
+        # Copy all links from original and reset them (except tab links, which are already set)
         for page_num in range(total_pages):
             source_page = source_doc[page_num]
             target_page = doc[page_num]
@@ -571,28 +697,28 @@ class DynamicPDFGenerator:
             # Hole alle Links von der Original-Seite
             source_links = source_page.get_links()
             
-            # Filtere Links auf der linken Seite (obere Links)
+            # Filter links on the left side (upper links)
             left_links = [l for l in source_links if l['from'].x0 < 500]
             
             if left_links:
-                # Sortiere Links nach Y-Position (von oben nach unten)
+                # Sort links by Y position (from top to bottom)
                 left_links.sort(key=lambda l: l['from'].y0)
                 
-                # Berechne Offset basierend auf erstem Link (oberster)
+                # Calculate offset based on first link (topmost)
                 first_link_rect = left_links[0]['from']
                 avg_x = sum(l['from'].x0 for l in left_links) / len(left_links)
                 
-                # Stelle sicher, dass Links nicht über den linken Rand hinausgehen
+                # Ensure links don't go beyond the left edge
                 min_x = min(l['from'].x0 for l in left_links)
                 if min_x + (target_x - avg_x) < 10.0:
-                    # Anpassen, damit der linkeste Link genau bei 10px ist
+                    # Adjust so leftmost link is exactly at 10px
                     offset_x = 10.0 - min_x
                 else:
                     offset_x = target_x - avg_x
                 
                 offset_y = target_y - first_link_rect.y0
                 
-                # Extrahiere Texte auf der linken Seite
+                # Extract texts on the left side
                 source_text_dict = source_page.get_text("dict")
                 left_texts = []
                 for block in source_text_dict["blocks"]:
@@ -608,7 +734,7 @@ class DynamicPDFGenerator:
                             
                             for span in line["spans"]:
                                 bbox = span['bbox']
-                                if bbox[0] < 500:  # Text auf der linken Seite
+                                if bbox[0] < 500:  # Text on the left side
                                     if line_y is None:
                                         line_y = bbox[1]
                                         line_x = bbox[0]
@@ -631,10 +757,10 @@ class DynamicPDFGenerator:
                                     'flags': flags
                                 })
                 
-                # Sortiere Texte nach Y-Position
+                # Sort texts by Y position
                 left_texts.sort(key=lambda t: t['y'])
                 
-                # Lösche alle alten Links auf der linken Seite
+                # Delete all old links on the left side
                 existing_links = target_page.get_links()
                 for existing_link in existing_links:
                     try:
@@ -644,8 +770,8 @@ class DynamicPDFGenerator:
                     except:
                         pass
                 
-                # Lösche alte Texte und leere Boxen durch Überzeichnen mit weißem Hintergrund
-                # Erweitere den Bereich, um auch leere Boxen zu entfernen
+                # Delete old texts and empty boxes by drawing over with white background
+                # Extend the area to also remove empty boxes
                 for text_info in left_texts:
                     try:
                         bbox = text_info['bbox']
@@ -654,22 +780,22 @@ class DynamicPDFGenerator:
                     except:
                         pass
                 
-                # Lösche auch leere Boxen/Rechtecke im Bereich der Links
+                # Also delete empty boxes/rectangles in the link area
                 for source_link in left_links:
                     try:
                         link_rect = source_link['from']
-                        # Lösche alte Box durch weißes Rechteck
+                        # Delete old box with white rectangle
                         white_rect = fitz.Rect(link_rect.x0 - 2, link_rect.y0 - 2, link_rect.x1 + 2, link_rect.y1 + 2)
                         target_page.draw_rect(white_rect, color=(1.0, 1.0, 1.0), width=0, fill=(1.0, 1.0, 1.0))
                     except:
                         pass
                 
-                # Erstelle Links und Texte zusammen an neuen Positionen
+                # Create links and texts together at new positions
                 for i, source_link in enumerate(left_links):
                     try:
                         link_rect = source_link['from']
                         
-                        # Neue Link-Position = alte Position + Offset
+                        # New link position = old position + offset
                         new_link_rect = fitz.Rect(
                             link_rect.x0 + offset_x,
                             link_rect.y0 + offset_y,
@@ -677,7 +803,7 @@ class DynamicPDFGenerator:
                             link_rect.y1 + offset_y
                         )
                         
-                        # Stelle sicher, dass Link nicht über den linken Rand hinausgeht
+                        # Ensure link doesn't go beyond the left edge
                         if new_link_rect.x0 < 10.0:
                             diff = 10.0 - new_link_rect.x0
                             new_link_rect = fitz.Rect(
@@ -689,7 +815,7 @@ class DynamicPDFGenerator:
                         
                         target_page_num = source_link.get('page', 0)
                         
-                        # Konvertiere Seiten-Nummer
+                        # Convert page number
                         if isinstance(target_page_num, str):
                             try:
                                 target_page_num = int(target_page_num) - 1
@@ -700,17 +826,17 @@ class DynamicPDFGenerator:
                         else:
                             continue
                         
-                        # Prüfe ob Zielseite existiert
+                        # Check if target page exists
                         if target_page_num < 0 or target_page_num >= total_pages:
                             continue
                         
-                        # Prüfe ob dieser Link aktiv ist (Zielseite = aktuelle Seite)
+                        # Check if this link is active (target page = current page)
                         is_active = (target_page_num == page_num)
                         
-                        # Bestimme Hintergrundfarbe basierend auf Aktivierung
+                        # Determine background color based on activation
                         bg_color = self.tab_colors["active"] if is_active else self.tab_colors["background"]
                         
-                        # Erstelle Link an neuer Position
+                        # Create link at new position
                         link = {
                             "kind": fitz.LINK_GOTO,
                             "from": new_link_rect,
@@ -720,21 +846,21 @@ class DynamicPDFGenerator:
                         }
                         target_page.insert_link(link)
                         
-                        # Zeichne abgerundetes Rechteck für den Link (Marine-Blau) - leichter Radius, Schatten, keine Linien
+                        # Draw rounded rectangle for the link (Navy blue) - light radius, shadow, no lines
                         self.draw_rounded_rect(target_page, new_link_rect, bg_color, border_color=None, radius=3.0, shadow=True)
                         
-                        # Finde zugehörigen Text (nächster Text nach Y-Position)
+                        # Find associated text (next text by Y position)
                         if i < len(left_texts):
                             text_info = left_texts[i]
                             
-                            # Text-Position: innerhalb des Link-Rechtecks, behalte relative Position
+                            # Text position: within link rectangle, keep relative position
                             text_offset_in_link = text_info['x'] - link_rect.x0
                             new_text_x = new_link_rect.x0 + text_offset_in_link
-                            # Stelle sicher, dass Text nicht über den Rand hinausgeht
+                            # Ensure text doesn't go beyond the edge
                             if new_text_x < 10.0:
-                                new_text_x = 10.0 + 5  # 5px Padding vom Rand
+                                new_text_x = 10.0 + 5  # 5px padding from edge
                             
-                            # Y-Position: Mitte des Links (baseline)
+                            # Y position: center of link (baseline)
                             new_text_y = new_link_rect.y0 + (new_link_rect.height / 2) + (text_info['size'] * 0.3)
                             
                             fontname = "helv"
@@ -749,22 +875,22 @@ class DynamicPDFGenerator:
                                 color=(0.0, 0.0, 0.0)
                             )
                     except Exception as e:
-                        # Ignoriere Fehler bei einzelnen Links
+                        # Ignore errors for individual links
                         pass
             
-            # Füge andere Links hinzu (nicht auf der linken Seite, z.B. Tab-Links)
+            # Add other links (not on the left side, e.g. tab links)
             for source_link in source_links:
                 try:
-                    # Prüfe ob es ein Tab-Link ist (rechte Seite)
+                    # Check if it's a tab link (right side)
                     link_rect = source_link['from']
-                    if link_rect.x0 > 500:  # Tab-Links sind auf der rechten Seite
-                        continue  # Überspringe, da wir sie bereits gezeichnet haben
-                    if link_rect.x0 < 500:  # Bereits verarbeitet
+                    if link_rect.x0 > 500:  # Tab links are on the right side
+                        continue  # Skip, as we already drew them
+                    if link_rect.x0 < 500:  # Already processed
                         continue
                     
                     target_page_num = source_link.get('page', 0)
                     
-                    # Konvertiere Seiten-Nummer
+                    # Convert page number
                     if isinstance(target_page_num, str):
                         try:
                             target_page_num = int(target_page_num) - 1
@@ -775,11 +901,11 @@ class DynamicPDFGenerator:
                     else:
                         continue
                     
-                    # Prüfe ob Zielseite existiert
+                    # Check if target page exists
                     if target_page_num < 0 or target_page_num >= total_pages:
                         continue
                     
-                    # Erstelle Link
+                    # Create link
                     link = {
                         "kind": fitz.LINK_GOTO,
                         "from": source_link['from'],
@@ -789,41 +915,41 @@ class DynamicPDFGenerator:
                     }
                     target_page.insert_link(link)
                 except Exception as e:
-                    # Ignoriere Fehler bei einzelnen Links
+                    # Ignore errors for individual links
                     pass
         
         source_doc.close()
         
-        # Speichere PDF
-        print(f"Speichere PDF: {output_path}")
+        # Save PDF
+        print(f"Saving PDF: {output_path}")
         doc.save(output_path)
         doc.close()
         
-        print(f"\n✓ PDF erfolgreich generiert: {output_path}")
-        print(f"  - Gesamt Seiten: {total_pages}")
+        print(f"\n✓ PDF successfully generated: {output_path}")
+        print(f"  - Total pages: {total_pages}")
         print(f"  - Tabs: {len(self.tabs)}")
-        print(f"\nDie PDF kann jetzt per Skript angepasst werden!")
-        print(f"\nStruktur-Dokumentation:")
-        print(f"  - Tab-Positionen: {self.tab_x} (x), Höhen: {[t['y'] for t in self.tabs]}")
-        print(f"  - Seiten-Struktur: {list(self.page_structure.keys())}")
+        print(f"\nThe PDF can now be modified via script!")
+        print(f"\nStructure documentation:")
+        print(f"  - Tab positions: {self.tab_x} (x), heights: {[t['y'] for t in self.tabs]}")
+        print(f"  - Page structure: {list(self.page_structure.keys())}")
         
         return output_path
     
     def modify_pdf(self, pdf_path: str, modifications: Dict):
         """
-        Modifiziert eine bestehende PDF
+        Modifies an existing PDF
         
         Args:
-            pdf_path: Pfad zur PDF
-            modifications: Dict mit Modifikationen
-                - "add_text": List[Dict] - Text hinzufügen
-                - "remove_links": List[int] - Links entfernen (Seiten-Nummern)
-                - "add_links": List[Dict] - Links hinzufügen
-                - "modify_tabs": Dict - Tab-Struktur ändern
+            pdf_path: Path to PDF
+            modifications: Dict with modifications
+                - "add_text": List[Dict] - Add text
+                - "remove_links": List[int] - Remove links (page numbers)
+                - "add_links": List[Dict] - Add links
+                - "modify_tabs": Dict - Change tab structure
         """
         doc = fitz.open(pdf_path)
         
-        # Beispiel: Text hinzufügen
+        # Example: Add text
         if "add_text" in modifications:
             for text_data in modifications["add_text"]:
                 page_num = text_data.get("page", 1) - 1
@@ -837,7 +963,7 @@ class DynamicPDFGenerator:
                         fontname=text_data.get("font", "helv")
                     )
         
-        # Beispiel: Links entfernen
+        # Example: Remove links
         if "remove_links" in modifications:
             for page_num in modifications["remove_links"]:
                 page_idx = page_num - 1
@@ -847,7 +973,7 @@ class DynamicPDFGenerator:
                     for link in links:
                         page.delete_link(link)
         
-        # Beispiel: Links hinzufügen
+        # Example: Add links
         if "add_links" in modifications:
             for link_data in modifications["add_links"]:
                 page_num = link_data.get("page", 1) - 1
@@ -870,18 +996,18 @@ class DynamicPDFGenerator:
         
         doc.save(pdf_path, incremental=True)
         doc.close()
-        print(f"✓ PDF modifiziert: {pdf_path}")
+        print(f"✓ PDF modified: {pdf_path}")
 
 
 def main():
-    """Hauptfunktion"""
+    """Main function"""
     generator = DynamicPDFGenerator()
     
     source = "vampire_journal.pdf"
     output = "vampire_journal_dynamic.pdf"
     
     if not os.path.exists(source):
-        print(f"Fehler: {source} nicht gefunden!")
+        print(f"Error: {source} not found!")
         return
     
     generator.generate_from_source(source, output)

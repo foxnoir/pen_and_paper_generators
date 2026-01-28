@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Clan Sheet Generator
-Erstellt ein dynamisches Clan-Sheet basierend auf Benutzereingaben.
+Creates a dynamic clan sheet based on user input.
 
 Vampire: The Masquerade is a trademark of White Wolf Entertainment AB.
 This tool is not affiliated with or endorsed by White Wolf Entertainment AB.
@@ -16,7 +16,7 @@ import textwrap
 class ClanSheetGenerator:
     def __init__(self, clan_name, logo_path=None, watermark_path="watermark.png"):
         self.clan_name = clan_name.upper()
-        # Logo-Pfad: zuerst nach clan_name.png suchen, dann Fallback auf clan_name.png (generisches Logo)
+        # Logo path: first search for clan_name.png, then fallback to clan_name.png (generic logo)
         if logo_path is None:
             clan_logo_path = f"{self.clan_name.lower()}.png"
             if os.path.exists(clan_logo_path):
@@ -28,13 +28,13 @@ class ClanSheetGenerator:
         self.watermark_path = watermark_path
         self.page_width = 2480  # A4 at 300 DPI
         self.page_height = 3508
-        self.margin = 60  # Kleinere Margins für mehr Platz
+        self.margin = 60  # Smaller margins for more space
         self.content_width = self.page_width - 2 * self.margin
         self.content_height = self.page_height - 2 * self.margin
         
         # Box dimensions
-        self.box_spacing = 60  # Mehr Abstand zwischen linken und rechten Boxen
-        self.header_height = 75  # Noch höhere Header-Boxen
+        self.box_spacing = 60  # More spacing between left and right boxes
+        self.header_height = 75  # Even higher header boxes
         self.min_box_height = 140
         
         # Colors
@@ -47,64 +47,64 @@ class ClanSheetGenerator:
         self.sections = {}
         
     def load_logo(self):
-        """Lädt das Logo und passt es an - entfernt weißen/hellen Hintergrund, vereinheitlicht auf max_height"""
+        """Loads the logo and adapts it - removes white/light background, standardizes to max_height"""
         if os.path.exists(self.logo_path):
             logo = Image.open(self.logo_path)
-            # Konvertiere zu RGBA falls nötig
+            # Convert to RGBA if necessary
             if logo.mode != 'RGBA':
                 logo = logo.convert('RGBA')
             
-            # Entferne weißen/hellen/grauen Hintergrund: Mache helle Pixel transparent
-            # Verwende einen niedrigeren Schwellenwert (200 statt 240) für bessere Erkennung
-            # Verwende numpy für bessere Performance (falls verfügbar) oder manuell
+            # Remove white/light/gray background: Make light pixels transparent
+            # Use a lower threshold (200 instead of 240) for better detection
+            # Use numpy for better performance (if available) or manual
             try:
                 import numpy as np
-                # Konvertiere zu numpy array für bessere Performance
+                # Convert to numpy array for better performance
                 img_array = np.array(logo)
-                # Berechne Helligkeit für jeden Pixel
+                # Calculate brightness for each pixel
                 brightness = (img_array[:, :, 0].astype(float) + img_array[:, :, 1].astype(float) + img_array[:, :, 2].astype(float)) / 3.0
-                # Erstelle Maske für helle Pixel (niedrigerer Schwellenwert 200 für bessere Erkennung)
-                # Auch prüfe auf ähnliche RGB-Werte (graue Pixel)
+                # Create mask for light pixels (lower threshold 200 for better detection)
+                # Also check for similar RGB values (gray pixels)
                 mask = brightness > 200
-                # Zusätzlich: Wenn R, G, B sehr ähnlich sind (grauer Hintergrund), auch transparent machen
+                # Additionally: If R, G, B are very similar (gray background), also make transparent
                 r_diff = np.abs(img_array[:, :, 0].astype(float) - img_array[:, :, 1].astype(float))
                 g_diff = np.abs(img_array[:, :, 1].astype(float) - img_array[:, :, 2].astype(float))
                 b_diff = np.abs(img_array[:, :, 0].astype(float) - img_array[:, :, 2].astype(float))
                 gray_mask = (r_diff < 30) & (g_diff < 30) & (b_diff < 30) & (brightness > 180)
-                # Kombiniere beide Masken
+                # Combine both masks
                 final_mask = mask | gray_mask
-                # Setze Alpha-Kanal auf 0 für helle/graue Pixel (mache sie transparent)
+                # Set alpha channel to 0 for light/gray pixels (make them transparent)
                 img_array[final_mask, 3] = 0
                 logo = Image.fromarray(img_array.astype(np.uint8))
             except ImportError:
-                # Fallback ohne numpy: manuelle Verarbeitung
+                # Fallback without numpy: manual processing
                 data = logo.getdata()
                 new_data = []
                 
                 for item in data:
                     r, g, b, a = item
                     brightness = (r + g + b) / 3
-                    # Prüfe ob Pixel hell ist (niedrigerer Schwellenwert 200)
-                    # Oder ob es ein grauer Pixel ist (ähnliche R, G, B Werte)
+                    # Check if pixel is light (lower threshold 200)
+                    # Or if it's a gray pixel (similar R, G, B values)
                     r_diff = abs(r - g)
                     g_diff = abs(g - b)
                     b_diff = abs(r - b)
                     is_gray = (r_diff < 30) and (g_diff < 30) and (b_diff < 30) and (brightness > 180)
                     
                     if brightness > 200 or is_gray:
-                        # Heller/grauer Pixel -> transparent
+                        # Light/gray pixel -> transparent
                         new_data.append((r, g, b, 0))
                     else:
-                        # Dunkler Pixel -> behalte wie er ist
+                        # Dark pixel -> keep as is
                         new_data.append(item)
                 
                 logo.putdata(new_data)
             
-            # Stelle sicher, dass das Logo RGBA-Modus hat
+            # Ensure logo has RGBA mode
             if logo.mode != 'RGBA':
                 logo = logo.convert('RGBA')
             
-            # Logo skalieren: Bei Setiten größer (350px), sonst 280px
+            # Scale logo: For Setites larger (350px), otherwise 280px
             if self.clan_name.upper() == "SETITEN":
                 max_height = 350
             else:
@@ -117,15 +117,15 @@ class ClanSheetGenerator:
         return None
     
     def load_watermark(self):
-        """Lädt das Wasserzeichen und passt es an - entfernt weißen/grauen Hintergrund, behält nur schwarze Pixel"""
+        """Loads the watermark and adapts it - removes white/gray background, keeps only black pixels"""
         if os.path.exists(self.watermark_path):
             watermark = Image.open(self.watermark_path)
-            # Konvertiere zu RGBA falls nötig
+            # Convert to RGBA if necessary
             if watermark.mode != 'RGBA':
                 watermark = watermark.convert('RGBA')
             
-            # Entferne weißen/grauen Hintergrund: Mache helle Pixel transparent
-            # Erstelle ein neues Bild mit transparentem Hintergrund
+            # Remove white/gray background: Make light pixels transparent
+            # Create a new image with transparent background
             data = watermark.getdata()
             new_data = []
             
@@ -133,31 +133,31 @@ class ClanSheetGenerator:
                 r, g, b = item[0], item[1], item[2]
                 brightness = (r + g + b) / 3
                 
-                # Prüfe ob Pixel weiß oder grau ist (heller Hintergrund)
-                # Wenn R, G, B ähnlich sind (grau) oder alle über einem Schwellenwert (weiß)
-                # Schwellenwert für Hintergrund: > 180 für grau, > 240 für weiß
+                # Check if pixel is white or gray (light background)
+                # If R, G, B are similar (gray) or all above a threshold (white)
+                # Threshold for background: > 180 for gray, > 240 for white
                 is_gray = abs(r - g) < 30 and abs(g - b) < 30 and abs(r - b) < 30
                 is_background = (brightness > 180 and is_gray) or (brightness > 240)
                 
                 if is_background:
-                    # Weißer/grauer Hintergrund-Pixel -> transparent
+                    # White/gray background pixel -> transparent
                     new_data.append((0, 0, 0, 0))
                 else:
-                    # Dunkler Pixel -> behalte, aber mit reduzierter Deckkraft
-                    # Setze auf schwarz mit Alpha basierend auf Helligkeit
-                    # Je dunkler, desto höher das Alpha (max 35% Deckkraft)
+                    # Dark pixel -> keep, but with reduced opacity
+                    # Set to black with alpha based on brightness
+                    # The darker, the higher the alpha (max 35% opacity)
                     alpha_value = int((255 - brightness) * 0.35)
                     new_data.append((0, 0, 0, alpha_value))
             
             watermark.putdata(new_data)
             
-            # Vereinheitlichte Skalierung - auf 60% der Sheet-Größe, behalte Seitenverhältnis
+            # Unified scaling - to 60% of sheet size, maintain aspect ratio
             target_width = int(self.page_width * 0.6)
             target_height = int(self.page_height * 0.6)
-            # Berechne Skalierung basierend auf Seitenverhältnis
+            # Calculate scaling based on aspect ratio
             width_ratio = target_width / watermark.width
             height_ratio = target_height / watermark.height
-            # Verwende das kleinere Verhältnis, um Verzerrung zu vermeiden
+            # Use the smaller ratio to avoid distortion
             ratio = min(width_ratio, height_ratio)
             new_width = int(watermark.width * ratio)
             new_height = int(watermark.height * ratio)
@@ -167,17 +167,17 @@ class ClanSheetGenerator:
         return None
     
     def get_font(self, size, bold=False):
-        """Holt eine Schriftart"""
+        """Gets a font"""
         try:
             if bold:
-                # Versuche verschiedene Bold-Fonts
+                # Try various bold fonts
                 try:
                     return ImageFont.truetype("/System/Library/Fonts/Helvetica-Bold.ttf", size)
                 except:
                     try:
                         return ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", size)
                     except:
-                        # Fallback: Helvetica.ttc mit Font-Index für Bold (falls unterstützt)
+                        # Fallback: Helvetica.ttc with font index for Bold (if supported)
                         return ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", size)
             else:
                 return ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", size)
@@ -188,10 +188,10 @@ class ClanSheetGenerator:
                 else:
                     return ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", size)
             except:
-                # Fallback: Verwende load_default und mache es manuell bold durch größere Schrift
+                # Fallback: Use load_default and make it manually bold by larger font size
                 default_font = ImageFont.load_default()
                 if bold:
-                    # Für bold: etwas größere Schrift als Ersatz
+                    # For bold: slightly larger font as replacement
                     return ImageFont.load_default()
                 return default_font
     
@@ -223,29 +223,29 @@ class ClanSheetGenerator:
         return lines
     
     def calculate_text_height(self, text, font, max_width):
-        """Berechnet die benötigte Höhe für Text"""
+        """Calculates the required height for text"""
         lines = self.wrap_text(text, font, max_width)
-        # Schätze Zeilenhöhe basierend auf Font-Metrik
+        # Estimate line height based on font metrics
         try:
             bbox = font.getbbox("Ag")
-            line_height = (bbox[3] - bbox[1]) + 6  # Etwas mehr Abstand
+            line_height = (bbox[3] - bbox[1]) + 6  # A bit more spacing
         except:
             line_height = 25
-        return len(lines) * line_height + 25  # Mehr Padding
+        return len(lines) * line_height + 25  # More padding
     
     def draw_box(self, draw, x, y, width, height, header_text, content_text, font_normal, font_bold, header_height=None):
-        """Zeichnet eine Box mit Header und Inhalt"""
-        # Einheitlicher Margin für alle 4 Seiten
-        box_padding = 40  # Margin auf allen Seiten
+        """Draws a box with header and content"""
+        # Unified margin for all 4 sides
+        box_padding = 40  # Margin on all sides
         
-        # Verwende übergebene Header-Höhe oder Standard
+        # Use passed header height or default
         if header_height is None:
             header_height = self.header_height
         
-        # Header Box mit Umriss
+        # Header box with outline
         draw.rectangle([x, y, x + width, y + header_height], fill=self.header_color, outline=(0, 0, 0), width=3)
         
-        # Header Text (zentriert, weiß)
+        # Header text (centered, white)
         header_lines = self.wrap_text(header_text, font_bold, width - 2 * box_padding)
         try:
             bbox = font_bold.getbbox("Ag")
@@ -261,77 +261,77 @@ class ClanSheetGenerator:
             draw.text((text_x, header_y), line, fill=(255, 255, 255), font=font_bold)
             header_y += line_height + 2
         
-        # Content Box
+        # Content box
         content_y = y + header_height
         
-        # Content Text - respektiere originale Zeilenumbrüche
-        # Teile nach originalen Zeilenumbrüchen
+        # Content text - respect original line breaks
+        # Split by original line breaks
         original_lines = content_text.split('\n')
         try:
             bbox = font_normal.getbbox("Ag")
             line_height = bbox[3] - bbox[1]
         except:
             line_height = 22
-        text_y = content_y + box_padding  # Einheitlicher Margin oben
-        max_width = width - 2 * box_padding  # Einheitlicher Margin links und rechts
+        text_y = content_y + box_padding  # Unified margin top
+        max_width = width - 2 * box_padding  # Unified margin left and right
         
-        # Berechne tatsächliche Höhe WÄHREND des Zeichnens
-        actual_content_height = box_padding  # Start mit Padding oben
+        # Calculate actual height WHILE drawing
+        actual_content_height = box_padding  # Start with padding top
         
         for original_line in original_lines:
             original_line = original_line.strip()
             if not original_line:
-                # Leere Zeile im Original beibehalten
+                # Keep empty line from original
                 actual_content_height += line_height // 2
                 continue
             
-            # Prüfe ob Zeile umgebrochen werden muss
+            # Check if line needs to be wrapped
             line_width = font_normal.getlength(original_line)
             if line_width > max_width:
-                # Nur dann wrappen wenn wirklich nötig
+                # Only wrap if really necessary
                 wrapped_lines = self.wrap_text(original_line, font_normal, max_width)
                 for wrapped_line in wrapped_lines:
                     if wrapped_line.strip():
                         actual_content_height += line_height + 6
             else:
-                # Zeile passt - keine Umbrüche hinzufügen
+                # Line fits - don't add breaks
                 actual_content_height += line_height + 6
         
-        actual_content_height += box_padding  # Padding unten
+        actual_content_height += box_padding  # Padding bottom
         
-        # Zeichne Box mit tatsächlicher Höhe
+        # Draw box with actual height
         draw.rectangle([x, content_y, x + width, content_y + actual_content_height], 
                       fill=self.box_color, outline=(0, 0, 0), width=3)
         
-        # Jetzt zeichne den Text
-        text_y = content_y + box_padding  # Reset für Zeichnen
+        # Now draw the text
+        text_y = content_y + box_padding  # Reset for drawing
         for original_line in original_lines:
             original_line = original_line.strip()
             if not original_line:
-                # Leere Zeile im Original beibehalten
+                # Keep empty line from original
                 text_y += line_height // 2
                 continue
             
-            # Prüfe ob Zeile umgebrochen werden muss
+            # Check if line needs to be wrapped
             line_width = font_normal.getlength(original_line)
             if line_width > max_width:
-                # Nur dann wrappen wenn wirklich nötig
+                # Only wrap if really necessary
                 wrapped_lines = self.wrap_text(original_line, font_normal, max_width)
                 for wrapped_line in wrapped_lines:
                     if wrapped_line.strip():
                         draw.text((x + box_padding, text_y), wrapped_line, fill=self.text_color, font=font_normal)
                     text_y += line_height + 6
             else:
-                # Zeile passt - keine Umbrüche hinzufügen
+                # Line fits - don't add breaks
                 draw.text((x + box_padding, text_y), original_line, fill=self.text_color, font=font_normal)
                 text_y += line_height + 6
         
         return actual_content_height + header_height
     
     def draw_disciplines_box(self, draw, x, y, width, height, header_text, content_text, font_normal, font_bold):
-        """Zeichnet eine Box mit spezieller Formatierung für Disziplinen"""
-        # Einheitlicher Margin für alle 4 Seiten
-        box_padding = 40  # Margin auf allen Seiten
+        """Draws a box with special formatting for disciplines"""
+        # Unified margin for all 4 sides
+        box_padding = 40  # Margin on all sides
         
         # Header Box mit Umriss
         draw.rectangle([x, y, x + width, y + self.header_height], fill=self.header_color, outline=(0, 0, 0), width=3)
@@ -487,7 +487,7 @@ class ClanSheetGenerator:
         return content_height + self.header_height
     
     def parse_user_input(self, user_text):
-        """Parst den Benutzertext und extrahiert die Sektionen"""
+        """Parses the user text and extracts the sections"""
         sections = {}
         current_section = None
         current_content = []
@@ -563,15 +563,15 @@ class ClanSheetGenerator:
         return sections
     
     def generate_sheet(self, sections, clanessenz):
-        """Generiert das Clan-Sheet"""
-        # Erstelle Bild
+        """Generates the clan sheet"""
+        # Create image
         img = Image.new('RGB', (self.page_width, self.page_height), self.bg_color)
         draw = ImageDraw.Draw(img)
         
-        # Schriftarten - noch größer für bessere Lesbarkeit
-        font_header = self.get_font(52, bold=True)  # Noch größere Header-Schrift (bold)
-        font_normal = self.get_font(48, bold=False)  # Noch größere normale Schrift in Boxen
-        font_final = self.get_font(70, bold=True)  # Finaler Satz etwas kleiner damit er nicht rutscht
+        # Fonts - even larger for better readability
+        font_header = self.get_font(52, bold=True)  # Even larger header font (bold)
+        font_normal = self.get_font(48, bold=False)  # Even larger normal font in boxes
+        font_final = self.get_font(70, bold=True)  # Final sentence slightly smaller so it doesn't slip
         
         current_y = self.margin + 20
         

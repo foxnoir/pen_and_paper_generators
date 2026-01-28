@@ -1,0 +1,3 @@
+# Python package dependencies
+# Add packages here as you develop scripts
+Pillow>=10.0.0

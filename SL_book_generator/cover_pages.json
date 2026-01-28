@@ -1,0 +1,63 @@
+{
+    "cover_pages": {
+        "Domäne": {
+            "background_image": "images/cover_background.png",
+            "title": "Domäne",
+            "subtitle": "Die Stadt und ihre Strukturen",
+            "description": "Hier findest du alle Informationen über die Domäne, ihre Machtstrukturen und die wichtigsten Orte."
+        },
+        "Intrigen & Interessen": {
+            "background_image": "images/cover_background.png",
+            "title": "Intrigen & Interessen",
+            "subtitle": "Verbindungen und Konflikte",
+            "description": "Übersicht über alle Intrigen, Interessen und die komplexen Beziehungen zwischen den Charakteren."
+        },
+        "Runden": {
+            "background_image": "images/cover_background.png",
+            "title": "Runden",
+            "subtitle": "Chronik der Ereignisse",
+            "description": "Detaillierte Aufzeichnungen aller Runden und wichtigen Ereignisse der Kampagne."
+        },
+        "NPCs": {
+            "background_image": "images/cover_background.png",
+            "title": "NPCs",
+            "subtitle": "Charaktere und Persönlichkeiten",
+            "description": "Alle wichtigen Nicht-Spieler-Charaktere mit ihren Hintergründen, Motivationen und Beziehungen."
+        },
+        "Orte": {
+            "background_image": "images/cover_background.png",
+            "title": "Orte",
+            "subtitle": "Schauplätze und Locations",
+            "description": "Beschreibungen aller wichtigen Orte, von Clubs über Elysien bis hin zu privaten Domänen."
+        },
+        "Karten": {
+            "background_image": "images/cover_background.png",
+            "title": "Karten",
+            "subtitle": "Übersichten und Pläne",
+            "description": "Karten, Pläne und visuelle Übersichten wichtiger Bereiche und Strukturen."
+        },
+        "Handouts": {
+            "background_image": "images/cover_background.png",
+            "title": "Handouts",
+            "subtitle": "Materialien und Dokumente",
+            "description": "Alle Handouts, Dokumente und Materialien für die Spieler."
+        },
+        "Notizen": {
+            "background_image": "images/cover_background.png",
+            "title": "Notizen",
+            "subtitle": "Persönliche Aufzeichnungen",
+            "description": "Private Notizen, Ideen und Gedanken für die Kampagne."
+        }
+    },
+    "default_background": "images/cover_background.png",
+    "default_font": {
+        "title_size": 48,
+        "subtitle_size": 24,
+        "description_size": 14
+    },
+    "text_position": {
+        "title_y_offset": -100,
+        "subtitle_y_offset": -50,
+        "description_y_offset": 50
+    }
+}

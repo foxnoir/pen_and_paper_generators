@@ -8,6 +8,7 @@ import fitz  # PyMuPDF
 from typing import List, Dict, Optional
 import random
 import math
+import os
 
 
 class LayoutGenerator:
@@ -21,30 +22,30 @@ class LayoutGenerator:
         self.tab_width = 35.0  # Wider for better design and text
         self.tab_x = self.page_width - self.tab_width - 5  # Right margin with 5pt spacing
         
-        # Tab design colors (RGB 0-1 for PyMuPDF) - Jade green
+        # Tab design colors (RGB 0-1 for PyMuPDF)
+        # #EEDCC8 = RGB(238, 220, 200) - inactive (beige/cream)
+        # #D0C4B4 = RGB(208, 196, 180) - active (darker beige)
         self.tab_colors = {
-            "background": (0.75, 0.90, 0.80),  # Light jade green (inactive)
-            "border": (0.50, 0.75, 0.60),  # Jade green border
-            "active": (0.50, 0.75, 0.60),  # Darker jade green (active)
+            "background": (238 / 255, 220 / 255, 200 / 255),  # #EEDCC8 (inactive)
+            "border": (208 / 255, 196 / 255, 180 / 255),  # #D0C4B4 border
+            "active": (208 / 255, 196 / 255, 180 / 255),  # #D0C4B4 (active)
             "text": (0.15, 0.15, 0.15),  # Dark text
-            "shadow": (0.40, 0.65, 0.50)  # Jade green shadow
+            "shadow": (200 / 255, 190 / 255, 175 / 255)  # Slightly darker shadow
         }
     
     def draw_blood_splatters(self, page: fitz.Page):
-        """Draws random ink stain clusters in the background (pure grayscale)"""
-        # First light stains (#D4D3D3 = RGB 212/255, 211/255, 211/255)
-        # Average = (212+211+211)/3 = 211.33 -> true grayscale
-        base_gray_light = (212 + 211 + 211) / 3 / 255
-        self._draw_ink_clusters(page, base_gray=base_gray_light, variation=0.05)
+        """Draws random blood stain clusters in the background with custom colors"""
+        # Light stains (#CD2103 = RGB 205/255, 33/255, 3/255) - brighter red
+        light_color = (205 / 255, 33 / 255, 3 / 255)
+        self._draw_ink_clusters(page, base_color=light_color, variation=0.05, is_color=True)
         
-        # Then darker stains (#7C7979 = RGB 124/255, 121/255, 121/255)
-        # Average = (124+121+121)/3 = 122 -> true grayscale
-        base_gray_dark = (124 + 121 + 121) / 3 / 255
+        # Darker stains (#772616 = RGB 119/255, 38/255, 22/255) - darker red/brown
+        dark_color = (119 / 255, 38 / 255, 22 / 255)
         # Dark ones can overlap the light ones
-        self._draw_ink_clusters(page, base_gray=base_gray_dark, variation=0.06)
+        self._draw_ink_clusters(page, base_color=dark_color, variation=0.06, is_color=True)
     
-    def _draw_ink_clusters(self, page: fitz.Page, base_gray: float, variation: float):
-        """Draws ink stain clusters with given grayscale value (pure grayscale, no color)"""
+    def _draw_ink_clusters(self, page: fitz.Page, base_color=None, base_gray=None, variation: float=0.05, is_color: bool=False):
+        """Draws blood stain clusters with given color or grayscale value"""
         # Number of clusters per run (1-3 spots, so max. 6 clusters total)
         num_clusters = random.randint(1, 3)
         
@@ -70,10 +71,20 @@ class LayoutGenerator:
                 x = max(10, min(x, self.page_width - 10))
                 y = max(10, min(y, self.page_height - 10))
                 
-                # Random grayscale value based on base gray with variation
-                # All RGB channels have the same value for pure grayscale
-                gray_value = max(0, min(1, base_gray + random.uniform(-variation, variation)))
-                color = (gray_value, gray_value, gray_value)
+                # Calculate color based on type
+                if is_color and base_color:
+                    # Color mode: apply variation to each RGB channel independently
+                    r = max(0, min(1, base_color[0] + random.uniform(-variation, variation)))
+                    g = max(0, min(1, base_color[1] + random.uniform(-variation, variation)))
+                    b = max(0, min(1, base_color[2] + random.uniform(-variation, variation)))
+                    color = (r, g, b)
+                elif base_gray is not None:
+                    # Grayscale mode (backward compatibility)
+                    gray_value = max(0, min(1, base_gray + random.uniform(-variation, variation)))
+                    color = (gray_value, gray_value, gray_value)
+                else:
+                    # Fallback to default gray
+                    color = (0.5, 0.5, 0.5)
                 
                 # Random size (smaller stains)
                 base_size = random.uniform(1.5, 6)
@@ -989,9 +1000,171 @@ class LayoutGenerator:
                 
                 row_start_x += tab_width_actual + tab_spacing
     
-    def apply_layout_to_pdf(self, doc: fitz.Document, tabs: List[Dict], tab_text_elements: List[Dict] = None, page_structure: Dict = None, tab_subsections: Dict = None, metadata: Dict = None):
+    def add_cover_page(self, page: fitz.Page, cover_config: Dict, page_width: float, page_height: float):
+        """Adds a cover page with background image and centered text"""
+        # Load background image if specified
+        bg_image_path = cover_config.get("background_image")
+        if bg_image_path and os.path.exists(bg_image_path):
+            try:
+                # Insert image as background (full page)
+                img_rect = fitz.Rect(0, 0, page_width, page_height)
+                page.insert_image(img_rect, filename=bg_image_path)
+            except Exception as e:
+                print(f"Warning: Could not load background image {bg_image_path}: {e}")
+        
+        # Get text configuration
+        title = cover_config.get("title", "")
+        subtitle = cover_config.get("subtitle", "")
+        description = cover_config.get("description", "")
+        
+        # Get font sizes from config or use defaults
+        font_config = cover_config.get("default_font", {})
+        title_size = font_config.get("title_size", 48)
+        subtitle_size = font_config.get("subtitle_size", 24)
+        description_size = font_config.get("description_size", 14)
+        
+        # Get text position offsets
+        pos_config = cover_config.get("text_position", {})
+        title_y_offset = pos_config.get("title_y_offset", -100)
+        subtitle_y_offset = pos_config.get("subtitle_y_offset", -50)
+        description_y_offset = pos_config.get("description_y_offset", 50)
+        
+        # Calculate center position
+        center_x = page_width / 2
+        center_y = page_height / 2
+        
+        # Draw title (centered, bold, large)
+        if title:
+            title_y = center_y + title_y_offset
+            try:
+                # Try bold font first
+                page.insert_text(
+                    (center_x, title_y),
+                    title,
+                    fontsize=title_size,
+                    fontname='helv-Bold',
+                    color=(0.0, 0.0, 0.0),
+                    align=1  # Center alignment
+                )
+            except:
+                # Fallback to regular font
+                try:
+                    page.insert_text(
+                        (center_x, title_y),
+                        title,
+                        fontsize=title_size,
+                        color=(0.0, 0.0, 0.0),
+                        align=1
+                    )
+                except:
+                    pass
+        
+        # Draw subtitle (centered, medium size)
+        if subtitle:
+            subtitle_y = center_y + subtitle_y_offset
+            try:
+                text_width = fitz.get_text_length(subtitle, fontname='helv', fontsize=subtitle_size)
+            except:
+                text_width = len(subtitle) * subtitle_size * 0.6
+            
+            subtitle_x = center_x - (text_width / 2)
+            try:
+                page.insert_text(
+                    (subtitle_x, subtitle_y),
+                    subtitle,
+                    fontsize=subtitle_size,
+                    fontname='helv',
+                    color=(0.3, 0.3, 0.3)
+                )
+            except:
+                try:
+                    page.insert_text(
+                        (subtitle_x, subtitle_y),
+                        subtitle,
+                        fontsize=subtitle_size,
+                        color=(0.3, 0.3, 0.3)
+                    )
+                except:
+                    pass
+        
+        # Draw description (centered, smaller, wrapped if needed)
+        if description:
+            desc_y = center_y + description_y_offset
+            # Use textbox for better text wrapping and centering
+            desc_rect = fitz.Rect(
+                center_x - 200,  # Left margin
+                desc_y - 50,     # Top margin
+                center_x + 200,  # Right margin
+                desc_y + 100     # Bottom margin
+            )
+            try:
+                rc = page.insert_textbox(
+                    desc_rect,
+                    description,
+                    fontsize=description_size,
+                    fontname='helv',
+                    color=(0.2, 0.2, 0.2),
+                    align=1  # Center alignment
+                )
+                if rc < 0:
+                    # Fallback to simple text insertion
+                    try:
+                        text_width = fitz.get_text_length(description, fontname='helv', fontsize=description_size)
+                    except:
+                        text_width = len(description) * description_size * 0.5
+                    desc_x = center_x - (text_width / 2)
+                    page.insert_text(
+                        (desc_x, desc_y),
+                        description,
+                        fontsize=description_size,
+                        fontname='helv',
+                        color=(0.2, 0.2, 0.2)
+                    )
+            except:
+                try:
+                    text_width = fitz.get_text_length(description, fontname='helv', fontsize=description_size)
+                except:
+                    text_width = len(description) * description_size * 0.5
+                desc_x = center_x - (text_width / 2)
+                try:
+                    page.insert_text(
+                        (desc_x, desc_y),
+                        description,
+                        fontsize=description_size,
+                        color=(0.2, 0.2, 0.2)
+                    )
+                except:
+                    pass
+    
+    def apply_layout_to_pdf(self, doc: fitz.Document, tabs: List[Dict], tab_text_elements: List[Dict] = None, page_structure: Dict = None, tab_subsections: Dict = None, metadata: Dict = None, cover_pages_config: Dict = None):
         """Applies layout (blood splatters and tabs) to all pages of a PDF"""
         total_pages = len(doc)
+        
+        # Add cover pages BEFORE blood splatters and tabs
+        if cover_pages_config:
+            print("Adding cover pages...")
+            cover_pages = cover_pages_config.get("cover_pages", {})
+            default_bg = cover_pages_config.get("default_background", "")
+            default_font = cover_pages_config.get("default_font", {})
+            text_position = cover_pages_config.get("text_position", {})
+            
+            # Find first page of each tab and add cover page
+            for tab in tabs:
+                tab_name = tab.get("name")
+                target_page_num = tab.get("target_page", 1) - 1  # Convert to 0-based
+                
+                if tab_name in cover_pages and 0 <= target_page_num < total_pages:
+                    cover_config = cover_pages[tab_name].copy()
+                    # Merge with defaults
+                    if default_bg and "background_image" not in cover_config:
+                        cover_config["background_image"] = default_bg
+                    if default_font:
+                        cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
+                    if text_position:
+                        cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                    
+                    cover_page = doc[target_page_num]
+                    self.add_cover_page(cover_page, cover_config, self.page_width, self.page_height)
         
         print("Drawing blood splatters in background...")
         # Draw blood splatters on all pages (BEFORE tabs are drawn)

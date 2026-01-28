@@ -224,10 +224,18 @@ class DynamicPDFGenerator:
                             pass  # Names stay from JSON!
             source_doc.close()
         
+        # Load cover pages configuration if available
+        cover_pages_config = None
+        cover_pages_path = os.path.join(os.path.dirname(json_path), "cover_pages.json")
+        if os.path.exists(cover_pages_path):
+            print(f"Loading cover pages configuration from {cover_pages_path}...")
+            with open(cover_pages_path, 'r', encoding='utf-8') as f:
+                cover_pages_config = json.load(f)
+        
         # Apply layout (blood splatters and tabs) - this preserves layout!
         print("Applying layout (blood splatters and tabs)...")
         metadata = structure.get("metadata", {})
-        self.layout_generator.apply_layout_to_pdf(doc, self.tabs, tab_text_elements, self.page_structure, self.tab_subsections, metadata)
+        self.layout_generator.apply_layout_to_pdf(doc, self.tabs, tab_text_elements, self.page_structure, self.tab_subsections, metadata, cover_pages_config)
         
         # Save PDF
         print(f"Saving PDF: {output_path}")

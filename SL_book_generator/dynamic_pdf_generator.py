@@ -20,28 +20,28 @@ class DynamicPDFGenerator:
         
         # Tab-Struktur (rechte Seite, Y-Positionen) - von oben nach unten
         self.tabs = [
-            {"name": "Domäne", "y": 65.0, "target_page": 1, "height": 70.0},
-            {"name": "Intrigen & Interessen", "y": 143.0, "target_page": 94, "height": 110.0},
-            {"name": "Runden", "y": 261.0, "target_page": 93, "height": 70.0},
-            {"name": "NPCs", "y": 339.0, "target_page": 90, "height": 70.0},
-            {"name": "Orte", "y": 417.0, "target_page": 81, "height": 70.0},
-            {"name": "Karten", "y": 495.0, "target_page": 30, "height": 70.0},
-            {"name": "Handouts", "y": 573.0, "target_page": 23, "height": 70.0},
-            {"name": "Notizen", "y": 651.0, "target_page": 11, "height": 70.0},
-            {"name": "Regeln", "y": 729.0, "target_page": 95, "height": 70.0},
+            {"name": "Domäne", "y": 65.0, "target_page": 1, "height": 70.0},  # Korrekt
+            {"name": "Intrigen & Interessen", "y": 143.0, "target_page": 11, "height": 110.0},  # Soll Inhalt von Notizen haben (Seite 11)
+            {"name": "Runden", "y": 261.0, "target_page": 23, "height": 70.0},  # Soll Inhalt von Handouts haben (Seite 23)
+            {"name": "NPCs", "y": 339.0, "target_page": 90, "height": 70.0},  # Soll Inhalt von NPCs haben (Seite 90) - bleibt gleich
+            {"name": "Orte", "y": 417.0, "target_page": 81, "height": 70.0},  # Korrekt
+            {"name": "Karten", "y": 495.0, "target_page": 30, "height": 70.0},  # Soll Inhalt von Karten haben (Seite 30) - bleibt gleich
+            {"name": "Handouts", "y": 573.0, "target_page": 93, "height": 70.0},  # Soll leer sein, zeigt auf leere Seite 93
+            {"name": "Notizen", "y": 651.0, "target_page": 94, "height": 70.0},  # Soll leer sein, zeigt auf leere Seite 94
+            {"name": "Regeln", "y": 729.0, "target_page": 95, "height": 70.0},  # Korrekt
         ]
         
         # Tab-Breite und Position
         self.tab_width = 35.0  # Breiter für besseres Design und Text
         self.tab_x = self.page_width - self.tab_width - 5  # Rechter Rand mit 5pt Abstand
         
-        # Tab-Design-Farben (RGB 0-1 für PyMuPDF) - Marine-Blau
+        # Tab-Design-Farben (RGB 0-1 für PyMuPDF) - Jadegrün
         self.tab_colors = {
-            "background": (0.75, 0.85, 0.95),  # Helles Marine-Blau (inaktiv)
-            "border": (0.50, 0.65, 0.80),  # Marine-Blau Rahmen
-            "active": (0.50, 0.65, 0.80),  # Dunkles Marine-Blau (aktiv)
+            "background": (0.75, 0.90, 0.80),  # Helles Jadegrün (inaktiv)
+            "border": (0.50, 0.75, 0.60),  # Jadegrün Rahmen
+            "active": (0.50, 0.75, 0.60),  # Dunkleres Jadegrün (aktiv)
             "text": (0.15, 0.15, 0.15),  # Dunkler Text
-            "shadow": (0.40, 0.55, 0.70)  # Marine-Blau Schatten
+            "shadow": (0.40, 0.65, 0.50)  # Jadegrün Schatten
         }
         
         # Seiten-Struktur

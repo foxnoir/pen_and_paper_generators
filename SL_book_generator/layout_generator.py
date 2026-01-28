@@ -339,14 +339,31 @@ class LayoutGenerator:
         except:
             pass
     
-    def add_tabs_to_page(self, page: fitz.Page, page_num: int, tabs: List[Dict], tab_text_elements: List[Dict] = None):
+    def add_tabs_to_page(self, page: fitz.Page, page_num: int, tabs: List[Dict], tab_text_elements: List[Dict] = None, page_structure: Dict = None):
         """Adds modern tab tabs to a page"""
-        # Determine which page is active (based on tab targets)
+        # Determine which tab is active
+        # A tab is active if:
+        # 1. The page is the exact target_page, OR
+        # 2. The page belongs to this tab (based on page_structure)
         active_tab = None
+        
+        # First check exact target_page match
         for tab in tabs:
             if tab["target_page"] == page_num:
                 active_tab = tab
                 break
+        
+        # If no exact match and we have page_structure, check by tab_name
+        # This ensures tabs stay active when viewing their subsections
+        if active_tab is None and page_structure:
+            page_info = page_structure.get(page_num)
+            if page_info:
+                current_tab_name = page_info.get("tab_name")
+                if current_tab_name:
+                    for tab in tabs:
+                        if tab["name"] == current_tab_name:
+                            active_tab = tab
+                            break
         
         # Draw all tabs
         for i, tab in enumerate(tabs):
@@ -392,8 +409,26 @@ class LayoutGenerator:
         current_y = start_y
         
         # First row: subsections_left_top_tabs
+        # IMPORTANT: Don't show active subsection in first row!
         first_row_tabs = []
         second_row_tabs = []
+        
+        # Find target pages for subsections and sub-subsections
+        subsection_target_pages = {}  # subsection_name -> page_num
+        sub_subsection_target_pages = {}  # (subsection_name, sub_subsection_name) -> page_num
+        
+        # Search through page_structure to find target pages
+        for pg_num, pg_info in page_structure.items():
+            if pg_info.get("tab_name") == tab_name:
+                pg_subsection = pg_info.get("subsection")
+                pg_sub_subsection = pg_info.get("sub_subsection")
+                
+                if pg_subsection and not pg_sub_subsection:
+                    # This is a subsection page
+                    subsection_target_pages[pg_subsection] = pg_num
+                elif pg_subsection and pg_sub_subsection:
+                    # This is a sub-subsection page
+                    sub_subsection_target_pages[(pg_subsection, pg_sub_subsection)] = pg_num
         
         for subsection in subsections:
             subsection_name_curr = subsection.get("name", "")
@@ -401,20 +436,25 @@ class LayoutGenerator:
             if not sub_subsections:
                 sub_subsections = subsection.get("sub_subsections", [])
             
-            # Add subsection to first row
+            # Always add subsection to first row (show all, active ones in active color)
+            target_page = subsection_target_pages.get(subsection_name_curr)
+            is_subsection_active = (subsection_name_curr == subsection_name)
             first_row_tabs.append({
                 "name": subsection_name_curr,
-                "is_active": (subsection_name_curr == subsection_name),
-                "target_page": None  # Will be calculated
+                "is_active": is_subsection_active,  # Active ones stay visible but in active color
+                "target_page": target_page
             })
             
-            # Add sub-subsections to second row
-            for sub_subsection in sub_subsections:
-                second_row_tabs.append({
-                    "name": sub_subsection,
-                    "is_active": (sub_subsection == sub_subsection_name),
-                    "target_page": None  # Will be calculated
-                })
+            # Only add sub-subsections to second row if this subsection is active
+            # If subsection_name is None, don't show any sub-subsections
+            if subsection_name is not None and subsection_name_curr == subsection_name:
+                for sub_subsection in sub_subsections:
+                    target_page = sub_subsection_target_pages.get((subsection_name, sub_subsection))
+                    second_row_tabs.append({
+                        "name": sub_subsection,
+                        "is_active": (sub_subsection == sub_subsection_name),
+                        "target_page": target_page
+                    })
         
         # Draw first row
         row_y = current_y
@@ -446,6 +486,20 @@ class LayoutGenerator:
             
             # Draw rounded rectangle with shadow (no border)
             self.draw_rounded_rect(page, tab_rect, bg_color, border_color=None, radius=4.0, shadow=True)
+            
+            # Add link if target_page is available
+            if tab_data.get("target_page") is not None:
+                try:
+                    link = {
+                        "kind": fitz.LINK_GOTO,
+                        "from": tab_rect,
+                        "page": tab_data["target_page"] - 1,  # 0-based
+                        "to": fitz.Point(0, 0),
+                        "zoom": 0.0
+                    }
+                    page.insert_link(link)
+                except:
+                    pass
             
             # Add text - calculate text width and center manually (like old code)
             # Calculate text width to properly center it
@@ -533,6 +587,20 @@ class LayoutGenerator:
                 # Draw rounded rectangle with shadow (no border)
                 self.draw_rounded_rect(page, tab_rect, bg_color, border_color=None, radius=3.5, shadow=True)
                 
+                # Add link if target_page is available
+                if tab_data.get("target_page") is not None:
+                    try:
+                        link = {
+                            "kind": fitz.LINK_GOTO,
+                            "from": tab_rect,
+                            "page": tab_data["target_page"] - 1,  # 0-based
+                            "to": fitz.Point(0, 0),
+                            "zoom": 0.0
+                        }
+                        page.insert_link(link)
+                    except:
+                        pass
+                
                 # Add text - calculate text width and center manually (like old code)
                 # Calculate text width to properly center it
                 font_size = 8
@@ -589,7 +657,7 @@ class LayoutGenerator:
         # Draw modern tabs on all pages
         for page_num in range(total_pages):
             target_page = doc[page_num]
-            self.add_tabs_to_page(target_page, page_num + 1, tabs, tab_text_elements)
+            self.add_tabs_to_page(target_page, page_num + 1, tabs, tab_text_elements, page_structure)
         
         # Draw upper tabs (left top) if we have the structure
         if page_structure and tab_subsections and metadata:

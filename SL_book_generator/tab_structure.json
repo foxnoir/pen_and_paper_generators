@@ -6,7 +6,7 @@
             "y_position": 65.0,
             "subsections_left_top_tabs": [
                 {
-                    "name": "Domäne",
+                    "name": "Stadt",
                     "seconnd_subsections_left_tabs": [
                         "Status quo",
                         "Machtstruktur",
@@ -266,21 +266,21 @@
                 {
                     "name": "Grundregeln",
                     "sub_subsections": [
-                        "Würfelsystem und Problem",
-                        "Attribute und Fähigkeiten",
+                        "Würfelsystem & Problem",
+                        "Attribute & Fähigkeiten",
                         "Schwierigkeiten",
                         "Willenskraft",
-                        "Gesundheit und Schaden"
+                        "Gesundheit & Schaden"
                     ]
                 },
                 {
                     "name": "Charakter & Blut",
                     "sub_subsections": [
-                        "Menschlichkeit und Pfade",
-                        "Blut und Hunger",
+                        "Menschlichkeit & Pfade",
+                        "Blut & Hunger",
                         "Bllutpunkte",
                         "Raserei",
-                        "Erzeugung und Generation"
+                        "Erzeugung & Generation"
                     ]
                 },
                 {

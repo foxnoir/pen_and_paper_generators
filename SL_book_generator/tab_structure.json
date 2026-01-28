@@ -1,0 +1,379 @@
+{
+    "right_tabs": [
+        {
+            "name": "Domäne",
+            "target_page": 1,
+            "y_position": 65.0,
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Stadt",
+                    "seconnd_subsections_left_tabs": [
+                        "Status quo",
+                        "Machtstruktur",
+                        "Clanlandschaft",
+                        "Einfluss & Territorien",
+                        "Konfliktherde",
+                        "Maskerade & Öffentlichkeit",
+                        "Sonstiges"
+                    ]
+                },
+                {
+                    "name": "Storyline",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Zeitlinien",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Zentraler Konflikt",
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Intrigen & Interessen",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Aufträge & Verpflichtungen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Beziehungen & Schulden",
+                    "keywords": [
+                        "Erpressung",
+                        "Gefallen",
+                        "Komplotte",
+                        "Konflikte",
+                        "Verbündete",
+                        "Sonstiges"
+                    ]
+                },
+                {
+                    "name": "Geheimnisse",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Gerüchte & Informationen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Zeitlinien",
+                    "keywords": [
+                        "Zeitlinien"
+                    ]
+                },
+                {
+                    "name": "Ziele & Ambitionen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Sonstiges",
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Runden",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Überblick",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Rundenziel",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Ablauf",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Schlüsselinformationen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Konsequenzen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Notizen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Sonstiges",
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "NPCs",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Camarilla",
+                    "seconnd_subsections_left_tabs": [
+                        "Brujah",
+                        "Gangrel",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Toreador",
+                        "Tremere",
+                        "Ventrue",
+                        "Sonstige"
+                    ]
+                },
+                {
+                    "name": "Sabbat",
+                    "seconnd_subsections_left_tabs": [
+                        "Assamiten",
+                        "Brujah",
+                        "Gangrel",
+                        "Lasombra",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Salubri",
+                        "Toreador",
+                        "Tremere",
+                        "Tzimice",
+                        "Sonstige"
+                    ]
+                },
+                {
+                    "name": "Anarchen",
+                    "seconnd_subsections_left_tabs": [
+                        "Assamiten",
+                        "Brujah",
+                        "Gangrel",
+                        "Lasombra",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Setiten",
+                        "Toreador",
+                        "Tremere",
+                        "Tzimice",
+                        "Sonstige"
+                    ]
+                },
+                {
+                    "name": "Unabhängige",
+                    "seconnd_subsections_left_tabs": [
+                        "Assamiten",
+                        "Gangrel",
+                        "Giovanni",
+                        "Setiten",
+                        "Ravnos",
+                        "Salubri",
+                        "Wahre Brujah",
+                        "Sonstige"
+                    ]
+                },
+                {
+                    "name": "Blutlinien",
+                    "seconnd_subsections_left_tabs": [
+                        "Ahrimanes",
+                        "Baali",
+                        "Gargoyles",
+                        "Kiasyd",
+                        "Lamia",
+                        "Nagaraja",
+                        "Töchter der Kakophonie",
+                        "Sonstige"
+                    ]
+                },
+                {
+                    "name": "Werwölfe",
+                    "seconnd_subsections_left_tabs": [
+                        "Feindlicher Stamm",
+                        "Freundlicher Stamm",
+                        "Sonstige"
+                    ]
+                },
+                {
+                    "name": "Ghule",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Menschen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Andere",
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Orte",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Clubs & Nachtleben",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Elysien",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Industrie & Verfall",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Kultur & Öffentlichkeit",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Menschliche Infrastruktur",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Outdoor-Orte",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Private Domänen",
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Karten",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Stadtplan",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Domänen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Lagepläne",
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Handouts",
+            "seconnd_subsections_left_tabs": []
+        },
+        {
+            "name": "Notizen",
+            "seconnd_subsections_left_tabs": []
+        },
+        {
+            "name": "Regeln",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Grundregeln",
+                    "sub_subsections": [
+                        "Würfelsystem und Problem",
+                        "Attribute und Fähigkeiten",
+                        "Schwierigkeiten",
+                        "Willenskraft",
+                        "Gesundheit und Schaden"
+                    ]
+                },
+                {
+                    "name": "Charakter & Blut",
+                    "sub_subsections": [
+                        "Menschlichkeit und Pfade",
+                        "Blut und Hunger",
+                        "Bllutpunkte",
+                        "Raserei",
+                        "Erzeugung und Generation"
+                    ]
+                },
+                {
+                    "name": "Disziplinen",
+                    "sub_subsections": [
+                        "überblick",
+                        "Grundregeln",
+                        "Einzelne Disziplinen",
+                        "Thaumaturgie",
+                        "Nekromantie",
+                        "Hinweise"
+                    ]
+                },
+                {
+                    "name": "Kampf & Konflikt",
+                    "sub_subsections": [
+                        "Kampfablauf",
+                        "Nah- / Fernkampf",
+                        "Schadenstypen",
+                        "Heilung & Tod"
+                    ]
+                },
+                {
+                    "name": "Gesellschaft & Politik",
+                    "sub_subsections": [
+                        "Elysium & Etikette",
+                        "Status",
+                        "Domänen",
+                        "Boons",
+                        "Ämter"
+                    ]
+                },
+                {
+                    "name": "Maskerade",
+                    "sub_subsections": [
+                        "Grundprinzip",
+                        "Traditionen",
+                        "Maskeradebrüche",
+                        "Zeugen & Vertuschung",
+                        "Jäger & Aufmerksamkeit",
+                        "Eskalation"
+                    ]
+                }
+            ]
+        }
+    ],
+    "upper_tabs": [
+        {
+            "name": "Domäne",
+            "target_page": 1
+        },
+        {
+            "name": "Intrigen & Interessen",
+            "target_page": 11
+        },
+        {
+            "name": "Runden",
+            "target_page": 23
+        },
+        {
+            "name": "NPCs",
+            "target_page": 90
+        },
+        {
+            "name": "Orte",
+            "target_page": 81
+        },
+        {
+            "name": "Karten",
+            "target_page": 30
+        },
+        {
+            "name": "Handouts",
+            "target_page": 93
+        },
+        {
+            "name": "Notizen",
+            "target_page": 94
+        },
+        {
+            "name": "Regeln",
+            "target_page": 95
+        }
+    ],
+    "metadata": {
+        "page_width": 595.2755737304688,
+        "page_height": 841.8897705078125,
+        "tab_width": 35.0,
+        "right_tab_x_position": 560.2755737304688,
+        "upper_tabs_position": {
+            "x": 10.0,
+            "y": 20.0
+        },
+        "description": "Complete structure of all tabs (right side), upper tabs (top left), and their subsections with keywords for dynamic page detection"
+    }
+}

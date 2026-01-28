@@ -5,7 +5,7 @@ Handles all visual design elements: tabs, blood splatters, rounded rectangles, e
 """
 
 import fitz  # PyMuPDF
-from typing import List, Dict
+from typing import List, Dict, Optional
 import random
 import math
 
@@ -90,7 +90,7 @@ class LayoutGenerator:
                         # Use ellipse for drop shape
                         rect = fitz.Rect(x - width/2, y - height/2, x + width/2, y + height/2)
                         page.draw_oval(rect, color=color, fill=color, width=0)
-                        
+                    
                     elif splatter_type == 'stain':
                         # Ink stain - irregular, organic shape
                         shape = page.new_shape()
@@ -110,14 +110,14 @@ class LayoutGenerator:
                         shape.draw_polyline(points)
                         shape.finish(fill=color, color=color, width=0)
                         shape.commit()
-                        
+                    
                     elif splatter_type == 'small_stain':
                         # Small ink stain - compact
                         width = base_size * random.uniform(0.9, 1.3)
                         height = base_size * random.uniform(0.9, 1.3)
                         rect = fitz.Rect(x - width/2, y - height/2, x + width/2, y + height/2)
                         page.draw_oval(rect, color=color, fill=color, width=0)
-                        
+                
                 except Exception as e:
                     # Fallback: simple drop
                     try:
@@ -153,7 +153,7 @@ class LayoutGenerator:
             
             # Draw main rectangle
             self._draw_rounded_rect_shape(page, rect, fill_color, border_color, radius)
-            
+        
         except Exception as e:
             # Fallback: normal rectangle if path fails
             if shadow:
@@ -214,7 +214,7 @@ class LayoutGenerator:
             border_width = 0 if border_color is None else 1.0
             shape.finish(fill=fill_color, color=border_color if border_color else fill_color, width=border_width)
             shape.commit()
-            
+        
         except Exception as e:
             # Fallback: normal rectangle if path fails
             page.draw_rect(rect, color=border_color if border_color else fill_color, width=0 if not border_color else 1.0, fill=fill_color)
@@ -261,11 +261,20 @@ class LayoutGenerator:
         )
         page.draw_rect(shadow_line, color=self.tab_colors["border"], width=0, fill=self.tab_colors["border"])
         
-        # Add text - use original text if available
-        if original_text:
+        # Add text - use tab name from JSON (not from original_text!)
+        # original_text is only used for font styling
+        tab_name = tab.get("name", "")
+        if tab_name:
             # Calculate position for text - significantly shifted to left
             # Shift text 8-10pt to left (negative value = to left)
             text_offset_left = -9.0
+            
+            # Get font styling from original_text if available, otherwise use defaults
+            fontsize = 8
+            fontname = 'helv-Bold'
+            if original_text:
+                fontsize = original_text.get('fontsize', 8)
+                fontname = original_text.get('fontname', 'helv-Bold')
             
             # Use insert_textbox with rotation for vertical text
             try:
@@ -277,28 +286,29 @@ class LayoutGenerator:
                     tab_rect.x1 - 2 + text_offset_left,
                     tab_rect.y1 - 2
                 )
-                
+
                 # Try to insert text with rotation
                 # rotate=270 means 270° clockwise = 90° counter-clockwise
+                # Use tab name from JSON, not original_text!
                 rc = page.insert_textbox(
                     text_rect,
-                    original_text['text'],
-                    fontsize=original_text.get('fontsize', 8),
-                    fontname=original_text.get('fontname', 'helv-Bold'),
+                    tab_name,  # Use name from JSON!
+                    fontsize=fontsize,
+                    fontname=fontname,
                     color=(0.0, 0.0, 0.0),
                     align=1,  # Centered
                     rotate=270  # Vertical
                 )
-                
+
                 if rc < 0:
                     # Fallback: Simple text without rotation, shifted to left
                     center_x = tab_rect.x0 + self.tab_width / 2 + text_offset_left
                     center_y = tab_rect.y0 + tab["height"] / 2
                     page.insert_text(
                         (center_x, center_y),
-                        original_text['text'],
-                        fontsize=original_text.get('fontsize', 7),
-                        fontname=original_text.get('fontname', 'helv-Bold'),
+                        tab_name,  # Use name from JSON!
+                        fontsize=fontsize,
+                        fontname=fontname,
                         color=(0.0, 0.0, 0.0)
                     )
             except Exception as e:
@@ -308,9 +318,9 @@ class LayoutGenerator:
                     center_y = tab_rect.y0 + tab["height"] / 2
                     page.insert_text(
                         (center_x, center_y),
-                        original_text['text'][:15] if len(original_text['text']) > 15 else original_text['text'],
-                        fontsize=7,
-                        fontname='helv-Bold',
+                        tab_name[:15] if len(tab_name) > 15 else tab_name,  # Use name from JSON!
+                        fontsize=fontsize,
+                        fontname=fontname,
                         color=(0.0, 0.0, 0.0)
                     )
                 except:
@@ -344,7 +354,228 @@ class LayoutGenerator:
             text_element = tab_text_elements[i] if tab_text_elements and i < len(tab_text_elements) else None
             self.draw_modern_tab(page, tab, page_num, is_active, text_element)
     
-    def apply_layout_to_pdf(self, doc: fitz.Document, tabs: List[Dict], tab_text_elements: List[Dict] = None):
+    def add_upper_tabs_to_page(self, page: fitz.Page, page_num: int, page_structure: Dict, tab_subsections: Dict, metadata: Dict):
+        """Adds upper tabs (left top) based on page structure and subsections from JSON"""
+        # Get page info
+        page_info = page_structure.get(page_num)
+        if not page_info:
+            return
+        
+        tab_name = page_info.get("tab_name")
+        subsection_name = page_info.get("subsection")
+        sub_subsection_name = page_info.get("sub_subsection")
+        
+        # Get subsections for this tab
+        tab_info = tab_subsections.get(tab_name)
+        if not tab_info:
+            return
+        
+        subsections = tab_info.get("subsections", [])
+        if not subsections:
+            return
+        
+        # Get position from metadata
+        upper_tabs_pos = metadata.get("upper_tabs_position", {"x": 10.0, "y": 20.0})
+        start_x = upper_tabs_pos.get("x", 10.0)
+        start_y = upper_tabs_pos.get("y", 20.0)
+        
+        # Tab dimensions - SMALLER!
+        tab_height = 18.0  # Reduced from 25.0
+        tab_width_base = 60.0  # Reduced from 80.0
+        tab_spacing = 4.0  # Reduced from 5.0
+        row_spacing = 6.0  # Reduced from 8.0
+        
+        # Maximum width to avoid overlapping with right tabs
+        max_width = self.tab_x - 20  # Leave 20pt margin before right tabs
+        
+        current_x = start_x
+        current_y = start_y
+        
+        # First row: subsections_left_top_tabs
+        first_row_tabs = []
+        second_row_tabs = []
+        
+        for subsection in subsections:
+            subsection_name_curr = subsection.get("name", "")
+            sub_subsections = subsection.get("seconnd_subsections_left_tabs", [])
+            if not sub_subsections:
+                sub_subsections = subsection.get("sub_subsections", [])
+            
+            # Add subsection to first row
+            first_row_tabs.append({
+                "name": subsection_name_curr,
+                "is_active": (subsection_name_curr == subsection_name),
+                "target_page": None  # Will be calculated
+            })
+            
+            # Add sub-subsections to second row
+            for sub_subsection in sub_subsections:
+                second_row_tabs.append({
+                    "name": sub_subsection,
+                    "is_active": (sub_subsection == sub_subsection_name),
+                    "target_page": None  # Will be calculated
+                })
+        
+        # Draw first row
+        row_y = current_y
+        row_start_x = start_x
+        
+        for tab_data in first_row_tabs:
+            tab_name_upper = tab_data["name"]
+            is_active = tab_data["is_active"]
+            
+            # Calculate tab width based on text length (smaller font = smaller width)
+            text_width = len(tab_name_upper) * 4.0  # Reduced from 5.5
+            tab_width_actual = max(tab_width_base, text_width + 8)  # Reduced padding
+            tab_width_actual = min(tab_width_actual, max_width - (row_start_x - start_x))  # Don't exceed max width
+            
+            # Check if we need to wrap to next row
+            if row_start_x + tab_width_actual > max_width and row_start_x > start_x:
+                row_y += tab_height + row_spacing
+                row_start_x = start_x
+            
+            tab_rect = fitz.Rect(
+                row_start_x,
+                row_y,
+                row_start_x + tab_width_actual,
+                row_y + tab_height
+            )
+            
+            # Determine color (active tab is darker)
+            bg_color = self.tab_colors["active"] if is_active else self.tab_colors["background"]
+            
+            # Draw rounded rectangle with shadow (no border)
+            self.draw_rounded_rect(page, tab_rect, bg_color, border_color=None, radius=4.0, shadow=True)
+            
+            # Add text - calculate text width and center manually (like old code)
+            # Calculate text width to properly center it
+            font_size = 9
+            try:
+                # Get text width using font metrics
+                text_width = fitz.get_text_length(tab_name_upper, fontname='helv-Bold', fontsize=font_size)
+            except:
+                # Fallback: estimate text width (rough approximation)
+                text_width = len(tab_name_upper) * (font_size * 0.6)
+            
+            # Calculate center position: tab center minus half text width
+            tab_center_x = row_start_x + tab_width_actual / 2
+            text_x = tab_center_x - (text_width / 2)  # Start position for centered text
+            
+            # Vertical center with baseline offset
+            text_y = row_y + tab_height / 2 + (font_size * 0.35)
+            
+            # Insert text WITHOUT align=1 (text starts at position, we calculated center manually)
+            try:
+                page.insert_text(
+                    (text_x, text_y),
+                    tab_name_upper,
+                    fontsize=font_size,
+                    fontname='helv-Bold',
+                    color=(0.0, 0.0, 0.0)
+                )
+            except Exception as e1:
+                # Fallback 1: Try with helv
+                try:
+                    text_width = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                    text_x = tab_center_x - (text_width / 2)
+                    page.insert_text(
+                        (text_x, text_y),
+                        tab_name_upper,
+                        fontsize=font_size,
+                        fontname='helv',
+                        color=(0.0, 0.0, 0.0)
+                    )
+                except Exception as e2:
+                    # Fallback 2: Use estimated width
+                    try:
+                        text_width = len(tab_name_upper) * (font_size * 0.6)
+                        text_x = tab_center_x - (text_width / 2)
+                        page.insert_text(
+                            (text_x, text_y),
+                            tab_name_upper,
+                            fontsize=font_size,
+                            color=(0.0, 0.0, 0.0)
+                        )
+                    except:
+                        pass
+            
+            row_start_x += tab_width_actual + tab_spacing
+        
+        # Draw second row (sub-subsections)
+        if second_row_tabs:
+            row_y = row_y + tab_height + row_spacing
+            row_start_x = start_x
+            
+            for tab_data in second_row_tabs:
+                tab_name_upper = tab_data["name"]
+                is_active = tab_data["is_active"]
+                
+                # Calculate tab width based on text length (even smaller)
+                text_width = len(tab_name_upper) * 3.5
+                tab_width_actual = max(tab_width_base * 0.7, text_width + 6)  # Smaller
+                tab_width_actual = min(tab_width_actual, max_width - (row_start_x - start_x))
+                
+                # Check if we need to wrap to next row
+                if row_start_x + tab_width_actual > max_width and row_start_x > start_x:
+                    row_y += tab_height * 0.85 + row_spacing
+                    row_start_x = start_x
+                
+                tab_rect = fitz.Rect(
+                    row_start_x,
+                    row_y,
+                    row_start_x + tab_width_actual,
+                    row_y + tab_height * 0.85  # Smaller height
+                )
+                
+                # Determine color (active tab is darker)
+                bg_color = self.tab_colors["active"] if is_active else self.tab_colors["background"]
+                
+                # Draw rounded rectangle with shadow (no border)
+                self.draw_rounded_rect(page, tab_rect, bg_color, border_color=None, radius=3.5, shadow=True)
+                
+                # Add text - calculate text width and center manually (like old code)
+                # Calculate text width to properly center it
+                font_size = 8
+                try:
+                    # Get text width using font metrics
+                    text_width = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                except:
+                    # Fallback: estimate text width (rough approximation)
+                    text_width = len(tab_name_upper) * (font_size * 0.6)
+                
+                # Calculate center position: tab center minus half text width
+                tab_center_x = row_start_x + tab_width_actual / 2
+                text_x = tab_center_x - (text_width / 2)  # Start position for centered text
+                
+                # Vertical center with baseline offset
+                text_y = row_y + (tab_height * 0.85) / 2 + (font_size * 0.35)
+                
+                # Insert text WITHOUT align=1 (text starts at position, we calculated center manually)
+                try:
+                    page.insert_text(
+                        (text_x, text_y),
+                        tab_name_upper,
+                        fontsize=font_size,
+                        fontname='helv',
+                        color=(0.0, 0.0, 0.0)
+                    )
+                except Exception as e1:
+                    # Fallback 1: Use estimated width
+                    try:
+                        text_width = len(tab_name_upper) * (font_size * 0.6)
+                        text_x = tab_center_x - (text_width / 2)
+                        page.insert_text(
+                            (text_x, text_y),
+                            tab_name_upper,
+                            fontsize=font_size,
+                            color=(0.0, 0.0, 0.0)
+                        )
+                    except:
+                        pass
+                
+                row_start_x += tab_width_actual + tab_spacing
+    
+    def apply_layout_to_pdf(self, doc: fitz.Document, tabs: List[Dict], tab_text_elements: List[Dict] = None, page_structure: Dict = None, tab_subsections: Dict = None, metadata: Dict = None):
         """Applies layout (blood splatters and tabs) to all pages of a PDF"""
         total_pages = len(doc)
         
@@ -359,3 +590,10 @@ class LayoutGenerator:
         for page_num in range(total_pages):
             target_page = doc[page_num]
             self.add_tabs_to_page(target_page, page_num + 1, tabs, tab_text_elements)
+        
+        # Draw upper tabs (left top) if we have the structure
+        if page_structure and tab_subsections and metadata:
+            print("Drawing upper tabs (left top)...")
+            for page_num in range(total_pages):
+                target_page = doc[page_num]
+                self.add_upper_tabs_to_page(target_page, page_num + 1, page_structure, tab_subsections, metadata)

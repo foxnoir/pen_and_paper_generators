@@ -24,7 +24,7 @@ class ClanSheetGenerator:
             else:
                 self.logo_path = "clan_name.png"
         else:
-            self.logo_path = logo_path
+        self.logo_path = logo_path
         self.watermark_path = watermark_path
         self.page_width = 2480  # A4 at 300 DPI
         self.page_height = 3508
@@ -108,7 +108,7 @@ class ClanSheetGenerator:
             if self.clan_name.upper() == "SETITEN":
                 max_height = 350
             else:
-                max_height = 280
+            max_height = 280
             if logo.height != max_height:
                 ratio = max_height / logo.height
                 new_width = int(logo.width * ratio)

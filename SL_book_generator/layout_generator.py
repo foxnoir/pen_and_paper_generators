@@ -396,14 +396,14 @@ class LayoutGenerator:
         start_x = upper_tabs_pos.get("x", 10.0)
         start_y = upper_tabs_pos.get("y", 20.0)
         
-        # Tab dimensions - SMALLER!
-        tab_height = 18.0  # Reduced from 25.0
-        tab_width_base = 60.0  # Reduced from 80.0
-        tab_spacing = 4.0  # Reduced from 5.0
-        row_spacing = 6.0  # Reduced from 8.0
+        # Tab dimensions - optimized
+        tab_height = 18.0
+        tab_width_base = 55.0  # Optimized base width
+        tab_spacing = 3.5  # Optimized spacing
+        row_spacing = 6.0
         
         # Maximum width to avoid overlapping with right tabs
-        max_width = self.tab_x - 20  # Leave 20pt margin before right tabs
+        max_width = self.tab_x - 15  # Increased available width to allow wider tabs (was 20)
         
         current_x = start_x
         current_y = start_y
@@ -464,10 +464,88 @@ class LayoutGenerator:
             tab_name_upper = tab_data["name"]
             is_active = tab_data["is_active"]
             
-            # Calculate tab width based on text length (smaller font = smaller width)
-            text_width = len(tab_name_upper) * 4.0  # Reduced from 5.5
-            tab_width_actual = max(tab_width_base, text_width + 8)  # Reduced padding
-            tab_width_actual = min(tab_width_actual, max_width - (row_start_x - start_x))  # Don't exceed max width
+            # Calculate tab width dynamically based on actual text width
+            font_size = 9
+            text_width_pt = None
+            
+            # Try multiple methods to get accurate text width
+            # Method 1: Use fitz.get_text_length (most accurate) - try Bold first
+            try:
+                text_width_pt = fitz.get_text_length(tab_name_upper, fontname='helv-Bold', fontsize=font_size)
+            except:
+                pass
+            
+            # Method 2: Try with regular helv font if Bold fails
+            if text_width_pt is None:
+                try:
+                    text_width_pt = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                except:
+                    pass
+            
+            # Method 3: Improved character-based estimation (more accurate for special cases)
+            if text_width_pt is None:
+                # More accurate character width mapping for helv-Bold
+                # Based on actual font metrics - these are multipliers for font_size
+                char_widths = {
+                    # Wide characters (need more space)
+                    '&': 0.90, 'W': 0.90, 'M': 0.90, 'w': 0.75, 'm': 0.75,
+                    'Q': 0.85, 'D': 0.80, 'O': 0.80, 'G': 0.80,
+                    'A': 0.75, 'V': 0.70, 'Y': 0.70,
+                    # Narrow characters (need less space)
+                    'i': 0.20, 'l': 0.20, 't': 0.30, 'f': 0.30, 'r': 0.30,
+                    'j': 0.25, 'I': 0.25,
+                    # Space
+                    ' ': 0.30,
+                    # Special characters (Umlaute and special chars)
+                    'ö': 0.65, 'ä': 0.65, 'ü': 0.65, 'ß': 0.60,
+                    'Ö': 0.80, 'Ä': 0.80, 'Ü': 0.80,
+                    # Other common characters
+                    'h': 0.60, 'n': 0.55, 'u': 0.55, 'o': 0.60, 'a': 0.55,
+                    'e': 0.55, 's': 0.50, 'c': 0.50, 'd': 0.60, 'g': 0.60,
+                    'b': 0.60, 'p': 0.60, 'q': 0.60, 'k': 0.55, 'v': 0.55,
+                    'x': 0.55, 'y': 0.55, 'z': 0.50
+                }
+                estimated_width = 0
+                for char in tab_name_upper:
+                    # Use uppercase for lookup, but keep original case for width
+                    char_lower = char.lower()
+                    char_upper = char.upper()
+                    # Check both cases
+                    char_width = char_widths.get(char, char_widths.get(char_lower, char_widths.get(char_upper, 0.60)))
+                    estimated_width += char_width * font_size
+                text_width_pt = estimated_width
+            
+            # Dynamic padding based on text length + 4px extra on each side (8px total)
+            # Special handling for texts with "&" which need more space
+            has_ampersand = '&' in tab_name_upper
+            # Extra padding for "&" characters - they need significantly more breathing room
+            # For "Ziele & Ambitionen" and similar long texts with "&"
+            if has_ampersand:
+                if text_width_pt > 50:  # Long texts with "&" like "Ziele & Ambitionen"
+                    extra_ampersand_padding = 16
+                else:
+                    extra_ampersand_padding = 12
+            else:
+                extra_ampersand_padding = 0
+            
+            if text_width_pt < 25:
+                padding = 14 + 8 + extra_ampersand_padding  # More padding for very short texts + 8px extra
+            elif text_width_pt < 40:
+                padding = 12 + 8 + extra_ampersand_padding  # Medium padding + 8px extra
+            elif text_width_pt < 60:
+                padding = 10 + 8 + extra_ampersand_padding  # Less padding for medium-long texts + 8px extra
+            else:
+                padding = 8 + 8 + extra_ampersand_padding   # Minimal padding for very long texts + 8px extra
+            
+            # Calculate final tab width
+            tab_width_actual = text_width_pt + padding
+            # Ensure minimum width
+            tab_width_actual = max(tab_width_base, tab_width_actual)
+            # Don't exceed max width (with safety margin)
+            # For tabs with "&", allow them to be wider if needed (less safety margin)
+            safety_margin = 1 if has_ampersand else 2
+            available_width = max_width - (row_start_x - start_x) - safety_margin
+            tab_width_actual = min(tab_width_actual, available_width)
             
             # Check if we need to wrap to next row
             if row_start_x + tab_width_actual > max_width and row_start_x > start_x:
@@ -502,14 +580,45 @@ class LayoutGenerator:
                     pass
             
             # Add text - calculate text width and center manually (like old code)
-            # Calculate text width to properly center it
+            # Use the SAME text width calculation as for tab width to ensure consistency
             font_size = 9
+            text_width = None
+            
+            # Use the same method as tab width calculation
             try:
-                # Get text width using font metrics
                 text_width = fitz.get_text_length(tab_name_upper, fontname='helv-Bold', fontsize=font_size)
             except:
-                # Fallback: estimate text width (rough approximation)
-                text_width = len(tab_name_upper) * (font_size * 0.6)
+                pass
+            
+            if text_width is None:
+                try:
+                    text_width = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                except:
+                    pass
+            
+            # If still None, use the same character-based estimation
+            if text_width is None:
+                char_widths = {
+                    '&': 0.80, 'W': 0.90, 'M': 0.90, 'w': 0.75, 'm': 0.75,
+                    'Q': 0.85, 'D': 0.80, 'O': 0.80, 'G': 0.80,
+                    'A': 0.75, 'V': 0.70, 'Y': 0.70,
+                    'i': 0.20, 'l': 0.20, 't': 0.30, 'f': 0.30, 'r': 0.30,
+                    'j': 0.25, 'I': 0.25,
+                    ' ': 0.30,
+                    'ö': 0.65, 'ä': 0.65, 'ü': 0.65, 'ß': 0.60,
+                    'Ö': 0.80, 'Ä': 0.80, 'Ü': 0.80,
+                    'h': 0.60, 'n': 0.55, 'u': 0.55, 'o': 0.60, 'a': 0.55,
+                    'e': 0.55, 's': 0.50, 'c': 0.50, 'd': 0.60, 'g': 0.60,
+                    'b': 0.60, 'p': 0.60, 'q': 0.60, 'k': 0.55, 'v': 0.55,
+                    'x': 0.55, 'y': 0.55, 'z': 0.50
+                }
+                estimated_width = 0
+                for char in tab_name_upper:
+                    char_lower = char.lower()
+                    char_upper = char.upper()
+                    char_width = char_widths.get(char, char_widths.get(char_lower, char_widths.get(char_upper, 0.60)))
+                    estimated_width += char_width * font_size
+                text_width = estimated_width
             
             # Calculate center position: tab center minus half text width
             tab_center_x = row_start_x + tab_width_actual / 2
@@ -528,9 +637,11 @@ class LayoutGenerator:
                     color=(0.0, 0.0, 0.0)
                 )
             except Exception as e1:
-                # Fallback 1: Try with helv
+                # Fallback 1: Try with helv (recalculate text_width)
                 try:
-                    text_width = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                    text_width_helv = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                    if text_width_helv:
+                        text_width = text_width_helv
                     text_x = tab_center_x - (text_width / 2)
                     page.insert_text(
                         (text_x, text_y),
@@ -540,9 +651,28 @@ class LayoutGenerator:
                         color=(0.0, 0.0, 0.0)
                     )
                 except Exception as e2:
-                    # Fallback 2: Use estimated width
+                    # Fallback 2: Use character-based estimation (same as tab width calculation)
                     try:
-                        text_width = len(tab_name_upper) * (font_size * 0.6)
+                        char_widths = {
+                            '&': 0.80, 'W': 0.90, 'M': 0.90, 'w': 0.75, 'm': 0.75,
+                            'Q': 0.85, 'D': 0.80, 'O': 0.80, 'G': 0.80,
+                            'A': 0.75, 'V': 0.70, 'Y': 0.70,
+                            'i': 0.20, 'l': 0.20, 't': 0.30, 'f': 0.30, 'r': 0.30,
+                            'j': 0.25, 'I': 0.25, ' ': 0.30,
+                            'ö': 0.65, 'ä': 0.65, 'ü': 0.65, 'ß': 0.60,
+                            'Ö': 0.80, 'Ä': 0.80, 'Ü': 0.80,
+                            'h': 0.60, 'n': 0.55, 'u': 0.55, 'o': 0.60, 'a': 0.55,
+                            'e': 0.55, 's': 0.50, 'c': 0.50, 'd': 0.60, 'g': 0.60,
+                            'b': 0.60, 'p': 0.60, 'q': 0.60, 'k': 0.55, 'v': 0.55,
+                            'x': 0.55, 'y': 0.55, 'z': 0.50
+                        }
+                        estimated_width = 0
+                        for char in tab_name_upper:
+                            char_lower = char.lower()
+                            char_upper = char.upper()
+                            char_width = char_widths.get(char, char_widths.get(char_lower, char_widths.get(char_upper, 0.60)))
+                            estimated_width += char_width * font_size
+                        text_width = estimated_width
                         text_x = tab_center_x - (text_width / 2)
                         page.insert_text(
                             (text_x, text_y),
@@ -564,10 +694,81 @@ class LayoutGenerator:
                 tab_name_upper = tab_data["name"]
                 is_active = tab_data["is_active"]
                 
-                # Calculate tab width based on text length (even smaller)
-                text_width = len(tab_name_upper) * 3.5
-                tab_width_actual = max(tab_width_base * 0.7, text_width + 6)  # Smaller
-                tab_width_actual = min(tab_width_actual, max_width - (row_start_x - start_x))
+                # Calculate tab width dynamically based on actual text width
+                font_size = 8
+                text_width_pt = None
+                
+                # Try multiple methods to get accurate text width
+                # Method 1: Use fitz.get_text_length (most accurate) - try Bold first
+                try:
+                    text_width_pt = fitz.get_text_length(tab_name_upper, fontname='helv-Bold', fontsize=font_size)
+                except:
+                    pass
+                
+                # Method 2: Try with regular helv font if Bold fails
+                if text_width_pt is None:
+                    try:
+                        text_width_pt = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                    except:
+                        pass
+                
+                # Method 3: Improved character-based estimation (more accurate for special cases)
+                if text_width_pt is None:
+                    # More accurate character width mapping for helv
+                    # Based on actual font metrics - these are multipliers for font_size
+                    char_widths = {
+                        # Wide characters (need more space)
+                        '&': 0.75, 'W': 0.85, 'M': 0.85, 'w': 0.70, 'm': 0.70,
+                        'Q': 0.80, 'D': 0.75, 'O': 0.75, 'G': 0.75,
+                        'A': 0.70, 'V': 0.65, 'Y': 0.65,
+                        # Narrow characters (need less space)
+                        'i': 0.20, 'l': 0.20, 't': 0.30, 'f': 0.30, 'r': 0.30,
+                        'j': 0.25, 'I': 0.25,
+                        # Space
+                        ' ': 0.30,
+                        # Special characters (Umlaute and special chars)
+                        'ö': 0.60, 'ä': 0.60, 'ü': 0.60, 'ß': 0.55,
+                        'Ö': 0.75, 'Ä': 0.75, 'Ü': 0.75,
+                        # Other common characters
+                        'h': 0.55, 'n': 0.50, 'u': 0.50, 'o': 0.55, 'a': 0.50,
+                        'e': 0.50, 's': 0.45, 'c': 0.45, 'd': 0.55, 'g': 0.55,
+                        'b': 0.55, 'p': 0.55, 'q': 0.55, 'k': 0.50, 'v': 0.50,
+                        'x': 0.50, 'y': 0.50, 'z': 0.45
+                    }
+                    estimated_width = 0
+                    for char in tab_name_upper:
+                        # Use uppercase for lookup, but keep original case for width
+                        char_lower = char.lower()
+                        char_upper = char.upper()
+                        # Check both cases
+                        char_width = char_widths.get(char, char_widths.get(char_lower, char_widths.get(char_upper, 0.55)))
+                        estimated_width += char_width * font_size
+                    text_width_pt = estimated_width
+                
+                # Dynamic padding based on text length + 4px extra on each side (8px total)
+                # Second row needs more careful handling for long texts like "Private Domänen"
+                # Special handling for texts with "&" which need more space
+                has_ampersand = '&' in tab_name_upper
+                # Extra padding for "&" characters - they need more breathing room
+                extra_ampersand_padding = 8 if has_ampersand else 0
+                
+                if text_width_pt < 20:
+                    padding = 12 + 8 + extra_ampersand_padding  # More padding for very short texts + 8px extra
+                elif text_width_pt < 35:
+                    padding = 10 + 8 + extra_ampersand_padding  # Medium padding + 8px extra
+                elif text_width_pt < 50:
+                    padding = 8 + 8 + extra_ampersand_padding   # Less padding for medium-long texts + 8px extra
+                else:
+                    padding = 6 + 8 + extra_ampersand_padding   # Minimal padding for very long texts + 8px extra
+                
+                # Calculate final tab width
+                tab_width_actual = text_width_pt + padding
+                # Ensure minimum width (but allow longer texts to be wider)
+                min_width = tab_width_base * 0.7
+                tab_width_actual = max(min_width, tab_width_actual)
+                # Don't exceed max width (with safety margin)
+                available_width = max_width - (row_start_x - start_x) - 2  # 2pt safety margin
+                tab_width_actual = min(tab_width_actual, available_width)
                 
                 # Check if we need to wrap to next row
                 if row_start_x + tab_width_actual > max_width and row_start_x > start_x:
@@ -602,14 +803,45 @@ class LayoutGenerator:
                         pass
                 
                 # Add text - calculate text width and center manually (like old code)
-                # Calculate text width to properly center it
+                # Use the SAME text width calculation as for tab width to ensure consistency
                 font_size = 8
+                text_width = None
+                
+                # Use the same method as tab width calculation
                 try:
-                    # Get text width using font metrics
-                    text_width = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                    text_width = fitz.get_text_length(tab_name_upper, fontname='helv-Bold', fontsize=font_size)
                 except:
-                    # Fallback: estimate text width (rough approximation)
-                    text_width = len(tab_name_upper) * (font_size * 0.6)
+                    pass
+                
+                if text_width is None:
+                    try:
+                        text_width = fitz.get_text_length(tab_name_upper, fontname='helv', fontsize=font_size)
+                    except:
+                        pass
+                
+                # If still None, use the same character-based estimation
+                if text_width is None:
+                    char_widths = {
+                        '&': 0.75, 'W': 0.85, 'M': 0.85, 'w': 0.70, 'm': 0.70,
+                        'Q': 0.80, 'D': 0.75, 'O': 0.75, 'G': 0.75,
+                        'A': 0.70, 'V': 0.65, 'Y': 0.65,
+                        'i': 0.20, 'l': 0.20, 't': 0.30, 'f': 0.30, 'r': 0.30,
+                        'j': 0.25, 'I': 0.25,
+                        ' ': 0.30,
+                        'ö': 0.60, 'ä': 0.60, 'ü': 0.60, 'ß': 0.55,
+                        'Ö': 0.75, 'Ä': 0.75, 'Ü': 0.75,
+                        'h': 0.55, 'n': 0.50, 'u': 0.50, 'o': 0.55, 'a': 0.50,
+                        'e': 0.50, 's': 0.45, 'c': 0.45, 'd': 0.55, 'g': 0.55,
+                        'b': 0.55, 'p': 0.55, 'q': 0.55, 'k': 0.50, 'v': 0.50,
+                        'x': 0.50, 'y': 0.50, 'z': 0.45
+                    }
+                    estimated_width = 0
+                    for char in tab_name_upper:
+                        char_lower = char.lower()
+                        char_upper = char.upper()
+                        char_width = char_widths.get(char, char_widths.get(char_lower, char_widths.get(char_upper, 0.55)))
+                        estimated_width += char_width * font_size
+                    text_width = estimated_width
                 
                 # Calculate center position: tab center minus half text width
                 tab_center_x = row_start_x + tab_width_actual / 2
@@ -628,9 +860,28 @@ class LayoutGenerator:
                         color=(0.0, 0.0, 0.0)
                     )
                 except Exception as e1:
-                    # Fallback 1: Use estimated width
+                    # Fallback 1: Use character-based estimation (same as tab width calculation)
                     try:
-                        text_width = len(tab_name_upper) * (font_size * 0.6)
+                        char_widths = {
+                            '&': 0.75, 'W': 0.85, 'M': 0.85, 'w': 0.70, 'm': 0.70,
+                            'Q': 0.80, 'D': 0.75, 'O': 0.75, 'G': 0.75,
+                            'A': 0.70, 'V': 0.65, 'Y': 0.65,
+                            'i': 0.20, 'l': 0.20, 't': 0.30, 'f': 0.30, 'r': 0.30,
+                            'j': 0.25, 'I': 0.25, ' ': 0.30,
+                            'ö': 0.60, 'ä': 0.60, 'ü': 0.60, 'ß': 0.55,
+                            'Ö': 0.75, 'Ä': 0.75, 'Ü': 0.75,
+                            'h': 0.55, 'n': 0.50, 'u': 0.50, 'o': 0.55, 'a': 0.50,
+                            'e': 0.50, 's': 0.45, 'c': 0.45, 'd': 0.55, 'g': 0.55,
+                            'b': 0.55, 'p': 0.55, 'q': 0.55, 'k': 0.50, 'v': 0.50,
+                            'x': 0.50, 'y': 0.50, 'z': 0.45
+                        }
+                        estimated_width = 0
+                        for char in tab_name_upper:
+                            char_lower = char.lower()
+                            char_upper = char.upper()
+                            char_width = char_widths.get(char, char_widths.get(char_lower, char_widths.get(char_upper, 0.55)))
+                            estimated_width += char_width * font_size
+                        text_width = estimated_width
                         text_x = tab_center_x - (text_width / 2)
                         page.insert_text(
                             (text_x, text_y),

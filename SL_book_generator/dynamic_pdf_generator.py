@@ -79,13 +79,16 @@ class DynamicPDFGenerator:
                 current_y = y_position
             # If no y_position in JSON, current_y is already set from previous iteration
             
-            # Calculate height based on name length (read from JSON)
-            if len(tab_name) > 20:  # Very long names like "Intrigen & Interessen"
-                height = 110.0
-            elif len(tab_name) > 15:
-                height = 85.0
-            else:
-                height = base_height
+            # Get height from JSON if available, otherwise calculate based on name length
+            height = tab_data.get("height")
+            if height is None:
+                # Calculate height based on name length (fallback)
+                if len(tab_name) > 20:  # Very long names like "Intrigen & Interessen"
+                    height = 110.0
+                elif len(tab_name) > 15:
+                    height = 85.0
+                else:
+                    height = base_height
             
             # Calculate pages for this tab
             subsections = tab_data.get("subsections_left_top_tabs", [])

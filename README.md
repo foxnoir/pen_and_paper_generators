@@ -9,6 +9,7 @@
 <br />
 
 <div align="center">
+  <img src="images/logo.png" alt="Logo" width="80" height="80">
   <h1 align="center">Pen and Paper Generators</h1>
 
   <p align="center">

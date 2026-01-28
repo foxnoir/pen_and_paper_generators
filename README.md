@@ -30,6 +30,7 @@
       <a href="#available-generators">Available Generators</a>
       <ul>
         <li><a href="#clan-sheet-generator">Clan Sheet Generator</a></li>
+        <li><a href="#sl-journal-generator">SL Journal Generator</a></li>
       </ul>
     </li>
     <li>
@@ -62,7 +63,8 @@ Pen and Paper Generators is a collection of Python tools designed to help player
 - Customizable templates and layouts
 
 **Currently Available Generators:**
-- **Clan Sheet Generator** - Generate clan reference sheets for Vampire: The Masquerade (2nd/3rd edition)
+- **[Clan Sheet Generator](clan_sheet_generator/README.md)** - Generate clan reference sheets for Vampire: The Masquerade (2nd/3rd edition)
+- **[SL Journal Generator](SL_book_generator/README.md)** - Generate dynamic PDF journals with interactive navigation for Vampire: The Masquerade sessions
 
 **Coming Soon:**
 - More generators for various RPG systems
@@ -92,6 +94,26 @@ python3 clan_sheet_gen.py --clan BRUJAH --quick
 ```
 
 For detailed documentation, see the [Clan Sheet Generator README](clan_sheet_generator/README.md).
+
+### SL Journal Generator
+
+Generate dynamic PDF journals with interactive navigation tabs for **Vampire: The Masquerade** sessions. Create professional-looking session journals with customizable structure, blood splatter effects, and clickable navigation.
+
+**Key Features:**
+- Dynamic PDF generation from JSON structure
+- Interactive navigation (right-side vertical tabs and top-left horizontal tabs)
+- Customizable tab structure (tabs, subsections, sub-subsections)
+- Subtle grayscale blood splatter effects
+- Modern design with jade green color scheme
+- Hyperlink support for easy navigation
+
+**Quick Start:**
+```bash
+cd SL_book_generator
+python3 journal_generator.py
+```
+
+For detailed documentation, see the [SL Journal Generator README](SL_book_generator/README.md).
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 

@@ -9,25 +9,79 @@
                     "name": "Stadt",
                     "seconnd_subsections_left_tabs": [
                         "Status quo",
-                        "Machtstruktur",
-                        "Clanlandschaft",
-                        "Einfluss & Territorien",
-                        "Konfliktherde",
                         "Maskerade & Öffentlichkeit",
+                        "Öffentliche Brennpunkte",
                         "Sonstiges"
                     ]
                 },
                 {
-                    "name": "Storyline",
+                    "name": "Macht & Kontrolle",
+                    "seconnd_subsections_left_tabs": [
+                        "Machtstruktur & Ämter",
+                        "Clanlandschaft",
+                        "Einfluss & Territorien",
+                        "Kontrollierte Institutionen",
+                        "Sonstiges"
+                    ]
+                },
+                {
+                    "name": "Blut & Jagd",
+                    "seconnd_subsections_left_tabs": [
+                        "Blutversorgung",
+                        "Jagdgebiete",
+                        "Konflikte um Beute",
+                        "Jagdregeln / Tabus"
+                    ]
+                },
+                {
+                    "name": "Spannungen, Risiken & Gefahren",
+                    "seconnd_subsections_left_tabs": [
+                        "Konfliktherde",
+                        "Alte Feindschaften",
+                        "Waffenstillstände",
+                        "Aktuelle Krisen",
+                        "Latente Bedrohungen"
+                    ]
+                },
+                {
+                    "name": "Chronologie",
+                    "seconnd_subsections_left_tabs": [
+                        "Gründung & Wendepunkte",
+                        "Machtwechsel",
+                        "Große Katastrophen",
+                        "Abgeschlossene Konflikte"
+                    ]
+                },
+                {
+                    "name": "Storystränge",
+                    "seconnd_subsections_left_tabs": [
+                        "Aktueller Zustand",
+                        "Akteure & Fraktionen",
+                        "Mögliche Entwicklungen",
+                        "Nächste Eskalationsstufe"
+                    ]
+                },
+                {
+                    "name": "Leitkonflikt der Chronik",
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Zeitlinien",
-                    "seconnd_subsections_left_tabs": []
+                    "name": "SCs",
+                    "seconnd_subsections_left_tabs": [
+                        "Charakterbögen",
+                        "Einstiegspunkte",
+                        "Beziehungen Fraktionen / NPCs",
+                        "Gefallen"
+                    ]
                 },
                 {
-                    "name": "Zentraler Konflikt",
-                    "seconnd_subsections_left_tabs": []
+                    "name": "Kalender",
+                    "seconnd_subsections_left_tabs": [
+                        "Zeitstrahl",
+                        "Wichtige Ereignisse",
+                        "Wichtige Daten",
+                        "Countdown"
+                    ]
                 }
             ]
         },
@@ -40,7 +94,7 @@
                 },
                 {
                     "name": "Beziehungen & Schulden",
-                    "keywords": [
+                    "subsections_left_top_tabs": [
                         "Erpressung",
                         "Gefallen",
                         "Komplotte",
@@ -51,17 +105,19 @@
                 },
                 {
                     "name": "Geheimnisse",
-                    "seconnd_subsections_left_tabs": []
+                    "subsections_left_top_tabs": [
+                        "SL-Geheimnisse",
+                        "Falsche Annahmen SCs",
+                        "Gezielte Lügen"
+                    ]
                 },
                 {
                     "name": "Gerüchte & Informationen",
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Zeitlinien",
-                    "keywords": [
-                        "Zeitlinien"
-                    ]
+                    "name": "Intrigenverläufe",
+                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Ziele & Ambitionen",
@@ -74,14 +130,14 @@
             ]
         },
         {
-            "name": "Runden",
+            "name": "Sitzungen",
             "subsections_left_top_tabs": [
                 {
                     "name": "Überblick",
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Rundenziel",
+                    "name": "Sitzungsziel",
                     "seconnd_subsections_left_tabs": []
                 },
                 {
@@ -93,12 +149,21 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Konsequenzen",
+                    "name": "Notizen",
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Notizen",
+                    "name": "Review & Konsequenzen",
                     "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Eskalation",
+                    "subsections": [
+                        "Aktueller Druck",
+                        "Offene Risiken",
+                        "Reaktionen der Fraktionen",
+                        "Was passiert, wenn nichts passiert"
+                    ]
                 },
                 {
                     "name": "Sonstiges",
@@ -134,7 +199,8 @@
                         "Salubri",
                         "Toreador",
                         "Tremere",
-                        "Tzimice",
+                        "Tzimisce",
+                        "Ventrue",
                         "Sonstige"
                     ]
                 },
@@ -147,10 +213,10 @@
                         "Lasombra",
                         "Malkavian",
                         "Nosferatu",
-                        "Setiten",
+                        "Jünger des Set",
                         "Toreador",
                         "Tremere",
-                        "Tzimice",
+                        "Tzimisce",
                         "Sonstige"
                     ]
                 },
@@ -160,8 +226,9 @@
                         "Assamiten",
                         "Gangrel",
                         "Giovanni",
-                        "Setiten",
+                        "Jünger des Set",
                         "Ravnos",
+                        "Samedi",
                         "Salubri",
                         "Wahre Brujah",
                         "Sonstige"
@@ -173,10 +240,12 @@
                         "Ahrimanes",
                         "Baali",
                         "Gargoyles",
+                        "Kappadozianer",
                         "Kiasyd",
                         "Lamia",
                         "Nagaraja",
                         "Töchter der Kakophonie",
+                        "Samedi",
                         "Sonstige"
                     ]
                 },
@@ -226,7 +295,7 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Outdoor-Orte",
+                    "name": "Freies Gelände",
                     "seconnd_subsections_left_tabs": []
                 },
                 {
@@ -248,6 +317,26 @@
                 },
                 {
                     "name": "Lagepläne",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Kanalisation",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Stromversorgung",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Wasserversorgung",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Überwachungspläne",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Technische Infrastruktur",
                     "seconnd_subsections_left_tabs": []
                 }
             ]
@@ -278,7 +367,7 @@
                     "sub_subsections": [
                         "Menschlichkeit & Pfade",
                         "Blut & Hunger",
-                        "Bllutpunkte",
+                        "Blutpunkte",
                         "Raserei",
                         "Erzeugung & Generation"
                     ]
@@ -286,7 +375,7 @@
                 {
                     "name": "Disziplinen",
                     "sub_subsections": [
-                        "überblick",
+                        "Überblick",
                         "Grundregeln",
                         "Einzelne Disziplinen",
                         "Thaumaturgie",
@@ -309,7 +398,7 @@
                         "Elysium & Etikette",
                         "Status",
                         "Domänen",
-                        "Boons",
+                        "Gefallen",
                         "Ämter"
                     ]
                 },
@@ -337,7 +426,7 @@
             "target_page": 11
         },
         {
-            "name": "Runden",
+            "name": "Sitzungen",
             "target_page": 23
         },
         {

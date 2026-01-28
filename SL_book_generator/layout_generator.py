@@ -270,61 +270,119 @@ class LayoutGenerator:
             text_offset_left = -9.0
             
             # Get font styling from original_text if available, otherwise use defaults
-            fontsize = 8
-            fontname = 'helv-Bold'
+            # Make text larger and bold for right-side tabs
+            fontsize = 11  # Increased from 8 to 11 for better visibility and bold appearance
+            fontname = 'helv-Bold'  # Always use bold
             if original_text:
-                fontsize = original_text.get('fontsize', 8)
-                fontname = original_text.get('fontname', 'helv-Bold')
+                # Use larger size from original if available, but ensure minimum 11
+                original_size = original_text.get('fontsize', 8)
+                fontsize = max(11, original_size)  # At least 11pt for bold appearance
+                # Always use bold for right tabs
+                fontname = 'helv-Bold'
             
-            # Use insert_textbox with rotation for vertical text
+            # Use insert_textbox with rotation (most reliable method)
+            from fitz import Rect
+            # Text-Rect for vertical text (rotated 90° counter-clockwise)
+            # The rect should be tall and narrow for vertical text
+            text_rect = Rect(
+                tab_rect.x0 + 2 + text_offset_left,
+                tab_rect.y0 + 2,
+                tab_rect.x1 - 2 + text_offset_left,
+                tab_rect.y1 - 2
+            )
+            
+            # Use insert_textbox with rotation - ensure fonts are available
+            # First, ensure helv-Bold font is available by inserting invisible text
             try:
-                from fitz import Rect
-                # Text-Rect significantly shifted to left
-                text_rect = Rect(
-                    tab_rect.x0 + 2 + text_offset_left,
-                    tab_rect.y0 + 2,
-                    tab_rect.x1 - 2 + text_offset_left,
-                    tab_rect.y1 - 2
-                )
-
-                # Try to insert text with rotation
-                # rotate=270 means 270° clockwise = 90° counter-clockwise
-                # Use tab name from JSON, not original_text!
-                rc = page.insert_textbox(
-                    text_rect,
-                    tab_name,  # Use name from JSON!
+                page.insert_text((0, 0), "", fontsize=0.1, fontname='helv-Bold', render_mode=3)
+            except:
+                pass
+            
+            from fitz import Rect
+            text_rect = Rect(
+                tab_rect.x0 + 2 + text_offset_left,
+                tab_rect.y0 + 2,
+                tab_rect.x1 - 2 + text_offset_left,
+                tab_rect.y1 - 2
+            )
+            
+            # Try insert_textbox with rotation and bold font
+            # Note: insert_textbox may not support fontname parameter with rotation
+            # So we'll try multiple approaches
+            rc = -1
+            
+            # Calculate center position for text
+            center_x = tab_rect.x0 + self.tab_width / 2 + text_offset_left
+            center_y = tab_rect.y0 + tab["height"] / 2
+            
+            # Method 1: Try using TextWriter for bold rotated text (most reliable for bold)
+            rc = -1
+            try:
+                writer = fitz.TextWriter(page.rect)
+                writer.append(
+                    fitz.Point(center_x, center_y),
+                    tab_name,
                     fontsize=fontsize,
-                    fontname=fontname,
-                    color=(0.0, 0.0, 0.0),
-                    align=1,  # Centered
-                    rotate=270  # Vertical
+                    fontname='helv-Bold',
+                    color=(0.0, 0.0, 0.0)
                 )
-
-                if rc < 0:
-                    # Fallback: Simple text without rotation, shifted to left
-                    center_x = tab_rect.x0 + self.tab_width / 2 + text_offset_left
-                    center_y = tab_rect.y0 + tab["height"] / 2
-                    page.insert_text(
-                        (center_x, center_y),
-                        tab_name,  # Use name from JSON!
-                        fontsize=fontsize,
-                        fontname=fontname,
-                        color=(0.0, 0.0, 0.0)
-                    )
-            except Exception as e:
-                # Last fallback: Simple text, shifted to left
+                # Rotate 90° counter-clockwise around center
+                writer.transform((0, -1, 1, 0, center_x + center_y, center_y - center_x))
+                writer.write_text(page)
+                rc = 0  # Success
+            except:
+                rc = -1
+            
+            # Method 2: If TextWriter fails, try insert_textbox with rotation
+            if rc < 0:
                 try:
-                    center_x = tab_rect.x0 + self.tab_width / 2 + text_offset_left
-                    center_y = tab_rect.y0 + tab["height"] / 2
+                    rc = page.insert_textbox(
+                        text_rect,
+                        tab_name,
+                        fontsize=fontsize,
+                        fontname='helv-Bold',
+                        color=(0.0, 0.0, 0.0),
+                        align=1,
+                        rotate=270
+                    )
+                except:
+                    rc = -1
+            
+            # Method 3: If that fails, try without fontname but with larger size
+            if rc < 0:
+                try:
+                    rc = page.insert_textbox(
+                        text_rect,
+                        tab_name,
+                        fontsize=fontsize,  # Larger size makes it appear bolder
+                        color=(0.0, 0.0, 0.0),
+                        align=1,
+                        rotate=270
+                    )
+                except:
+                    rc = -1
+            
+            # Method 4: Final fallback - insert_text with bold (no rotation)
+            if rc < 0:
+                try:
                     page.insert_text(
                         (center_x, center_y),
-                        tab_name[:15] if len(tab_name) > 15 else tab_name,  # Use name from JSON!
+                        tab_name,
                         fontsize=fontsize,
-                        fontname=fontname,
+                        fontname='helv-Bold',
                         color=(0.0, 0.0, 0.0)
                     )
                 except:
-                    pass
+                    # Last resort: without fontname
+                    try:
+                        page.insert_text(
+                            (center_x, center_y),
+                            tab_name,
+                            fontsize=fontsize,
+                            color=(0.0, 0.0, 0.0)
+                        )
+                    except:
+                        pass
         
         # Add link
         link = {
@@ -387,7 +445,17 @@ class LayoutGenerator:
         if not tab_info:
             return
         
+        # Get subsections dynamically - check multiple possible locations
         subsections = tab_info.get("subsections", [])
+        
+        # If no subsections in "subsections", check tab_data directly
+        if not subsections:
+            tab_data = tab_info.get("tab_data", {})
+            if tab_data:
+                # Check for subsections_left_top_tabs (most common location)
+                subsections = tab_data.get("subsections_left_top_tabs", [])
+        
+        # If still no subsections, return early
         if not subsections:
             return
         
@@ -432,9 +500,13 @@ class LayoutGenerator:
         
         for subsection in subsections:
             subsection_name_curr = subsection.get("name", "")
+            # Get sub-subsections - check multiple possible field names dynamically
             sub_subsections = subsection.get("seconnd_subsections_left_tabs", [])
             if not sub_subsections:
                 sub_subsections = subsection.get("sub_subsections", [])
+            if not sub_subsections:
+                # Also check for alternative spelling
+                sub_subsections = subsection.get("second_subsections_left_tabs", [])
             
             # Always add subsection to first row (show all, active ones in active color)
             target_page = subsection_target_pages.get(subsection_name_curr)
@@ -516,10 +588,11 @@ class LayoutGenerator:
                 text_width_pt = estimated_width
             
             # Dynamic padding based on text length + 4px extra on each side (8px total)
-            # Special handling for texts with "&" which need more space
+            # Special handling for texts with "&" and longer texts like "Freies Gelände"
             has_ampersand = '&' in tab_name_upper
+            text_length = len(tab_name_upper)
+            
             # Extra padding for "&" characters - they need significantly more breathing room
-            # For "Ziele & Ambitionen" and similar long texts with "&"
             if has_ampersand:
                 if text_width_pt > 50:  # Long texts with "&" like "Ziele & Ambitionen"
                     extra_ampersand_padding = 16
@@ -528,29 +601,39 @@ class LayoutGenerator:
             else:
                 extra_ampersand_padding = 0
             
-            if text_width_pt < 25:
-                padding = 14 + 8 + extra_ampersand_padding  # More padding for very short texts + 8px extra
-            elif text_width_pt < 40:
-                padding = 12 + 8 + extra_ampersand_padding  # Medium padding + 8px extra
-            elif text_width_pt < 60:
-                padding = 10 + 8 + extra_ampersand_padding  # Less padding for medium-long texts + 8px extra
+            # Extra padding for longer texts without "&" (like "Freies Gelände", "Menschliche Infrastruktur")
+            # Increased padding for texts longer than 10 characters to prevent truncation
+            if not has_ampersand and text_length > 10:
+                extra_length_padding = (text_length - 10) * 1.0  # Increased from 0.8 to 1.0 for better spacing
             else:
-                padding = 8 + 8 + extra_ampersand_padding   # Minimal padding for very long texts + 8px extra
+                extra_length_padding = 0
+            
+            if text_width_pt < 25:
+                padding = 14 + 8 + extra_ampersand_padding + extra_length_padding
+            elif text_width_pt < 40:
+                padding = 12 + 8 + extra_ampersand_padding + extra_length_padding
+            elif text_width_pt < 60:
+                padding = 10 + 8 + extra_ampersand_padding + extra_length_padding
+            else:
+                padding = 8 + 8 + extra_ampersand_padding + extra_length_padding
             
             # Calculate final tab width
             tab_width_actual = text_width_pt + padding
             # Ensure minimum width
             tab_width_actual = max(tab_width_base, tab_width_actual)
-            # Don't exceed max width (with safety margin)
-            # For tabs with "&", allow them to be wider if needed (less safety margin)
-            safety_margin = 1 if has_ampersand else 2
-            available_width = max_width - (row_start_x - start_x) - safety_margin
-            tab_width_actual = min(tab_width_actual, available_width)
             
-            # Check if we need to wrap to next row
-            if row_start_x + tab_width_actual > max_width and row_start_x > start_x:
+            # Check if tab fits in current row, wrap if needed BEFORE drawing
+            available_width = max_width - (row_start_x - start_x)
+            if tab_width_actual > available_width and row_start_x > start_x:
+                # Wrap to next row BEFORE calculating tab_rect
                 row_y += tab_height + row_spacing
                 row_start_x = start_x
+                # Recalculate available width for new row
+                available_width = max_width
+            
+            # DO NOT limit tab width - allow tabs to be as wide as needed
+            # This ensures longer texts like "Freies Gelände" are never truncated
+            # The wrapping logic above handles overflow by moving to next row
             
             tab_rect = fitz.Rect(
                 row_start_x,
@@ -746,32 +829,44 @@ class LayoutGenerator:
                     text_width_pt = estimated_width
                 
                 # Dynamic padding based on text length + 4px extra on each side (8px total)
-                # Second row needs more careful handling for long texts like "Private Domänen"
-                # Special handling for texts with "&" which need more space
+                # Use the same improved logic as first row for consistency
                 has_ampersand = '&' in tab_name_upper
-                # Extra padding for "&" characters - they need more breathing room
-                extra_ampersand_padding = 8 if has_ampersand else 0
+                text_length = len(tab_name_upper)
+                
+                # Extra padding for "&" characters - they need significantly more breathing room
+                if has_ampersand:
+                    if text_width_pt > 40:  # Long texts with "&"
+                        extra_ampersand_padding = 12
+                    else:
+                        extra_ampersand_padding = 8
+                else:
+                    extra_ampersand_padding = 0
+                
+                # Extra padding for longer texts without "&" (like "Private Domänen")
+                if not has_ampersand and text_length > 10:
+                    extra_length_padding = (text_length - 10) * 0.7  # Add padding for longer texts
+                else:
+                    extra_length_padding = 0
                 
                 if text_width_pt < 20:
-                    padding = 12 + 8 + extra_ampersand_padding  # More padding for very short texts + 8px extra
+                    padding = 12 + 8 + extra_ampersand_padding + extra_length_padding
                 elif text_width_pt < 35:
-                    padding = 10 + 8 + extra_ampersand_padding  # Medium padding + 8px extra
+                    padding = 10 + 8 + extra_ampersand_padding + extra_length_padding
                 elif text_width_pt < 50:
-                    padding = 8 + 8 + extra_ampersand_padding   # Less padding for medium-long texts + 8px extra
+                    padding = 8 + 8 + extra_ampersand_padding + extra_length_padding
                 else:
-                    padding = 6 + 8 + extra_ampersand_padding   # Minimal padding for very long texts + 8px extra
+                    padding = 6 + 8 + extra_ampersand_padding + extra_length_padding
                 
                 # Calculate final tab width
                 tab_width_actual = text_width_pt + padding
                 # Ensure minimum width (but allow longer texts to be wider)
                 min_width = tab_width_base * 0.7
                 tab_width_actual = max(min_width, tab_width_actual)
-                # Don't exceed max width (with safety margin)
-                available_width = max_width - (row_start_x - start_x) - 2  # 2pt safety margin
-                tab_width_actual = min(tab_width_actual, available_width)
                 
-                # Check if we need to wrap to next row
-                if row_start_x + tab_width_actual > max_width and row_start_x > start_x:
+                # Check if tab fits in current row, wrap if needed BEFORE drawing
+                available_width = max_width - (row_start_x - start_x)
+                if tab_width_actual > available_width and row_start_x > start_x:
+                    # Wrap to next row BEFORE calculating tab_rect
                     row_y += tab_height * 0.85 + row_spacing
                     row_start_x = start_x
                 

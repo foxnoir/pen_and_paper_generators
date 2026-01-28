@@ -336,7 +336,7 @@ def main():
     # Try JSON first, fallback to source PDF
     json_path = "tab_structure.json"
     source = "vampire_journal.pdf"
-    output = "vampire_journal_dynamic.pdf"
+    output = "SL_journal.pdf"
     
     if os.path.exists(json_path):
         print("Using JSON structure file...")

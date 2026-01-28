@@ -5,7 +5,7 @@ Generates clan sheets for any Vampire: The Masquerade clan (2nd/3rd edition)
 
 Vampire: The Masquerade is a trademark of White Wolf Entertainment AB.
 This tool is not affiliated with or endorsed by White Wolf Entertainment AB.
-Assets (logo.png, bg.png) are property of White Wolf Entertainment AB.
+Assets ({clan_name}.png logos or clan_name.png, watermark.png) are property of White Wolf Entertainment AB.
 """
 
 import argparse

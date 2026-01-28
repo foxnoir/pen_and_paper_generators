@@ -9,7 +9,6 @@
 <br />
 
 <div align="center">
-  <img src="../images/logo.png" alt="Logo" width="80" height="80">
   <h1 align="center">Clan Sheet Generator</h1>
 
   <p align="center">
@@ -196,11 +195,8 @@ The CLANESSENZ is a short, powerful statement that captures the essence of the c
 The generator uses the following assets (located in the `clan_sheet_generator` directory):
 
 <div align="center">
-  <h3>Logo</h3>
-  <img src="logo.png" alt="Logo" width="200">
-  
   <h3>Background Watermark</h3>
-  <img src="bg.png" alt="Background Watermark" width="400">
+  <img src="watermark.png" alt="Background Watermark" width="400">
 </div>
 
 ### Example Output
@@ -320,8 +316,8 @@ This tool is created for personal use and educational purposes by fans of the ga
 ### Assets
 
 The following assets used in this generator are property of White Wolf Entertainment AB:
-- **Logo** (`logo.png`) - Copyright White Wolf Entertainment AB
-- **Background Watermark** (`bg.png`) - Copyright White Wolf Entertainment AB
+- **Logo** (`{clan_name}.png` or `clan_name.png` as fallback) - Copyright White Wolf Entertainment AB
+- **Background Watermark** (`watermark.png`) - Copyright White Wolf Entertainment AB
 
 These assets are used under fair use for fan-created content. If you are the copyright holder and wish to have these assets removed, please contact the repository maintainer.
 

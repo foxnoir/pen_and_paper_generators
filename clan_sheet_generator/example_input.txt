@@ -1,105 +1,111 @@
-GANGREL INFOBOX
+TOECHTER_KAKOPHONIE INFOBOX
 
 Spitzname:
-Clan des Tieres / Nomaden / Hinterwälter
+Clan der Sängerinnen / Sirenen / Stimmen der Nacht
 
-Clan-Disziplinen:
-Animalism · Fortitude · Protean
+Status:
+Blutlinie
 
-Clanschwäche:
-Bei Raserei nehmen Gangrel dauerhaft tierische Züge an.
+Abstammung:
+Unklar (vermutlich Toreador oder Malkavianer)
 
-GANGREL KURZÜBERBLICK
+Zugehörigkeit:
+Unabhängig
 
-Sie leben näher an der Bestie als alle anderen.
-Wo Städte Schutz bieten, sehen sie Käfige.
-Wo Regeln herrschen, wittern sie Gefahr.
+Disziplinen:
+Auspex · Fortitude · Melpominee
 
-Gangrel ziehen die Wildnis der Zivilisation vor.
-Sie überleben dort, wo andere zerbrechen – allein, anpassungsfähig, ungebunden.
+Blutlinien-Schwäche:
+Die Stimmen der Töchter sind untrennbar mit ihrem Zustand verbunden; emotionale Extreme, Wahnsinn oder Überreizung können ihre Kontrolle über Melpominee stören.
 
-Freiheit ist für sie kein Ideal.
-Sie ist eine Notwendigkeit.
+TOECHTER_KAKOPHONIE KURZÜBERBLICK
 
-GANGREL SPEZIFISCHE SCHWÄCHE
+Sie hören etwas,
+das andere nicht hören können.
 
-Ihre Raserei hinterlässt sichtbare Spuren.
+Die Töchter der Kakophonie existieren zwischen Kunst und Wahnsinn.
+Ihre Stimmen berühren nicht nur Ohren,
+sondern Seele, Blut und Bestie.
+
+Niemand weiß, ob sie ein Clan,
+eine Blutlinie oder ein Fluch sind.
+Manche glauben, sie seien ein Unfall.
+Andere, sie seien eine Warnung.
+
+Sie treten selten auf.
+Und wenn sie singen,
+bleibt niemand unberührt.
+
+TOECHTER_KAKOPHONIE SPEZIFISCHE SCHWÄCHE
+
+Die Stimme ist kein Werkzeug – sie ist Teil von ihnen.
 
 Regeltechnisch (klassisch):
-Nach jeder Raserei: dauerhaftes tierisches Merkmal
-Merkmale kumulieren und sind schwer zu entfernen
+Starke emotionale Zustände können Disziplinen beeinflussen
+SL kann Kontrollverlust oder ungewollte Effekte auslösen
 
 In der Praxis:
-Krallen, Reißzähne, Tieraugen, Fell
-Zunehmende Entfremdung von der Menschlichkeit
-Die Bestie schreibt sich in den Körper ein
+Unberechenbare emotionale Ausbrüche
+Gefahr der Selbstüberforderung
+Nähe zu Wahnsinn oder Ekstase
 
-👉 Jede Raserei hinterlässt Narben.
+👉 Kunst ohne Grenze wird gefährlich.
 
-GANGREL CLANHALTUNG & ROLLE
+TOECHTER_KAKOPHONIE CLANHALTUNG & ROLLE
 
-Unabhängig, instinktiv, territorial
+Expressiv, entrückt, emotional
 
-Misstrauen gegenüber Politik und Hofintrigen
+Kunst als Existenzform
+Stimme statt Politik
 
-Respekt gilt Stärke, Überleben und Ehrlichkeit – nicht Titeln oder Worten
+Meiden Sekten und Höfe
+Wirken durch Auftritte, Präsenz und Nachhall
 
-Überlebenskünstler, Grenzgänger, Späher: Nomaden, Jäger, Einzelgänger
+Häufig:
+Sängerinnen, Performerinnen, Sirenen
+Lebende Kunstwerke der Nacht
 
-DAS BAND ZUR BESTIE
+Zwischen Inspiration und Selbstverlust
 
-Gangrel verdrängen die Bestie nicht –
-sie leben mit ihr.
+TOECHTER_KAKOPHONIE BEZIEHUNGEN
 
-Instinkt ersetzt Planung.
-Reaktion ersetzt Diplomatie.
+Toreador: Faszination und Neid
+Malkavianer: Unheimliche Nähe
+Camarilla: Misstrauen
+Andere Blutlinien: Neugier oder Vorsicht
 
-In der Praxis:
-Schnelle Entscheidungen
-Klarer Beutetrieb
-Wenig Geduld für Maskenspiele
+TOECHTER_KAKOPHONIE DISZIPLINEN
+Melpominee (Stimme)
 
-👉 Kontrolle entsteht durch Akzeptanz, nicht Unterdrückung.
-
-GANGREL BEZIEHUNGEN
-
-Ventrue: Verachtung für Herrschaft
-Toreador: Unverständnis für Eitelkeit
-Nosferatu: Respekt durch Ähnlichkeit
-Camarilla: Geduldet, selten eingebunden
-
-GANGREL DISZIPLINEN
-Animalism (Tierherrschaft)
-
-Verbindung zu Tierwelt und Bestie.
+Die Stimme als Macht.
 
 Typisch:
-Tiere rufen oder kontrollieren
-Emotionen beruhigen oder entfesseln
-Die eigene Bestie lenken
+Emotionen durch Gesang lenken
+Schmerz, Freude oder Ekstase erzeugen
+Zuhörer binden oder brechen
+
+Auspex (Wahrnehmung)
+
+Hören, was unausgesprochen bleibt.
+
+Typisch:
+Emotionale Resonanzen erkennen
+Feinste Stimmungen wahrnehmen
+Künstlerische Intuition
 
 Fortitude (Zähigkeit)
 
-Schmerz ist ein Lehrer.
+Durchhalten trotz Überforderung.
 
 Typisch:
-Extremes Durchhaltevermögen
-Widerstand gegen Schaden
-Überleben statt Glanz
+Emotionale Belastung ertragen
+Weiter singen trotz Schaden
+Standhaft bleiben
 
-Protean (Gestaltwandel)
+TOECHTER_KAKOPHONIE INTERNE SPANNUNGEN
 
-Der Körper passt sich an.
+Reine Künstlerinnen: Ausdruck ohne Kontrolle
+Zerrissene Stimmen: Kunst wird Zwang
 
-Typisch:
-Krallen, Reißzähne
-Tiergestalten
-Verschmelzen mit Erde oder Schatten
-
-GANGREL INTERNE SPANNUNGEN
-
-Alte Gangrel: Vollständig von der Wildnis geprägt
-Junge Gangrel: Zwischen Stadtleben und Instinkt
-
-Dauernder Konflikt zwischen Anpassung und Freiheit
+Dauernder Konflikt zwischen Inspiration und Selbstzerstörung
 ENDE

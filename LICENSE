@@ -27,8 +27,8 @@ SOFTWARE.
 **Vampire: The Masquerade** is a trademark of White Wolf Entertainment AB.
 
 The following assets included in this project are property of White Wolf Entertainment AB:
-- Logo images (`logo.png` files)
-- Background watermark images (`bg.png` files)
+- Logo images (`{clan_name}.png` files or `clan_name.png` as fallback)
+- Background watermark images (`watermark.png` files)
 
 These assets are used under fair use for fan-created content. All game content, concepts, and terminology belong to White Wolf Entertainment AB.
 

@@ -5,7 +5,7 @@ Erstellt ein dynamisches Clan-Sheet basierend auf Benutzereingaben.
 
 Vampire: The Masquerade is a trademark of White Wolf Entertainment AB.
 This tool is not affiliated with or endorsed by White Wolf Entertainment AB.
-Assets (logo.png, bg.png) are property of White Wolf Entertainment AB.
+Assets ({clan_name}.png logos or clan_name.png, watermark.png) are property of White Wolf Entertainment AB.
 """
 
 from PIL import Image, ImageDraw, ImageFont
@@ -14,9 +14,17 @@ import textwrap
 
 
 class ClanSheetGenerator:
-    def __init__(self, clan_name, logo_path="logo.png", watermark_path="bg.png"):
+    def __init__(self, clan_name, logo_path=None, watermark_path="watermark.png"):
         self.clan_name = clan_name.upper()
-        self.logo_path = logo_path
+        # Logo-Pfad: zuerst nach clan_name.png suchen, dann Fallback auf clan_name.png (generisches Logo)
+        if logo_path is None:
+            clan_logo_path = f"{self.clan_name.lower()}.png"
+            if os.path.exists(clan_logo_path):
+                self.logo_path = clan_logo_path
+            else:
+                self.logo_path = "clan_name.png"
+        else:
+            self.logo_path = logo_path
         self.watermark_path = watermark_path
         self.page_width = 2480  # A4 at 300 DPI
         self.page_height = 3508
@@ -39,11 +47,68 @@ class ClanSheetGenerator:
         self.sections = {}
         
     def load_logo(self):
-        """Lädt das Logo und passt es an - vereinheitlicht auf max_height"""
+        """Lädt das Logo und passt es an - entfernt weißen/hellen Hintergrund, vereinheitlicht auf max_height"""
         if os.path.exists(self.logo_path):
             logo = Image.open(self.logo_path)
-            # Logo immer auf max. 280px Höhe skalieren für Konsistenz
-            max_height = 280
+            # Konvertiere zu RGBA falls nötig
+            if logo.mode != 'RGBA':
+                logo = logo.convert('RGBA')
+            
+            # Entferne weißen/hellen/grauen Hintergrund: Mache helle Pixel transparent
+            # Verwende einen niedrigeren Schwellenwert (200 statt 240) für bessere Erkennung
+            # Verwende numpy für bessere Performance (falls verfügbar) oder manuell
+            try:
+                import numpy as np
+                # Konvertiere zu numpy array für bessere Performance
+                img_array = np.array(logo)
+                # Berechne Helligkeit für jeden Pixel
+                brightness = (img_array[:, :, 0].astype(float) + img_array[:, :, 1].astype(float) + img_array[:, :, 2].astype(float)) / 3.0
+                # Erstelle Maske für helle Pixel (niedrigerer Schwellenwert 200 für bessere Erkennung)
+                # Auch prüfe auf ähnliche RGB-Werte (graue Pixel)
+                mask = brightness > 200
+                # Zusätzlich: Wenn R, G, B sehr ähnlich sind (grauer Hintergrund), auch transparent machen
+                r_diff = np.abs(img_array[:, :, 0].astype(float) - img_array[:, :, 1].astype(float))
+                g_diff = np.abs(img_array[:, :, 1].astype(float) - img_array[:, :, 2].astype(float))
+                b_diff = np.abs(img_array[:, :, 0].astype(float) - img_array[:, :, 2].astype(float))
+                gray_mask = (r_diff < 30) & (g_diff < 30) & (b_diff < 30) & (brightness > 180)
+                # Kombiniere beide Masken
+                final_mask = mask | gray_mask
+                # Setze Alpha-Kanal auf 0 für helle/graue Pixel (mache sie transparent)
+                img_array[final_mask, 3] = 0
+                logo = Image.fromarray(img_array.astype(np.uint8))
+            except ImportError:
+                # Fallback ohne numpy: manuelle Verarbeitung
+                data = logo.getdata()
+                new_data = []
+                
+                for item in data:
+                    r, g, b, a = item
+                    brightness = (r + g + b) / 3
+                    # Prüfe ob Pixel hell ist (niedrigerer Schwellenwert 200)
+                    # Oder ob es ein grauer Pixel ist (ähnliche R, G, B Werte)
+                    r_diff = abs(r - g)
+                    g_diff = abs(g - b)
+                    b_diff = abs(r - b)
+                    is_gray = (r_diff < 30) and (g_diff < 30) and (b_diff < 30) and (brightness > 180)
+                    
+                    if brightness > 200 or is_gray:
+                        # Heller/grauer Pixel -> transparent
+                        new_data.append((r, g, b, 0))
+                    else:
+                        # Dunkler Pixel -> behalte wie er ist
+                        new_data.append(item)
+                
+                logo.putdata(new_data)
+            
+            # Stelle sicher, dass das Logo RGBA-Modus hat
+            if logo.mode != 'RGBA':
+                logo = logo.convert('RGBA')
+            
+            # Logo skalieren: Bei Setiten größer (350px), sonst 280px
+            if self.clan_name.upper() == "SETITEN":
+                max_height = 350
+            else:
+                max_height = 280
             if logo.height != max_height:
                 ratio = max_height / logo.height
                 new_width = int(logo.width * ratio)
@@ -52,12 +117,40 @@ class ClanSheetGenerator:
         return None
     
     def load_watermark(self):
-        """Lädt das Wasserzeichen und passt es an - vereinheitlicht"""
+        """Lädt das Wasserzeichen und passt es an - entfernt weißen/grauen Hintergrund, behält nur schwarze Pixel"""
         if os.path.exists(self.watermark_path):
             watermark = Image.open(self.watermark_path)
             # Konvertiere zu RGBA falls nötig
             if watermark.mode != 'RGBA':
                 watermark = watermark.convert('RGBA')
+            
+            # Entferne weißen/grauen Hintergrund: Mache helle Pixel transparent
+            # Erstelle ein neues Bild mit transparentem Hintergrund
+            data = watermark.getdata()
+            new_data = []
+            
+            for item in data:
+                r, g, b = item[0], item[1], item[2]
+                brightness = (r + g + b) / 3
+                
+                # Prüfe ob Pixel weiß oder grau ist (heller Hintergrund)
+                # Wenn R, G, B ähnlich sind (grau) oder alle über einem Schwellenwert (weiß)
+                # Schwellenwert für Hintergrund: > 180 für grau, > 240 für weiß
+                is_gray = abs(r - g) < 30 and abs(g - b) < 30 and abs(r - b) < 30
+                is_background = (brightness > 180 and is_gray) or (brightness > 240)
+                
+                if is_background:
+                    # Weißer/grauer Hintergrund-Pixel -> transparent
+                    new_data.append((0, 0, 0, 0))
+                else:
+                    # Dunkler Pixel -> behalte, aber mit reduzierter Deckkraft
+                    # Setze auf schwarz mit Alpha basierend auf Helligkeit
+                    # Je dunkler, desto höher das Alpha (max 35% Deckkraft)
+                    alpha_value = int((255 - brightness) * 0.35)
+                    new_data.append((0, 0, 0, alpha_value))
+            
+            watermark.putdata(new_data)
+            
             # Vereinheitlichte Skalierung - auf 60% der Sheet-Größe, behalte Seitenverhältnis
             target_width = int(self.page_width * 0.6)
             target_height = int(self.page_height * 0.6)
@@ -69,10 +162,7 @@ class ClanSheetGenerator:
             new_width = int(watermark.width * ratio)
             new_height = int(watermark.height * ratio)
             watermark = watermark.resize((new_width, new_height), Image.Resampling.LANCZOS)
-            # Vereinheitlichte Deckkraft: 35% (0.35 * 255 = 89)
-            alpha = watermark.split()[3]
-            alpha = alpha.point(lambda p: int(p * 0.35))
-            watermark.putalpha(alpha)
+            
             return watermark
         return None
     
@@ -516,10 +606,10 @@ class ClanSheetGenerator:
             # Vereinheitlichter Abstand zwischen Logo und Content
             current_y = logo_y + logo.height + logo_spacing
         
-        # Berechne Spalten-Breiten: Für Malkavianer 1/2 und 1/2, sonst 1/4 und 3/4
+        # Berechne Spalten-Breiten: Für Malkavianer 1/3 und 2/3, sonst 1/4 und 3/4
         if self.clan_name.upper() == "MALKAVIANER":
-            left_column_width = int(self.content_width / 2) - self.box_spacing // 2
-            right_column_width = int(self.content_width / 2) - self.box_spacing // 2
+            left_column_width = int(self.content_width / 3) - self.box_spacing // 2
+            right_column_width = int((self.content_width * 2) / 3) - self.box_spacing // 2
         else:
             left_column_width = int(self.content_width / 4)  # Schmaler für längere Boxen
             right_column_width = int((self.content_width * 3) / 4) - self.box_spacing
@@ -531,18 +621,32 @@ class ClanSheetGenerator:
             f"{self.clan_name} SPEZIFISCHE SCHWÄCHE"
         ]
         
-        # Prüfe ob DAS MALKAVIANER-NETZWERK existiert und füge es links hinzu
-        network_section = f"{self.clan_name} DAS MALKAVIANER-NETZWERK"
-        if network_section in sections:
-            left_sections.append(network_section)
-        
         # Rechte Spalte Boxen (Reihenfolge wie in den Input-Dateien)
         right_sections = [
             f"{self.clan_name} CLANHALTUNG & ROLLE",
-            f"{self.clan_name} BEZIEHUNGEN",
-            f"{self.clan_name} DISZIPLINEN",
-            f"{self.clan_name} INTERNE SPANNUNGEN"
+            f"{self.clan_name} DISZIPLINEN"
         ]
+        
+        # Bei Malkavianern: BEZIEHUNGEN und INTERNE SPANNUNGEN nach rechts verschieben
+        if self.clan_name.upper() == "MALKAVIANER":
+            right_sections.insert(1, f"{self.clan_name} BEZIEHUNGEN")
+            right_sections.append(f"{self.clan_name} INTERNE SPANNUNGEN")
+        else:
+            # Bei anderen Clans: BEZIEHUNGEN und INTERNE SPANNUNGEN bleiben rechts
+            right_sections.insert(1, f"{self.clan_name} BEZIEHUNGEN")
+            right_sections.append(f"{self.clan_name} INTERNE SPANNUNGEN")
+        
+        # Prüfe ob DAS MALKAVIANER-NETZWERK existiert
+        # Bei Malkavianern: füge es rechts hinzu (nach CLANHALTUNG & ROLLE)
+        # Bei anderen Clans: füge es links hinzu (falls vorhanden)
+        network_section = f"{self.clan_name} DAS MALKAVIANER-NETZWERK"
+        if network_section in sections:
+            if self.clan_name.upper() == "MALKAVIANER":
+                # Bei Malkavianern: rechts nach CLANHALTUNG & ROLLE einfügen
+                right_sections.insert(1, network_section)
+            else:
+                # Bei anderen Clans: links hinzufügen
+                left_sections.append(network_section)
         
         # Berechne verfügbare Höhe für linke Spalte (über die ganze Länge)
         # Linke Boxen sollen immer die ganze Höhe einnehmen (mit etwas Abstand unten)
@@ -561,7 +665,9 @@ class ClanSheetGenerator:
                                                     self.calculate_text_height(content, font_normal, left_column_width - 80))
                 left_heights.append(min_height)
             
-            total_left_min_height = sum(left_heights) + (len(left_heights) - 1) * self.box_spacing
+            # Für Malkavianer: kleinerer Abstand für Berechnung
+            left_box_spacing_calc = 40 if self.clan_name.upper() == "MALKAVIANER" else self.box_spacing
+            total_left_min_height = sum(left_heights) + (len(left_heights) - 1) * left_box_spacing_calc
             
             # Wenn zu groß, skaliere Schriftgröße
             if total_left_min_height > available_height_for_boxes:
@@ -577,7 +683,9 @@ class ClanSheetGenerator:
                     height = self.header_height + max(self.min_box_height,
                                                     self.calculate_text_height(content, font_normal, left_column_width - 80))
                     left_heights.append(height)
-                total_left_min_height = sum(left_heights) + (len(left_heights) - 1) * self.box_spacing
+                # Für Malkavianer: kleinerer Abstand für Berechnung
+                left_box_spacing_calc = 40 if self.clan_name.upper() == "MALKAVIANER" else self.box_spacing
+                total_left_min_height = sum(left_heights) + (len(left_heights) - 1) * left_box_spacing_calc
                 
                 # Wenn immer noch zu groß nach Skalierung, erhöhe Margin
                 if total_left_min_height > available_height_for_boxes:
@@ -594,8 +702,11 @@ class ClanSheetGenerator:
         # Rechte Boxen werden vollständig dynamisch beim Zeichnen berechnet
         # Keine Vorberechnung mehr - jede Box berechnet ihre Höhe selbst
         
+        # Für Malkavianer: kleinerer, einheitlicher Abstand zwischen linken Boxen
+        left_box_spacing = 40 if self.clan_name.upper() == "MALKAVIANER" else self.box_spacing
+        
         # Finale Berechnung: Stelle sicher, dass linke Boxen genau die verfügbare Höhe nutzen
-        actual_left_height = sum(left_heights) + (len(left_heights) - 1) * self.box_spacing
+        actual_left_height = sum(left_heights) + (len(left_heights) - 1) * left_box_spacing
         bottom_margin = max(min_bottom_margin, self.page_height - current_y - actual_left_height)
         
         # Linke Spalte Position
@@ -620,7 +731,7 @@ class ClanSheetGenerator:
             else:
                 self.draw_box(draw, left_x, left_y, left_column_width, height, 
                              header_text, content, font_normal, font_header)
-            left_y += height + self.box_spacing
+            left_y += height + left_box_spacing
         
         # Zeichne rechte Spalte - VOLLSTÄNDIG DYNAMISCH: Berechne Höhe beim Zeichnen
         actual_right_y = right_y
@@ -766,6 +877,27 @@ class ClanSheetGenerator:
             else:
                 final_text_y = final_text_y_bottom
             
+            # Spezielle Anpassung für Ventrue: CLANESSENZ 80px nach oben verschieben
+            if self.clan_name.upper() == "VENTRUE":
+                final_text_y -= 80
+            
+            # Spezielle Anpassung für Salubri: CLANESSENZ 90px nach oben verschieben
+            if self.clan_name.upper() == "SALUBRI":
+                final_text_y -= 90
+            
+            
+            # Spezielle Anpassung für Gangrel: CLANESSENZ 70px nach oben verschieben
+            if self.clan_name.upper() == "GANGREL":
+                final_text_y -= 70
+            
+            # Spezielle Anpassung für Giovanni: CLANESSENZ 70px nach oben verschieben
+            if self.clan_name.upper() == "GIOVANNI":
+                final_text_y -= 70
+            
+            # Spezielle Anpassung für Wahre Brujah: CLANESSENZ 80px nach oben verschieben
+            if self.clan_name.upper() == "WAHRE_BRUJAH":
+                final_text_y -= 80
+            
             # Obere Linie
             line_y_top = final_text_y - line_padding
             draw.line([(final_area_start_x, line_y_top), 
@@ -786,101 +918,21 @@ class ClanSheetGenerator:
                 draw.text((text_x, final_text_y + i * line_height), line, 
                          fill=self.text_color, font=font_final)
         
-        # Wasserzeichen deaktiviert - weißer Hintergrund
-        # watermark = self.load_watermark()
-        # if watermark:
-        #     # Konvertiere img zu RGBA falls nötig
-        #     if img.mode != 'RGBA':
-        #         img = img.convert('RGBA')
-        #     # Zentriere das Wasserzeichen auf dem Sheet
-        #     watermark_x = (self.page_width - watermark.width) // 2
-        #     watermark_y = (self.page_height - watermark.height) // 2
-        #     # Erstelle ein temporäres Bild für das Wasserzeichen in voller Größe
-        #     watermark_full = Image.new('RGBA', (self.page_width, self.page_height), (0, 0, 0, 0))
-        #     watermark_full.paste(watermark, (watermark_x, watermark_y), watermark)
-        #     # Füge Wasserzeichen hinzu
-        #     img = Image.alpha_composite(img, watermark_full)
-        #     # Konvertiere zurück zu RGB für Kompatibilität
-        #     img = img.convert('RGB')
+        # Wasserzeichen hinzufügen
+        watermark = self.load_watermark()
+        if watermark:
+            # Konvertiere img zu RGBA falls nötig
+            if img.mode != 'RGBA':
+                img = img.convert('RGBA')
+            # Zentriere das Wasserzeichen auf dem Sheet
+            watermark_x = (self.page_width - watermark.width) // 2
+            watermark_y = (self.page_height - watermark.height) // 2
+            # Erstelle ein temporäres Bild für das Wasserzeichen in voller Größe
+            watermark_full = Image.new('RGBA', (self.page_width, self.page_height), (0, 0, 0, 0))
+            watermark_full.paste(watermark, (watermark_x, watermark_y), watermark)
+            # Füge Wasserzeichen hinzu
+            img = Image.alpha_composite(img, watermark_full)
+            # Konvertiere zurück zu RGB für Kompatibilität
+            img = img.convert('RGB')
         
         return img
-
-
-def main():
-    print("=" * 60)
-    print("CLAN SHEET GENERATOR")
-    print("=" * 60)
-    print()
-    
-    # Clan Name eingeben
-    clan_name = input("Bitte geben Sie den Clan-Namen ein: ").strip()
-    if not clan_name:
-        print("Fehler: Clan-Name darf nicht leer sein!")
-        return
-    
-    print()
-    print("Bitte geben Sie den Text für die Sektionen ein.")
-    print("Verwenden Sie die folgenden Überschriften (alles GROSSBUCHSTABEN):")
-    print(f"- {clan_name.upper()} INFOBOX")
-    print(f"- {clan_name.upper()} KURZÜBERBLICK")
-    print(f"- {clan_name.upper()} SPEZIFISCHE SCHWÄCHE")
-    print(f"- {clan_name.upper()} CLANHALTUNG & ROLLE")
-    print(f"- {clan_name.upper()} BEZIEHUNGEN")
-    print(f"- {clan_name.upper()} INTERNE SPANNUNGEN")
-    print(f"- {clan_name.upper()} DISZIPLINEN")
-    print()
-    print("Geben Sie den Text ein.")
-    print("Tipp: Sie können den Text mit allen Überschriften auf einmal einfügen.")
-    print("Beenden Sie die Eingabe mit 'ENDE' in einer neuen Zeile:")
-    print()
-    
-    lines = []
-    while True:
-        try:
-            line = input()
-            line_stripped = line.strip().upper()
-            
-            # Beende bei "ENDE"
-            if line_stripped == "ENDE":
-                break
-            
-            lines.append(line)
-        except EOFError:
-            # Handle Ctrl+D / Ctrl+Z
-            break
-    
-    user_text = '\n'.join(lines)
-    
-    # CLANESSENZ
-    print()
-    clanessenz = input("Bitte geben Sie die CLANESSENZ ein: ").strip()
-    if not clanessenz:
-        clanessenz = "Brujah fühlen zuerst – und handeln dann. Wenn sie Recht haben, brennt die Welt. Wenn nicht, auch."
-    
-    # Generator erstellen
-    generator = ClanSheetGenerator(clan_name)
-    
-    # Text parsen
-    sections = generator.parse_user_input(user_text)
-    
-    # Sheet generieren
-    print()
-    print("Generiere Clan-Sheet...")
-    sheet = generator.generate_sheet(sections, clanessenz)
-    
-    # Speichern
-    output_filename = f"{clan_name.lower()}_clan_sheet.png"
-    sheet.save(output_filename, "PNG", dpi=(300, 300))
-    print(f"Clan-Sheet gespeichert als: {output_filename}")
-    
-    # Optional: Als PDF speichern
-    try:
-        pdf_filename = f"{clan_name.lower()}_clan_sheet.pdf"
-        sheet.save(pdf_filename, "PDF", resolution=300.0)
-        print(f"Clan-Sheet auch als PDF gespeichert: {pdf_filename}")
-    except Exception as e:
-        print(f"Hinweis: PDF konnte nicht erstellt werden: {e}")
-
-
-if __name__ == "__main__":
-    main()

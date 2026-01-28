@@ -10,8 +10,8 @@ This tool is created for personal use and educational purposes by fans of the ga
 
 The following assets used in this generator are property of White Wolf Entertainment AB:
 
-- **Logo** (`logo.png`) - Copyright White Wolf Entertainment AB
-- **Background Watermark** (`bg.png`) - Copyright White Wolf Entertainment AB
+- **Logo** (`{clan_name}.png` or `clan_name.png` as fallback) - Copyright White Wolf Entertainment AB
+- **Background Watermark** (`watermark.png`) - Copyright White Wolf Entertainment AB
 
 These assets are used under fair use for fan-created content. If you are the copyright holder and wish to have these assets removed, please contact the repository maintainer.
 

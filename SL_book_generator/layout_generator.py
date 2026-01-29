@@ -26,7 +26,6 @@ class LayoutGenerator:
         self.tab_x = self.page_width - self.tab_width - 5  # Right margin with 5pt spacing
         
         # Image compression settings
-        self.image_dpi = 150  # Reduce DPI for smaller file size (default is usually 300)
         self.image_quality = 85  # JPEG quality (1-100, lower = smaller file)
         
         # Tab design colors (RGB 0-1 for PyMuPDF)
@@ -1102,7 +1101,7 @@ class LayoutGenerator:
                         # Compress image before insertion to reduce file size
                         compressed_path = self._compress_image(image_path)
                         img_rect = fitz.Rect(0, 0, page_width, page_height)
-                        page.insert_image(img_rect, filename=compressed_path, keep_proportion=False, dpi=self.image_dpi)
+                        page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
                         # Clean up temporary file if it was created
                         if compressed_path != image_path and os.path.exists(compressed_path):
                             try:
@@ -1202,7 +1201,7 @@ class LayoutGenerator:
                 # Compress image before insertion to reduce file size
                 compressed_path = self._compress_image(bg_image_path)
                 img_rect = fitz.Rect(0, 0, page_width, page_height)
-                page.insert_image(img_rect, filename=compressed_path, keep_proportion=False, dpi=self.image_dpi)
+                page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
                 # Clean up temporary file if it was created
                 if compressed_path != bg_image_path and os.path.exists(compressed_path):
                     try:
@@ -1284,7 +1283,7 @@ class LayoutGenerator:
                 )
                 # Compress image before insertion to reduce file size
                 compressed_path = self._compress_image(center_image_path)
-                page.insert_image(img_rect, filename=compressed_path, keep_proportion=True, dpi=self.image_dpi)
+                page.insert_image(img_rect, filename=compressed_path, keep_proportion=True)
                 # Clean up temporary file if it was created
                 if compressed_path != center_image_path and os.path.exists(compressed_path):
                     try:
@@ -1759,7 +1758,7 @@ class LayoutGenerator:
                             # Compress image before insertion to reduce file size
                             compressed_path = self._compress_image(bg_image_path)
                             img_rect = fitz.Rect(0, 0, self.page_width, self.page_height)
-                            page.insert_image(img_rect, filename=compressed_path, keep_proportion=False, dpi=self.image_dpi)
+                            page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
                             # Clean up temporary file if it was created
                             if compressed_path != bg_image_path and os.path.exists(compressed_path):
                                 try:

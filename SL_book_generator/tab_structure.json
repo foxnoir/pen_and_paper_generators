@@ -76,12 +76,12 @@
                 },
                 {
                     "name": "Kalender",
-                    "page_count": 2,
+                    "page_count": 3,
                     "seconnd_subsections_left_tabs": [
                         "Zeitstrahl",
                         "Wichtige Ereignisse",
                         "Wichtige Daten",
-                        "Countdown"
+                        "Countdowns"
                     ]
                 }
             ]
@@ -91,10 +91,12 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Aufträge & Verpflichtungen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Beziehungen & Schulden",
+                    "page_count": 4,
                     "subsections_left_top_tabs": [
                         "Erpressung",
                         "Gefallen",
@@ -106,6 +108,7 @@
                 },
                 {
                     "name": "Geheimnisse",
+                    "page_count": 4,
                     "subsections_left_top_tabs": [
                         "SL-Geheimnisse",
                         "Falsche Annahmen SCs",
@@ -114,18 +117,22 @@
                 },
                 {
                     "name": "Gerüchte & Informationen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Intrigenverläufe",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Ziele & Ambitionen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Sonstiges",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 }
             ]
@@ -135,30 +142,37 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Überblick",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Sitzungsziel",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Ablauf",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Schlüsselinformationen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Notizen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Review & Konsequenzen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Eskalation",
+                    "page_count": 4,
                     "subsections": [
                         "Aktueller Druck",
                         "Offene Risiken",
@@ -168,6 +182,7 @@
                 },
                 {
                     "name": "Sonstiges",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 }
             ]
@@ -275,30 +290,37 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Clubs & Nachtleben",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Elysien",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Industrie & Verfall",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Kultur & Öffentlichkeit",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Menschliche Infrastruktur",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Freies Gelände",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Private Domänen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 }
             ]
@@ -342,10 +364,12 @@
         },
         {
             "name": "Handouts",
+            "page_count": 6,
             "seconnd_subsections_left_tabs": []
         },
         {
             "name": "Notizen",
+            "page_count": 6,
             "seconnd_subsections_left_tabs": []
         },
         {

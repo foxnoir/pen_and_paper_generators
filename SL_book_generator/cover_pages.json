@@ -36,29 +36,93 @@
             "subtitle": "Karten und Lagepläne"
         },
         "Handouts": {
-            "background_image": "assets/images/section_cover/main_cover.png",
-            "title": "Handouts",
-            "subtitle": "Materialien und Dokumente",
-            "description": "Alle Handouts, Dokumente und Materialien für die Spieler."
+            "page_1": {
+                "background_image": "assets/images/section_cover/main_cover.png",
+                "title": "Handouts",
+                "subtitle": "Materialien und Dokumente",
+                "description": "Alle Handouts, Dokumente und Materialien für die Spieler."
+            },
+            "page_2": {
+                "background_image": "random"
+            },
+            "page_3": {
+                "background_image": "random"
+            },
+            "page_4": {
+                "background_image": "random"
+            },
+            "page_5": {
+                "background_image": "random"
+            },
+            "page_6": {
+                "background_image": "random"
+            }
         },
         "Notizen": {
-            "background_image": "assets/images/section_cover/main_cover.png",
-            "title": "Notizen",
-            "subtitle": "Persönliche Aufzeichnungen",
-            "description": "Private Notizen, Ideen und Gedanken für die Kampagne."
+            "page_1": {
+                "background_image": "assets/images/section_cover/main_cover.png",
+                "title": "Notizen",
+                "subtitle": "Persönliche Aufzeichnungen",
+                "description": "Private Notizen, Ideen und Gedanken für die Kampagne."
+            },
+            "page_2": {
+                "background_image": "random"
+            },
+            "page_3": {
+                "background_image": "random"
+            },
+            "page_4": {
+                "background_image": "random"
+            },
+            "page_5": {
+                "background_image": "random"
+            },
+            "page_6": {
+                "background_image": "random"
+            }
         },
         "subsections": {
             "Domäne": {
                 "Stadt": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
                     "title": "Stadt",
-                    "subtitle": "Domäne",
+                    "subtitle": "Stadt",
                     "description": "Informationen über die Stadt"
                 },
                 "Macht & Kontrolle": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
                     "title": "Macht & Kontrolle",
                     "subtitle": "Macht & Kontrolle"
+                },
+                "Blut & Jagd": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Blut & Jagd",
+                    "subtitle": "Blut & Jagd"
+                },
+                "Spannungen, Risiken & Gefahren": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Spannungen, Risiken & Gefahren",
+                    "subtitle": "Spannungen, Risiken & Gefahren"
+                },
+                "Chronologie": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Chronologie",
+                    "subtitle": "Chronologie"
+                },
+                "Storystränge": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Storystränge",
+                    "subtitle": "Storystränge"
+                },
+                "Leitkonflikt der Chronik": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Leitkonflikt der Chronik",
+                    "subtitle": "Leitkonflikt der Chronik"
+                },
+                "SCs": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "SCs",
+                    "subtitle": "SCs"
                 },
                 "Kalender": {
                     "page_1": {
@@ -68,7 +132,438 @@
                     "page_2": {
                         "image": "assets/images/calender/calender_3.png",
                         "full_page": true
+                    },
+                    "page_3": {
+                        "image": "assets/images/calender/calender_4.png",
+                        "full_page": true
                     }
+                }
+            },
+            "Intrigen & Interessen": {
+                "Aufträge & Verpflichtungen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Aufträge & Verpflichtungen",
+                        "subtitle": "Aufträge & Verpflichtungen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Beziehungen & Schulden": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Beziehungen & Schulden",
+                        "subtitle": "Beziehungen & Schulden"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Geheimnisse": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Geheimnisse",
+                        "subtitle": "Geheimnisse"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Gerüchte & Informationen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Gerüchte & Informationen",
+                        "subtitle": "Gerüchte & Informationen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Intrigenverläufe": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Intrigenverläufe",
+                        "subtitle": "Intrigenverläufe"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Ziele & Ambitionen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Ziele & Ambitionen",
+                        "subtitle": "Ziele & Ambitionen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Sonstiges": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Sonstiges",
+                        "subtitle": "Sonstiges"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                }
+            },
+            "Orte": {
+                "Clubs & Nachtleben": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Clubs & Nachtleben",
+                        "subtitle": "Clubs & Nachtleben"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Elysien": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Elysien",
+                        "subtitle": "Elysien"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Industrie & Verfall": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Industrie & Verfall",
+                        "subtitle": "Industrie & Verfall"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Kultur & Öffentlichkeit": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Kultur & Öffentlichkeit",
+                        "subtitle": "Kultur & Öffentlichkeit"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Menschliche Infrastruktur": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Menschliche Infrastruktur",
+                        "subtitle": "Menschliche Infrastruktur"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Freies Gelände": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Freies Gelände",
+                        "subtitle": "Freies Gelände"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Private Domänen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Private Domänen",
+                        "subtitle": "Private Domänen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                }
+            },
+            "Karten": {
+                "Stadtplan": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Stadtplan",
+                    "subtitle": "Stadtplan"
+                },
+                "Domänen": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Domänen",
+                    "subtitle": "Domänen"
+                },
+                "Lagepläne": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Lagepläne",
+                    "subtitle": "Lagepläne"
+                },
+                "Kanalisation": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Kanalisation",
+                    "subtitle": "Kanalisation"
+                },
+                "Stromversorgung": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Stromversorgung",
+                    "subtitle": "Stromversorgung"
+                },
+                "Wasserversorgung": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Wasserversorgung",
+                    "subtitle": "Wasserversorgung"
+                },
+                "Überwachungspläne": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Überwachungspläne",
+                    "subtitle": "Überwachungspläne"
+                }
+            },
+            "Sitzungen": {
+                "Überblick": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Überblick",
+                        "subtitle": "Überblick"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Sitzungsziel": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Sitzungsziel",
+                        "subtitle": "Sitzungsziel"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Ablauf": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Ablauf",
+                        "subtitle": "Ablauf"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Schlüsselinformationen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Schlüsselinformationen",
+                        "subtitle": "Schlüsselinformationen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Notizen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Notizen",
+                        "subtitle": "Notizen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Review & Konsequenzen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Review & Konsequenzen",
+                        "subtitle": "Review & Konsequenzen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Eskalation": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Eskalation",
+                        "subtitle": "Eskalation"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Sonstiges": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Sonstiges",
+                        "subtitle": "Sonstiges"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                }
+            },
+            "Regeln": {
+                "Grundregeln": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Grundregeln",
+                    "subtitle": "Grundregeln"
+                },
+                "Charakter & Blut": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Charakter & Blut",
+                    "subtitle": "Charakter & Blut"
+                },
+                "Disziplinen": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Disziplinen",
+                    "subtitle": "Disziplinen"
+                },
+                "Kampf & Konflikt": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Kampf & Konflikt",
+                    "subtitle": "Kampf & Konflikt"
+                },
+                "Gesellschaft & Politik": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Gesellschaft & Politik",
+                    "subtitle": "Gesellschaft & Politik"
+                },
+                "Maskerade": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Maskerade",
+                    "subtitle": "Maskerade"
                 }
             },
             "NPCs": {

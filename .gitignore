@@ -224,3 +224,10 @@ Icon?
 # macOS - Directories
 .Spotlight-V100
 .Trashes
+
+# PDF files
+*.pdf
+
+# Assets directory
+assets/
+**/assets/

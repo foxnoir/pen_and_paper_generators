@@ -10,6 +10,8 @@ import random
 import math
 import os
 import glob
+import tempfile
+from PIL import Image
 
 
 class LayoutGenerator:
@@ -23,6 +25,10 @@ class LayoutGenerator:
         self.tab_width = 35.0  # Wider for better design and text
         self.tab_x = self.page_width - self.tab_width - 5  # Right margin with 5pt spacing
         
+        # Image compression settings
+        self.image_dpi = 150  # Reduce DPI for smaller file size (default is usually 300)
+        self.image_quality = 85  # JPEG quality (1-100, lower = smaller file)
+        
         # Tab design colors (RGB 0-1 for PyMuPDF)
         # #EEDCC8 = RGB(238, 220, 200) - inactive (beige/cream)
         # #D0C4B4 = RGB(208, 196, 180) - active (darker beige)
@@ -33,6 +39,44 @@ class LayoutGenerator:
             "text": (0.15, 0.15, 0.15),  # Dark text
             "shadow": (200 / 255, 190 / 255, 175 / 255)  # Slightly darker shadow
         }
+    
+    def _compress_image(self, image_path: str) -> str:
+        """
+        Compress image to reduce file size.
+        Returns path to compressed image (temporary file or original if compression fails).
+        """
+        try:
+            # Open image
+            img = Image.open(image_path)
+            
+            # Convert RGBA to RGB if necessary (for JPEG)
+            if img.mode in ('RGBA', 'LA', 'P'):
+                # Create white background
+                background = Image.new('RGB', img.size, (255, 255, 255))
+                if img.mode == 'P':
+                    img = img.convert('RGBA')
+                background.paste(img, mask=img.split()[-1] if img.mode == 'RGBA' else None)
+                img = background
+            elif img.mode != 'RGB':
+                img = img.convert('RGB')
+            
+            # Resize if image is very large (reduce to max 2000px on longest side)
+            max_dimension = 2000
+            if max(img.size) > max_dimension:
+                ratio = max_dimension / max(img.size)
+                new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
+                img = img.resize(new_size, Image.Resampling.LANCZOS)
+            
+            # Save as compressed JPEG to temporary file
+            temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.jpg')
+            img.save(temp_file.name, 'JPEG', quality=self.image_quality, optimize=True)
+            temp_file.close()
+            
+            return temp_file.name
+        except Exception as e:
+            print(f"  Warning: Could not compress image {image_path}: {e}")
+            # Return original path if compression fails
+            return image_path
     
     def draw_blood_splatters(self, page: fitz.Page):
         """Draws random blood stain clusters in the background with custom colors"""
@@ -1055,10 +1099,16 @@ class LayoutGenerator:
                         page.draw_rect(white_rect, color=(1, 1, 1), width=0, fill=(1, 1, 1))
                         
                         # Insert image as full page - use keep_proportion=False to fill entire page without white borders
-                        # Compress image during insertion to reduce file size
+                        # Compress image before insertion to reduce file size
+                        compressed_path = self._compress_image(image_path)
                         img_rect = fitz.Rect(0, 0, page_width, page_height)
-                        page.insert_image(img_rect, filename=image_path, keep_proportion=False)
-                        # Note: Image compression is handled at PDF save time
+                        page.insert_image(img_rect, filename=compressed_path, keep_proportion=False, dpi=self.image_dpi)
+                        # Clean up temporary file if it was created
+                        if compressed_path != image_path and os.path.exists(compressed_path):
+                            try:
+                                os.unlink(compressed_path)
+                            except:
+                                pass
                         print(f"  ✓ Successfully inserted full-page image: {image_path} (size: {page_width}x{page_height})")
                         return  # Don't add text or background
                     except Exception as e:
@@ -1072,18 +1122,57 @@ class LayoutGenerator:
         # Load background image if specified
         bg_image_path = cover_config.get("background_image")
         
-        # If basic.png is specified, use random background from assets/images/background/ instead
-        if bg_image_path and ("basic.png" in bg_image_path or bg_image_path == "images/basic.png"):
+        # Handle "random" background_image - use random background from assets/images/background/
+        if bg_image_path == "random":
             script_dir = os.path.dirname(os.path.abspath(__file__))
             background_dir = os.path.join(script_dir, "assets", "images", "background")
             if not os.path.exists(background_dir):
                 background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
             
-            # Find all background images
+            # Find all background images (excluding rules subdirectory and basic.png)
             background_images = []
             if os.path.exists(background_dir):
                 for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
-                    background_images.extend(glob.glob(os.path.join(background_dir, ext)))
+                    all_images = glob.glob(os.path.join(background_dir, ext))
+                    # Filter out subdirectories (like rules/) and basic.png
+                    background_images.extend([img for img in all_images 
+                                             if os.path.dirname(img) == background_dir 
+                                             and 'basic.png' not in img.lower()])
+                background_images.sort()
+            
+            if background_images:
+                bg_image_path = random.choice(background_images)
+            else:
+                # Fallback to basic.png if no other backgrounds found
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
+        # If basic.png is specified, use random background from assets/images/background/ instead
+        # EXCEPT for clan sheets (sub-subsections) which should always use basic.png
+        is_clan_sheet = cover_config.get("image") is not None  # Clan sheets have an "image" field
+        
+        # Check if bg_image_path points to basic.png (any path variant)
+        is_basic_png = bg_image_path and "basic.png" in bg_image_path
+        
+        # For clan sheets, ensure basic.png path points to the correct location
+        if is_basic_png and is_clan_sheet:
+            # Normalize path: assets/images/basic.png -> assets/images/background/basic.png
+            if "background" not in bg_image_path:
+                bg_image_path = bg_image_path.replace("images/basic.png", "images/background/basic.png")
+                bg_image_path = bg_image_path.replace("assets/images/basic.png", "assets/images/background/basic.png")
+        
+        if is_basic_png and not is_clan_sheet:
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            background_dir = os.path.join(script_dir, "assets", "images", "background")
+            if not os.path.exists(background_dir):
+                background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+            
+            # Find all background images (exclude basic.png itself)
+            background_images = []
+            if os.path.exists(background_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(background_dir, ext))
+                    # Filter out basic.png from random selection
+                    background_images.extend([img for img in all_images if 'basic.png' not in img.lower()])
                 background_images.sort()
             
             # Use random background if available, otherwise fall back to basic.png
@@ -1110,10 +1199,20 @@ class LayoutGenerator:
         if bg_image_path and os.path.exists(bg_image_path):
             try:
                 # Insert image as background (full page) - use keep_proportion=False to fill entire page
+                # Compress image before insertion to reduce file size
+                compressed_path = self._compress_image(bg_image_path)
                 img_rect = fitz.Rect(0, 0, page_width, page_height)
-                page.insert_image(img_rect, filename=bg_image_path, keep_proportion=False)
+                page.insert_image(img_rect, filename=compressed_path, keep_proportion=False, dpi=self.image_dpi)
+                # Clean up temporary file if it was created
+                if compressed_path != bg_image_path and os.path.exists(compressed_path):
+                    try:
+                        os.unlink(compressed_path)
+                    except:
+                        pass
             except Exception as e:
                 print(f"Warning: Could not load background image {bg_image_path}: {e}")
+        elif bg_image_path:
+            print(f"Warning: Background image path not found: {bg_image_path}")
         
         # Load optional center image (for subsections/sub-subsections)
         center_image_path = cover_config.get("image")
@@ -1183,7 +1282,15 @@ class LayoutGenerator:
                     content_center_x + img_width / 2,
                     content_center_y + img_height / 2
                 )
-                page.insert_image(img_rect, filename=center_image_path, keep_proportion=True)
+                # Compress image before insertion to reduce file size
+                compressed_path = self._compress_image(center_image_path)
+                page.insert_image(img_rect, filename=compressed_path, keep_proportion=True, dpi=self.image_dpi)
+                # Clean up temporary file if it was created
+                if compressed_path != center_image_path and os.path.exists(compressed_path):
+                    try:
+                        os.unlink(compressed_path)
+                    except:
+                        pass
                 print(f"  ✓ Successfully inserted center image: {center_image_path} (size: {img_width}x{img_height}, area: {content_width}x{content_height})")
             except Exception as e:
                 print(f"  ✗ Warning: Could not load center image {center_image_path}: {e}")
@@ -1191,9 +1298,13 @@ class LayoutGenerator:
                 traceback.print_exc()
         
         # Get text configuration
-        title = cover_config.get("title", "")
-        subtitle = cover_config.get("subtitle", "")
-        description = cover_config.get("description", "")
+        # If background_image is "random", don't show any text (no title, subtitle, description)
+        bg_image_path = cover_config.get("background_image")
+        is_random_background = bg_image_path == "random"
+        
+        title = "" if is_random_background else cover_config.get("title", "")
+        subtitle = "" if is_random_background else cover_config.get("subtitle", "")
+        description = "" if is_random_background else cover_config.get("description", "")
         
         # Get font sizes from config or use defaults
         font_config = cover_config.get("default_font", {})
@@ -1386,8 +1497,9 @@ class LayoutGenerator:
                 return "images/basic.png"
             
             # Helper function to process background_image: if basic.png, use random background
-            def process_background_image(bg_path):
-                if bg_path and ("basic.png" in bg_path or bg_path == "images/basic.png"):
+            # EXCEPT for clan sheets (sub-subsections) which should always use basic.png
+            def process_background_image(bg_path, is_clan_sheet=False):
+                if bg_path and ("basic.png" in bg_path or bg_path == "images/basic.png") and not is_clan_sheet:
                     return get_random_background()
                 return bg_path
             
@@ -1397,19 +1509,50 @@ class LayoutGenerator:
                 target_page_num = tab.get("target_page", 1) - 1  # Convert to 0-based
                 
                 if tab_name in cover_pages and 0 <= target_page_num < total_pages:
-                    cover_config = cover_pages[tab_name].copy()
-                    # Merge with defaults
-                    if default_bg and "background_image" not in cover_config:
-                        cover_config["background_image"] = process_background_image(default_bg)
-                    elif "background_image" in cover_config:
-                        cover_config["background_image"] = process_background_image(cover_config["background_image"])
-                    if default_font:
-                        cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
-                    if text_position:
-                        cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                    tab_cover_config = cover_pages[tab_name]
                     
-                    cover_page = doc[target_page_num]
-                    self.add_cover_page(cover_page, cover_config, self.page_width, self.page_height)
+                    # Check if tab has page_1, page_2, etc. structure (for tabs with multiple pages)
+                    if isinstance(tab_cover_config, dict) and any(key.startswith("page_") for key in tab_cover_config.keys()):
+                        # Handle multiple pages for this tab (like Handouts, Notizen with page_count > 1)
+                        for pg_num, pg_info in page_structure.items():
+                            if (pg_info.get("tab_name") == tab_name and 
+                                pg_info.get("subsection") is None and
+                                pg_info.get("sub_subsection") is None):
+                                page_index = pg_info.get("page_index", 1)
+                                page_key = f"page_{page_index}"
+                                
+                                if page_key in tab_cover_config:
+                                    page_num = int(pg_num) - 1  # Convert to 0-based
+                                    if 0 <= page_num < total_pages:
+                                        cover_config = tab_cover_config[page_key].copy()
+                                        # Merge with defaults
+                                        if default_bg and "background_image" not in cover_config:
+                                            cover_config["background_image"] = process_background_image(default_bg)
+                                        elif "background_image" in cover_config:
+                                            cover_config["background_image"] = process_background_image(cover_config["background_image"])
+                                        if default_font:
+                                            cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
+                                        if text_position:
+                                            cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                                        
+                                        cover_page = doc[page_num]
+                                        print(f"  Adding cover for {tab_name} (page {page_index}) on page {page_num + 1}")
+                                        self.add_cover_page(cover_page, cover_config, self.page_width, self.page_height)
+                    else:
+                        # Old structure: single config for first page
+                        cover_config = tab_cover_config.copy()
+                        # Merge with defaults
+                        if default_bg and "background_image" not in cover_config:
+                            cover_config["background_image"] = process_background_image(default_bg)
+                        elif "background_image" in cover_config:
+                            cover_config["background_image"] = process_background_image(cover_config["background_image"])
+                        if default_font:
+                            cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
+                        if text_position:
+                            cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                        
+                        cover_page = doc[target_page_num]
+                        self.add_cover_page(cover_page, cover_config, self.page_width, self.page_height)
             
             # Add cover pages for subsections
             subsections_config = cover_pages.get("subsections", {})
@@ -1494,10 +1637,12 @@ class LayoutGenerator:
                                         if 0 <= page_num < total_pages:
                                             cover_config = sub_subsection_config.copy()
                                             # Merge with defaults
+                                            # Clan sheets (sub-subsections) should always use basic.png, not random
+                                            is_clan_sheet = cover_config.get("image") is not None
                                             if default_bg and "background_image" not in cover_config:
-                                                cover_config["background_image"] = process_background_image(default_bg)
+                                                cover_config["background_image"] = process_background_image(default_bg, is_clan_sheet=is_clan_sheet)
                                             elif "background_image" in cover_config:
-                                                cover_config["background_image"] = process_background_image(cover_config["background_image"])
+                                                cover_config["background_image"] = process_background_image(cover_config["background_image"], is_clan_sheet=is_clan_sheet)
                                             if default_font:
                                                 cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
                                             if text_position:
@@ -1553,47 +1698,80 @@ class LayoutGenerator:
                                         break
             
             # Add random background from assets/images/background/ to all pages without cover pages
+            # Special handling: "Regeln" section uses assets/images/background/rules/
             script_dir = os.path.dirname(os.path.abspath(__file__))
             background_dir = os.path.join(script_dir, "assets", "images", "background")
             if not os.path.exists(background_dir):
                 background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
             
-            # Find all background images
+            rules_background_dir = os.path.join(background_dir, "rules")
+            
+            # Find all background images (excluding rules subdirectory)
             background_images = []
             if os.path.exists(background_dir):
-                # Look for PNG files in background directory
+                # Look for PNG files in background directory (but not in subdirectories)
                 for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
-                    background_images.extend(glob.glob(os.path.join(background_dir, ext)))
+                    all_images = glob.glob(os.path.join(background_dir, ext))
+                    # Filter out subdirectories (like rules/)
+                    background_images.extend([img for img in all_images if os.path.dirname(img) == background_dir])
                 background_images.sort()  # Sort for consistent ordering
+            
+            # Find rules background images
+            rules_background_images = []
+            if os.path.exists(rules_background_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    rules_background_images.extend(glob.glob(os.path.join(rules_background_dir, ext)))
+                rules_background_images.sort()
             
             # Fallback to basic.png if no background images found
             if not background_images:
-                basic_bg_path = "images/basic.png"
-                possible_paths = [
-                    basic_bg_path,
-                    os.path.join(script_dir, basic_bg_path),
-                    os.path.join(os.getcwd(), basic_bg_path)
-                ]
-                for path in possible_paths:
-                    if os.path.exists(path):
-                        background_images = [path]
-                        break
+                basic_bg_path = os.path.join(background_dir, "basic.png")
+                if os.path.exists(basic_bg_path):
+                    background_images = [basic_bg_path]
             
-            if background_images:
-                print(f"Adding random backgrounds from {len(background_images)} images to pages without cover pages...")
+            if background_images or rules_background_images:
+                print(f"Adding random backgrounds to pages without cover pages...")
                 pages_with_bg = 0
+                pages_with_rules_bg = 0
                 for page_num in range(total_pages):
                     if page_num not in pages_with_covers:
                         try:
-                            # Randomly select a background image for this page
-                            bg_image_path = random.choice(background_images)
+                            # Check if this page belongs to "Regeln" section
+                            # page_structure uses 1-based page numbers as keys (integers)
+                            page_info = page_structure.get(page_num + 1, {})
+                            # Also try string key in case it's stored as string
+                            if not page_info:
+                                page_info = page_structure.get(str(page_num + 1), {})
+                            
+                            tab_name = page_info.get("tab_name", "")
+                            is_rules_section = tab_name == "Regeln"
+                            
+                            # Select appropriate background directory
+                            if is_rules_section and rules_background_images:
+                                bg_image_path = random.choice(rules_background_images)
+                                pages_with_rules_bg += 1
+                            elif background_images:
+                                bg_image_path = random.choice(background_images)
+                            else:
+                                continue  # Skip if no backgrounds available
+                            
                             page = doc[page_num]
+                            # Compress image before insertion to reduce file size
+                            compressed_path = self._compress_image(bg_image_path)
                             img_rect = fitz.Rect(0, 0, self.page_width, self.page_height)
-                            page.insert_image(img_rect, filename=bg_image_path, keep_proportion=False)
+                            page.insert_image(img_rect, filename=compressed_path, keep_proportion=False, dpi=self.image_dpi)
+                            # Clean up temporary file if it was created
+                            if compressed_path != bg_image_path and os.path.exists(compressed_path):
+                                try:
+                                    os.unlink(compressed_path)
+                                except:
+                                    pass
                             pages_with_bg += 1
                         except Exception as e:
                             print(f"  Warning: Could not add background to page {page_num + 1}: {e}")
-                print(f"  ✓ Added random backgrounds to {pages_with_bg} pages")
+                            import traceback
+                            traceback.print_exc()
+                print(f"  ✓ Added random backgrounds to {pages_with_bg} pages ({pages_with_rules_bg} from rules/)")
             else:
                 print("Warning: No background images found in assets/images/background/, skipping background addition")
         

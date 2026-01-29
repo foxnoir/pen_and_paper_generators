@@ -1,0 +1,110 @@
+TREMERE_ANTITRIBU INFOBOX
+
+Spitzname:
+Clan der Magier / Antitribu
+
+Status:
+Clan
+
+Abstammung:
+Tremere
+
+Zugehörigkeit:
+Unabhängig / Anarchen
+
+Disziplinen:
+Thaumaturgie · Auspex · Dominate
+
+Clan-Schwäche:
+Blutband zu Clan oder Lehrer
+
+TREMERE_ANTITRIBU KURZÜBERBLICK
+
+Blut verlangt Gehorsam.
+
+Auch außerhalb der Camarilla tragen Tremere die Last
+ihrer künstlich erschaffenen Blutlinie.
+
+Sie haben die Ketten gesehen.
+Sie haben sie verstanden.
+
+Und versuchen nun,
+sie vorsichtig zu lösen –
+ohne dass das Blut es merkt.
+
+TREMERE_ANTITRIBU SPEZIFISCHE SCHWÄCHE
+
+Blut verlangt Gehorsam.
+
+Auch außerhalb der Camarilla tragen Tremere die Last
+ihrer künstlich erschaffenen Blutlinie.
+
+Regeltechnisch (klassisch):
+Blutband zu Clan oder Lehrer ist verbreitet
+Thaumaturgie erfordert Disziplin, Rituale und Vorbereitung
+
+In der Praxis:
+Schwierigkeiten, wirklich unabhängig zu sein
+Misstrauen innerhalb des Clans
+Furcht vor Verrat und Kontrollverlust
+
+👉 Freiheit ist gefährlich für einen Clan, der auf Kontrolle basiert.
+
+TREMERE_ANTITRIBU CLANHALTUNG & ROLLE
+
+Misstrauisch, kalkulierend, wissensorientiert
+
+Macht durch Geheimnisse statt Titel
+Kontrolle durch Rituale statt Befehle
+
+Zweifeln an der Camarilla-Hierarchie
+Misstrauen anarchischer Unordnung
+
+Häufig:
+Freie Ritualisten, okkulte Berater, Blutmagier
+Händler von Wissen und magischen Diensten
+
+Zwischen Unabhängigkeit und alter Loyalität
+
+TREMERE_ANTITRIBU BEZIEHUNGEN
+
+Brujah (Anarchen): Zweckbündnisse
+Nosferatu (Anarchen): Informationsaustausch
+Camarilla: Alte Fesseln
+Sabbat: Verachtete Verschwendung von Wissen
+
+TREMERE_ANTITRIBU DISZIPLINEN
+Thaumaturgie (Blutmagie)
+
+Macht durch Vorbereitung.
+
+Typisch:
+Rituale statt Spontanzauber
+Blut als Werkzeug
+Langfristige Kontrolle
+
+Auspex (Wahrnehmung)
+
+Wissen ist Schutz.
+
+Typisch:
+Magische Analyse
+Auren lesen
+Übernatürliches erkennen
+
+Dominate (Gedankenkontrolle)
+
+Notwendige Absicherung.
+
+Typisch:
+Gedanken schützen
+Zeugen kontrollieren
+Gefahren neutralisieren
+
+TREMERE_ANTITRIBU INTERNE SPANNUNGEN
+
+Traditionalisten: Ordnung durch Struktur
+Abtrünnige: Wissen ohne Ketten
+
+Dauernder Konflikt zwischen Sicherheit und Freiheit
+ENDE

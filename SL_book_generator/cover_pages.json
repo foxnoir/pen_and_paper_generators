@@ -1,55 +1,295 @@
 {
     "cover_pages": {
         "Domäne": {
-            "background_image": "images/cover_background.png",
+            "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Domäne",
-            "subtitle": "Die Stadt und ihre Strukturen",
-            "description": "Hier findest du alle Informationen über die Domäne, ihre Machtstrukturen und die wichtigsten Orte."
+            "subtitle": "Boston, USA",
+            "description": "01.10.2001"
         },
         "Intrigen & Interessen": {
-            "background_image": "images/cover_background.png",
+            "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Intrigen & Interessen",
-            "subtitle": "Verbindungen und Konflikte",
+            "subtitle": "Intrigen & Interessen",
             "description": "Übersicht über alle Intrigen, Interessen und die komplexen Beziehungen zwischen den Charakteren."
         },
-        "Runden": {
-            "background_image": "images/cover_background.png",
-            "title": "Runden",
+        "Sitzungen": {
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Sitzungen",
             "subtitle": "Chronik der Ereignisse",
             "description": "Detaillierte Aufzeichnungen aller Runden und wichtigen Ereignisse der Kampagne."
         },
         "NPCs": {
-            "background_image": "images/cover_background.png",
+            "background_image": "assets/images/section_cover/main_cover.png",
             "title": "NPCs",
             "subtitle": "Charaktere und Persönlichkeiten",
             "description": "Alle wichtigen Nicht-Spieler-Charaktere mit ihren Hintergründen, Motivationen und Beziehungen."
         },
         "Orte": {
-            "background_image": "images/cover_background.png",
+            "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Orte",
-            "subtitle": "Schauplätze und Locations",
+            "subtitle": "Schauplätze und Grundrisse",
             "description": "Beschreibungen aller wichtigen Orte, von Clubs über Elysien bis hin zu privaten Domänen."
         },
         "Karten": {
-            "background_image": "images/cover_background.png",
+            "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Karten",
-            "subtitle": "Übersichten und Pläne",
-            "description": "Karten, Pläne und visuelle Übersichten wichtiger Bereiche und Strukturen."
+            "subtitle": "Karten und Lagepläne"
         },
         "Handouts": {
-            "background_image": "images/cover_background.png",
+            "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Handouts",
             "subtitle": "Materialien und Dokumente",
             "description": "Alle Handouts, Dokumente und Materialien für die Spieler."
         },
         "Notizen": {
-            "background_image": "images/cover_background.png",
+            "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Notizen",
             "subtitle": "Persönliche Aufzeichnungen",
             "description": "Private Notizen, Ideen und Gedanken für die Kampagne."
+        },
+        "subsections": {
+            "Domäne": {
+                "Stadt": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Stadt",
+                    "subtitle": "Domäne",
+                    "description": "Informationen über die Stadt"
+                },
+                "Macht & Kontrolle": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Macht & Kontrolle",
+                    "subtitle": "Macht & Kontrolle"
+                },
+                "Kalender": {
+                    "page_1": {
+                        "image": "assets/images/calender/calender_2.png",
+                        "full_page": true
+                    },
+                    "page_2": {
+                        "image": "assets/images/calender/calender_3.png",
+                        "full_page": true
+                    }
+                }
+            },
+            "NPCs": {
+                "Camarilla": {
+                    "image": "assets/images/infos/camarilla.png",
+                    "full_page": true
+                },
+                "Sabbat": {
+                    "image": "assets/images/infos/sabbat.png",
+                    "full_page": true
+                },
+                "Werwölfe": {
+                    "image": "assets/images/infos/garou.png",
+                    "full_page": true
+                },
+                "Blutlinien": {
+                    "image": "assets/images/infos/blutlinien.png",
+                    "full_page": true
+                },
+                "Ghule": {
+                    "image": "assets/images/infos/ghule.png",
+                    "full_page": true
+                },
+                "Anarchen": {
+                    "image": "assets/images/infos/anarchen.png",
+                    "full_page": true
+                },
+                "Unabhängige": {
+                    "image": "assets/images/infos/unabhängige.png",
+                    "full_page": true
+                }
+            }
+        },
+        "sub_subsections": {
+            "NPCs": {
+                "Camarilla": {
+                    "Brujah": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/camarilla/brujah_clan_sheet.png"
+                    },
+                    "Gangrel": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/camarilla/gangrel_clan_sheet.png"
+                    },
+                    "Malkavian": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/camarilla/malkavianer_clan_sheet.png"
+                    },
+                    "Nosferatu": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/camarilla/nosferatu_clan_sheet.png"
+                    },
+                    "Toreador": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/camarilla/toreador_clan_sheet-1.png"
+                    },
+                    "Tremere": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/camarilla/tremere_clan_sheet.png"
+                    },
+                    "Ventrue": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/camarilla/ventrue_clan_sheet.png"
+                    }
+                },
+                "Sabbat": {
+                    "Assamiten": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/assamiten_clan_sheet.png"
+                    },
+                    "Brujah": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/brujah_clan_sheet.png"
+                    },
+                    "Gangrel": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/gangrel_clan_sheet.png"
+                    },
+                    "Lasombra": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/lasombra_clan_sheet.png"
+                    },
+                    "Malkavian": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/malkavianer_clan_sheet.png"
+                    },
+                    "Nosferatu": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/nosferatu_clan_sheet.png"
+                    },
+                    "Salubri": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/salubri_clan_sheet.png"
+                    },
+                    "Toreador": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/toreador_clan_sheet.png"
+                    },
+                    "Tremere": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/tremere_clan_sheet.png"
+                    },
+                    "Tzimisce": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/tzimisce_clan_sheet.png"
+                    },
+                    "Ventrue": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/sabbat/ventrue_antitribu_clan_sheet.png"
+                    }
+                },
+                "Anarchen": {
+                    "Assamiten": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/assamiten_clan_sheet.png"
+                    },
+                    "Brujah": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/brujah_clan_sheet.png"
+                    },
+                    "Gangrel": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/gangrel_clan_sheet.png"
+                    },
+                    "Lasombra": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/lasombra_clan_sheet.png"
+                    },
+                    "Malkavian": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/malkavianer_clan_sheet.png"
+                    },
+                    "Nosferatu": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/nosferatu_clan_sheet.png"
+                    },
+                    "Jünger des Set": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/setiten_clan_sheet.png"
+                    },
+                    "Toreador": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/toreador_clan_sheet.png"
+                    },
+                    "Tremere": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/tremere_clan_sheet.png"
+                    },
+                    "Tzimisce": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/anarchen/tzimisce_clan_sheet.png"
+                    }
+                },
+                "Unabhängige": {
+                    "Assamiten": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/unabhänige/assamiten_clan_sheet.png"
+                    },
+                    "Gangrel": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/unabhänige/gangrel_clan_sheet.png"
+                    },
+                    "Giovanni": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/unabhänige/giovanni_clan_sheet.png"
+                    },
+                    "Jünger des Set": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/unabhänige/setiten_clan_sheet.png"
+                    },
+                    "Ravnos": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/unabhänige/ravnos_clan_sheet.png"
+                    },
+                    "Salubri": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/unabhänige/salubri_clan_sheet.png"
+                    },
+                    "Wahre Brujah": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/unabhänige/wahre_brujah_clan_sheet.png"
+                    }
+                },
+                "Blutlinien": {
+                    "Ahrimanes": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/blutlinien/ahrimanes_clan_sheet.png"
+                    },
+                    "Baali": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/blutlinien/baali_clan_sheet.png"
+                    },
+                    "Gargoyles": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/blutlinien/gargoyles_clan_sheet.png"
+                    },
+                    "Kiasyd": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/blutlinien/kissayid_clan_sheet.png"
+                    },
+                    "Lamia": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/blutlinien/lamia_clan_sheet.png"
+                    },
+                    "Nagaraja": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/blutlinien/nagaraja_clan_sheet.png"
+                    },
+                    "Töchter der Kakophonie": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/blutlinien/toechter_kakophonie_clan_sheet.png"
+                    },
+                    "Samedi": {
+                        "background_image": "assets/images/basic.png",
+                        "image": "assets/images/sheets_transparent/blutlinien/samedi_clan_sheet.png"
+                    }
+                }
+            }
         }
     },
-    "default_background": "images/cover_background.png",
+    "default_background": "assets/images/section_cover/main_cover.png",
     "default_font": {
         "title_size": 48,
         "subtitle_size": 24,

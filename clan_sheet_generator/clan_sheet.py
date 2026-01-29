@@ -24,7 +24,7 @@ class ClanSheetGenerator:
             else:
                 self.logo_path = "clan_name.png"
         else:
-        self.logo_path = logo_path
+            self.logo_path = logo_path
         self.watermark_path = watermark_path
         self.page_width = 2480  # A4 at 300 DPI
         self.page_height = 3508
@@ -108,7 +108,7 @@ class ClanSheetGenerator:
             if self.clan_name.upper() == "SETITEN":
                 max_height = 350
             else:
-            max_height = 280
+                max_height = 280
             if logo.height != max_height:
                 ratio = max_height / logo.height
                 new_width = int(logo.width * ratio)
@@ -844,8 +844,11 @@ class ClanSheetGenerator:
             final_area_width = right_column_width  # 2/3 Breite
             final_area_start_x = right_x  # Beginnt bei rechter Spalte
             
-            # Feste Schriftgröße
-            font_final = self.get_font(65, bold=True)  # Feste Schriftgröße
+            # Feste Schriftgröße - kleiner für VENTRUE_ANTITRIBU
+            if self.clan_name.upper() == "VENTRUE_ANTITRIBU":
+                font_final = self.get_font(55, bold=True)  # Kleinere Schriftgröße
+            else:
+                font_final = self.get_font(65, bold=True)  # Feste Schriftgröße
             final_text_width = final_area_width - 40
             final_lines = self.wrap_text(clanessenz, font_final, final_text_width)
             
@@ -879,6 +882,10 @@ class ClanSheetGenerator:
             
             # Spezielle Anpassung für Ventrue: CLANESSENZ 80px nach oben verschieben
             if self.clan_name.upper() == "VENTRUE":
+                final_text_y -= 80
+            
+            # Spezielle Anpassung für Ventrue Antitribu: CLANESSENZ 80px nach oben verschieben
+            if self.clan_name.upper() == "VENTRUE_ANTITRIBU":
                 final_text_y -= 80
             
             # Spezielle Anpassung für Salubri: CLANESSENZ 90px nach oben verschieben

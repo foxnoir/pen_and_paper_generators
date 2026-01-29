@@ -115,9 +115,23 @@ class DynamicPDFGenerator:
                 page_structure[current_page] = {
                     "tab_name": tab_name,
                     "subsection": subsection_name,
-                    "sub_subsection": None
+                    "sub_subsection": None,
+                    "page_index": 1
                 }
                 current_page += 1
+                
+                # Check if subsection has page_count > 1 (for multiple pages like Kalender)
+                page_count = subsection.get("page_count", 1)
+                if page_count > 1:
+                    # Add additional pages for this subsection
+                    for page_idx in range(2, page_count + 1):
+                        page_structure[current_page] = {
+                            "tab_name": tab_name,
+                            "subsection": subsection_name,
+                            "sub_subsection": None,
+                            "page_index": page_idx
+                        }
+                        current_page += 1
                 
                 # Then pages for each sub-subsection
                 for sub_subsection in sub_subsections:
@@ -237,9 +251,17 @@ class DynamicPDFGenerator:
         metadata = structure.get("metadata", {})
         self.layout_generator.apply_layout_to_pdf(doc, self.tabs, tab_text_elements, self.page_structure, self.tab_subsections, metadata, cover_pages_config)
         
-        # Save PDF
+        # Save PDF with compression
         print(f"Saving PDF: {output_path}")
-        doc.save(output_path)
+        # Enable compression to reduce file size
+        doc.save(
+            output_path,
+            deflate=True,  # Compress PDF streams
+            deflate_images=True,  # Compress images
+            deflate_fonts=True,  # Compress fonts
+            garbage=4,  # Maximum garbage collection
+            clean=True  # Clean up unused objects
+        )
         doc.close()
         
         print(f"\n✓ PDF successfully generated: {output_path}")
@@ -322,9 +344,17 @@ class DynamicPDFGenerator:
         
         source_doc.close()
         
-        # Save PDF
+        # Save PDF with compression
         print(f"Saving PDF: {output_path}")
-        doc.save(output_path)
+        # Enable compression to reduce file size
+        doc.save(
+            output_path,
+            deflate=True,  # Compress PDF streams
+            deflate_images=True,  # Compress images
+            deflate_fonts=True,  # Compress fonts
+            garbage=4,  # Maximum garbage collection
+            clean=True  # Clean up unused objects
+        )
         doc.close()
         
         print(f"\n✓ PDF successfully generated: {output_path}")

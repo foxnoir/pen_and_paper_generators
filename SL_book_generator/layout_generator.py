@@ -9,6 +9,7 @@ from typing import List, Dict, Optional
 import random
 import math
 import os
+import glob
 
 
 class LayoutGenerator:
@@ -35,8 +36,8 @@ class LayoutGenerator:
     
     def draw_blood_splatters(self, page: fitz.Page):
         """Draws random blood stain clusters in the background with custom colors"""
-        # Light stains (#CD2103 = RGB 205/255, 33/255, 3/255) - brighter red
-        light_color = (205 / 255, 33 / 255, 3 / 255)
+        # Light stains (#49231E = RGB 73/255, 35/255, 30/255) - darker red/brown
+        light_color = (73 / 255, 35 / 255, 30 / 255)
         self._draw_ink_clusters(page, base_color=light_color, variation=0.05, is_color=True)
         
         # Darker stains (#772616 = RGB 119/255, 38/255, 22/255) - darker red/brown
@@ -501,10 +502,17 @@ class LayoutGenerator:
             if pg_info.get("tab_name") == tab_name:
                 pg_subsection = pg_info.get("subsection")
                 pg_sub_subsection = pg_info.get("sub_subsection")
+                pg_page_index = pg_info.get("page_index", 1)  # Default to 1 if not set
                 
                 if pg_subsection and not pg_sub_subsection:
                     # This is a subsection page
-                    subsection_target_pages[pg_subsection] = pg_num
+                    # Only use the first page (page_index=1) as target, even if there are multiple pages
+                    if pg_subsection not in subsection_target_pages or pg_page_index == 1:
+                        if pg_page_index == 1:
+                            subsection_target_pages[pg_subsection] = pg_num
+                        elif pg_subsection not in subsection_target_pages:
+                            # Fallback: use first found page if page_index is not set
+                            subsection_target_pages[pg_subsection] = pg_num
                 elif pg_subsection and pg_sub_subsection:
                     # This is a sub-subsection page
                     sub_subsection_target_pages[(pg_subsection, pg_sub_subsection)] = pg_num
@@ -1000,17 +1008,187 @@ class LayoutGenerator:
                 
                 row_start_x += tab_width_actual + tab_spacing
     
+    def _get_lilith_font_path(self):
+        """Returns the absolute path to the Lilith Plain font file"""
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        # Try different Lilith font variants (prefer Plain, then Regular)
+        font_paths = [
+            os.path.join(script_dir, "assets", "fonts", "Lilith", "Lilith Plain", "Lilith Plain.ttf"),
+            os.path.join(script_dir, "assets", "fonts", "Lilith", "Lilith Regular", "Lilith Regular.ttf"),
+            os.path.join(os.getcwd(), "assets", "fonts", "Lilith", "Lilith Plain", "Lilith Plain.ttf"),
+            os.path.join(os.getcwd(), "assets", "fonts", "Lilith", "Lilith Regular", "Lilith Regular.ttf"),
+        ]
+        
+        for font_path in font_paths:
+            if os.path.exists(font_path):
+                return os.path.abspath(font_path)
+        return None
+    
     def add_cover_page(self, page: fitz.Page, cover_config: Dict, page_width: float, page_height: float):
-        """Adds a cover page with background image and centered text"""
+        """Adds a cover page with background image, optional center image, and centered text"""
+        # Check if this is a full-page image (no background, no text)
+        full_page_image = cover_config.get("full_page", False)
+        
+        if full_page_image:
+            # Only insert the image, full page, no background, no text
+            image_path = cover_config.get("image")
+            if image_path:
+                # Resolve path relative to script directory if needed
+                if not os.path.isabs(image_path):
+                    script_dir = os.path.dirname(os.path.abspath(__file__))
+                    possible_paths = [
+                        image_path,  # Try as-is first
+                        os.path.join(script_dir, image_path),  # Relative to script
+                        os.path.join(os.getcwd(), image_path)  # Relative to cwd
+                    ]
+                    image_path = None
+                    for path in possible_paths:
+                        if os.path.exists(path):
+                            image_path = path
+                            break
+                
+                if image_path and os.path.exists(image_path):
+                    try:
+                        # Clear page first to ensure no other content interferes
+                        # Create a white rectangle to clear the page
+                        white_rect = fitz.Rect(0, 0, page_width, page_height)
+                        page.draw_rect(white_rect, color=(1, 1, 1), width=0, fill=(1, 1, 1))
+                        
+                        # Insert image as full page - use keep_proportion=False to fill entire page without white borders
+                        # Compress image during insertion to reduce file size
+                        img_rect = fitz.Rect(0, 0, page_width, page_height)
+                        page.insert_image(img_rect, filename=image_path, keep_proportion=False)
+                        # Note: Image compression is handled at PDF save time
+                        print(f"  ✓ Successfully inserted full-page image: {image_path} (size: {page_width}x{page_height})")
+                        return  # Don't add text or background
+                    except Exception as e:
+                        print(f"  ✗ Warning: Could not load full-page image {image_path}: {e}")
+                        import traceback
+                        traceback.print_exc()
+                else:
+                    print(f"  ✗ Warning: Full-page image not found: {cover_config.get('image')}")
+            return
+        
         # Load background image if specified
         bg_image_path = cover_config.get("background_image")
+        
+        # If basic.png is specified, use random background from assets/images/background/ instead
+        if bg_image_path and ("basic.png" in bg_image_path or bg_image_path == "images/basic.png"):
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            background_dir = os.path.join(script_dir, "assets", "images", "background")
+            if not os.path.exists(background_dir):
+                background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+            
+            # Find all background images
+            background_images = []
+            if os.path.exists(background_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    background_images.extend(glob.glob(os.path.join(background_dir, ext)))
+                background_images.sort()
+            
+            # Use random background if available, otherwise fall back to basic.png
+            if background_images:
+                bg_image_path = random.choice(background_images)
+            # else: keep bg_image_path as basic.png (fallback)
+        
+        # Resolve path relative to script directory if needed
+        if bg_image_path:
+            if not os.path.isabs(bg_image_path):
+                # Try relative to current working directory first
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                possible_paths = [
+                    bg_image_path,  # Try as-is first
+                    os.path.join(script_dir, bg_image_path),  # Relative to script
+                    os.path.join(os.getcwd(), bg_image_path)  # Relative to cwd
+                ]
+                bg_image_path = None
+                for path in possible_paths:
+                    if os.path.exists(path):
+                        bg_image_path = path
+                        break
+        
         if bg_image_path and os.path.exists(bg_image_path):
             try:
-                # Insert image as background (full page)
+                # Insert image as background (full page) - use keep_proportion=False to fill entire page
                 img_rect = fitz.Rect(0, 0, page_width, page_height)
-                page.insert_image(img_rect, filename=bg_image_path)
+                page.insert_image(img_rect, filename=bg_image_path, keep_proportion=False)
             except Exception as e:
                 print(f"Warning: Could not load background image {bg_image_path}: {e}")
+        
+        # Load optional center image (for subsections/sub-subsections)
+        center_image_path = cover_config.get("image")
+        # Resolve path relative to script directory if needed
+        if center_image_path:
+            if not os.path.isabs(center_image_path):
+                # Try relative to current working directory first
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                possible_paths = [
+                    center_image_path,  # Try as-is first
+                    os.path.join(script_dir, center_image_path),  # Relative to script
+                    os.path.join(os.getcwd(), center_image_path)  # Relative to cwd
+                ]
+                center_image_path = None
+                for path in possible_paths:
+                    if os.path.exists(path):
+                        center_image_path = path
+                        break
+        
+        if center_image_path and os.path.exists(center_image_path):
+            try:
+                # Calculate content area (within tab boundaries)
+                # Right tabs: tab_width = 35pt, tab_x = page_width - 35 - 5 = page_width - 40
+                # Content area ends at: tab_x - 15 = page_width - 55
+                # Left margin: 30pt (as requested)
+                # Top margin: ~80pt to leave space for upper tabs (tabs start at y=20, height=18, spacing, plus buffer)
+                # Bottom margin: 30pt
+                
+                tab_width = 35.0
+                tab_x = page_width - tab_width - 5
+                content_right = tab_x - 15  # End of content area (before tabs)
+                content_left = 52.0  # 52px left margin (30px original + 22px shift right)
+                content_top = 80.0  # Space for upper tabs
+                content_bottom = 30.0  # 30px bottom margin
+                
+                # Calculate available content area
+                content_width = content_right - content_left
+                content_height = page_height - content_top - content_bottom
+                
+                # Get image dimensions or use defaults
+                # If image_width/image_height not specified, try to get actual image size
+                img_width = cover_config.get("image_width")
+                img_height = cover_config.get("image_height")
+                
+                if img_width is None or img_height is None:
+                    # Try to get actual image dimensions
+                    try:
+                        from PIL import Image
+                        img = Image.open(center_image_path)
+                        img_width_actual, img_height_actual = img.size
+                        # Scale to fit content area while maintaining aspect ratio
+                        scale = min(content_width / img_width_actual, content_height / img_height_actual)
+                        img_width = img_width_actual * scale
+                        img_height = img_height_actual * scale
+                    except:
+                        # Fallback to content area size
+                        img_width = img_width or content_width
+                        img_height = img_height or content_height
+                
+                # Center the image within content area
+                content_center_x = content_left + content_width / 2
+                content_center_y = content_top + content_height / 2
+                
+                img_rect = fitz.Rect(
+                    content_center_x - img_width / 2,
+                    content_center_y - img_height / 2,
+                    content_center_x + img_width / 2,
+                    content_center_y + img_height / 2
+                )
+                page.insert_image(img_rect, filename=center_image_path, keep_proportion=True)
+                print(f"  ✓ Successfully inserted center image: {center_image_path} (size: {img_width}x{img_height}, area: {content_width}x{content_height})")
+            except Exception as e:
+                print(f"  ✗ Warning: Could not load center image {center_image_path}: {e}")
+                import traceback
+                traceback.print_exc()
         
         # Get text configuration
         title = cover_config.get("title", "")
@@ -1033,31 +1211,69 @@ class LayoutGenerator:
         center_x = page_width / 2
         center_y = page_height / 2
         
-        # Draw title (centered, bold, large)
+        # Draw title (centered, bold, large) - using Lilith font
         if title:
             title_y = center_y + title_y_offset
-            try:
-                # Try bold font first
-                page.insert_text(
-                    (center_x, title_y),
-                    title,
-                    fontsize=title_size,
-                    fontname='helv-Bold',
-                    color=(0.0, 0.0, 0.0),
-                    align=1  # Center alignment
-                )
-            except:
-                # Fallback to regular font
+            # Get Lilith font path
+            lilith_font_path = self._get_lilith_font_path()
+            
+            if lilith_font_path:
+                try:
+                    # Use Lilith font with fontfile parameter
+                    page.insert_text(
+                        (center_x, title_y),
+                        title,
+                        fontsize=title_size,
+                        fontfile=lilith_font_path,
+                        color=(0.0, 0.0, 0.0),
+                        align=1  # Center alignment
+                    )
+                except Exception as e:
+                    print(f"Warning: Could not use Lilith font, falling back to helv-Bold: {e}")
+                    try:
+                        # Fallback to bold font
+                        page.insert_text(
+                            (center_x, title_y),
+                            title,
+                            fontsize=title_size,
+                            fontname='helv-Bold',
+                            color=(0.0, 0.0, 0.0),
+                            align=1
+                        )
+                    except:
+                        # Fallback to regular font
+                        try:
+                            page.insert_text(
+                                (center_x, title_y),
+                                title,
+                                fontsize=title_size,
+                                color=(0.0, 0.0, 0.0),
+                                align=1
+                            )
+                        except:
+                            pass
+            else:
+                # Fallback to helv-Bold if Lilith not available
                 try:
                     page.insert_text(
                         (center_x, title_y),
                         title,
                         fontsize=title_size,
+                        fontname='helv-Bold',
                         color=(0.0, 0.0, 0.0),
                         align=1
                     )
                 except:
-                    pass
+                    try:
+                        page.insert_text(
+                            (center_x, title_y),
+                            title,
+                            fontsize=title_size,
+                            color=(0.0, 0.0, 0.0),
+                            align=1
+                        )
+                    except:
+                        pass
         
         # Draw subtitle (centered, medium size)
         if subtitle:
@@ -1148,6 +1364,33 @@ class LayoutGenerator:
             default_font = cover_pages_config.get("default_font", {})
             text_position = cover_pages_config.get("text_position", {})
             
+            # Get list of background images for random selection
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            background_dir = os.path.join(script_dir, "assets", "images", "background")
+            if not os.path.exists(background_dir):
+                background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+            
+            background_images = []
+            if os.path.exists(background_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    background_images.extend(glob.glob(os.path.join(background_dir, ext)))
+                background_images.sort()
+            
+            # Helper function to get random background or fallback
+            def get_random_background():
+                if background_images:
+                    return random.choice(background_images)
+                # Fallback to basic.png or default_bg
+                if default_bg and "basic.png" not in default_bg:
+                    return default_bg
+                return "images/basic.png"
+            
+            # Helper function to process background_image: if basic.png, use random background
+            def process_background_image(bg_path):
+                if bg_path and ("basic.png" in bg_path or bg_path == "images/basic.png"):
+                    return get_random_background()
+                return bg_path
+            
             # Find first page of each tab and add cover page
             for tab in tabs:
                 tab_name = tab.get("name")
@@ -1157,7 +1400,9 @@ class LayoutGenerator:
                     cover_config = cover_pages[tab_name].copy()
                     # Merge with defaults
                     if default_bg and "background_image" not in cover_config:
-                        cover_config["background_image"] = default_bg
+                        cover_config["background_image"] = process_background_image(default_bg)
+                    elif "background_image" in cover_config:
+                        cover_config["background_image"] = process_background_image(cover_config["background_image"])
                     if default_font:
                         cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
                     if text_position:
@@ -1165,9 +1410,195 @@ class LayoutGenerator:
                     
                     cover_page = doc[target_page_num]
                     self.add_cover_page(cover_page, cover_config, self.page_width, self.page_height)
+            
+            # Add cover pages for subsections
+            subsections_config = cover_pages.get("subsections", {})
+            if subsections_config and page_structure:
+                print("Adding subsection cover pages...")
+                for tab_name, subsections in subsections_config.items():
+                    # Find pages for each subsection
+                    for subsection_name, subsection_config in subsections.items():
+                        # Check if subsection_config has page_1, page_2, etc. structure
+                        if isinstance(subsection_config, dict) and any(key.startswith("page_") for key in subsection_config.keys()):
+                            # New structure: page_1, page_2, etc.
+                            for pg_num, pg_info in page_structure.items():
+                                if (pg_info.get("tab_name") == tab_name and 
+                                    pg_info.get("subsection") == subsection_name and
+                                    not pg_info.get("sub_subsection")):
+                                    page_index = pg_info.get("page_index", 1)
+                                    page_key = f"page_{page_index}"
+                                    
+                                    if page_key in subsection_config:
+                                        page_num = int(pg_num) - 1  # Convert to 0-based
+                                        if 0 <= page_num < total_pages:
+                                            cover_config = subsection_config[page_key].copy()
+                                            # Merge with defaults
+                                            if default_bg and "background_image" not in cover_config:
+                                                cover_config["background_image"] = process_background_image(default_bg)
+                                            elif "background_image" in cover_config:
+                                                cover_config["background_image"] = process_background_image(cover_config["background_image"])
+                                            if default_font:
+                                                cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
+                                            if text_position:
+                                                cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                                            
+                                            subsection_page = doc[page_num]
+                                            print(f"  Adding cover for {tab_name} -> {subsection_name} (page {page_index}) on page {page_num + 1}")
+                                            self.add_cover_page(subsection_page, cover_config, self.page_width, self.page_height)
+                        else:
+                            # Old structure: single config for first page
+                            for pg_num, pg_info in page_structure.items():
+                                if (pg_info.get("tab_name") == tab_name and 
+                                    pg_info.get("subsection") == subsection_name and
+                                    not pg_info.get("sub_subsection") and
+                                    pg_info.get("page_index", 1) == 1):
+                                    # This is the first page of this subsection
+                                    page_num = int(pg_num) - 1  # Convert to 0-based
+                                    if 0 <= page_num < total_pages:
+                                        cover_config = subsection_config.copy()
+                                        # Merge with defaults
+                                        if default_bg and "background_image" not in cover_config:
+                                            cover_config["background_image"] = process_background_image(default_bg)
+                                        elif "background_image" in cover_config:
+                                            cover_config["background_image"] = process_background_image(cover_config["background_image"])
+                                        if default_font:
+                                            cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
+                                        if text_position:
+                                            cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                                        
+                                        subsection_page = doc[page_num]
+                                        print(f"  Adding cover for {tab_name} -> {subsection_name} on page {page_num + 1}")
+                                        self.add_cover_page(subsection_page, cover_config, self.page_width, self.page_height)
+                                    break
+            
+            # Add cover pages for sub-subsections
+            sub_subsections_config = cover_pages.get("sub_subsections", {})
+            if sub_subsections_config and page_structure:
+                print("Adding sub-subsection cover pages...")
+                for tab_name, subsections in sub_subsections_config.items():
+                    for subsection_name, sub_subsections in subsections.items():
+                        for sub_subsection_name, sub_subsection_config in sub_subsections.items():
+                            # Skip _page_2, _page_3, etc. for Kalender - handled directly in subsection logic
+                            if sub_subsection_name.startswith("_page_"):
+                                continue
+                            else:
+                                # Normal sub-subsection handling
+                                # Search page_structure for this sub-subsection
+                                found = False
+                                for pg_num, pg_info in page_structure.items():
+                                    if (pg_info.get("tab_name") == tab_name and 
+                                        pg_info.get("subsection") == subsection_name and
+                                        pg_info.get("sub_subsection") == sub_subsection_name):
+                                        # This is the first page of this sub-subsection
+                                        page_num = int(pg_num) - 1  # Convert to 0-based
+                                        if 0 <= page_num < total_pages:
+                                            cover_config = sub_subsection_config.copy()
+                                            # Merge with defaults
+                                            if default_bg and "background_image" not in cover_config:
+                                                cover_config["background_image"] = process_background_image(default_bg)
+                                            elif "background_image" in cover_config:
+                                                cover_config["background_image"] = process_background_image(cover_config["background_image"])
+                                            if default_font:
+                                                cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
+                                            if text_position:
+                                                cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                                            
+                                            sub_subsection_page = doc[page_num]
+                                            print(f"  Adding cover for {tab_name} -> {subsection_name} -> {sub_subsection_name} on page {page_num + 1}")
+                                            self.add_cover_page(sub_subsection_page, cover_config, self.page_width, self.page_height)
+                                            found = True
+                                        break
+                                if not found:
+                                    print(f"  Warning: Could not find page for {tab_name} -> {subsection_name} -> {sub_subsection_name}")
+            
+            # Track which pages have cover pages
+            pages_with_covers = set()
+            if cover_pages_config:
+                cover_pages = cover_pages_config.get("cover_pages", {})
+                
+                # Track tab cover pages
+                for tab in tabs:
+                    tab_name = tab.get("name")
+                    target_page_num = tab.get("target_page", 1) - 1
+                    if tab_name in cover_pages and 0 <= target_page_num < total_pages:
+                        pages_with_covers.add(target_page_num)
+                
+                # Track subsection cover pages
+                subsections_config = cover_pages.get("subsections", {})
+                if subsections_config and page_structure:
+                    for tab_name, subsections in subsections_config.items():
+                        for subsection_name, subsection_config in subsections.items():
+                            # Track all pages for this subsection (including page_1, page_2, etc.)
+                            for pg_num, pg_info in page_structure.items():
+                                if (pg_info.get("tab_name") == tab_name and 
+                                    pg_info.get("subsection") == subsection_name and
+                                    not pg_info.get("sub_subsection")):
+                                    page_num = int(pg_num) - 1
+                                    if 0 <= page_num < total_pages:
+                                        pages_with_covers.add(page_num)
+                
+                # Track sub-subsection cover pages
+                sub_subsections_config = cover_pages.get("sub_subsections", {})
+                if sub_subsections_config and page_structure:
+                    for tab_name, subsections in sub_subsections_config.items():
+                        for subsection_name, sub_subsections in subsections.items():
+                            for sub_subsection_name, sub_subsection_config in sub_subsections.items():
+                                for pg_num, pg_info in page_structure.items():
+                                    if (pg_info.get("tab_name") == tab_name and 
+                                        pg_info.get("subsection") == subsection_name and
+                                        pg_info.get("sub_subsection") == sub_subsection_name):
+                                        page_num = int(pg_num) - 1
+                                        if 0 <= page_num < total_pages:
+                                            pages_with_covers.add(page_num)
+                                        break
+            
+            # Add random background from assets/images/background/ to all pages without cover pages
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            background_dir = os.path.join(script_dir, "assets", "images", "background")
+            if not os.path.exists(background_dir):
+                background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+            
+            # Find all background images
+            background_images = []
+            if os.path.exists(background_dir):
+                # Look for PNG files in background directory
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    background_images.extend(glob.glob(os.path.join(background_dir, ext)))
+                background_images.sort()  # Sort for consistent ordering
+            
+            # Fallback to basic.png if no background images found
+            if not background_images:
+                basic_bg_path = "images/basic.png"
+                possible_paths = [
+                    basic_bg_path,
+                    os.path.join(script_dir, basic_bg_path),
+                    os.path.join(os.getcwd(), basic_bg_path)
+                ]
+                for path in possible_paths:
+                    if os.path.exists(path):
+                        background_images = [path]
+                        break
+            
+            if background_images:
+                print(f"Adding random backgrounds from {len(background_images)} images to pages without cover pages...")
+                pages_with_bg = 0
+                for page_num in range(total_pages):
+                    if page_num not in pages_with_covers:
+                        try:
+                            # Randomly select a background image for this page
+                            bg_image_path = random.choice(background_images)
+                            page = doc[page_num]
+                            img_rect = fitz.Rect(0, 0, self.page_width, self.page_height)
+                            page.insert_image(img_rect, filename=bg_image_path, keep_proportion=False)
+                            pages_with_bg += 1
+                        except Exception as e:
+                            print(f"  Warning: Could not add background to page {page_num + 1}: {e}")
+                print(f"  ✓ Added random backgrounds to {pages_with_bg} pages")
+            else:
+                print("Warning: No background images found in assets/images/background/, skipping background addition")
         
-        print("Drawing blood splatters in background...")
-        # Draw blood splatters on all pages (BEFORE tabs are drawn)
+        # Draw blood splatters on all pages
+        print("Drawing blood splatters...")
         for page_num in range(total_pages):
             target_page = doc[page_num]
             self.draw_blood_splatters(target_page)

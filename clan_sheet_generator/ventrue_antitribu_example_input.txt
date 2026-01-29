@@ -1,0 +1,108 @@
+VENTRUE_ANTITRIBU INFOBOX
+
+Spitzname:
+Clan der Herrscher / Antitribu
+
+Status:
+Clan
+
+Abstammung:
+Ventrue
+
+Zugehörigkeit:
+Sabbat
+
+Disziplinen:
+Dominate · Fortitude · Presence
+
+Clan-Schwäche:
+Strenge Einschränkung der möglichen Blutquellen
+
+VENTRUE_ANTITRIBU KURZÜBERBLICK
+
+Herrschaft frisst Menschlichkeit.
+
+Ventrue Antitribu sind gezwungen,
+besonders eingeschränktes Blut zu trinken
+(oft nur bestimmte Gruppen, Zustände oder Rituale).
+
+Sie herrschen nicht, um zu bewahren.
+Sie herrschen, um zu beweisen,
+dass sie es können.
+
+VENTRUE_ANTITRIBU SPEZIFISCHE SCHWÄCHE
+
+Herrschaft frisst Menschlichkeit.
+
+Ventrue Antitribu sind gezwungen, besonders eingeschränktes Blut zu trinken
+(oft nur bestimmte Gruppen, Zustände oder Rituale).
+
+Regeltechnisch (klassisch):
+Strenge Einschränkung der möglichen Blutquellen
+Verlust von Kontrolle bei Hunger oder Misserfolg
+
+In der Praxis:
+Zwanghafte Jagdmuster
+Gefährliche Abhängigkeit von bestimmten Opfern
+Hunger führt schnell zu Brutalität oder Fehlentscheidungen
+
+👉 Macht macht wählerisch – und verwundbar.
+
+VENTRUE_ANTITRIBU CLANHALTUNG & ROLLE
+
+Dominant, fanatisch, hierarchisch
+
+Herrschaft durch Stärke, nicht durch Etikette
+Befehl ersetzt Diplomatie
+
+Verachten Camarilla-Traditionen
+Glauben an natürliche Überlegenheit
+
+Häufig:
+Kriegsherren, Diktatoren, Inquisitoren
+Führer von Rudeln und Kreuzzügen
+
+Zwischen Kontrolle und Grausamkeit
+
+VENTRUE_ANTITRIBU BEZIEHUNGEN
+
+Brujah Antitribu: Rivalität um Führung
+Lasombra: Respekt und Machtkämpfe
+Camarilla: Verachtete Schwäche
+Anarchen: Nutzlose Idealisten
+
+VENTRUE_ANTITRIBU DISZIPLINEN
+Dominate (Gedankenkontrolle)
+
+Herrschaft ohne Maske.
+
+Typisch:
+Befehle erzwingen
+Willen brechen
+Unterordnung sichern
+
+Fortitude (Zähigkeit)
+
+Überleben durch Überlegenheit.
+
+Typisch:
+Hohe Widerstandskraft
+Durchhalten im offenen Krieg
+Ignorieren von Schmerz
+
+Presence (Präsenz)
+
+Furcht statt Bewunderung.
+
+Typisch:
+Unterwerfung erzeugen
+Einschüchtern
+Gefolgschaft erzwingen
+
+VENTRUE_ANTITRIBU INTERNE SPANNUNGEN
+
+Dogmatische Herrscher: Ordnung durch Terror
+Pragmatische Anführer: Kontrolle durch Effizienz
+
+Dauernder Konflikt zwischen Disziplin und Blutdurst
+ENDE

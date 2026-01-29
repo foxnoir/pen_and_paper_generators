@@ -76,6 +76,7 @@
                 },
                 {
                     "name": "Kalender",
+                    "page_count": 2,
                     "seconnd_subsections_left_tabs": [
                         "Zeitstrahl",
                         "Wichtige Ereignisse",
@@ -228,7 +229,6 @@
                         "Giovanni",
                         "Jünger des Set",
                         "Ravnos",
-                        "Samedi",
                         "Salubri",
                         "Wahre Brujah",
                         "Sonstige"
@@ -240,7 +240,6 @@
                         "Ahrimanes",
                         "Baali",
                         "Gargoyles",
-                        "Kappadozianer",
                         "Kiasyd",
                         "Lamia",
                         "Nagaraja",

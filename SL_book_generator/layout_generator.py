@@ -39,39 +39,59 @@ class LayoutGenerator:
             "shadow": (200 / 255, 190 / 255, 175 / 255)  # Slightly darker shadow
         }
     
-    def _compress_image(self, image_path: str) -> str:
+    def _compress_image(self, image_path: str, preserve_transparency: bool = False) -> str:
         """
         Compress image to reduce file size.
+        If preserve_transparency is True, keeps PNG format with transparency.
+        Otherwise converts to JPEG for smaller file size.
         Returns path to compressed image (temporary file or original if compression fails).
         """
         try:
             # Open image
             img = Image.open(image_path)
+            original_mode = img.mode
+            has_transparency = img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info)
             
-            # Convert RGBA to RGB if necessary (for JPEG)
-            if img.mode in ('RGBA', 'LA', 'P'):
-                # Create white background
-                background = Image.new('RGB', img.size, (255, 255, 255))
-                if img.mode == 'P':
-                    img = img.convert('RGBA')
-                background.paste(img, mask=img.split()[-1] if img.mode == 'RGBA' else None)
-                img = background
-            elif img.mode != 'RGB':
-                img = img.convert('RGB')
-            
-            # Resize if image is very large (reduce to max 2000px on longest side)
-            max_dimension = 2000
-            if max(img.size) > max_dimension:
-                ratio = max_dimension / max(img.size)
-                new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
-                img = img.resize(new_size, Image.Resampling.LANCZOS)
-            
-            # Save as compressed JPEG to temporary file
-            temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.jpg')
-            img.save(temp_file.name, 'JPEG', quality=self.image_quality, optimize=True)
-            temp_file.close()
-            
-            return temp_file.name
+            # If we need to preserve transparency, keep PNG format
+            if preserve_transparency or has_transparency:
+                # Resize if image is very large (reduce to max 2000px on longest side)
+                max_dimension = 2000
+                if max(img.size) > max_dimension:
+                    ratio = max_dimension / max(img.size)
+                    new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
+                    img = img.resize(new_size, Image.Resampling.LANCZOS)
+                
+                # Save as compressed PNG to temporary file (preserves transparency)
+                temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.png')
+                img.save(temp_file.name, 'PNG', optimize=True, compress_level=6)
+                temp_file.close()
+                
+                return temp_file.name
+            else:
+                # Convert RGBA to RGB if necessary (for JPEG)
+                if img.mode in ('RGBA', 'LA', 'P'):
+                    # Create white background
+                    background = Image.new('RGB', img.size, (255, 255, 255))
+                    if img.mode == 'P':
+                        img = img.convert('RGBA')
+                    background.paste(img, mask=img.split()[-1] if img.mode == 'RGBA' else None)
+                    img = background
+                elif img.mode != 'RGB':
+                    img = img.convert('RGB')
+                
+                # Resize if image is very large (reduce to max 2000px on longest side)
+                max_dimension = 2000
+                if max(img.size) > max_dimension:
+                    ratio = max_dimension / max(img.size)
+                    new_size = (int(img.size[0] * ratio), int(img.size[1] * ratio))
+                    img = img.resize(new_size, Image.Resampling.LANCZOS)
+                
+                # Save as compressed JPEG to temporary file
+                temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.jpg')
+                img.save(temp_file.name, 'JPEG', quality=self.image_quality, optimize=True)
+                temp_file.close()
+                
+                return temp_file.name
         except Exception as e:
             print(f"  Warning: Could not compress image {image_path}: {e}")
             # Return original path if compression fails
@@ -558,7 +578,14 @@ class LayoutGenerator:
                             subsection_target_pages[pg_subsection] = pg_num
                 elif pg_subsection and pg_sub_subsection:
                     # This is a sub-subsection page
-                    sub_subsection_target_pages[(pg_subsection, pg_sub_subsection)] = pg_num
+                    # Only use the first page (page_index=1) as target, even if there are multiple pages
+                    key = (pg_subsection, pg_sub_subsection)
+                    if key not in sub_subsection_target_pages or pg_page_index == 1:
+                        if pg_page_index == 1:
+                            sub_subsection_target_pages[key] = pg_num
+                        elif key not in sub_subsection_target_pages:
+                            # Fallback: use first found page if page_index is not set
+                            sub_subsection_target_pages[key] = pg_num
         
         for subsection in subsections:
             subsection_name_curr = subsection.get("name", "")
@@ -1098,8 +1125,8 @@ class LayoutGenerator:
                         page.draw_rect(white_rect, color=(1, 1, 1), width=0, fill=(1, 1, 1))
                         
                         # Insert image as full page - use keep_proportion=False to fill entire page without white borders
-                        # Compress image before insertion to reduce file size
-                        compressed_path = self._compress_image(image_path)
+                        # Compress image before insertion to reduce file size (preserve transparency for full-page images)
+                        compressed_path = self._compress_image(image_path, preserve_transparency=True)
                         img_rect = fitz.Rect(0, 0, page_width, page_height)
                         page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
                         # Clean up temporary file if it was created
@@ -1143,6 +1170,31 @@ class LayoutGenerator:
                 bg_image_path = random.choice(background_images)
             else:
                 # Fallback to basic.png if no other backgrounds found
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
+        # Handle "random_npc_vampire" background_image - use random background from assets/images/NPCs/vampire/
+        if bg_image_path == "random_npc_vampire":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            npc_vampire_dir = os.path.join(script_dir, "assets", "images", "NPCs", "vampire")
+            if not os.path.exists(npc_vampire_dir):
+                npc_vampire_dir = os.path.join(os.getcwd(), "assets", "images", "NPCs", "vampire")
+            
+            # Find all NPC vampire images
+            npc_vampire_images = []
+            if os.path.exists(npc_vampire_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(npc_vampire_dir, ext))
+                    npc_vampire_images.extend(all_images)
+                npc_vampire_images.sort()
+            
+            if npc_vampire_images:
+                bg_image_path = random.choice(npc_vampire_images)
+            else:
+                # Fallback to random background if no NPC vampire images found
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
         
         # If basic.png is specified, use random background from assets/images/background/ instead
@@ -1230,6 +1282,8 @@ class LayoutGenerator:
                     if os.path.exists(path):
                         center_image_path = path
                         break
+                if not center_image_path:
+                    print(f"  ✗ Warning: Center image not found. Tried paths: {possible_paths}")
         
         if center_image_path and os.path.exists(center_image_path):
             try:
@@ -1281,8 +1335,8 @@ class LayoutGenerator:
                     content_center_x + img_width / 2,
                     content_center_y + img_height / 2
                 )
-                # Compress image before insertion to reduce file size
-                compressed_path = self._compress_image(center_image_path)
+                # Compress image before insertion to reduce file size (preserve transparency for transparent sheets)
+                compressed_path = self._compress_image(center_image_path, preserve_transparency=True)
                 page.insert_image(img_rect, filename=compressed_path, keep_proportion=True)
                 # Clean up temporary file if it was created
                 if compressed_path != center_image_path and os.path.exists(compressed_path):
@@ -1623,14 +1677,52 @@ class LayoutGenerator:
                             # Skip _page_2, _page_3, etc. for Kalender - handled directly in subsection logic
                             if sub_subsection_name.startswith("_page_"):
                                 continue
+                            
+                            # Check if sub_subsection_config has page_1, page_2, etc. structure
+                            if isinstance(sub_subsection_config, dict) and any(key.startswith("page_") for key in sub_subsection_config.keys()):
+                                # New structure: page_1, page_2, etc.
+                                # Iterate through all pages for this sub-subsection
+                                for pg_num, pg_info in page_structure.items():
+                                    if (pg_info.get("tab_name") == tab_name and 
+                                        pg_info.get("subsection") == subsection_name and
+                                        pg_info.get("sub_subsection") == sub_subsection_name):
+                                        page_index = pg_info.get("page_index", 1)
+                                        page_key = f"page_{page_index}"
+                                        
+                                        if page_key in sub_subsection_config:
+                                            page_config = sub_subsection_config[page_key]
+                                            page_num = int(pg_num) - 1  # Convert to 0-based
+                                            if 0 <= page_num < total_pages:
+                                                cover_config = page_config.copy()
+                                                # Merge with defaults
+                                                # Clan sheets (sub-subsections) should always use basic.png, not random
+                                                is_clan_sheet = cover_config.get("image") is not None
+                                                if is_clan_sheet:
+                                                    print(f"  Debug: Found image for {sub_subsection_name} (page {page_index}): {cover_config.get('image')}")
+                                                # Ensure image field is preserved
+                                                if "image" in page_config:
+                                                    cover_config["image"] = page_config["image"]
+                                                if default_bg and "background_image" not in cover_config:
+                                                    cover_config["background_image"] = process_background_image(default_bg, is_clan_sheet=is_clan_sheet)
+                                                elif "background_image" in cover_config:
+                                                    cover_config["background_image"] = process_background_image(cover_config["background_image"], is_clan_sheet=is_clan_sheet)
+                                                if default_font:
+                                                    cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
+                                                if text_position:
+                                                    cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                                                
+                                                sub_subsection_page = doc[page_num]
+                                                print(f"  Adding cover for {tab_name} -> {subsection_name} -> {sub_subsection_name} (page {page_index}) on page {page_num + 1}")
+                                                self.add_cover_page(sub_subsection_page, cover_config, self.page_width, self.page_height)
                             else:
-                                # Normal sub-subsection handling
+                                # Normal sub-subsection handling (single page, no page_1/page_2 structure)
                                 # Search page_structure for this sub-subsection
                                 found = False
                                 for pg_num, pg_info in page_structure.items():
                                     if (pg_info.get("tab_name") == tab_name and 
                                         pg_info.get("subsection") == subsection_name and
-                                        pg_info.get("sub_subsection") == sub_subsection_name):
+                                        pg_info.get("sub_subsection") == sub_subsection_name and
+                                        pg_info.get("page_index", 1) == 1):  # Only process page_index 1 for old structure
                                         # This is the first page of this sub-subsection
                                         page_num = int(pg_num) - 1  # Convert to 0-based
                                         if 0 <= page_num < total_pages:
@@ -1687,14 +1779,27 @@ class LayoutGenerator:
                     for tab_name, subsections in sub_subsections_config.items():
                         for subsection_name, sub_subsections in subsections.items():
                             for sub_subsection_name, sub_subsection_config in sub_subsections.items():
-                                for pg_num, pg_info in page_structure.items():
-                                    if (pg_info.get("tab_name") == tab_name and 
-                                        pg_info.get("subsection") == subsection_name and
-                                        pg_info.get("sub_subsection") == sub_subsection_name):
-                                        page_num = int(pg_num) - 1
-                                        if 0 <= page_num < total_pages:
-                                            pages_with_covers.add(page_num)
-                                        break
+                                # Check if sub_subsection_config has page_1, page_2, etc. structure
+                                if isinstance(sub_subsection_config, dict) and any(key.startswith("page_") for key in sub_subsection_config.keys()):
+                                    # Track all pages for this sub-subsection (including page_1, page_2, etc.)
+                                    for pg_num, pg_info in page_structure.items():
+                                        if (pg_info.get("tab_name") == tab_name and 
+                                            pg_info.get("subsection") == subsection_name and
+                                            pg_info.get("sub_subsection") == sub_subsection_name):
+                                            page_num = int(pg_num) - 1
+                                            if 0 <= page_num < total_pages:
+                                                pages_with_covers.add(page_num)
+                                else:
+                                    # Old structure: single page
+                                    for pg_num, pg_info in page_structure.items():
+                                        if (pg_info.get("tab_name") == tab_name and 
+                                            pg_info.get("subsection") == subsection_name and
+                                            pg_info.get("sub_subsection") == sub_subsection_name and
+                                            pg_info.get("page_index", 1) == 1):
+                                            page_num = int(pg_num) - 1
+                                            if 0 <= page_num < total_pages:
+                                                pages_with_covers.add(page_num)
+                                            break
             
             # Add random background from assets/images/background/ to all pages without cover pages
             # Special handling: "Regeln" section uses assets/images/background/rules/

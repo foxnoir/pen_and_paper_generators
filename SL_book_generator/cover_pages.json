@@ -81,6 +81,11 @@
                 "background_image": "random"
             }
         },
+        "Regeln": {
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Regeln",
+            "subtitle": "Kompakte Übersicht der Regeln"
+        },
         "subsections": {
             "Domäne": {
                 "Stadt": {
@@ -601,150 +606,640 @@
             "NPCs": {
                 "Camarilla": {
                     "Brujah": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/camarilla/brujah_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/camarilla/brujah_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Gangrel": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/camarilla/gangrel_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/camarilla/gangrel_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Malkavian": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/camarilla/malkavianer_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/camarilla/malkavianer_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Nosferatu": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/camarilla/nosferatu_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/camarilla/nosferatu_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Toreador": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/camarilla/toreador_clan_sheet-1.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/camarilla/toreador_clan_sheet-1.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Tremere": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/camarilla/tremere_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/camarilla/tremere_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Ventrue": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/camarilla/ventrue_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/camarilla/ventrue_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     }
                 },
                 "Sabbat": {
                     "Assamiten": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/assamiten_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/assamiten_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Brujah": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/brujah_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/brujah_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Gangrel": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/gangrel_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/gangrel_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Lasombra": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/lasombra_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/lasombra_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Malkavian": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/malkavianer_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/malkavianer_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Nosferatu": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/nosferatu_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/nosferatu_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Salubri": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/salubri_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/salubri_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Toreador": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/toreador_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/toreador_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Tremere": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/tremere_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/tremere_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Tzimisce": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/tzimisce_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/tzimisce_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Ventrue": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/sabbat/ventrue_antitribu_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/sabbat/ventrue_antitribu_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     }
                 },
                 "Anarchen": {
                     "Assamiten": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/assamiten_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/assamiten_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Brujah": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/brujah_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/brujah_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Gangrel": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/gangrel_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/gangrel_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Lasombra": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/lasombra_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/lasombra_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Malkavian": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/malkavianer_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/malkavianer_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Nosferatu": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/nosferatu_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/nosferatu_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Jünger des Set": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/setiten_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/setiten_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Toreador": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/toreador_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/toreador_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Tremere": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/tremere_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/tremere_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Tzimisce": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/anarchen/tzimisce_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/anarchen/tzimisce_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     }
                 },
                 "Unabhängige": {
                     "Assamiten": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/unabhänige/assamiten_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/unabhänige/assamiten_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Gangrel": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/unabhänige/gangrel_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/unabhänige/gangrel_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Giovanni": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/unabhänige/giovanni_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/unabhänige/giovanni_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Jünger des Set": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/unabhänige/setiten_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/unabhänige/setiten_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Ravnos": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/unabhänige/ravnos_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/unabhänige/ravnos_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Salubri": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/unabhänige/salubri_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/unabhänige/salubri_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     },
                     "Wahre Brujah": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/unabhänige/wahre_brujah_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/unabhänige/wahre_brujah_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        }
                     }
                 },
                 "Blutlinien": {

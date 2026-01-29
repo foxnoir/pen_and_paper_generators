@@ -150,12 +150,29 @@ class DynamicPDFGenerator:
                 
                 # Then pages for each sub-subsection
                 for sub_subsection in sub_subsections:
-                    page_structure[current_page] = {
-                        "tab_name": tab_name,
-                        "subsection": subsection_name,
-                        "sub_subsection": sub_subsection
-                    }
-                    current_page += 1
+                    # Check if this is a NPCs subsection (Camarilla, Sabbat, Anarchen, Unabhängige)
+                    # that should have multiple pages
+                    is_npc_subsection = (tab_name == "NPCs" and 
+                                        subsection_name in ["Camarilla", "Sabbat", "Anarchen", "Unabhängige"])
+                    
+                    if is_npc_subsection:
+                        # Generate 5 pages for each NPC sub-subsection
+                        for page_idx in range(1, 6):  # page_index 1-5
+                            page_structure[current_page] = {
+                                "tab_name": tab_name,
+                                "subsection": subsection_name,
+                                "sub_subsection": sub_subsection,
+                                "page_index": page_idx
+                            }
+                            current_page += 1
+                    else:
+                        # Regular sub-subsection (single page)
+                        page_structure[current_page] = {
+                            "tab_name": tab_name,
+                            "subsection": subsection_name,
+                            "sub_subsection": sub_subsection
+                        }
+                        current_page += 1
             
             # If no subsections, still need at least one page
             if not subsections:

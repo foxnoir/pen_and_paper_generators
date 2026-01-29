@@ -126,43 +126,93 @@ class DynamicPDFGenerator:
                 if not sub_subsections:
                     sub_subsections = subsection.get("sub_subsections", [])
                 
-                # First page for subsection itself
-                page_structure[current_page] = {
-                    "tab_name": tab_name,
-                    "subsection": subsection_name,
-                    "sub_subsection": None,
-                    "page_index": 1
-                }
-                current_page += 1
+                # Check if this is Ghule or Menschen subsection (should have pages, even without sub-subsections)
+                is_ghule_subsection = (tab_name == "NPCs" and subsection_name == "Ghule")
+                is_menschen_subsection = (tab_name == "NPCs" and subsection_name == "Menschen")
                 
-                # Check if subsection has page_count > 1 (for multiple pages like Kalender)
-                page_count = subsection.get("page_count", 1)
-                if page_count > 1:
-                    # Add additional pages for this subsection
-                    for page_idx in range(2, page_count + 1):
+                if is_ghule_subsection:
+                    # Generate 9 pages for Ghule subsection:
+                    # page_1: ghule info sheet
+                    # page_2,4,6,8: ghule.png sheet (as image with basic.png background)
+                    # page_3,5,7,9: basic_npc (page_9 without upper tabs)
+                    for page_idx in range(1, 10):  # page_index 1-9
                         page_structure[current_page] = {
                             "tab_name": tab_name,
                             "subsection": subsection_name,
                             "sub_subsection": None,
-                            "page_index": page_idx
+                            "page_index": page_idx,
+                            "no_upper_tabs": (page_idx == 9)  # Last page has no upper tabs
                         }
                         current_page += 1
+                elif is_menschen_subsection:
+                    # Generate 5 pages for Menschen subsection (all basic_npc, last without upper tabs)
+                    for page_idx in range(1, 6):  # page_index 1-5
+                        page_structure[current_page] = {
+                            "tab_name": tab_name,
+                            "subsection": subsection_name,
+                            "sub_subsection": None,
+                            "page_index": page_idx,
+                            "no_upper_tabs": (page_idx == 5)  # Last page has no upper tabs
+                        }
+                        current_page += 1
+                else:
+                    # First page for subsection itself
+                    page_structure[current_page] = {
+                        "tab_name": tab_name,
+                        "subsection": subsection_name,
+                        "sub_subsection": None,
+                        "page_index": 1
+                    }
+                    current_page += 1
+                    
+                    # Check if subsection has page_count > 1 (for multiple pages like Kalender)
+                    page_count = subsection.get("page_count", 1)
+                    if page_count > 1:
+                        # Add additional pages for this subsection
+                        for page_idx in range(2, page_count + 1):
+                            page_structure[current_page] = {
+                                "tab_name": tab_name,
+                                "subsection": subsection_name,
+                                "sub_subsection": None,
+                                "page_index": page_idx
+                            }
+                            current_page += 1
                 
                 # Then pages for each sub-subsection
                 for sub_subsection in sub_subsections:
-                    # Check if this is a NPCs subsection (Camarilla, Sabbat, Anarchen, Unabhängige)
+                    # Check if this is a NPCs subsection (Camarilla, Sabbat, Anarchen, Unabhängige, Blutlinien)
                     # that should have multiple pages
                     is_npc_subsection = (tab_name == "NPCs" and 
-                                        subsection_name in ["Camarilla", "Sabbat", "Anarchen", "Unabhängige"])
+                                        subsection_name in ["Camarilla", "Sabbat", "Anarchen", "Unabhängige", "Blutlinien"])
+                    
+                    # Check if this is Werwölfe subsection (should have 4 pages)
+                    is_werwoelfe_subsection = (tab_name == "NPCs" and subsection_name == "Werwölfe")
                     
                     if is_npc_subsection:
-                        # Generate 5 pages for each NPC sub-subsection
-                        for page_idx in range(1, 6):  # page_index 1-5
+                        # Generate 11 pages for each NPC sub-subsection:
+                        # page_1: clan sheet
+                        # page_2,4,6,8,10: random_npc_vampire
+                        # page_3,5,7,9,11: basic_npc (page_11 without upper tabs)
+                        for page_idx in range(1, 12):  # page_index 1-11
                             page_structure[current_page] = {
                                 "tab_name": tab_name,
                                 "subsection": subsection_name,
                                 "sub_subsection": sub_subsection,
-                                "page_index": page_idx
+                                "page_index": page_idx,
+                                "no_upper_tabs": (page_idx == 11)  # Last page has no upper tabs
+                            }
+                            current_page += 1
+                    elif is_werwoelfe_subsection:
+                        # Generate 10 pages for each Werwölfe sub-subsection:
+                        # page_1,3,5,7,9: garou.png sheet (as image with basic.png background)
+                        # page_2,4,6,8,10: basic_npc (page_10 without upper tabs)
+                        for page_idx in range(1, 11):  # page_index 1-10
+                            page_structure[current_page] = {
+                                "tab_name": tab_name,
+                                "subsection": subsection_name,
+                                "sub_subsection": sub_subsection,
+                                "page_index": page_idx,
+                                "no_upper_tabs": (page_idx == 10)  # Last page has no upper tabs
                             }
                             current_page += 1
                     else:

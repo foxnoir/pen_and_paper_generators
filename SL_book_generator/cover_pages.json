@@ -589,8 +589,61 @@
                     "full_page": true
                 },
                 "Ghule": {
-                    "image": "assets/images/infos/ghule.png",
-                    "full_page": true
+                    "page_1": {
+                        "image": "assets/images/infos/ghule.png",
+                        "full_page": true
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/NPCs/ghule.png"
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_4": {
+                        "background_image": "assets/images/NPCs/ghule.png"
+                    },
+                    "page_5": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_6": {
+                        "background_image": "assets/images/NPCs/ghule.png"
+                    },
+                    "page_7": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_8": {
+                        "background_image": "assets/images/NPCs/ghule.png"
+                    },
+                    "page_9": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    }
+                },
+                "Menschen": {
+                    "page_1": {
+                        "background_image": "assets/images/NPCs/human.png"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/NPCs/human.png"
+                    },
+                    "page_4": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_5": {
+                        "background_image": "assets/images/NPCs/human.png"
+                    },
+                    "page_6": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    }
                 },
                 "Anarchen": {
                     "image": "assets/images/infos/anarchen.png",
@@ -614,13 +667,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Gangrel": {
@@ -632,13 +708,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Malkavian": {
@@ -650,13 +749,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Nosferatu": {
@@ -668,13 +790,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Toreador": {
@@ -686,13 +831,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Tremere": {
@@ -704,13 +872,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Ventrue": {
@@ -722,13 +913,76 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     }
                 },
@@ -742,13 +996,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Brujah": {
@@ -760,13 +1037,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Gangrel": {
@@ -778,13 +1078,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Lasombra": {
@@ -796,13 +1119,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Malkavian": {
@@ -814,13 +1160,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Nosferatu": {
@@ -832,13 +1201,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Salubri": {
@@ -850,13 +1242,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Toreador": {
@@ -868,13 +1283,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Tremere": {
@@ -886,13 +1324,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Tzimisce": {
@@ -904,13 +1365,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Ventrue": {
@@ -922,13 +1406,76 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     }
                 },
@@ -942,13 +1489,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Brujah": {
@@ -960,13 +1530,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Gangrel": {
@@ -978,13 +1571,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Lasombra": {
@@ -996,13 +1612,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Malkavian": {
@@ -1014,13 +1653,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Nosferatu": {
@@ -1032,13 +1694,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Jünger des Set": {
@@ -1050,13 +1735,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Toreador": {
@@ -1068,13 +1776,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Tremere": {
@@ -1086,13 +1817,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Tzimisce": {
@@ -1104,13 +1858,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     }
                 },
@@ -1124,13 +1901,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Gangrel": {
@@ -1142,13 +1942,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Giovanni": {
@@ -1160,13 +1983,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Jünger des Set": {
@@ -1178,13 +2024,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Ravnos": {
@@ -1196,13 +2065,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Salubri": {
@@ -1214,13 +2106,36 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     },
                     "Wahre Brujah": {
@@ -1232,48 +2147,560 @@
                             "background_image": "random_npc_vampire"
                         },
                         "page_3": {
-                            "background_image": "random_npc_vampire"
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         },
                         "page_4": {
                             "background_image": "random_npc_vampire"
                         },
                         "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
                             "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
                         }
                     }
                 },
                 "Blutlinien": {
                     "Ahrimanes": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/blutlinien/ahrimanes_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/blutlinien/ahrimanes_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     },
                     "Baali": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/blutlinien/baali_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/blutlinien/baali_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     },
                     "Gargoyles": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/blutlinien/gargoyles_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/blutlinien/gargoyles_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     },
                     "Kiasyd": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/blutlinien/kissayid_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/blutlinien/kissayid_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     },
                     "Lamia": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/blutlinien/lamia_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/blutlinien/lamia_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     },
                     "Nagaraja": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/blutlinien/nagaraja_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/blutlinien/nagaraja_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     },
                     "Töchter der Kakophonie": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/blutlinien/toechter_kakophonie_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/blutlinien/toechter_kakophonie_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     },
                     "Samedi": {
-                        "background_image": "assets/images/basic.png",
-                        "image": "assets/images/sheets_transparent/blutlinien/samedi_clan_sheet.png"
+                        "page_1": {
+                            "background_image": "assets/images/basic.png",
+                            "image": "assets/images/sheets_transparent/blutlinien/samedi_clan_sheet.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_4": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_6": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_10": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_11": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
+                    }
+                },
+                "Werwölfe": {
+                    "Feindlicher Stamm": {
+                        "page_1": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_6": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_8": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_10": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
+                    },
+                    "Neutraler Stamm": {
+                        "page_1": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_6": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_8": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_10": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_6": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_8": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_10": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     }
                 }
             }

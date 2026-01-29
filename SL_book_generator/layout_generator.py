@@ -1629,10 +1629,25 @@ class LayoutGenerator:
                                         if 0 <= page_num < total_pages:
                                             cover_config = subsection_config[page_key].copy()
                                             # Merge with defaults
+                                            # Preserve no_upper_tabs flag if present, or set it if background is basic_npc.png
+                                            bg_image = cover_config.get("background_image", "")
+                                            if "no_upper_tabs" in subsection_config[page_key]:
+                                                cover_config["no_upper_tabs"] = subsection_config[page_key]["no_upper_tabs"]
+                                                pg_info["no_upper_tabs"] = subsection_config[page_key]["no_upper_tabs"]
+                                            elif "basic_npc.png" in bg_image:
+                                                cover_config["no_upper_tabs"] = True
+                                                pg_info["no_upper_tabs"] = True
                                             if default_bg and "background_image" not in cover_config:
                                                 cover_config["background_image"] = process_background_image(default_bg)
                                             elif "background_image" in cover_config:
                                                 cover_config["background_image"] = process_background_image(cover_config["background_image"])
+                                            
+                                            # Check if final background_image is basic_npc.png and set no_upper_tabs
+                                            final_bg = cover_config.get("background_image", "")
+                                            if "basic_npc.png" in final_bg:
+                                                cover_config["no_upper_tabs"] = True
+                                                pg_info["no_upper_tabs"] = True
+                                            
                                             if default_font:
                                                 cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
                                             if text_position:
@@ -1702,10 +1717,25 @@ class LayoutGenerator:
                                                 # Ensure image field is preserved
                                                 if "image" in page_config:
                                                     cover_config["image"] = page_config["image"]
+                                                # Preserve no_upper_tabs flag if present, or set it if background is basic_npc.png
+                                                bg_image = cover_config.get("background_image", "")
+                                                if "no_upper_tabs" in page_config:
+                                                    cover_config["no_upper_tabs"] = page_config["no_upper_tabs"]
+                                                    pg_info["no_upper_tabs"] = page_config["no_upper_tabs"]
+                                                elif "basic_npc.png" in bg_image:
+                                                    cover_config["no_upper_tabs"] = True
+                                                    pg_info["no_upper_tabs"] = True
                                                 if default_bg and "background_image" not in cover_config:
                                                     cover_config["background_image"] = process_background_image(default_bg, is_clan_sheet=is_clan_sheet)
                                                 elif "background_image" in cover_config:
                                                     cover_config["background_image"] = process_background_image(cover_config["background_image"], is_clan_sheet=is_clan_sheet)
+                                                
+                                                # Check if final background_image is basic_npc.png and set no_upper_tabs
+                                                final_bg = cover_config.get("background_image", "")
+                                                if "basic_npc.png" in final_bg:
+                                                    cover_config["no_upper_tabs"] = True
+                                                    pg_info["no_upper_tabs"] = True
+                                                
                                                 if default_font:
                                                     cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
                                                 if text_position:
@@ -1895,5 +1925,51 @@ class LayoutGenerator:
         if page_structure and tab_subsections and metadata:
             print("Drawing upper tabs (left top)...")
             for page_num in range(total_pages):
+                page_info = page_structure.get(page_num + 1)
+                # Skip upper tabs if page has no_upper_tabs flag
+                if page_info and page_info.get("no_upper_tabs"):
+                    continue
+                
+                # Check if this page uses basic_npc.png background (no upper tabs for these pages)
+                # We need to check the cover_pages config to see if this page uses basic_npc.png
+                if cover_pages_config:
+                    cover_pages = cover_pages_config.get("cover_pages", {})
+                    # Check subsections and sub_subsections for this page
+                    tab_name = page_info.get("tab_name") if page_info else None
+                    subsection_name = page_info.get("subsection") if page_info else None
+                    sub_subsection_name = page_info.get("sub_subsection") if page_info else None
+                    page_index = page_info.get("page_index", 1) if page_info else 1
+                    
+                    uses_basic_npc = False
+                    if tab_name == "NPCs" and subsection_name:
+                        # Check subsections
+                        subsections_config = cover_pages.get("subsections", {})
+                        if subsections_config and "NPCs" in subsections_config:
+                            subsection_config = subsections_config["NPCs"].get(subsection_name)
+                            if subsection_config:
+                                if isinstance(subsection_config, dict) and any(k.startswith("page_") for k in subsection_config.keys()):
+                                    page_key = f"page_{page_index}"
+                                    if page_key in subsection_config:
+                                        bg_image = subsection_config[page_key].get("background_image", "")
+                                        if "basic_npc.png" in bg_image:
+                                            uses_basic_npc = True
+                        
+                        # Check sub_subsections
+                        if not uses_basic_npc and sub_subsection_name:
+                            sub_subsections_config = cover_pages.get("sub_subsections", {})
+                            if sub_subsections_config and "NPCs" in sub_subsections_config:
+                                if subsection_name in sub_subsections_config["NPCs"]:
+                                    sub_subsection_config = sub_subsections_config["NPCs"][subsection_name].get(sub_subsection_name)
+                                    if sub_subsection_config:
+                                        if isinstance(sub_subsection_config, dict) and any(k.startswith("page_") for k in sub_subsection_config.keys()):
+                                            page_key = f"page_{page_index}"
+                                            if page_key in sub_subsection_config:
+                                                bg_image = sub_subsection_config[page_key].get("background_image", "")
+                                                if "basic_npc.png" in bg_image:
+                                                    uses_basic_npc = True
+                    
+                    if uses_basic_npc:
+                        continue
+                
                 target_page = doc[page_num]
                 self.add_upper_tabs_to_page(target_page, page_num + 1, page_structure, tab_subsections, metadata)

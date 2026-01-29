@@ -346,7 +346,7 @@ def crop_page_content(page: fitz.Page, page_width: float, page_height: float) ->
     - Left: ~5pt (to trim left margin)
     """
     top_margin = 100.0  # Increased to remove all top tabs (was 90pt)
-    bottom_margin = 50.0
+    bottom_margin = -150.0  # Reduced by 200px: was 50.0, now -150.0 (keeps more bottom content)
     right_margin = 60.0  # Right margin (was 65pt, reduced by 5pt)
     left_margin = 7.0  # Trim left margin (was 5pt)
     

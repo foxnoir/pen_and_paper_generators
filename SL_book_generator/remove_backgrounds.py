@@ -11,16 +11,16 @@ import argparse
 from pathlib import Path
 
 
-def remove_background_color_based(image_path, threshold=240, edge_threshold=10, preserve_watermark=True):
+def remove_background_color_based(image_path, threshold=200, edge_threshold=25, preserve_watermark=True):
     """
-    Removes background based on color similarity to corners.
-    Assumes corners represent the background color.
-    Preserves watermarks by detecting darker pixels that might be watermark content.
+    Removes background based on color similarity to edges.
+    Samples edge pixels to determine background color more accurately.
+    More aggressive background removal while preserving actual content.
     
     Args:
         image_path: Path to the image file
-        threshold: Brightness threshold for background removal (0-255)
-        edge_threshold: Threshold for edge detection smoothing
+        threshold: Brightness threshold for background removal (0-255, lower = more aggressive)
+        edge_threshold: Threshold for color distance detection (higher = more aggressive)
         preserve_watermark: If True, preserves darker pixels that might be watermarks
     
     Returns:
@@ -32,26 +32,41 @@ def remove_background_color_based(image_path, threshold=240, edge_threshold=10, 
     if img.mode != 'RGBA':
         img = img.convert('RGBA')
     
-    # Get corner pixels to determine background color
+    # Sample edge pixels more comprehensively to determine background color
     width, height = img.size
-    corners = [
-        img.getpixel((0, 0)),  # Top-left
-        img.getpixel((width-1, 0)),  # Top-right
-        img.getpixel((0, height-1)),  # Bottom-left
-        img.getpixel((width-1, height-1))  # Bottom-right
-    ]
+    edge_pixels = []
     
-    # Calculate average background color from corners
-    avg_r = sum(c[0] for c in corners if len(c) >= 3) // len(corners)
-    avg_g = sum(c[1] for c in corners if len(c) >= 3) // len(corners)
-    avg_b = sum(c[2] for c in corners if len(c) >= 3) // len(corners)
+    # Sample more edge pixels (not just corners)
+    sample_step = max(1, min(width, height) // 20)  # Sample every 5% of edge
     
-    # Watermark detection threshold
-    watermark_threshold = threshold - 50
+    # Top and bottom edges
+    for x in range(0, width, sample_step):
+        edge_pixels.append(img.getpixel((x, 0)))  # Top
+        edge_pixels.append(img.getpixel((x, height-1)))  # Bottom
+    
+    # Left and right edges
+    for y in range(0, height, sample_step):
+        edge_pixels.append(img.getpixel((0, y)))  # Left
+        edge_pixels.append(img.getpixel((width-1, y)))  # Right
+    
+    # Calculate average background color from edge pixels
+    valid_pixels = [p for p in edge_pixels if len(p) >= 3]
+    if not valid_pixels:
+        valid_pixels = [(255, 255, 255)]  # Fallback to white
+    
+    avg_r = sum(c[0] for c in valid_pixels) // len(valid_pixels)
+    avg_g = sum(c[1] for c in valid_pixels) // len(valid_pixels)
+    avg_b = sum(c[2] for c in valid_pixels) // len(valid_pixels)
+    
+    # Calculate average brightness of edge pixels
+    edge_brightness = sum((c[0] + c[1] + c[2]) / 3 for c in valid_pixels) / len(valid_pixels)
     
     # Create new image with transparency
     data = img.getdata()
     new_data = []
+    
+    # Only preserve grayscale pixels that are actually dark (content), not light backgrounds
+    watermark_brightness_threshold = threshold - 30  # Only preserve grayscale darker than this
     
     for item in data:
         if len(item) >= 3:
@@ -64,36 +79,63 @@ def remove_background_color_based(image_path, threshold=240, edge_threshold=10, 
             # Calculate brightness
             brightness = (r + g + b) / 3
             
-            # Check if pixel is grayscale (very lenient)
-            # Very lenient: allow up to 40 difference between channels
-            grayscale_threshold = 40
+            # Check if pixel is grayscale (moderate threshold)
+            grayscale_threshold = 30
             is_grayscale = abs(r - g) < grayscale_threshold and abs(g - b) < grayscale_threshold and abs(r - b) < grayscale_threshold
             
             if preserve_watermark:
-                # Preserve ALL grayscale pixels as potential watermarks
-                # Only remove pure white or very bright colored pixels
-                if is_grayscale:
-                    # This is a grayscale pixel - preserve it as watermark
-                    watermark_gray = int(brightness)
-                    # Calculate alpha based on brightness
-                    if brightness >= threshold:
-                        # Very light gray (almost white) - make it more transparent
-                        alpha = int(100 + (255 - brightness) / (255 - threshold + 1) * 100)
-                        alpha = max(100, min(200, alpha))
+                # CRITICAL: Always preserve very dark pixels (black lines, text, etc.)
+                # These are definitely content, not background
+                dark_content_threshold = 80  # Pixels darker than this are always content
+                if brightness < dark_content_threshold:
+                    # Very dark pixel - definitely content (lines, text, etc.) - always preserve
+                    new_data.append((r, g, b, 255))
+                # CRITICAL: Preserve ALL grayscale pixels that are not too bright
+                # This includes light gray table lines (brightness ~150-220)
+                # Only remove very bright grayscale (almost white, brightness > 240)
+                elif is_grayscale:
+                    # Grayscale pixel - could be table lines, text, or content
+                    # Preserve all grayscale except very bright ones (almost white)
+                    if brightness < 240:
+                        # Convert grayscale content to black for better visibility
+                        # This makes table lines clearly visible
+                        if brightness < 150:
+                            # Dark to medium gray - keep as is (already dark enough)
+                            new_data.append((r, g, b, 255))
+                        elif brightness < 220:
+                            # Light gray (table lines) - convert to black
+                            new_data.append((0, 0, 0, 255))
+                        else:
+                            # Very light gray - convert to black but slightly less opaque
+                            new_data.append((0, 0, 0, 240))
                     else:
-                        # Darker gray - more opaque
-                        alpha = int(150 + (threshold - brightness) / threshold * 105)
-                        alpha = max(150, min(255, alpha))
-                    new_data.append((watermark_gray, watermark_gray, watermark_gray, alpha))
+                        # Very bright grayscale (almost white) - remove as background
+                        new_data.append((r, g, b, 0))
                 elif color_distance < edge_threshold or brightness > threshold:
                     # Background color -> transparent
                     new_data.append((r, g, b, 0))
                 else:
-                    # Keep pixel with original alpha
+                    # Keep pixel with original alpha (likely content)
                     new_data.append((r, g, b, a))
             else:
-                # Original behavior
-                if color_distance < edge_threshold or brightness > threshold:
+                # More aggressive: remove anything close to background color or bright
+                # BUT always preserve very dark pixels and grayscale content (table lines, etc.)
+                dark_content_threshold = 80
+                if brightness < dark_content_threshold:
+                    # Very dark pixel - always preserve
+                    new_data.append((r, g, b, 255))
+                elif is_grayscale and brightness < 240:
+                    # Convert grayscale content to black for better visibility
+                    if brightness < 150:
+                        # Dark to medium gray - keep as is
+                        new_data.append((r, g, b, 255))
+                    elif brightness < 220:
+                        # Light gray (table lines) - convert to black
+                        new_data.append((0, 0, 0, 255))
+                    else:
+                        # Very light gray - convert to black
+                        new_data.append((0, 0, 0, 240))
+                elif color_distance < edge_threshold or brightness > threshold:
                     new_data.append((r, g, b, 0))
                 else:
                     new_data.append((r, g, b, a))
@@ -104,14 +146,14 @@ def remove_background_color_based(image_path, threshold=240, edge_threshold=10, 
     return img
 
 
-def remove_background_brightness_based(image_path, threshold=240, preserve_watermark=True):
+def remove_background_brightness_based(image_path, threshold=200, preserve_watermark=True):
     """
     Removes background based on brightness threshold.
-    Preserves watermarks by detecting darker pixels that might be watermark content.
+    More aggressive background removal while preserving actual content.
     
     Args:
         image_path: Path to the image file
-        threshold: Brightness threshold (0-255)
+        threshold: Brightness threshold (0-255, lower = more aggressive)
         preserve_watermark: If True, preserves darker pixels that might be watermarks
     
     Returns:
@@ -127,47 +169,71 @@ def remove_background_brightness_based(image_path, threshold=240, preserve_water
     data = img.getdata()
     new_data = []
     
-    # Watermark preservation: preserve ALL grayscale pixels aggressively
-    # Strategy: Keep ALL grayscale pixels, only remove pure white/very bright colored pixels
-    # Very lenient grayscale detection: allow up to 40 difference between channels
-    grayscale_threshold = 40
+    # Only preserve dark grayscale pixels as content, not light backgrounds
+    grayscale_threshold = 30
+    watermark_brightness_threshold = threshold - 30  # Only preserve grayscale darker than this
     
     for i, item in enumerate(data):
         if len(item) >= 3:
             r, g, b = item[0], item[1], item[2]
             brightness = (r + g + b) / 3
             
-            # Check if pixel is grayscale (very lenient)
+            # Check if pixel is grayscale
             is_grayscale = abs(r - g) < grayscale_threshold and abs(g - b) < grayscale_threshold and abs(r - b) < grayscale_threshold
             
             if preserve_watermark:
-                # Preserve ALL grayscale pixels as potential watermarks
-                # Only remove pure white or very bright colored pixels
-                if is_grayscale:
-                    # This is a grayscale pixel - preserve it as watermark
-                    # Even very light grays should be preserved
-                    watermark_gray = int(brightness)
-                    # Calculate alpha based on brightness
-                    # Very light grays (close to white) get lower alpha, darker grays get higher alpha
-                    # Map brightness range (0-255) to alpha range (100-255)
-                    if brightness >= threshold:
-                        # Very light gray (almost white) - make it more transparent
-                        alpha = int(100 + (255 - brightness) / (255 - threshold + 1) * 100)
-                        alpha = max(100, min(200, alpha))
+                # CRITICAL: Always preserve very dark pixels (black lines, text, etc.)
+                # These are definitely content, not background
+                dark_content_threshold = 80  # Pixels darker than this are always content
+                if brightness < dark_content_threshold:
+                    # Very dark pixel - definitely content (lines, text, etc.) - always preserve
+                    new_data.append((r, g, b, 255))
+                # CRITICAL: Preserve ALL grayscale pixels that are not too bright
+                # This includes light gray table lines (brightness ~150-220)
+                # Only remove very bright grayscale (almost white, brightness > 240)
+                elif is_grayscale:
+                    # Grayscale pixel - could be table lines, text, or content
+                    # Preserve all grayscale except very bright ones (almost white)
+                    if brightness < 240:
+                        # Convert grayscale content to black for better visibility
+                        # This makes table lines clearly visible
+                        if brightness < 150:
+                            # Dark to medium gray - keep as is (already dark enough)
+                            new_data.append((r, g, b, 255))
+                        elif brightness < 220:
+                            # Light gray (table lines) - convert to black
+                            new_data.append((0, 0, 0, 255))
+                        else:
+                            # Very light gray - convert to black but slightly less opaque
+                            new_data.append((0, 0, 0, 240))
                     else:
-                        # Darker gray - more opaque
-                        alpha = int(150 + (threshold - brightness) / threshold * 105)
-                        alpha = max(150, min(255, alpha))
-                    new_data.append((watermark_gray, watermark_gray, watermark_gray, alpha))
+                        # Very bright grayscale (almost white) - remove as background
+                        new_data.append((r, g, b, 0))
                 elif brightness >= threshold:
-                    # Pure white/very bright colored background -> transparent
+                    # Bright background -> transparent
                     new_data.append((r, g, b, 0))
                 else:
                     # Content or darker colored areas -> keep opaque
                     new_data.append((r, g, b, 255))
             else:
-                # Original behavior: remove bright pixels
-                if brightness > threshold:
+                # More aggressive: remove bright pixels
+                # BUT always preserve very dark pixels and grayscale content (table lines, etc.)
+                dark_content_threshold = 80
+                if brightness < dark_content_threshold:
+                    # Very dark pixel - always preserve
+                    new_data.append((r, g, b, 255))
+                elif is_grayscale and brightness < 240:
+                    # Convert grayscale content to black for better visibility
+                    if brightness < 150:
+                        # Dark to medium gray - keep as is
+                        new_data.append((r, g, b, 255))
+                    elif brightness < 220:
+                        # Light gray (table lines) - convert to black
+                        new_data.append((0, 0, 0, 255))
+                    else:
+                        # Very light gray - convert to black
+                        new_data.append((0, 0, 0, 240))
+                elif brightness > threshold:
                     new_data.append((r, g, b, 0))  # Transparent
                 else:
                     new_data.append((r, g, b, 255))  # Opaque
@@ -293,10 +359,10 @@ Examples:
     parser.add_argument('-o', '--output', help='Output directory (default: input_dir_transparent)')
     parser.add_argument('-m', '--method', choices=['color', 'brightness'], default='color',
                        help='Background removal method (default: color)')
-    parser.add_argument('-t', '--threshold', type=int, default=240,
-                       help='Brightness threshold 0-255 (default: 240)')
-    parser.add_argument('-e', '--edge-threshold', type=int, default=10,
-                       help='Edge detection threshold for color method (default: 10)')
+    parser.add_argument('-t', '--threshold', type=int, default=200,
+                       help='Brightness threshold 0-255 (default: 200, lower = more aggressive)')
+    parser.add_argument('-e', '--edge-threshold', type=int, default=25,
+                       help='Edge detection threshold for color method (default: 25, higher = more aggressive)')
     parser.add_argument('--no-recursive', action='store_true',
                        help='Do not process subdirectories')
     parser.add_argument('--no-watermark', action='store_true',

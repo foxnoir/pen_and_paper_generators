@@ -68,23 +68,31 @@
             "name": "Intrigen & Interessen",
             "subsections_left_top_tabs": [
                 {
-                    "name": "Aufträge & Verpflichtungen",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
                     "name": "Beziehungen & Schulden",
                     "page_count": 4,
                     "subsections_left_top_tabs": [
                         "Übersicht",
                         "Verbündete",
                         "Feinde",
-                        "Erpressung",
-                        "Komplotte",
                         "Konflikte",
-                        "Gefallen",
-                        "Schulden",
+                        "Komplotte",
+                        "Erpressung",
                         "Sonstiges"
+                    ]
+                },
+                {
+                    "name": "Ziele & Ambitionen",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Aufträge & Verträge",
+                    "page_count": 4,
+                    "subsections_left_top_tabs": [
+                        "Aufträge",
+                        "Verträge",
+                        "Gefallen",
+                        "Schulden"
                     ]
                 },
                 {
@@ -98,11 +106,6 @@
                 },
                 {
                     "name": "Gerüchte",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Ziele & Ambitionen",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -295,7 +298,17 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
+                    "name": "Sabbat Orte",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
                     "name": "Garou Orte",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Sonstige Orte",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 }

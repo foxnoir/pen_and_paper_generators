@@ -1879,11 +1879,23 @@ class LayoutGenerator:
                             
                             tab_name = page_info.get("tab_name", "")
                             is_rules_section = tab_name == "Regeln"
+                            is_npcs_section = tab_name == "NPCs"
                             
                             # Select appropriate background directory
                             if is_rules_section and rules_background_images:
                                 bg_image_path = random.choice(rules_background_images)
                                 pages_with_rules_bg += 1
+                            elif is_npcs_section:
+                                # For NPCs section, use npc_2.png as default background
+                                npc_2_path = os.path.join(script_dir, "assets", "images", "section_cover", "npc_2.png")
+                                if not os.path.exists(npc_2_path):
+                                    npc_2_path = os.path.join(os.getcwd(), "assets", "images", "section_cover", "npc_2.png")
+                                if os.path.exists(npc_2_path):
+                                    bg_image_path = npc_2_path
+                                elif background_images:
+                                    bg_image_path = random.choice(background_images)
+                                else:
+                                    continue  # Skip if no backgrounds available
                             elif background_images:
                                 bg_image_path = random.choice(background_images)
                             else:

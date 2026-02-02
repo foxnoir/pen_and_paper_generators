@@ -1,10 +1,7 @@
 {
     "cover_pages": {
         "Domäne": {
-            "background_image": "assets/images/section_cover/main_cover.png",
-            "title": "Domäne",
-            "subtitle": "Boston, USA",
-            "description": "01.Oktober 2001"
+            "background_image": "assets/images/sepcial/boston.png"
         },
         "Intrigen & Interessen": {
             "background_image": "assets/images/section_cover/main_cover.png",
@@ -134,9 +131,26 @@
                     "subtitle": "Storystränge"
                 },
                 "Leitkonflikt der Chronik": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Leitkonflikt der Chronik",
-                    "subtitle": "Leitkonflikt der Chronik"
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Leitkonflikt der Chronik",
+                        "subtitle": "Leitkonflikt der Chronik"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    }
                 },
                 "SCs": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
@@ -553,6 +567,41 @@
                     }
                 }
             },
+            "Handouts": {
+                "Aktuelle Sitzung": {
+                    "page_1": {
+                        "background_image": "assets/images/sitzungen/aktuelle_sitzung.png"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    }
+                },
+                "Ausgegeben": {
+                    "page_1": {
+                        "background_image": "assets/images/sitzungen/ausgegeben.png"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    }
+                },
+                "Allgemein": {
+                    "page_1": {
+                        "background_image": "assets/images/sitzungen/allgemein.png"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    }
+                }
+            },
             "Regeln": {
                 "Grundregeln": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
@@ -595,8 +644,13 @@
                     "full_page": true
                 },
                 "Werwölfe": {
-                    "image": "assets/images/infos/garou.png",
-                    "full_page": true
+                    "page_1": {
+                        "image": "assets/images/infos/garou.png",
+                        "full_page": true
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/infos/garou_stämme.png"
+                    }
                 },
                 "Blutlinien": {
                     "image": "assets/images/infos/blutlinien.png",

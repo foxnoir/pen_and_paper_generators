@@ -106,8 +106,8 @@ class DynamicPDFGenerator:
             }
             current_page += 1
             
-            # Add additional pages if tab has page_count > 1 (for tabs without subsections)
-            if tab_page_count > 1 and not subsections:
+            # Add additional pages if tab has page_count > 1 (for tabs with or without subsections)
+            if tab_page_count > 1:
                 for page_idx in range(2, tab_page_count + 1):
                     page_structure[current_page] = {
                         "tab_name": tab_name,
@@ -126,9 +126,10 @@ class DynamicPDFGenerator:
                 if not sub_subsections:
                     sub_subsections = subsection.get("sub_subsections", [])
                 
-                # Check if this is Ghule or Menschen subsection (should have pages, even without sub-subsections)
+                # Check if this is Ghule, Menschen, or Werwölfe subsection (should have pages, even without sub-subsections)
                 is_ghule_subsection = (tab_name == "NPCs" and subsection_name == "Ghule")
                 is_menschen_subsection = (tab_name == "NPCs" and subsection_name == "Menschen")
+                is_werwoelfe_subsection = (tab_name == "NPCs" and subsection_name == "Werwölfe")
                 
                 if is_ghule_subsection:
                     # Generate 9 pages for Ghule subsection:
@@ -153,6 +154,18 @@ class DynamicPDFGenerator:
                             "sub_subsection": None,
                             "page_index": page_idx,
                             "no_upper_tabs": (page_idx == 5)  # Last page has no upper tabs
+                        }
+                        current_page += 1
+                elif is_werwoelfe_subsection:
+                    # Generate 2 pages for Werwölfe subsection:
+                    # page_1: garou.png full-page image
+                    # page_2: garou_stämme.png background image
+                    for page_idx in range(1, 3):  # page_index 1-2
+                        page_structure[current_page] = {
+                            "tab_name": tab_name,
+                            "subsection": subsection_name,
+                            "sub_subsection": None,
+                            "page_index": page_idx
                         }
                         current_page += 1
                 else:
@@ -216,13 +229,17 @@ class DynamicPDFGenerator:
                             }
                             current_page += 1
                     else:
-                        # Regular sub-subsection (single page)
-                        page_structure[current_page] = {
-                            "tab_name": tab_name,
-                            "subsection": subsection_name,
-                            "sub_subsection": sub_subsection
-                        }
-                        current_page += 1
+                        # Regular sub-subsection - generate at least 4 pages
+                        # Check if there's a configuration in cover_pages.json to determine page count
+                        # For now, always generate at least 4 pages
+                        for page_idx in range(1, 5):  # page_index 1-4 (minimum 4 pages)
+                            page_structure[current_page] = {
+                                "tab_name": tab_name,
+                                "subsection": subsection_name,
+                                "sub_subsection": sub_subsection,
+                                "page_index": page_idx
+                            }
+                            current_page += 1
             
             # If no subsections, still need at least one page
             if not subsections:

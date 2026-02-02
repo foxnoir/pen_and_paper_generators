@@ -6,81 +6,60 @@
             "y_position": 65.0,
             "subsections_left_top_tabs": [
                 {
-                    "name": "Stadt",
+                    "name": "Chronologie",
                     "seconnd_subsections_left_tabs": [
-                        "Status quo",
-                        "Maskerade & Öffentlichkeit",
-                        "Öffentliche Brennpunkte",
-                        "Sonstiges"
+                        "Vorgeschichte",
+                        "Wichtige Ereignisse",
+                        "Vergangene Konflikte"
                     ]
+                },
+                {
+                    "name": "Leitkonflikt der Chronik",
+                    "page_count": 6,
+                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Macht & Kontrolle",
                     "seconnd_subsections_left_tabs": [
-                        "Machtstruktur & Ämter",
                         "Clanlandschaft",
+                        "Ämter & Machtstruktur",
+                        "Akteure & Fraktionen",
                         "Einfluss & Territorien",
                         "Kontrollierte Institutionen",
+                        "Maskerade & Öffentlichkeit",
                         "Sonstiges"
                     ]
                 },
                 {
                     "name": "Blut & Jagd",
                     "seconnd_subsections_left_tabs": [
-                        "Blutversorgung",
                         "Jagdgebiete",
-                        "Konflikte um Beute",
-                        "Jagdregeln / Tabus"
+                        "Blutversorgung",
+                        "Jagdregeln / Tabus",
+                        "Konflikte um Beute"
                     ]
                 },
                 {
                     "name": "Spannungen, Risiken & Gefahren",
                     "seconnd_subsections_left_tabs": [
-                        "Konfliktherde",
                         "Alte Feindschaften",
+                        "Konfliktherde",
                         "Waffenstillstände",
+                        "Öffentliche Brennpunkte",
                         "Aktuelle Krisen",
                         "Latente Bedrohungen"
                     ]
-                },
-                {
-                    "name": "Chronologie",
-                    "seconnd_subsections_left_tabs": [
-                        "Vorgeschichte",
-                        "Wichtige Ereignisse",
-                        "Abgeschlossene Konflikte"
-                    ]
-                },
-                {
-                    "name": "Storystränge",
-                    "seconnd_subsections_left_tabs": [
-                        "Aktueller Zustand",
-                        "Akteure & Fraktionen",
-                        "Mögliche Entwicklungen",
-                        "Nächste Eskalationsstufe"
-                    ]
-                },
-                {
-                    "name": "Leitkonflikt der Chronik",
-                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "SCs",
                     "seconnd_subsections_left_tabs": [
                         "Charakterbögen",
                         "Einstiegspunkte",
-                        "Beziehungen Fraktionen / NPCs",
+                        "Beziehungen zu Fraktionen / NPCs",
+                        "Richtige Annahmen SCs",
+                        "Falsche Annahmen SCs",
+                        "Bekannte Informationen",
                         "Gefallen"
-                    ]
-                },
-                {
-                    "name": "Kalender",
-                    "page_count": 3,
-                    "seconnd_subsections_left_tabs": [
-                        "Zeitstrahl",
-                        "Wichtige Ereignisse",
-                        "Wichtige Daten",
-                        "Countdowns"
                     ]
                 }
             ]
@@ -97,35 +76,38 @@
                     "name": "Beziehungen & Schulden",
                     "page_count": 4,
                     "subsections_left_top_tabs": [
+                        "Übersicht",
+                        "Verbündete",
+                        "Feinde",
                         "Erpressung",
-                        "Gefallen",
                         "Komplotte",
                         "Konflikte",
-                        "Verbündete",
+                        "Gefallen",
+                        "Schulden",
                         "Sonstiges"
                     ]
                 },
                 {
-                    "name": "Geheimnisse",
+                    "name": "Geheimnisse & Informationen",
                     "page_count": 4,
                     "subsections_left_top_tabs": [
                         "SL-Geheimnisse",
-                        "Falsche Annahmen SCs",
+                        "Informationen",
                         "Gezielte Lügen"
                     ]
                 },
                 {
-                    "name": "Gerüchte & Informationen",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Intrigenverläufe",
+                    "name": "Gerüchte",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Ziele & Ambitionen",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Intrigenverläufe",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -140,17 +122,7 @@
             "name": "Sitzungen",
             "subsections_left_top_tabs": [
                 {
-                    "name": "Überblick",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Sitzungsziel",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Ablauf",
+                    "name": "Ablauf & Ziele",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -165,18 +137,12 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Review & Konsequenzen",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Eskalation",
-                    "page_count": 4,
-                    "subsections": [
-                        "Aktueller Druck",
-                        "Offene Risiken",
-                        "Reaktionen der Fraktionen",
-                        "Was passiert, wenn nichts passiert"
+                    "name": "Storystränge",
+                    "seconnd_subsections_left_tabs": [
+                        "Aktueller Stand",
+                        "Mögliche Entwicklungen & Konsequenzen",
+                        "Was passiert, wenn nichts passiert",
+                        "Nächste Eskalationsstufe"
                     ]
                 },
                 {
@@ -188,6 +154,7 @@
         },
         {
             "name": "NPCs",
+            "page_count": 6,
             "subsections_left_top_tabs": [
                 {
                     "name": "Camarilla",
@@ -288,12 +255,22 @@
             "name": "Orte",
             "subsections_left_top_tabs": [
                 {
-                    "name": "Clubs & Nachtleben",
+                    "name": "Elysien",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Elysien",
+                    "name": "Offiziele Gebäude",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Private Domänen",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Clubs & Nachtleben",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -318,7 +295,7 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Private Domänen",
+                    "name": "Garou Orte",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 }
@@ -364,7 +341,23 @@
         {
             "name": "Handouts",
             "page_count": 6,
-            "seconnd_subsections_left_tabs": []
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Aktuelle Sitzung",
+                    "page_count": 3,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Ausgehändigt",
+                    "page_count": 3,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Allgemein",
+                    "page_count": 3,
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
         },
         {
             "name": "Notizen",

@@ -1724,6 +1724,11 @@ class LayoutGenerator:
                                         if 0 <= page_num < total_pages:
                                             cover_config = subsection_config[page_key].copy()
                                             # Merge with defaults
+                                            # Ensure image and full_page fields are preserved (for pages like Garou page_1)
+                                            if "image" in subsection_config[page_key]:
+                                                cover_config["image"] = subsection_config[page_key]["image"]
+                                            if "full_page" in subsection_config[page_key]:
+                                                cover_config["full_page"] = subsection_config[page_key]["full_page"]
                                             # Preserve no_upper_tabs flag if present, or set it if background is basic_npc.png
                                             bg_image = cover_config.get("background_image", "")
                                             if "no_upper_tabs" in subsection_config[page_key]:

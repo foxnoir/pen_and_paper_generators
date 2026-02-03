@@ -53,8 +53,10 @@ class DynamicPDFGenerator:
         
         # Get sub_subsections config if available
         sub_subsections_config = None
+        subsections_config = None
         if cover_pages_config:
             sub_subsections_config = cover_pages_config.get("cover_pages", {}).get("sub_subsections", {})
+            subsections_config = cover_pages_config.get("cover_pages", {}).get("subsections", {})
         
         # Update dimensions from metadata if available
         if "page_width" in metadata:
@@ -140,10 +142,10 @@ class DynamicPDFGenerator:
                 if not sub_subsections:
                     sub_subsections = subsection.get("sub_subsections", [])
                 
-                # Check if this is Ghule, Menschen, or Werwölfe subsection (should have pages, even without sub-subsections)
+                # Check if this is Ghule, Menschen, or Garou subsection (should have pages, even without sub-subsections)
                 is_ghule_subsection = (tab_name == "NPCs" and subsection_name == "Ghule")
                 is_menschen_subsection = (tab_name == "NPCs" and subsection_name == "Menschen")
-                is_werwoelfe_subsection = (tab_name == "NPCs" and subsection_name == "Werwölfe")
+                is_garou_subsection = (tab_name == "NPCs" and subsection_name == "Garou")
                 
                 if is_ghule_subsection:
                     # Generate 9 pages for Ghule subsection:
@@ -170,10 +172,35 @@ class DynamicPDFGenerator:
                             "no_upper_tabs": (page_idx == 5)  # Last page has no upper tabs
                         }
                         current_page += 1
-                elif is_werwoelfe_subsection:
-                    # Generate 2 pages for Werwölfe subsection:
-                    # page_1: garou.png full-page image
-                    # page_2: garou_stämme.png background image
+                elif is_garou_subsection:
+                    # Read pages from cover_pages.json subsections config
+                    if subsections_config:
+                        tab_config = subsections_config.get(tab_name, {})
+                        subsection_config = tab_config.get(subsection_name, {})
+                        if isinstance(subsection_config, dict):
+                            # Count pages (page_1, page_2, etc.)
+                            page_keys = [k for k in subsection_config.keys() if k.startswith("page_")]
+                            if page_keys:
+                                # Extract page numbers and sort
+                                page_numbers = []
+                                for key in page_keys:
+                                    try:
+                                        num = int(key.split("_")[1])
+                                        page_numbers.append(num)
+                                    except:
+                                        pass
+                                if page_numbers:
+                                    max_page = max(page_numbers)
+                                    for page_idx in range(1, max_page + 1):
+                                        page_structure[current_page] = {
+                                            "tab_name": tab_name,
+                                            "subsection": subsection_name,
+                                            "sub_subsection": None,
+                                            "page_index": page_idx
+                                        }
+                                        current_page += 1
+                                    continue
+                    # Fallback: Generate 2 pages if config not found
                     for page_idx in range(1, 3):  # page_index 1-2
                         page_structure[current_page] = {
                             "tab_name": tab_name,
@@ -212,8 +239,8 @@ class DynamicPDFGenerator:
                     is_npc_subsection = (tab_name == "NPCs" and 
                                         subsection_name in ["Camarilla", "Sabbat", "Anarchen", "Unabhängige", "Blutlinien"])
                     
-                    # Check if this is Werwölfe subsection (should have 4 pages)
-                    is_werwoelfe_subsection = (tab_name == "NPCs" and subsection_name == "Werwölfe")
+                    # Check if this is Garou sub-subsection (should have multiple pages)
+                    is_garou_sub_subsection = (tab_name == "NPCs" and subsection_name == "Garou")
                     
                     if is_npc_subsection:
                         # Generate 11 pages for each NPC sub-subsection:
@@ -229,8 +256,8 @@ class DynamicPDFGenerator:
                                 "no_upper_tabs": (page_idx == 11)  # Last page has no upper tabs
                             }
                             current_page += 1
-                    elif is_werwoelfe_subsection:
-                        # Generate 10 pages for each Werwölfe sub-subsection:
+                    elif is_garou_sub_subsection:
+                        # Generate pages for each Garou sub-subsection (read from config)
                         # page_1,3,5,7,9: garou.png sheet (as image with basic.png background)
                         # page_2,4,6,8,10: basic_npc (page_10 without upper tabs)
                         for page_idx in range(1, 11):  # page_index 1-10

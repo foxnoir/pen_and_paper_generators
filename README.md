@@ -31,6 +31,7 @@
       <ul>
         <li><a href="#clan-sheet-generator">Clan Sheet Generator</a></li>
         <li><a href="#sl-journal-generator">SL Journal Generator</a></li>
+        <li><a href="#character-journal-generator">Character Journal Generator</a></li>
       </ul>
     </li>
     <li>
@@ -64,7 +65,8 @@ Pen and Paper Generators is a collection of Python tools designed to help player
 
 **Currently Available Generators:**
 - **[Clan Sheet Generator](clan_sheet_generator/README.md)** - Generate clan reference sheets for Vampire: The Masquerade (2nd/3rd edition)
-- **[SL Journal Generator](SL_book_generator/README.md)** - Generate dynamic PDF journals with interactive navigation for Vampire: The Masquerade sessions
+- **[SL Journal Generator](SL_journal_generator/README.md)** - Generate dynamic PDF journals with interactive navigation for Vampire: The Masquerade sessions
+- **[Character Journal Generator](character_journal_generator/README.md)** - Generate dynamic PDF journals with interactive navigation for character journals
 
 **Coming Soon:**
 - More generators for various RPG systems
@@ -97,23 +99,41 @@ For detailed documentation, see the [Clan Sheet Generator README](clan_sheet_gen
 
 ### SL Journal Generator
 
-Generate dynamic PDF journals with interactive navigation tabs for **Vampire: The Masquerade** sessions. Create professional-looking session journals with customizable structure, blood splatter effects, and clickable navigation.
+Generate dynamic PDF journals with interactive navigation tabs for **Vampire: The Masquerade** sessions. Create professional-looking session journals with customizable structure and clickable navigation.
 
 **Key Features:**
 - Dynamic PDF generation from JSON structure
 - Interactive navigation (right-side vertical tabs and top-left horizontal tabs)
 - Customizable tab structure (tabs, subsections, sub-subsections)
-- Subtle grayscale blood splatter effects
 - Modern design with jade green color scheme
 - Hyperlink support for easy navigation
 
 **Quick Start:**
 ```bash
-cd SL_book_generator
+cd SL_journal_generator
 python3 journal_generator.py
 ```
 
-For detailed documentation, see the [SL Journal Generator README](SL_book_generator/README.md).
+For detailed documentation, see the [SL Journal Generator README](SL_journal_generator/README.md).
+
+### Character Journal Generator
+
+Generate dynamic PDF journals with interactive navigation tabs for **character journals**. Create professional-looking character journals with customizable structure and clickable navigation.
+
+**Key Features:**
+- Dynamic PDF generation from JSON structure
+- Interactive navigation (right-side vertical tabs and top-left horizontal tabs)
+- Customizable tab structure (tabs, subsections, sub-subsections)
+- Modern design with jade green color scheme
+- Hyperlink support for easy navigation
+
+**Quick Start:**
+```bash
+cd character_journal_generator
+python3 journal_generator.py
+```
+
+For detailed documentation, see the [Character Journal Generator README](character_journal_generator/README.md).
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 

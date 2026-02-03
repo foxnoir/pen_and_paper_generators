@@ -11,6 +11,7 @@ import math
 import os
 import glob
 import tempfile
+import unicodedata
 from PIL import Image
 
 
@@ -47,6 +48,15 @@ class LayoutGenerator:
         Returns path to compressed image (temporary file or original if compression fails).
         """
         try:
+            # Normalize Unicode path to handle NFC/NFD differences
+            if not os.path.exists(image_path):
+                normalized_nfc = unicodedata.normalize('NFC', image_path)
+                normalized_nfd = unicodedata.normalize('NFD', image_path)
+                if os.path.exists(normalized_nfc):
+                    image_path = normalized_nfc
+                elif os.path.exists(normalized_nfd):
+                    image_path = normalized_nfd
+            
             # Open image
             img = Image.open(image_path)
             original_mode = img.mode
@@ -203,8 +213,8 @@ class LayoutGenerator:
                     except:
                         pass
     
-    def draw_rounded_rect(self, page: fitz.Page, rect: fitz.Rect, fill_color: tuple, border_color: tuple = None, radius: float = 8.0, shadow: bool = False):
-        """Draws a rounded rectangle with given radius"""
+    def draw_rounded_rect(self, page: fitz.Page, rect: fitz.Rect, fill_color: tuple, border_color: tuple = None, radius: float = 8.0, shadow: bool = False, opacity: float = 1.0):
+        """Draws a rounded rectangle with given radius and optional opacity"""
         try:
             import math
             
@@ -224,10 +234,10 @@ class LayoutGenerator:
                     x1 + shadow_offset,
                     y1 + shadow_offset
                 )
-                self._draw_rounded_rect_shape(page, shadow_rect, self.tab_colors["shadow"], None, radius)
+                self._draw_rounded_rect_shape(page, shadow_rect, self.tab_colors["shadow"], None, radius, opacity)
             
             # Draw main rectangle
-            self._draw_rounded_rect_shape(page, rect, fill_color, border_color, radius)
+            self._draw_rounded_rect_shape(page, rect, fill_color, border_color, radius, opacity)
         
         except Exception as e:
             # Fallback: normal rectangle if path fails
@@ -239,16 +249,23 @@ class LayoutGenerator:
                     rect.x1 + shadow_offset,
                     rect.y1 + shadow_offset
                 )
-                page.draw_rect(shadow_rect, color=self.tab_colors["shadow"], width=0, fill=self.tab_colors["shadow"])
-            page.draw_rect(rect, color=border_color if border_color else fill_color, width=0 if not border_color else 1.0, fill=fill_color)
+                page.draw_rect(shadow_rect, color=self.tab_colors["shadow"], width=0, fill=self.tab_colors["shadow"], fill_opacity=opacity)
+            page.draw_rect(rect, color=border_color if border_color else fill_color, width=0 if not border_color else 1.0, fill=fill_color, fill_opacity=opacity)
     
-    def _draw_rounded_rect_shape(self, page: fitz.Page, rect: fitz.Rect, fill_color: tuple, border_color: tuple, radius: float):
-        """Helper function to draw a rounded rectangle"""
+    def _draw_rounded_rect_shape(self, page: fitz.Page, rect: fitz.Rect, fill_color: tuple, border_color: tuple, radius: float, opacity: float = 1.0):
+        """Helper function to draw a rounded rectangle with optional opacity"""
         try:
             x0, y0 = rect.x0, rect.y0
             x1, y1 = rect.x1, rect.y1
             
-            # Use Shape object for complex paths
+            # If opacity is less than 1.0, use fallback method with fill_opacity
+            # because shape.finish() doesn't support opacity directly
+            if opacity < 1.0:
+                # Use simple rectangle with opacity (rounded corners won't work, but opacity will)
+                page.draw_rect(rect, color=border_color if border_color else fill_color, width=0 if not border_color else 1.0, fill=fill_color, fill_opacity=opacity)
+                return
+            
+            # Use Shape object for complex paths (only when opacity is 1.0)
             shape = page.new_shape()
             
             # Draw rounded rectangle by combining rectangles and circles
@@ -292,7 +309,7 @@ class LayoutGenerator:
         
         except Exception as e:
             # Fallback: normal rectangle if path fails
-            page.draw_rect(rect, color=border_color if border_color else fill_color, width=0 if not border_color else 1.0, fill=fill_color)
+            page.draw_rect(rect, color=border_color if border_color else fill_color, width=0 if not border_color else 1.0, fill=fill_color, fill_opacity=opacity)
     
     def draw_modern_tab(self, page: fitz.Page, tab: Dict, page_num: int, is_active: bool = False, original_text: Dict = None):
         """Draws a modern journal tab with design"""
@@ -734,8 +751,8 @@ class LayoutGenerator:
             # Determine color (active tab is darker)
             bg_color = self.tab_colors["active"] if is_active else self.tab_colors["background"]
             
-            # Draw rounded rectangle with shadow (no border)
-            self.draw_rounded_rect(page, tab_rect, bg_color, border_color=None, radius=4.0, shadow=True)
+            # Draw rounded rectangle with shadow (no border) - 70% opacity for upper tabs
+            self.draw_rounded_rect(page, tab_rect, bg_color, border_color=None, radius=4.0, shadow=True, opacity=0.7)
             
             # Add link if target_page is available
             if tab_data.get("target_page") is not None:
@@ -969,8 +986,8 @@ class LayoutGenerator:
                 # Determine color (active tab is darker)
                 bg_color = self.tab_colors["active"] if is_active else self.tab_colors["background"]
                 
-                # Draw rounded rectangle with shadow (no border)
-                self.draw_rounded_rect(page, tab_rect, bg_color, border_color=None, radius=3.5, shadow=True)
+                # Draw rounded rectangle with shadow (no border) - 70% opacity for upper tabs
+                self.draw_rounded_rect(page, tab_rect, bg_color, border_color=None, radius=3.5, shadow=True, opacity=0.7)
                 
                 # Add link if target_page is available
                 if tab_data.get("target_page") is not None:
@@ -1116,6 +1133,15 @@ class LayoutGenerator:
                         if os.path.exists(path):
                             image_path = path
                             break
+                        # Try Unicode normalization (macOS uses NFD, JSON often uses NFC)
+                        normalized_nfc = unicodedata.normalize('NFC', path)
+                        normalized_nfd = unicodedata.normalize('NFD', path)
+                        if normalized_nfc != path and os.path.exists(normalized_nfc):
+                            image_path = normalized_nfc
+                            break
+                        if normalized_nfd != path and os.path.exists(normalized_nfd):
+                            image_path = normalized_nfd
+                            break
                 
                 if image_path and os.path.exists(image_path):
                     try:
@@ -1197,6 +1223,31 @@ class LayoutGenerator:
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
         
+        # Handle "random_rules" background_image - use random background from assets/images/background/rules/
+        if bg_image_path == "random_rules":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            rules_dir = os.path.join(script_dir, "assets", "images", "background", "rules")
+            if not os.path.exists(rules_dir):
+                rules_dir = os.path.join(os.getcwd(), "assets", "images", "background", "rules")
+            
+            # Find all rules background images
+            rules_images = []
+            if os.path.exists(rules_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(rules_dir, ext))
+                    rules_images.extend(all_images)
+                rules_images.sort()
+            
+            if rules_images:
+                bg_image_path = random.choice(rules_images)
+            else:
+                # Fallback to random background if no rules images found
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
         # If basic.png is specified, use random background from assets/images/background/ instead
         # EXCEPT for clan sheets (sub-subsections) which should always use basic.png
         is_clan_sheet = cover_config.get("image") is not None  # Clan sheets have an "image" field
@@ -1246,24 +1297,59 @@ class LayoutGenerator:
                     if os.path.exists(path):
                         bg_image_path = path
                         break
+                    # Try Unicode normalization (macOS uses NFD, JSON often uses NFC)
+                    normalized_nfc = unicodedata.normalize('NFC', path)
+                    normalized_nfd = unicodedata.normalize('NFD', path)
+                    if normalized_nfc != path and os.path.exists(normalized_nfc):
+                        bg_image_path = normalized_nfc
+                        break
+                    if normalized_nfd != path and os.path.exists(normalized_nfd):
+                        bg_image_path = normalized_nfd
+                        break
         
-        if bg_image_path and os.path.exists(bg_image_path):
-            try:
-                # Insert image as background (full page) - use keep_proportion=False to fill entire page
-                # Compress image before insertion to reduce file size
-                compressed_path = self._compress_image(bg_image_path)
-                img_rect = fitz.Rect(0, 0, page_width, page_height)
-                page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
-                # Clean up temporary file if it was created
-                if compressed_path != bg_image_path and os.path.exists(compressed_path):
-                    try:
-                        os.unlink(compressed_path)
-                    except:
-                        pass
-            except Exception as e:
-                print(f"Warning: Could not load background image {bg_image_path}: {e}")
-        elif bg_image_path:
-            print(f"Warning: Background image path not found: {bg_image_path}")
+        if bg_image_path:
+            # Normalize Unicode path to handle NFC/NFD differences
+            normalized_path = unicodedata.normalize('NFC', bg_image_path)
+            if not os.path.exists(bg_image_path) and os.path.exists(normalized_path):
+                bg_image_path = normalized_path
+            elif not os.path.exists(bg_image_path):
+                # Try NFD normalization
+                normalized_nfd = unicodedata.normalize('NFD', bg_image_path)
+                if os.path.exists(normalized_nfd):
+                    bg_image_path = normalized_nfd
+            
+            if os.path.exists(bg_image_path):
+                try:
+                    # Insert image as background (full page) - use keep_proportion=False to fill entire page
+                    # Compress image before insertion to reduce file size
+                    compressed_path = self._compress_image(bg_image_path)
+                    img_rect = fitz.Rect(0, 0, page_width, page_height)
+                    page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
+                    # Clean up temporary file if it was created
+                    if compressed_path != bg_image_path and os.path.exists(compressed_path):
+                        try:
+                            os.unlink(compressed_path)
+                        except:
+                            pass
+                except Exception as e:
+                    print(f"Warning: Could not load background image {bg_image_path}: {e}")
+                    import traceback
+                    traceback.print_exc()
+            else:
+                print(f"Warning: Background image path not found: {bg_image_path}")
+                # Try to find the file with different normalizations
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                possible_base_paths = [
+                    bg_image_path,
+                    os.path.join(script_dir, bg_image_path),
+                    os.path.join(os.getcwd(), bg_image_path)
+                ]
+                for base_path in possible_base_paths:
+                    for norm in ['NFC', 'NFD']:
+                        normalized = unicodedata.normalize(norm, base_path)
+                        if os.path.exists(normalized):
+                            print(f"  Found with {norm} normalization: {normalized}")
+                            break
         
         # Load optional center image (for subsections/sub-subsections)
         center_image_path = cover_config.get("image")
@@ -1281,6 +1367,15 @@ class LayoutGenerator:
                 for path in possible_paths:
                     if os.path.exists(path):
                         center_image_path = path
+                        break
+                    # Try Unicode normalization (macOS uses NFD, JSON often uses NFC)
+                    normalized_nfc = unicodedata.normalize('NFC', path)
+                    normalized_nfd = unicodedata.normalize('NFD', path)
+                    if normalized_nfc != path and os.path.exists(normalized_nfc):
+                        center_image_path = normalized_nfc
+                        break
+                    if normalized_nfd != path and os.path.exists(normalized_nfd):
+                        center_image_path = normalized_nfd
                         break
                 if not center_image_path:
                     print(f"  ✗ Warning: Center image not found. Tried paths: {possible_paths}")

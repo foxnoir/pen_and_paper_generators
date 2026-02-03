@@ -34,13 +34,27 @@ class DynamicPDFGenerator:
         with open(json_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     
-    def calculate_pages_from_structure(self, structure: Dict) -> Tuple[List[Dict], Dict, Dict]:
+    def calculate_pages_from_structure(self, structure: Dict, cover_pages_config: Dict = None) -> Tuple[List[Dict], Dict, Dict]:
         """
         Calculates page structure from JSON and returns tabs with target pages
         Returns: (tabs_list, page_structure_dict, tab_subsections_dict)
         """
         right_tabs_data = structure.get("right_tabs", [])
         metadata = structure.get("metadata", {})
+        
+        # Load cover_pages.json if not provided
+        if cover_pages_config is None:
+            json_path = getattr(self, '_json_path', None)
+            if json_path:
+                cover_pages_path = os.path.join(os.path.dirname(json_path), "cover_pages.json")
+                if os.path.exists(cover_pages_path):
+                    with open(cover_pages_path, 'r', encoding='utf-8') as f:
+                        cover_pages_config = json.load(f)
+        
+        # Get sub_subsections config if available
+        sub_subsections_config = None
+        if cover_pages_config:
+            sub_subsections_config = cover_pages_config.get("cover_pages", {}).get("sub_subsections", {})
         
         # Update dimensions from metadata if available
         if "page_width" in metadata:
@@ -231,8 +245,28 @@ class DynamicPDFGenerator:
                     else:
                         # Regular sub-subsection - generate at least 4 pages
                         # Check if there's a configuration in cover_pages.json to determine page count
-                        # For now, always generate at least 4 pages
-                        for page_idx in range(1, 5):  # page_index 1-4 (minimum 4 pages)
+                        page_count = 4  # Default minimum
+                        if sub_subsections_config:
+                            tab_config = sub_subsections_config.get(tab_name, {})
+                            subsection_config = tab_config.get(subsection_name, {})
+                            sub_subsection_config = subsection_config.get(sub_subsection, {})
+                            if isinstance(sub_subsection_config, dict):
+                                # Count pages (page_1, page_2, etc.)
+                                page_keys = [k for k in sub_subsection_config.keys() if k.startswith("page_")]
+                                if page_keys:
+                                    # Extract page numbers and find the maximum
+                                    page_numbers = []
+                                    for key in page_keys:
+                                        try:
+                                            num = int(key.split("_")[1])
+                                            page_numbers.append(num)
+                                        except:
+                                            pass
+                                    if page_numbers:
+                                        page_count = max(page_numbers)
+                                        page_count = max(page_count, 4)  # Ensure minimum of 4
+                        
+                        for page_idx in range(1, page_count + 1):  # Generate pages based on config or minimum 4
                             page_structure[current_page] = {
                                 "tab_name": tab_name,
                                 "subsection": subsection_name,
@@ -301,9 +335,20 @@ class DynamicPDFGenerator:
         print(f"Loading structure from {json_path}...")
         structure = self.load_structure_from_json(json_path)
         
-        # Calculate page structure and tabs
+        # Load cover pages configuration if available (needed for page count calculation)
+        cover_pages_config = None
+        cover_pages_path = os.path.join(os.path.dirname(json_path), "cover_pages.json")
+        if os.path.exists(cover_pages_path):
+            print(f"Loading cover pages configuration from {cover_pages_path}...")
+            with open(cover_pages_path, 'r', encoding='utf-8') as f:
+                cover_pages_config = json.load(f)
+        
+        # Store json_path for later use
+        self._json_path = json_path
+        
+        # Calculate page structure and tabs (pass cover_pages_config to determine page counts)
         print("Calculating page structure from JSON...")
-        self.tabs, self.page_structure, self.tab_subsections = self.calculate_pages_from_structure(structure)
+        self.tabs, self.page_structure, self.tab_subsections = self.calculate_pages_from_structure(structure, cover_pages_config)
         
         total_pages = max(self.page_structure.keys()) if self.page_structure else 1
         
@@ -336,14 +381,6 @@ class DynamicPDFGenerator:
                             # Keep the name from JSON, just update font styling info if needed
                             pass  # Names stay from JSON!
             source_doc.close()
-        
-        # Load cover pages configuration if available
-        cover_pages_config = None
-        cover_pages_path = os.path.join(os.path.dirname(json_path), "cover_pages.json")
-        if os.path.exists(cover_pages_path):
-            print(f"Loading cover pages configuration from {cover_pages_path}...")
-            with open(cover_pages_path, 'r', encoding='utf-8') as f:
-                cover_pages_config = json.load(f)
         
         # Apply layout (blood splatters and tabs) - this preserves layout!
         print("Applying layout (blood splatters and tabs)...")

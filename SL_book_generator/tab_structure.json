@@ -6,17 +6,12 @@
             "y_position": 65.0,
             "subsections_left_top_tabs": [
                 {
-                    "name": "Chronologie",
+                    "name": "Chronologie & Kernkonflikt",
                     "seconnd_subsections_left_tabs": [
                         "Vorgeschichte",
                         "Wichtige Ereignisse",
                         "Vergangene Konflikte"
                     ]
-                },
-                {
-                    "name": "Leitkonflikt der Chronik",
-                    "page_count": 6,
-                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Macht & Kontrolle",
@@ -55,6 +50,7 @@
                     "seconnd_subsections_left_tabs": [
                         "Charakterbögen",
                         "Einstiegspunkte",
+                        "Aufträge und Aufgaben",
                         "Beziehungen zu Fraktionen / NPCs",
                         "Richtige Annahmen SCs",
                         "Falsche Annahmen SCs",
@@ -68,9 +64,9 @@
             "name": "Intrigen & Interessen",
             "subsections_left_top_tabs": [
                 {
-                    "name": "Beziehungen & Schulden",
+                    "name": "Beziehungen",
                     "page_count": 4,
-                    "subsections_left_top_tabs": [
+                    "seconnd_subsections_left_tabs": [
                         "Übersicht",
                         "Verbündete",
                         "Feinde",
@@ -83,22 +79,31 @@
                 {
                     "name": "Ziele & Ambitionen",
                     "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [
+                        "Camarilla",
+                        "Sabbat",
+                        "Unabhängige",
+                        "Anarchen",
+                        "Garou",
+                        "Andere Fraktionen"
+                    ]
                 },
                 {
-                    "name": "Aufträge & Verträge",
+                    "name": "Dokumente & Verpflichtungen",
                     "page_count": 4,
-                    "subsections_left_top_tabs": [
+                    "seconnd_subsections_left_tabs": [
                         "Aufträge",
                         "Verträge",
+                        "Dokumente",
                         "Gefallen",
-                        "Schulden"
+                        "Schulden",
+                        "Sonstiges"
                     ]
                 },
                 {
                     "name": "Geheimnisse & Informationen",
                     "page_count": 4,
-                    "subsections_left_top_tabs": [
+                    "seconnd_subsections_left_tabs": [
                         "SL-Geheimnisse",
                         "Informationen",
                         "Gezielte Lügen"
@@ -124,6 +129,11 @@
         {
             "name": "Sitzungen",
             "subsections_left_top_tabs": [
+                {
+                    "name": "Kalender",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
                 {
                     "name": "Ablauf & Ziele",
                     "page_count": 4,
@@ -233,7 +243,7 @@
                     ]
                 },
                 {
-                    "name": "Werwölfe",
+                    "name": "Garou",
                     "seconnd_subsections_left_tabs": [
                         "Feindlicher Stamm",
                         "Neutraler Stamm",
@@ -268,7 +278,12 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Private Domänen",
+                    "name": "Zufluchten",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Safehäuser",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -278,12 +293,12 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Industrie & Verfall",
+                    "name": "Kultur & Öffentlichkeit",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Kultur & Öffentlichkeit",
+                    "name": "Industrie & Verfall",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -323,30 +338,37 @@
                 },
                 {
                     "name": "Domänen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Lagepläne",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Kanalisation",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Stromversorgung",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Wasserversorgung",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Überwachungspläne",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Technische Infrastruktur",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 }
             ]

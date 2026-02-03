@@ -14,10 +14,22 @@ from typing import Optional, List, Dict, Tuple
 
 def sanitize_filename(name: str) -> str:
     """Convert tab name to a valid filename"""
+    # Replace Umlaute and special characters
+    replacements = {
+        'ä': 'ae', 'ö': 'oe', 'ü': 'ue',
+        'Ä': 'Ae', 'Ö': 'Oe', 'Ü': 'Ue',
+        'ß': 'ss',
+        ' ': '_',  # Replace spaces with underscores
+    }
+    for old, new in replacements.items():
+        name = name.replace(old, new)
+    
     # Remove or replace invalid characters
     name = re.sub(r'[<>:"/\\|?*]', '_', name)
-    # Remove leading/trailing spaces and dots
-    name = name.strip('. ')
+    # Remove leading/trailing spaces, dots, and underscores
+    name = name.strip('. _')
+    # Remove multiple consecutive underscores
+    name = re.sub(r'_+', '_', name)
     # Limit length
     if len(name) > 100:
         name = name[:100]
@@ -360,11 +372,73 @@ def crop_page_content(page: fitz.Page, page_width: float, page_height: float) ->
     return crop_rect
 
 
+def find_regeln_start_page(doc, json_path: Optional[str] = None) -> int:
+    """
+    Find the page number where "Regeln" tab starts.
+    First tries to load from JSON, then falls back to visual detection.
+    Returns 1-based page number (1 = first page).
+    """
+    # Try to load from JSON first
+    if json_path and os.path.exists(json_path):
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                structure = json.load(f)
+            
+            # Check upper_tabs for "Regeln"
+            upper_tabs = structure.get("upper_tabs", [])
+            for tab in upper_tabs:
+                if tab.get("name") == "Regeln":
+                    target_page = tab.get("target_page")
+                    if target_page:
+                        print(f"Found 'Regeln' tab at page {target_page} from JSON")
+                        return target_page
+            
+            # Also check right_tabs
+            right_tabs = structure.get("right_tabs", [])
+            for tab in right_tabs:
+                if tab.get("name") == "Regeln":
+                    target_page = tab.get("target_page")
+                    if target_page:
+                        print(f"Found 'Regeln' tab at page {target_page} from JSON")
+                        return target_page
+        except Exception as e:
+            print(f"Warning: Could not load JSON structure: {e}")
+    
+    # Fallback: Visual detection - search for "Regeln" tab in right tabs
+    print("Searching for 'Regeln' tab visually...")
+    page_width = doc[0].rect.width
+    page_height = doc[0].rect.height
+    
+    # Right tabs area: right side of page, vertical
+    right_tab_area = fitz.Rect(page_width - 60, 0, page_width, page_height)
+    
+    for page_num in range(len(doc)):
+        page = doc[page_num]
+        page_index = page_num + 1
+        
+        # Extract text from right tab area
+        text_dict = page.get_text("dict", clip=right_tab_area)
+        
+        for block in text_dict.get("blocks", []):
+            if "lines" not in block:
+                continue
+            for line in block.get("lines", []):
+                for span in line.get("spans", []):
+                    text = span.get("text", "").strip()
+                    if text == "Regeln":
+                        print(f"Found 'Regeln' tab visually at page {page_index}")
+                        return page_index
+    
+    # If not found, default to page 1 (extract all)
+    print("Warning: 'Regeln' tab not found, extracting from page 1")
+    return 1
+
+
 def extract_pages_from_pdf(pdf_path: str, output_dir: str = "extracted_pages", json_path: Optional[str] = None):
     """
-    Extract all pages from PDF, remove tabs, and save as PNGs.
+    Extract all pages from PDF starting from "Regeln" tab, remove tabs, and save as PNGs.
     Extracts page names directly from PDF using visual tab detection.
-    JSON is optional and only used for reference/validation.
+    JSON is optional and used to find the "Regeln" tab start page.
     """
     if not os.path.exists(pdf_path):
         print(f"Error: PDF file not found: {pdf_path}")
@@ -377,15 +451,29 @@ def extract_pages_from_pdf(pdf_path: str, output_dir: str = "extracted_pages", j
     doc = fitz.open(pdf_path)
     total_pages = len(doc)
     
-    print(f"Extracting {total_pages} pages from {pdf_path}...")
+    # Find start page (where "Regeln" tab begins)
+    # Default json_path if not provided
+    if not json_path:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        default_json = os.path.join(script_dir, "tab_structure.json")
+        if os.path.exists(default_json):
+            json_path = default_json
+    
+    start_page = find_regeln_start_page(doc, json_path)
+    start_page_index = start_page - 1  # Convert to 0-based index
+    
+    print(f"\nExtracting pages starting from 'Regeln' tab (page {start_page})...")
+    print(f"Total pages in PDF: {total_pages}")
+    print(f"Pages to extract: {total_pages - start_page_index}")
     print(f"Output directory: {output_dir}")
     
     page_width = doc[0].rect.width
     page_height = doc[0].rect.height
     
-    print(f"Page dimensions: {page_width} x {page_height} points")
+    print(f"Page dimensions: {page_width} x {page_height} points\n")
     
-    for page_num in range(total_pages):
+    extracted_count = 0
+    for page_num in range(start_page_index, total_pages):
         page = doc[page_num]
         page_index = page_num + 1
         
@@ -404,10 +492,11 @@ def extract_pages_from_pdf(pdf_path: str, output_dir: str = "extracted_pages", j
         output_path = os.path.join(output_dir, f"{filename}.png")
         pix.save(output_path)
         
+        extracted_count += 1
         print(f"  Page {page_index:4d}/{total_pages}: {filename}.png")
     
     doc.close()
-    print(f"\nDone! Extracted {total_pages} pages to {output_dir}/")
+    print(f"\nDone! Extracted {extracted_count} pages (from page {start_page} onwards) to {output_dir}/")
 
 
 if __name__ == "__main__":
@@ -415,7 +504,7 @@ if __name__ == "__main__":
     
     pdf_path = "vampire_journal.pdf"
     output_dir = "extracted_pages"
-    json_path = None  # Optional, not used for naming
+    json_path = None  # Optional, defaults to tab_structure.json in same directory
     
     if len(sys.argv) > 1:
         pdf_path = sys.argv[1]

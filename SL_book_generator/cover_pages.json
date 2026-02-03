@@ -99,32 +99,10 @@
         },
         "subsections": {
             "Domäne": {
-                "Chronologie": {
+                "Chronologie & Kernkonflikt": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Chronologie",
-                    "subtitle": "Chronologie"
-                },
-                "Leitkonflikt der Chronik": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Leitkonflikt der Chronik",
-                        "subtitle": "Leitkonflikt der Chronik"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    },
-                    "page_5": {
-                        "background_image": "random"
-                    },
-                    "page_6": {
-                        "background_image": "random"
-                    }
+                    "title": "Chronologie & Kernkonflikt",
+                    "subtitle": "Chronologie & Kernkonflikt"
                 },
                 "Macht & Kontrolle": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
@@ -148,11 +126,11 @@
                 }
             },
             "Intrigen & Interessen": {
-                "Aufträge & Verpflichtungen": {
+                "Beziehungen": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Aufträge & Verpflichtungen",
-                        "subtitle": "Aufträge & Verpflichtungen"
+                        "title": "Beziehungen",
+                        "subtitle": "Beziehungen"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -164,11 +142,27 @@
                         "background_image": "random"
                     }
                 },
-                "Beziehungen & Schulden": {
+                "Ziele & Ambitionen": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Beziehungen & Schulden",
-                        "subtitle": "Beziehungen & Schulden"
+                        "title": "Ziele & Ambitionen",
+                        "subtitle": "Ziele & Ambitionen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Dokumente & Verpflichtungen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Dokumente & Verpflichtungen",
+                        "subtitle": "Dokumente & Verpflichtungen"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -201,22 +195,6 @@
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
                         "title": "Gerüchte",
                         "subtitle": "Gerüchte"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Ziele & Ambitionen": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Ziele & Ambitionen",
-                        "subtitle": "Ziele & Ambitionen"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -294,11 +272,27 @@
                         "background_image": "random"
                     }
                 },
-                "Private Domänen": {
+                "Zufluchten": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Private Domänen",
-                        "subtitle": "Private Domänen"
+                        "title": "Zufluchten",
+                        "subtitle": "Zufluchten"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Safehäuser": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Safehäuser",
+                        "subtitle": "Safehäuser"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -390,6 +384,22 @@
                         "background_image": "random"
                     }
                 },
+                "Sabbat Orte": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Sabbat Orte",
+                        "subtitle": "Sabbat Orte"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
                 "Garou Orte": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
@@ -405,51 +415,150 @@
                     "page_4": {
                         "background_image": "random"
                     }
+                },
+                "Sonstige Orte": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Sonstige Orte",
+                        "subtitle": "Sonstige Orte"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 }
             },
             "Karten": {
                 "Stadtplan": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Stadtplan",
-                    "subtitle": "Stadtplan"
+                    "page_1": {
+                        "background_image": "assets/images/special/stadtplan.png"
+                    }
                 },
                 "Domänen": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Domänen",
-                    "subtitle": "Domänen"
+                    "page_1": {
+                        "background_image": "assets/images/special/domänen.png"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 },
                 "Lagepläne": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Lagepläne",
-                    "subtitle": "Lagepläne"
+                    "page_1": {
+                        "background_image": "assets/images/special/stadtplan.png"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 },
                 "Kanalisation": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Kanalisation",
-                    "subtitle": "Kanalisation"
+                    "page_1": {
+                        "background_image": "assets/images/special/kanalisation.png"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 },
                 "Stromversorgung": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Stromversorgung",
-                    "subtitle": "Stromversorgung"
+                    "page_1": {
+                        "background_image": "random"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 },
                 "Wasserversorgung": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Wasserversorgung",
-                    "subtitle": "Wasserversorgung"
+                    "page_1": {
+                        "background_image": "random"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 },
                 "Überwachungspläne": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Überwachungspläne",
-                    "subtitle": "Überwachungspläne"
+                    "page_1": {
+                        "background_image": "random"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 },
                 "Technische Infrastruktur": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Technische Infrastruktur",
-                    "subtitle": "Technische Infrastruktur"
+                    "page_1": {
+                        "background_image": "random"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 }
             },
             "Sitzungen": {
+                "Kalender": {
+                    "page_1": {
+                        "background_image": "assets/images/special/calender_2.png"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/special/calender_3.png"
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/special/calender_4.png"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    }
+                },
                 "Ablauf & Ziele": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
@@ -464,6 +573,12 @@
                     },
                     "page_4": {
                         "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "assets/images/special/hinrichtungsrede.png"
+                    },
+                    "page_6": {
+                        "background_image": "assets/images/special/tod_seneshall_sehen.png"
                     }
                 },
                 "Schlüsselinformationen": {
@@ -499,9 +614,20 @@
                     }
                 },
                 "Storystränge": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Storystränge",
-                    "subtitle": "Storystränge"
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Storystränge",
+                        "subtitle": "Storystränge"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 },
                 "Sonstiges": {
                     "page_1": {
@@ -596,13 +722,13 @@
                     "image": "assets/images/infos/sabbat.png",
                     "full_page": true
                 },
-                "Werwölfe": {
+                "Garou": {
                     "page_1": {
                         "image": "assets/images/infos/garou.png",
                         "full_page": true
                     },
                     "page_2": {
-                        "background_image": "assets/images/infos/garou_stämme.png"
+                        "background_image": "assets/images/infos/garou_staemme.png"
                     }
                 },
                 "Blutlinien": {
@@ -701,12 +827,72 @@
                 "Unabhängige": {
                     "image": "assets/images/infos/unabhängige.png",
                     "full_page": true
+                },
+                "Andere": {
+                    "page_1": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_4": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_5": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_6": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_7": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_8": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_9": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_10": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_11": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_12": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_13": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_14": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_15": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_16": {
+                        "background_image": "random_npc_vampire"
+                    }
                 }
             }
         },
         "sub_subsections": {
             "Domäne": {
-                "Chronologie": {
+                "Chronologie & Kernkonflikt": {
                     "Vorgeschichte": {
                         "page_1": {
                             "background_image": "assets/images/special/strahl.png"
@@ -719,6 +905,18 @@
                         },
                         "page_4": {
                             "background_image": "assets/images/special/main_conflict_3.png"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        },
+                        "page_8": {
+                            "background_image": "random"
                         }
                     },
                     "Wichtige Ereignisse": {
@@ -745,13 +943,390 @@
                         },
                         "page_8": {
                             "background_image": "assets/images/special/exil3.png"
+                        },
+                        "page_9": {
+                            "background_image": "random"
+                        },
+                        "page_10": {
+                            "background_image": "random"
+                        },
+                        "page_11": {
+                            "background_image": "random"
+                        },
+                        "page_12": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Vergangene Konflikte": {
+                        "page_1": {
+                            "background_image": "assets/images/special/vergangene_konflikte.png"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
                         }
                     }
                 },
                 "Macht & Kontrolle": {
+                    "Clanlandschaft": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Ämter & Machtstruktur": {
+                        "page_1": {
+                            "background_image": "assets/images/special/ämter.png"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Akteure & Fraktionen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
                     "Einfluss & Territorien": {
                         "page_1": {
                             "background_image": "assets/images/special/domänen.png"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Kontrollierte Institutionen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Maskerade & Öffentlichkeit": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sonstiges": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Blut & Jagd": {
+                    "Jagdgebiete": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Blutversorgung": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Jagdregeln / Tabus": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Konflikte um Beute": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Spannungen, Risiken & Gefahren": {
+                    "Alte Feindschaften": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Konfliktherde": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Waffenstillstände": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Öffentliche Brennpunkte": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Aktuelle Krisen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Latente Bedrohungen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "SCs": {
+                    "Charakterbögen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Einstiegspunkte": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Aufträge und Aufgaben": {
+                        "page_1": {
+                            "background_image": "assets/images/special/auftrag.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/special/auftrag_2.png"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Beziehungen zu Fraktionen / NPCs": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Richtige Annahmen SCs": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Falsche Annahmen SCs": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Bekannte Informationen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Gefallen": {
+                        "page_1": {
+                            "background_image": "random"
                         },
                         "page_2": {
                             "background_image": "random"
@@ -2598,6 +3173,66 @@
                             "background_image": "assets/images/NPCs/basic_npc.png",
                             "no_upper_tabs": true
                         }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_2": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/NPCs/notes.png",
+                            "no_upper_tabs": false
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_5": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_6": {
+                            "background_image": "assets/images/NPCs/notes.png",
+                            "no_upper_tabs": false
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_8": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_9": {
+                            "background_image": "assets/images/NPCs/notes.png",
+                            "no_upper_tabs": false
+                        },
+                        "page_10": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_11": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_12": {
+                            "background_image": "assets/images/NPCs/notes.png",
+                            "no_upper_tabs": false
+                        },
+                        "page_13": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        },
+                        "page_14": {
+                            "background_image": "random_npc_vampire"
+                        },
+                        "page_15": {
+                            "background_image": "assets/images/NPCs/notes.png",
+                            "no_upper_tabs": false
+                        },
+                        "page_16": {
+                            "background_image": "assets/images/NPCs/basic_npc.png",
+                            "no_upper_tabs": true
+                        }
                     }
                 },
                 "Unabhängige": {
@@ -3639,7 +4274,7 @@
                         }
                     }
                 },
-                "Werwölfe": {
+                "Garou": {
                     "Feindlicher Stamm": {
                         "page_1": {
                             "background_image": "assets/images/NPCs/garou.png"
@@ -3824,6 +4459,913 @@
                         "page_16": {
                             "background_image": "assets/images/NPCs/basic_npc.png",
                             "no_upper_tabs": true
+                        }
+                    }
+                },
+                "Andere": {
+                    "page_1": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_4": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_5": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_6": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_7": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_8": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_9": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_10": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_11": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_12": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_13": {
+                        "background_image": "random_npc_vampire"
+                    },
+                    "page_14": {
+                        "background_image": "assets/images/NPCs/notes.png",
+                        "no_upper_tabs": false
+                    },
+                    "page_15": {
+                        "background_image": "assets/images/NPCs/basic_npc.png",
+                        "no_upper_tabs": true
+                    },
+                    "page_16": {
+                        "background_image": "random_npc_vampire"
+                    }
+                }
+            },
+            "Intrigen & Interessen": {
+                "Beziehungen": {
+                    "Übersicht": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Verbündete": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Feinde": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Konflikte": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Komplotte": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Erpressung": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sonstiges": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Dokumente & Verpflichtungen": {
+                    "Aufträge": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Verträge": {
+                        "page_1": {
+                            "background_image": "assets/images/special/rasha_marco_1.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/special/rasha_marco_2.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/special/rosellini_rasha_1.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/special/rosellini_rasha_2.png"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        },
+                        "page_8": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Dokumente": {
+                        "page_1": {
+                            "background_image": "assets/images/special/exil.png"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Gefallen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Schulden": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sonstiges": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Geheimnisse & Informationen": {
+                    "SL-Geheimnisse": {
+                        "page_1": {
+                            "background_image": "assets/images/special/tod_seneshall.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/special/giovanni1.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/special/giovanni2.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/special/giovanni3.png"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Informationen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Gezielte Lügen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Ziele & Ambitionen": {
+                    "Camarilla": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sabbat": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Unabhängige": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Anarchen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Garou": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Andere Fraktionen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                }
+            },
+            "Sitzungen": {
+                "Storystränge": {
+                    "Aktueller Stand": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Mögliche Entwicklungen & Konsequenzen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Was passiert, wenn nichts passiert": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Nächste Eskalationsstufe": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                }
+            },
+            "Regeln": {
+                "Grundregeln": {
+                    "Würfelsystem & Problem": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Attribute & Fähigkeiten": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Schwierigkeiten": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Willenskraft": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Gesundheit & Schaden": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    }
+                },
+                "Charakter & Blut": {
+                    "Menschlichkeit & Pfade": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Blut & Hunger": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Blutpunkte": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Raserei": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Erzeugung & Generation": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    }
+                },
+                "Disziplinen": {
+                    "Überblick": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Grundregeln": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Einzelne Disziplinen": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Thaumaturgie": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Nekromantie": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Hinweise": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    }
+                },
+                "Kampf & Konflikt": {
+                    "Kampfablauf": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Nah- / Fernkampf": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Schadenstypen": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Heilung & Tod": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    }
+                },
+                "Gesellschaft & Politik": {
+                    "Elysium & Etikette": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Status": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Domänen": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Gefallen": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Ämter": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    }
+                },
+                "Maskerade": {
+                    "Grundprinzip": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Traditionen": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Maskeradebrüche": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Zeugen & Vertuschung": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Jäger & Aufmerksamkeit": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
+                        }
+                    },
+                    "Eskalation": {
+                        "page_1": {
+                            "background_image": "random_rules"
+                        },
+                        "page_2": {
+                            "background_image": "random_rules"
+                        },
+                        "page_3": {
+                            "background_image": "random_rules"
+                        },
+                        "page_4": {
+                            "background_image": "random_rules"
                         }
                     }
                 }

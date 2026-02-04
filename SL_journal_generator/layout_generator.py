@@ -1192,6 +1192,31 @@ class LayoutGenerator:
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
         
+        # Handle "random_scs" background_image - use random background from assets/images/SCs/
+        if bg_image_path == "random_scs":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            scs_dir = os.path.join(script_dir, "assets", "images", "SCs")
+            if not os.path.exists(scs_dir):
+                scs_dir = os.path.join(os.getcwd(), "assets", "images", "SCs")
+            
+            # Find all SCs images
+            scs_images = []
+            if os.path.exists(scs_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(scs_dir, ext))
+                    scs_images.extend(all_images)
+                scs_images.sort()
+            
+            if scs_images:
+                bg_image_path = random.choice(scs_images)
+            else:
+                # Fallback to random background if no SCs images found
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
         # If basic.png is specified, use random background from assets/images/background/ instead
         # EXCEPT for clan sheets (sub-subsections) which should always use basic.png
         is_clan_sheet = cover_config.get("image") is not None  # Clan sheets have an "image" field

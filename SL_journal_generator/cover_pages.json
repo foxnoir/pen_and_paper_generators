@@ -1182,7 +1182,7 @@
                 "Blut & Jagd": {
                     "Jagdgebiete": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/special/stadtplan.png"
                         },
                         "page_2": {
                             "background_image": "random"
@@ -1324,32 +1324,32 @@
                     }
                 },
                 "SCs": {
-                    "Charakterbögen": {
+                    "Charakterbögen und Hintergründe": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/1.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/2.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/3.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/4.png"
                         }
                     },
                     "Einstiegspunkte": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/5.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/6.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/1.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/2.png"
                         }
                     },
                     "Aufträge und Aufgaben": {
@@ -1360,58 +1360,58 @@
                             "background_image": "assets/images/special/auftrag_2.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/3.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/4.png"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/5.png"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/6.png"
                         }
                     },
                     "Beziehungen zu Fraktionen / NPCs": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/1.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/2.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/3.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/4.png"
                         }
                     },
                     "Bekanntes Wissen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/5.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/6.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/1.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/2.png"
                         }
                     },
                     "Annahmen & Fehlschlüsse": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/3.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/4.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/5.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/6.png"
                         }
                     },
                     "Gefallen": {
@@ -1428,13 +1428,13 @@
                             "background_image": "random_gefallen"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/1.png"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/2.png"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/3.png"
                         }
                     }
                 }

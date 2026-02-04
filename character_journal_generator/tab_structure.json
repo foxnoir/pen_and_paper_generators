@@ -18,7 +18,7 @@
                     ]
                 },
                 {
-                    "name": "Beziehungen",
+                    "name": "Persönliches Netzwerk",
                     "seconnd_subsections_left_tabs": [
                         "Verbündete",
                         "Feinde",
@@ -32,7 +32,8 @@
                         "Aufträge & Aufgaben",
                         "Gefallen",
                         "Schulden",
-                        "Ziele"
+                        "Ziele",
+                        "Erpressungen"
                     ]
                 }
             ]
@@ -41,24 +42,33 @@
             "name": "Domäne",
             "subsections_left_top_tabs": [
                 {
-                    "name": "Macht & Kontrolle",
-                    "seconnd_subsections_left_tabs": [
-                        "Ämter & Machtstruktur",
-                        "Einfluss & Territorien",
-                        "Akteure & Fraktionen",
-                        "Kontrollierte Institutionen",
-                        "Maskerade & Öffentlichkeit",
-                        "Sonstiges"
-                    ]
+                    "name": "Ämter & Machtstruktur",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Einfluss & Territorien",
+                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Blut & Jagd",
-                    "seconnd_subsections_left_tabs": [
-                        "Jagdgebiete",
-                        "Jagdregeln / Tabus",
-                        "Konflikte um Beute",
-                        "Blutversorgung"
-                    ]
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Akteure & Fraktionen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Kontrollierte Institutionen",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Maskerade & Öffentlichkeit",
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Sonstiges",
+                    "seconnd_subsections_left_tabs": []
                 }
             ]
         },
@@ -129,11 +139,16 @@
                 },
                 {
                     "name": "Plan & Ziele",
-                    "page_count": 4,
+                    "page_count": 8,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Ereignisse",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Entwicklung & Konsequenzen",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -204,7 +219,7 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Offiziele Gebäude",
+                    "name": "Offizielle Gebäude",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },

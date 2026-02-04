@@ -3,23 +3,22 @@
         "Charakter": {
             "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Charakter",
-            "subtitle": "Charakter",
-            "description": "Persönliche Informationen, Hintergrund und Details des Charakters."
+            "subtitle": "Charakter"
         },
         "Domäne": {
-            "background_image": "assets/images/special/phili.png"
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Intrigen & Interessen",
+            "subtitle": "Intrigen & Interessen"
         },
         "Intrigen & Interessen": {
             "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Intrigen & Interessen",
-            "subtitle": "Intrigen & Interessen",
-            "description": "Übersicht über alle Intrigen, Interessen und die komplexen Beziehungen zwischen den Charakteren."
+            "subtitle": "Intrigen & Interessen"
         },
         "Sitzungen": {
             "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Sitzungen",
-            "subtitle": "Chronik der Ereignisse",
-            "description": "Detaillierte Aufzeichnungen aller Runden und wichtigen Ereignisse der Kampagne."
+            "subtitle": "Chronik der Ereignisse"
         },
         "NPCs": {
             "background_image": "assets/images/section_cover/main_cover.png",
@@ -29,8 +28,7 @@
         "Orte": {
             "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Orte",
-            "subtitle": "Schauplätze und Grundrisse",
-            "description": "Beschreibungen aller wichtigen Orte, von Clubs über Elysien bis hin zu privaten Domänen."
+            "subtitle": "Schauplätze und Grundrisse"
         },
         "Karten": {
             "background_image": "assets/images/section_cover/main_cover.png",
@@ -41,31 +39,7 @@
             "page_1": {
                 "background_image": "assets/images/section_cover/main_cover.png",
                 "title": "Handouts",
-                "subtitle": "Materialien und Dokumente",
-                "description": "Alle Handouts, Dokumente und Materialien für die Spieler."
-            },
-            "page_2": {
-                "background_image": "random"
-            },
-            "page_3": {
-                "background_image": "random"
-            },
-            "page_4": {
-                "background_image": "random"
-            },
-            "page_5": {
-                "background_image": "random"
-            },
-            "page_6": {
-                "background_image": "random"
-            }
-        },
-        "Notizen": {
-            "page_1": {
-                "background_image": "assets/images/section_cover/main_cover.png",
-                "title": "Notizen",
-                "subtitle": "Persönliche Aufzeichnungen",
-                "description": "Private Notizen, Ideen und Gedanken für die Kampagne."
+                "subtitle": "Materialien und Dokumente"
             },
             "page_2": {
                 "background_image": "random"
@@ -107,6 +81,43 @@
                 }
             },
             "Domäne": {
+                "page_1": {
+                    "background_image": "assets/images/special/phili.png"
+                },
+                "Ämter & Machtstruktur": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Ämter & Machtstruktur",
+                        "subtitle": "Ämter & Machtstruktur"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/special/ämter.png"
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/special/rat.png"
+                    },
+                    "page_4": {
+                        "background_image": "assets/images/special/hueter.png"
+                    },
+                    "page_5": {
+                        "background_image": "assets/images/special/hounds.png"
+                    },
+                    "page_6": {
+                        "background_image": "assets/images/special/harpyien.png"
+                    },
+                    "page_7": {
+                        "background_image": "random"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
+                    }
+                },
                 "Macht & Kontrolle": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
                     "title": "Macht & Kontrolle",
@@ -201,11 +212,11 @@
                         "background_image": "random"
                     }
                 },
-                "Offiziele Gebäude": {
+                "Offizielle Gebäude": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Offiziele Gebäude",
-                        "subtitle": "Offiziele Gebäude"
+                        "title": "Offizielle Gebäude",
+                        "subtitle": "Offizielle Gebäude"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -486,38 +497,25 @@
             "Sitzungen": {
                 "Kalender": {
                     "page_1": {
-                        "background_image": "assets/images/special/calender_2.png"
+                        "background_image": "assets/images/calender/01.png"
                     },
                     "page_2": {
-                        "background_image": "assets/images/special/calender_3.png"
+                        "background_image": "assets/images/calender/02.png"
                     },
                     "page_3": {
-                        "background_image": "assets/images/special/calender_4.png"
+                        "background_image": "assets/images/calender/03.png"
                     },
                     "page_4": {
                         "background_image": "random"
-                    }
-                },
-                "Überblick": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Überblick",
-                        "subtitle": "Überblick"
-                    },
-                    "page_2": {
-                        "background_image": "assets/images/sitzungen/überblick.png"
-                    },
-                    "page_3": {
-                        "background_image": "assets/images/sitzungen/überblick2.png"
-                    },
-                    "page_4": {
-                        "background_image": "assets/images/sitzungen/überblick3.png"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "assets/images/sitzungen/überblick.png"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "assets/images/sitzungen/überblick2.png"
+                    },
+                    "page_7": {
+                        "background_image": "assets/images/sitzungen/überblick3.png"
                     }
                 },
                 "Plan & Ziele": {
@@ -530,31 +528,37 @@
                         "background_image": "assets/images/sitzungen/01.png"
                     },
                     "page_3": {
-                        "background_image": "assets/images/sitzungen/02.png"
+                        "background_image": "assets/images/sitzungen/01_1.png"
                     },
                     "page_4": {
                         "background_image": "assets/images/sitzungen/04.png"
                     },
                     "page_5": {
-                        "background_image": "assets/images/sitzungen/03.png"
+                        "background_image": "assets/images/sitzungen/04_1.png"
                     },
                     "page_6": {
                         "background_image": "assets/images/sitzungen/05.png"
                     },
                     "page_7": {
-                        "background_image": "assets/images/sitzungen/06.png"
+                        "background_image": "assets/images/sitzungen/05_1.png"
                     },
                     "page_8": {
-                        "background_image": "assets/images/sitzungen/07.png"
+                        "background_image": "assets/images/sitzungen/01.png"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "assets/images/sitzungen/01_1.png"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "assets/images/sitzungen/03.png"
                     },
                     "page_11": {
-                        "background_image": "random"
+                        "background_image": "assets/images/sitzungen/03_1.png"
+                    },
+                    "page_12": {
+                        "background_image": "assets/images/sitzungen/02.png"
+                    },
+                    "page_13": {
+                        "background_image": "assets/images/sitzungen/02_1.png"
                     }
                 },
                 "Ereignisse": {
@@ -1178,7 +1182,7 @@
                         }
                     }
                 },
-                "Beziehungen": {
+                "Persönliches Netzwerk": {
                     "Verbündete": {
                         "page_1": {
                             "background_image": "random"
@@ -1209,16 +1213,22 @@
                     },
                     "Kontakte": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/contacts/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/contacts/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/contacts/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/contacts/01.png"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/contacts/02.png"
+                        },
+                        "page_6": {
+                            "background_image": "assets/images/contacts/03.png"
                         }
                     },
                     "Andere": {
@@ -1319,14 +1329,10 @@
                         "page_4": {
                             "background_image": "random"
                         }
-                    }
-                }
-            },
-            "Domäne": {
-                "Macht & Kontrolle": {
-                    "Ämter & Machtstruktur": {
+                    },
+                    "Erpressungen": {
                         "page_1": {
-                            "background_image": "assets/images/special/ämter.png"
+                            "background_image": "random"
                         },
                         "page_2": {
                             "background_image": "random"
@@ -1334,13 +1340,14 @@
                         "page_3": {
                             "background_image": "random"
                         },
-                        "page_5": {
-                            "background_image": "random"
-                        },
                         "page_4": {
                             "background_image": "random"
                         }
-                    },
+                    }
+                }
+            },
+            "Domäne": {
+                "Macht & Kontrolle": {
                     "Akteure & Fraktionen": {
                         "page_1": {
                             "background_image": "random"
@@ -1357,7 +1364,7 @@
                     },
                     "Einfluss & Territorien": {
                         "page_1": {
-                            "background_image": "assets/images/special/domänen.png"
+                            "background_image": "assets/images/special/stadtplan.png"
                         },
                         "page_2": {
                             "background_image": "random"
@@ -1415,7 +1422,7 @@
                 "Blut & Jagd": {
                     "Jagdgebiete": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/special/stadtplan.png"
                         },
                         "page_2": {
                             "background_image": "random"

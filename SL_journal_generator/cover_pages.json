@@ -254,11 +254,11 @@
                     "title": "Elysien",
                     "subtitle": "Elysien"
                 },
-                "Offiziele Gebäude": {
+                "Offizielle Gebäude": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Offiziele Gebäude",
-                        "subtitle": "Offiziele Gebäude"
+                        "title": "Offizielle Gebäude",
+                        "subtitle": "Offizielle Gebäude"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -660,7 +660,7 @@
                         "background_image": "random"
                     },
                     "page_34": {
-                        "background_image": "assets/images/sitzungen/06.png"
+                        "background_image": "assets/images/sitzungen/01.png"
                     },
                     "page_35": {
                         "background_image": "random"
@@ -4624,20 +4624,6 @@
             },
             "Intrigen & Interessen": {
                 "Beziehungen": {
-                    "Übersicht": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
                     "Verbündete": {
                         "page_1": {
                             "background_image": "random"

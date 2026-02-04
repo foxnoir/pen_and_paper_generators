@@ -9,6 +9,7 @@
                     "name": "Details",
                     "seconnd_subsections_left_tabs": [
                         "Vorgeschichte",
+                        "Persönliche Ziele",
                         "Charakterbogen",
                         "Disziplinen",
                         "Vor- & Nachteile",
@@ -23,6 +24,7 @@
                         "Verbündete",
                         "Feinde",
                         "Kontakte",
+                        "Kontaktaufnahmen",
                         "Andere"
                     ]
                 },
@@ -48,14 +50,17 @@
                 },
                 {
                     "name": "Einfluss & Territorien",
+                    "page_count": 6,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Blut & Jagd",
+                    "page_count": 6,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Akteure & Fraktionen",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
@@ -64,10 +69,12 @@
                 },
                 {
                     "name": "Maskerade & Öffentlichkeit",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Sonstiges",
+                    "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 }
             ]
@@ -107,6 +114,9 @@
                         "Aufträge",
                         "Verträge",
                         "Dokumente",
+                        "Kontaktaufnahmen",
+                        "Zeitungsartikel",
+                        "Recherchen",
                         "Gefallen",
                         "Schulden",
                         "Sonstiges"
@@ -129,12 +139,7 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Kalender",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Überblick",
-                    "page_count": 4,
+                    "page_count": 8,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
@@ -215,23 +220,46 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Elysien",
+                    "seconnd_subsections_left_tabs": [
+                        "Brujah",
+                        "Gangrel",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Toreador",
+                        "Tremere",
+                        "Ventrue"
+                    ]
+                },
+                {
+                    "name": "Offiziele Gebäude",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Offizielle Gebäude",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Zufluchten",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
+                    "name": "Zufluchten und Verstecke",
+                    "seconnd_subsections_left_tabs": [
+                        "Brujah",
+                        "Gangrel",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Toreador",
+                        "Tremere",
+                        "Ventrue",
+                        "Andere"
+                    ]
                 },
                 {
                     "name": "Safehäuser",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [
+                        "Brujah",
+                        "Gangrel",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Toreador",
+                        "Tremere",
+                        "Ventrue",
+                        "Andere"
+                    ]
                 },
                 {
                     "name": "Clubs & Nachtleben",
@@ -265,8 +293,11 @@
                 },
                 {
                     "name": "Garou Orte",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [
+                        "Feindlicher Stamm",
+                        "Neutraler Stamm",
+                        "Sonstige"
+                    ]
                 },
                 {
                     "name": "Sonstige Orte",

@@ -88,11 +88,14 @@
                 },
                 {
                     "name": "Dokumente & Verpflichtungen",
-                    "page_count": 4,
+                    "page_count": 7,
                     "seconnd_subsections_left_tabs": [
                         "Aufträge",
                         "Verträge",
                         "Dokumente",
+                        "Kontaktaufnahmen",
+                        "Zeitungsartikel",
+                        "Recherchen",
                         "Gefallen",
                         "Schulden",
                         "Sonstiges"
@@ -283,7 +286,7 @@
                     ]
                 },
                 {
-                    "name": "Offizielle Gebäude",
+                    "name": "Offiziele Gebäude",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -345,7 +348,6 @@
                 },
                 {
                     "name": "Garou Orte",
-                    "page_count": 4,
                     "seconnd_subsections_left_tabs": [
                         "Feindlicher Stamm",
                         "Neutraler Stamm",

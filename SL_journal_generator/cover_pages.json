@@ -254,11 +254,11 @@
                     "title": "Elysien",
                     "subtitle": "Elysien"
                 },
-                "Offizielle Gebäude": {
+                "Offiziele Gebäude": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Offizielle Gebäude",
-                        "subtitle": "Offizielle Gebäude"
+                        "title": "Offiziele Gebäude",
+                        "subtitle": "Offiziele Gebäude"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -4764,6 +4764,39 @@
                             "background_image": "random"
                         }
                     },
+                    "Zeitungsartikel": {
+                        "page_1": {
+                            "background_image": "assets/images/articles/01.png"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Recherchen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Kontaktaufnahmen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        }
+                    },
                     "Gefallen": {
                         "page_1": {
                             "background_image": "random_gefallen"
@@ -5142,6 +5175,22 @@
                         "page_4": {
                             "background_image": "random"
                         }
+                    }
+                },
+                "Offiziele Gebäude": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Offiziele Gebäude",
+                        "subtitle": "Offiziele Gebäude"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
                     }
                 },
                 "Zufluchten": {

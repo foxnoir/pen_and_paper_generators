@@ -21,9 +21,18 @@
             "subtitle": "Chronik der Ereignisse"
         },
         "NPCs": {
-            "background_image": "assets/images/section_cover/main_cover.png",
-            "title": "Nebencharaktere",
-            "subtitle": "Nebencharaktere"
+            "page_1": {
+                "background_image": "assets/images/section_cover/npc.png"
+            },
+            "page_2": {
+                "background_image": "assets/images/section_cover/npc_2.png"
+            },
+            "page_3": {
+                "background_image": "assets/images/section_cover/npc_2.png"
+            },
+            "page_4": {
+                "background_image": "assets/images/section_cover/npc_2.png"
+            }
         },
         "Orte": {
             "background_image": "assets/images/section_cover/main_cover.png",
@@ -69,10 +78,10 @@
                     "title": "Details",
                     "subtitle": "Details"
                 },
-                "Beziehungen": {
+                "Persönliches Netzwerk": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Beziehungen",
-                    "subtitle": "Beziehungen"
+                    "title": "Persönliches Netzwerk",
+                    "subtitle": "Persönliches Netzwerk"
                 },
                 "Verstrickungen": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
@@ -118,15 +127,111 @@
                         "background_image": "random"
                     }
                 },
-                "Macht & Kontrolle": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Macht & Kontrolle",
-                    "subtitle": "Macht & Kontrolle"
+                "Einfluss & Territorien": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Einfluss & Territorien",
+                        "subtitle": "Einfluss & Territorien"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/special/stadtplan.png"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    }
                 },
                 "Blut & Jagd": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Blut & Jagd",
-                    "subtitle": "Blut & Jagd"
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Blut & Jagd",
+                        "subtitle": "Blut & Jagd"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/special/stadtplan.png"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    }
+                },
+                "Akteure & Fraktionen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Akteure & Fraktionen",
+                        "subtitle": "Akteure & Fraktionen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Kontrollierte Institutionen": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Kontrollierte Institutionen",
+                        "subtitle": "Kontrollierte Institutionen"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Maskerade & Öffentlichkeit": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Maskerade & Öffentlichkei",
+                        "subtitle": "Maskerade & Öffentlichkei"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
+                },
+                "Sonstiges": {
+                    "page_1": {
+                        "background_image": "random"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    }
                 }
             },
             "Intrigen & Interessen": {
@@ -202,6 +307,125 @@
                         "title": "Elysien",
                         "subtitle": "Elysien"
                     },
+                    "Brujah": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Gangrel": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Malkavian": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Nosferatu": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Toreador": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Tremere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Ventrue": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Andere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Offiziele Gebäude": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Offiziele Gebäude",
+                        "subtitle": "Offiziele Gebäude"
+                    },
                     "page_2": {
                         "background_image": "random"
                     },
@@ -212,36 +436,137 @@
                         "background_image": "random"
                     }
                 },
-                "Offizielle Gebäude": {
+                "Zufluchten und Verstecke": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Offizielle Gebäude",
-                        "subtitle": "Offizielle Gebäude"
+                        "title": "Zufluchten und Verstecke",
+                        "subtitle": "Zufluchten und Verstecke"
                     },
-                    "page_2": {
-                        "background_image": "random"
+                    "Brujah": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_3": {
-                        "background_image": "random"
+                    "Gangrel": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Zufluchten": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Zufluchten",
-                        "subtitle": "Zufluchten"
+                    "Malkavian": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_2": {
-                        "background_image": "random"
+                    "Nosferatu": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_3": {
-                        "background_image": "random"
+                    "Toreador": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_4": {
-                        "background_image": "random"
+                    "Tremere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Ventrue": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Andere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     }
                 },
                 "Safehäuser": {
@@ -250,110 +575,117 @@
                         "title": "Safehäuser",
                         "subtitle": "Safehäuser"
                     },
-                    "page_2": {
-                        "background_image": "random"
+                    "Brujah": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_3": {
-                        "background_image": "random"
+                    "Gangrel": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Clubs & Nachtleben": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Clubs & Nachtleben",
-                        "subtitle": "Clubs & Nachtleben"
+                    "Malkavian": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_2": {
-                        "background_image": "random"
+                    "Nosferatu": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_3": {
-                        "background_image": "random"
+                    "Toreador": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Industrie & Verfall": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Industrie & Verfall",
-                        "subtitle": "Industrie & Verfall"
+                    "Tremere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_2": {
-                        "background_image": "random"
+                    "Ventrue": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Kultur & Öffentlichkeit": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Kultur & Öffentlichkeit",
-                        "subtitle": "Kultur & Öffentlichkeit"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Menschliche Infrastruktur": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Menschliche Infrastruktur",
-                        "subtitle": "Menschliche Infrastruktur"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Freies Gelände": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Freies Gelände",
-                        "subtitle": "Freies Gelände"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Sabbat Orte": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Sabbat Orte",
-                        "subtitle": "Sabbat Orte"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     }
                 },
                 "Garou Orte": {
@@ -362,30 +694,47 @@
                         "title": "Garou Orte",
                         "subtitle": "Garou Orte"
                     },
-                    "page_2": {
-                        "background_image": "random"
+                    "Feindlicher Stamm": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_3": {
-                        "background_image": "random"
+                    "Neutraler Stamm": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Sonstige Orte": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Sonstige Orte",
-                        "subtitle": "Sonstige Orte"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
                     }
                 }
             },
@@ -506,7 +855,7 @@
                         "background_image": "assets/images/calender/03.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/calender/01.png"
                     },
                     "page_5": {
                         "background_image": "assets/images/sitzungen/überblick.png"
@@ -516,6 +865,15 @@
                     },
                     "page_7": {
                         "background_image": "assets/images/sitzungen/überblick3.png"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
                     }
                 },
                 "Plan & Ziele": {
@@ -667,56 +1025,56 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_11": {
                         "background_image": "random_npc"
                     },
                     "page_12": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_13": {
                         "background_image": "random_npc"
                     },
                     "page_14": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_15": {
                         "background_image": "random_npc"
                     },
                     "page_16": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -725,56 +1083,56 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_11": {
                         "background_image": "random_npc"
                     },
                     "page_12": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_13": {
                         "background_image": "random_npc"
                     },
                     "page_14": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_15": {
                         "background_image": "random_npc"
                     },
                     "page_16": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -783,56 +1141,56 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_11": {
                         "background_image": "random_npc"
                     },
                     "page_12": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_13": {
                         "background_image": "random_npc"
                     },
                     "page_14": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_15": {
                         "background_image": "random_npc"
                     },
                     "page_16": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -841,56 +1199,56 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_11": {
                         "background_image": "random_npc"
                     },
                     "page_12": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_13": {
                         "background_image": "random_npc"
                     },
                     "page_14": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_15": {
                         "background_image": "random_npc"
                     },
                     "page_16": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -899,56 +1257,56 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_11": {
                         "background_image": "random_npc"
                     },
                     "page_12": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_13": {
                         "background_image": "random_npc"
                     },
                     "page_14": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_15": {
                         "background_image": "random_npc"
                     },
                     "page_16": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -957,35 +1315,35 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -994,35 +1352,35 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -1031,21 +1389,21 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
@@ -1057,21 +1415,21 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
@@ -1084,6 +1442,20 @@
             "Charakter": {
                 "Details": {
                     "Vorgeschichte": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Persönliche Ziele": {
                         "page_1": {
                             "background_image": "random"
                         },
@@ -1229,6 +1601,38 @@
                         },
                         "page_6": {
                             "background_image": "assets/images/contacts/03.png"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        },
+                        "page_8": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Kontaktaufnahmen": {
+                        "page_1": {
+                            "background_image": "assets/images/my_approach/01.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/my_approach/02.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/my_approach/03.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/my_approach/04.png"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/my_approach/05.png"
+                        },
+                        "page_6": {
+                            "background_image": "assets/images/my_approach/06.png"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        },
+                        "page_8": {
+                            "background_image": "random"
                         }
                     },
                     "Andere": {
@@ -1346,173 +1750,41 @@
                     }
                 }
             },
-            "Domäne": {
-                "Macht & Kontrolle": {
-                    "Akteure & Fraktionen": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Einfluss & Territorien": {
-                        "page_1": {
-                            "background_image": "assets/images/special/stadtplan.png"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Kontrollierte Institutionen": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Maskerade & Öffentlichkeit": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Sonstiges": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    }
-                },
-                "Blut & Jagd": {
-                    "Jagdgebiete": {
-                        "page_1": {
-                            "background_image": "assets/images/special/stadtplan.png"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Blutversorgung": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Jagdregeln / Tabus": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Konflikte um Beute": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    }
-                }
-            },
             "NPCs": {
                 "Camarilla": {
                     "page_1": {
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -1521,35 +1793,35 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -1558,35 +1830,35 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -1595,35 +1867,35 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -1632,35 +1904,35 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -1669,35 +1941,35 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 },
@@ -1706,35 +1978,35 @@
                         "background_image": "random_npc"
                     },
                     "page_2": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_3": {
                         "background_image": "random_npc"
                     },
                     "page_4": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_5": {
                         "background_image": "random_npc"
                     },
                     "page_6": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_7": {
                         "background_image": "random_npc"
                     },
                     "page_8": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     },
                     "page_9": {
                         "background_image": "random_npc"
                     },
                     "page_10": {
-                        "background_image": "assets/images/NPCs/notes.png",
+                        "background_image": "random_notes",
                         "no_upper_tabs": false
                     }
                 }
@@ -1866,39 +2138,52 @@
                     },
                     "Verträge": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/contracts/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/contracts/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/contracts/03.png"
+                        }
+                    },
+                    "Zeitungsartikel": {
+                        "page_1": {
+                            "background_image": "assets/images/articles/01.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/articles/03.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/articles/02.png"
                         },
                         "page_4": {
                             "background_image": "random"
+                        }
+                    },
+                    "Recherchen": {
+                        "page_1": {
+                            "background_image": "assets/images/recherche/01.png"
                         },
-                        "page_5": {
-                            "background_image": "random"
+                        "page_2": {
+                            "background_image": "assets/images/recherche/02.png"
                         },
-                        "page_6": {
-                            "background_image": "random"
+                        "page_3": {
+                            "background_image": "assets/images/recherche/03.png"
                         },
-                        "page_7": {
-                            "background_image": "random"
-                        },
-                        "page_8": {
+                        "page_4": {
                             "background_image": "random"
                         }
                     },
                     "Dokumente": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/documents/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/documents/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/documents/03.png"
                         },
                         "page_4": {
                             "background_image": "random"
@@ -1924,6 +2209,26 @@
                             "background_image": "random"
                         },
                         "page_7": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Kontaktaufnahmen": {
+                        "page_1": {
+                            "background_image": "assets/images/approach/01.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/approach/02.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/approach/03.png"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
                             "background_image": "random"
                         }
                     },

@@ -76,7 +76,23 @@ class DynamicPDFGenerator:
         tabs = []
         page_structure = {}
         tab_subsections = {}  # Store subsections for each tab
-        current_page = 1
+        
+        # Check if there's a title page
+        has_title_page = False
+        if cover_pages_config:
+            cover_pages = cover_pages_config.get("cover_pages", {})
+            if "title_page" in cover_pages:
+                has_title_page = True
+                # Add title page as page 1
+                page_structure[1] = {
+                    "tab_name": None,
+                    "subsection": None,
+                    "sub_subsection": None,
+                    "page_index": 1,
+                    "is_title_page": True
+                }
+        
+        current_page = 2 if has_title_page else 1
         
         # Calculate Y positions dynamically based on tabs from JSON
         start_y = 65.0
@@ -550,7 +566,7 @@ def main():
     # Try JSON first, fallback to source PDF
     json_path = "tab_structure.json"
     source = "vampire_journal.pdf"
-    output = "SL_journal.pdf"
+    output = "character_journal.pdf"
     
     if os.path.exists(json_path):
         print("Using JSON structure file...")

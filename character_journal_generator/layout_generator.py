@@ -1005,7 +1005,7 @@ class LayoutGenerator:
                 return os.path.abspath(font_path)
         return None
     
-    def add_cover_page(self, page: fitz.Page, cover_config: Dict, page_width: float, page_height: float):
+    def add_cover_page(self, page: fitz.Page, cover_config: Dict, page_width: float, page_height: float, sub_subsection_name: str = None):
         """Adds a cover page with background image, optional center image, and centered text"""
         # Check if this is a full-page image (no background, no text)
         full_page_image = cover_config.get("full_page", False)
@@ -1068,29 +1068,79 @@ class LayoutGenerator:
         # Load background image if specified
         bg_image_path = cover_config.get("background_image")
         
-        # Handle "random" background_image - use random background from assets/images/background/
-        if bg_image_path == "random":
+        # Handle "random_gefallen" background_image - use random background from assets/images/gefallen/
+        if bg_image_path == "random_gefallen":
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            background_dir = os.path.join(script_dir, "assets", "images", "background")
-            if not os.path.exists(background_dir):
-                background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+            gefallen_dir = os.path.join(script_dir, "assets", "images", "gefallen")
+            if not os.path.exists(gefallen_dir):
+                gefallen_dir = os.path.join(os.getcwd(), "assets", "images", "gefallen")
             
-            # Find all background images (excluding rules subdirectory and basic.png)
-            background_images = []
-            if os.path.exists(background_dir):
+            # Find all gefallen images
+            gefallen_images = []
+            if os.path.exists(gefallen_dir):
                 for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
-                    all_images = glob.glob(os.path.join(background_dir, ext))
-                    # Filter out subdirectories (like rules/) and basic.png
-                    background_images.extend([img for img in all_images 
-                                             if os.path.dirname(img) == background_dir 
-                                             and 'basic.png' not in img.lower()])
-                background_images.sort()
+                    all_images = glob.glob(os.path.join(gefallen_dir, ext))
+                    gefallen_images.extend(all_images)
+                gefallen_images.sort()
             
-            if background_images:
-                bg_image_path = random.choice(background_images)
+            if gefallen_images:
+                bg_image_path = random.choice(gefallen_images)
             else:
-                # Fallback to basic.png if no other backgrounds found
+                # Fallback to regular background directory if no gefallen images found
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
+        
+        # Handle "random" background_image - use random background from assets/images/background/
+        # Special handling for "Gefallen" sub-subsection: use assets/images/gefallen/
+        elif bg_image_path == "random":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            
+            # Check if this is the "Gefallen" sub-subsection
+            if sub_subsection_name == "Gefallen":
+                gefallen_dir = os.path.join(script_dir, "assets", "images", "gefallen")
+                if not os.path.exists(gefallen_dir):
+                    gefallen_dir = os.path.join(os.getcwd(), "assets", "images", "gefallen")
+                
+                # Find all gefallen images
+                gefallen_images = []
+                if os.path.exists(gefallen_dir):
+                    for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                        all_images = glob.glob(os.path.join(gefallen_dir, ext))
+                        gefallen_images.extend(all_images)
+                    gefallen_images.sort()
+                
+                if gefallen_images:
+                    bg_image_path = random.choice(gefallen_images)
+                else:
+                    # Fallback to regular background directory if no gefallen images found
+                    background_dir = os.path.join(script_dir, "assets", "images", "background")
+                    if not os.path.exists(background_dir):
+                        background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                    bg_image_path = os.path.join(background_dir, "basic.png")
+            else:
+                # Regular random background selection
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                
+                # Find all background images (excluding rules subdirectory and basic.png)
+                background_images = []
+                if os.path.exists(background_dir):
+                    for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                        all_images = glob.glob(os.path.join(background_dir, ext))
+                        # Filter out subdirectories (like rules/) and basic.png
+                        background_images.extend([img for img in all_images 
+                                                 if os.path.dirname(img) == background_dir 
+                                                 and 'basic.png' not in img.lower()])
+                    background_images.sort()
+                
+                if background_images:
+                    bg_image_path = random.choice(background_images)
+                else:
+                    # Fallback to basic.png if no other backgrounds found
+                    bg_image_path = os.path.join(background_dir, "basic.png")
         
         # Handle "random_npc_vampire" background_image - use random background from assets/images/NPCs/vampire/
         if bg_image_path == "random_npc_vampire":
@@ -1517,6 +1567,24 @@ class LayoutGenerator:
             default_font = cover_pages_config.get("default_font", {})
             text_position = cover_pages_config.get("text_position", {})
             
+            # Add title page if it exists (page 1, 0-based index 0)
+            if "title_page" in cover_pages and total_pages > 0:
+                title_page_config = cover_pages["title_page"]
+                cover_config = title_page_config.copy()
+                # Merge with defaults
+                if default_bg and "background_image" not in cover_config:
+                    cover_config["background_image"] = default_bg
+                elif "background_image" in cover_config:
+                    cover_config["background_image"] = cover_config["background_image"]
+                if default_font:
+                    cover_config["default_font"] = {**default_font, **cover_config.get("default_font", {})}
+                if text_position:
+                    cover_config["text_position"] = {**text_position, **cover_config.get("text_position", {})}
+                
+                title_page = doc[0]
+                print(f"  Adding title page on page 1")
+                self.add_cover_page(title_page, cover_config, self.page_width, self.page_height)
+            
             # Get list of background images for random selection
             script_dir = os.path.dirname(os.path.abspath(__file__))
             background_dir = os.path.join(script_dir, "assets", "images", "background")
@@ -1737,7 +1805,7 @@ class LayoutGenerator:
                                                 
                                                 sub_subsection_page = doc[page_num]
                                                 print(f"  Adding cover for {tab_name} -> {subsection_name} -> {sub_subsection_name} (page {page_index}) on page {page_num + 1}")
-                                                self.add_cover_page(sub_subsection_page, cover_config, self.page_width, self.page_height)
+                                                self.add_cover_page(sub_subsection_page, cover_config, self.page_width, self.page_height, sub_subsection_name)
                             else:
                                 # Normal sub-subsection handling (single page, no page_1/page_2 structure)
                                 # Search page_structure for this sub-subsection
@@ -1765,7 +1833,7 @@ class LayoutGenerator:
                                             
                                             sub_subsection_page = doc[page_num]
                                             print(f"  Adding cover for {tab_name} -> {subsection_name} -> {sub_subsection_name} on page {page_num + 1}")
-                                            self.add_cover_page(sub_subsection_page, cover_config, self.page_width, self.page_height)
+                                            self.add_cover_page(sub_subsection_page, cover_config, self.page_width, self.page_height, sub_subsection_name)
                                             found = True
                                         break
                                 if not found:
@@ -1775,6 +1843,10 @@ class LayoutGenerator:
             pages_with_covers = set()
             if cover_pages_config:
                 cover_pages = cover_pages_config.get("cover_pages", {})
+                
+                # Track title page
+                if "title_page" in cover_pages:
+                    pages_with_covers.add(0)  # Title page is page 1 (0-based index 0)
                 
                 # Track tab cover pages
                 for tab in tabs:
@@ -1916,18 +1988,30 @@ class LayoutGenerator:
                 print("Warning: No background images found in assets/images/background/, skipping background addition")
         
         print("Drawing modern tab tabs...")
-        # Draw modern tabs on all pages
-        for page_num in range(total_pages):
+        # Draw modern tabs on all pages (skip title page on page 1)
+        start_page = 0
+        if cover_pages_config:
+            cover_pages = cover_pages_config.get("cover_pages", {})
+            if "title_page" in cover_pages:
+                start_page = 1  # Skip title page
+        
+        for page_num in range(start_page, total_pages):
             target_page = doc[page_num]
             self.add_tabs_to_page(target_page, page_num + 1, tabs, tab_text_elements, page_structure)
         
         # Draw upper tabs (left top) if we have the structure
         if page_structure and tab_subsections and metadata:
             print("Drawing upper tabs (left top)...")
-            for page_num in range(total_pages):
+            start_page = 0
+            if cover_pages_config:
+                cover_pages = cover_pages_config.get("cover_pages", {})
+                if "title_page" in cover_pages:
+                    start_page = 1  # Skip title page
+            
+            for page_num in range(start_page, total_pages):
                 page_info = page_structure.get(page_num + 1)
-                # Skip upper tabs if page has no_upper_tabs flag
-                if page_info and page_info.get("no_upper_tabs"):
+                # Skip upper tabs if page has no_upper_tabs flag or is title page
+                if page_info and (page_info.get("no_upper_tabs") or page_info.get("is_title_page")):
                     continue
                 
                 # Check if this page uses basic_npc.png background (no upper tabs for these pages)

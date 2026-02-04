@@ -7,7 +7,7 @@
             "description": "Persönliche Informationen, Hintergrund und Details des Charakters."
         },
         "Domäne": {
-            "background_image": "assets/images/special/boston.png"
+            "background_image": "assets/images/special/phili.png"
         },
         "Intrigen & Interessen": {
             "background_image": "assets/images/section_cover/main_cover.png",
@@ -983,16 +983,16 @@
                     },
                     "Gefallen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         }
                     },
                     "Schulden": {
@@ -1352,16 +1352,16 @@
                     },
                     "Gefallen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         }
                     }
                 }
@@ -4707,16 +4707,16 @@
                     },
                     "Gefallen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         }
                     },
                     "Schulden": {

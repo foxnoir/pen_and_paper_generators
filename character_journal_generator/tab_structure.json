@@ -1,18 +1,43 @@
 {
     "right_tabs": [
         {
-            "name": "Domäne",
+            "name": "Charakter",
             "target_page": 1,
             "y_position": 65.0,
             "subsections_left_top_tabs": [
                 {
-                    "name": "Chronologie & Kernkonflikt",
+                    "name": "Details",
                     "seconnd_subsections_left_tabs": [
                         "Vorgeschichte",
-                        "Wichtige Ereignisse",
-                        "Historische Konflikte"
+                        "Charakterbogen",
+                        "Disziplinen",
+                        "Vor- & Nachteile",
+                        "Inventar",
+                        "Zufluchten",
+                        "Ghule & Blutsgebundene"
                     ]
                 },
+                {
+                    "name": "Beessere Name",
+                    "seconnd_subsections_left_tabs": [
+                        "Verbündete",
+                        "Feinde",
+                        "Kontakte"
+                    ]
+                },
+                {
+                    "name": "Beessere Name",
+                    "seconnd_subsections_left_tabs": [
+                        "Gefallen",
+                        "Aufträge & Aufgaben",
+                        "Ziele"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Domäne",
+            "subsections_left_top_tabs": [
                 {
                     "name": "Macht & Kontrolle",
                     "seconnd_subsections_left_tabs": [
@@ -28,32 +53,8 @@
                     "name": "Blut & Jagd",
                     "seconnd_subsections_left_tabs": [
                         "Jagdgebiete",
-                        "Jagdregeln / Tabus",
                         "Konflikte um Beute",
                         "Blutversorgung"
-                    ]
-                },
-                {
-                    "name": "Eskalationspotenzial",
-                    "seconnd_subsections_left_tabs": [
-                        "Latente Bedrohungen",
-                        "Alte Feindschaften",
-                        "Waffenstillstände",
-                        "Konfliktherde",
-                        "Öffentliche Brennpunkte",
-                        "Aktuelle Krisen"
-                    ]
-                },
-                {
-                    "name": "SCs",
-                    "seconnd_subsections_left_tabs": [
-                        "Charakterbögen",
-                        "Einstiegspunkte",
-                        "Aufträge und Aufgaben",
-                        "Beziehungen zu Fraktionen / NPCs",
-                        "Bekanntes Wissen",
-                        "Annahmen & Fehlschlüsse",
-                        "Gefallen"
                     ]
                 }
             ]
@@ -102,25 +103,11 @@
                     "name": "Geheimnisse & Informationen",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": [
-                        "SL-Geheimnisse",
+                        "Gerüchte",
+                        "Geheimnisse",
                         "Informationen",
-                        "Gezielte Lügen"
+                        "Lügen"
                     ]
-                },
-                {
-                    "name": "Gerüchte",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Intrigenverläufe",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Sonstiges",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
                 }
             ]
         },
@@ -133,28 +120,14 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Ablauf & Ziele",
+                    "name": "Plan & Ziele",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Schlüsselinformationen",
+                    "name": "Ablauf",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Notizen",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Storystränge",
-                    "seconnd_subsections_left_tabs": [
-                        "Aktueller Stand",
-                        "Mögliche Entwicklungen & Konsequenzen",
-                        "Was passiert, wenn nichts passiert",
-                        "Nächste Eskalationsstufe"
-                    ]
                 },
                 {
                     "name": "Sonstiges",
@@ -169,84 +142,29 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Camarilla",
-                    "seconnd_subsections_left_tabs": [
-                        "Brujah",
-                        "Gangrel",
-                        "Malkavian",
-                        "Nosferatu",
-                        "Toreador",
-                        "Tremere",
-                        "Ventrue",
-                        "Sonstige"
-                    ]
+                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Sabbat",
                     "seconnd_subsections_left_tabs": [
-                        "Assamiten",
-                        "Brujah",
-                        "Gangrel",
-                        "Lasombra",
-                        "Malkavian",
-                        "Nosferatu",
-                        "Salubri",
-                        "Toreador",
-                        "Tremere",
-                        "Tzimisce",
-                        "Ventrue",
                         "Sonstige"
                     ]
                 },
                 {
                     "name": "Anarchen",
-                    "seconnd_subsections_left_tabs": [
-                        "Assamiten",
-                        "Brujah",
-                        "Gangrel",
-                        "Lasombra",
-                        "Malkavian",
-                        "Nosferatu",
-                        "Jünger des Set",
-                        "Toreador",
-                        "Tremere",
-                        "Tzimisce",
-                        "Sonstige"
-                    ]
+                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Unabhängige",
-                    "seconnd_subsections_left_tabs": [
-                        "Assamiten",
-                        "Gangrel",
-                        "Giovanni",
-                        "Jünger des Set",
-                        "Ravnos",
-                        "Salubri",
-                        "Wahre Brujah",
-                        "Sonstige"
-                    ]
+                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Blutlinien",
-                    "seconnd_subsections_left_tabs": [
-                        "Ahrimanes",
-                        "Baali",
-                        "Gargoyles",
-                        "Kiasyd",
-                        "Lamia",
-                        "Nagaraja",
-                        "Töchter der Kakophonie",
-                        "Samedi",
-                        "Sonstige"
-                    ]
+                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Garou",
-                    "seconnd_subsections_left_tabs": [
-                        "Feindlicher Stamm",
-                        "Neutraler Stamm",
-                        "Sonstige"
-                    ]
+                    "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Ghule",
@@ -370,32 +288,6 @@
                     "seconnd_subsections_left_tabs": []
                 }
             ]
-        },
-        {
-            "name": "Handouts",
-            "page_count": 6,
-            "subsections_left_top_tabs": [
-                {
-                    "name": "Aktuelle Sitzung",
-                    "page_count": 3,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Ausgehändigt",
-                    "page_count": 3,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Allgemein",
-                    "page_count": 3,
-                    "seconnd_subsections_left_tabs": []
-                }
-            ]
-        },
-        {
-            "name": "Notizen",
-            "page_count": 6,
-            "seconnd_subsections_left_tabs": []
         },
         {
             "name": "Regeln",

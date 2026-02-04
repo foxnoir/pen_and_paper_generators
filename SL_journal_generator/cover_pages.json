@@ -197,12 +197,21 @@
                         "subtitle": "Gerüchte"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/rumors/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/rumors/02.png"
                     },
                     "page_4": {
+                        "background_image": "assets/images/rumors/03.png"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    },
+                    "page_7": {
                         "background_image": "random"
                     }
                 },
@@ -241,20 +250,9 @@
             },
             "Orte": {
                 "Elysien": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Elysien",
-                        "subtitle": "Elysien"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Elysien",
+                    "subtitle": "Elysien"
                 },
                 "Offiziele Gebäude": {
                     "page_1": {
@@ -273,36 +271,14 @@
                     }
                 },
                 "Zufluchten": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Zufluchten",
-                        "subtitle": "Zufluchten"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Zufluchten",
+                    "subtitle": "Zufluchten"
                 },
                 "Safehäuser": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Safehäuser",
-                        "subtitle": "Safehäuser"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Safehäuser",
+                    "subtitle": "Safehäuser"
                 },
                 "Clubs & Nachtleben": {
                     "page_1": {
@@ -472,7 +448,7 @@
                         "background_image": "assets/images/special/kanalisation.png"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/special/stadtplan.png"
                     },
                     "page_3": {
                         "background_image": "random"
@@ -483,7 +459,7 @@
                 },
                 "Stromversorgung": {
                     "page_1": {
-                        "background_image": "random"
+                        "background_image": "assets/images/special/stadtplan.png"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -497,7 +473,7 @@
                 },
                 "Wasserversorgung": {
                     "page_1": {
-                        "background_image": "random"
+                        "background_image": "assets/images/special/stadtplan.png"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -511,7 +487,7 @@
                 },
                 "Überwachungspläne": {
                     "page_1": {
-                        "background_image": "random"
+                        "background_image": "assets/images/special/stadtplan.png"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -525,7 +501,7 @@
                 },
                 "Technische Infrastruktur": {
                     "page_1": {
-                        "background_image": "random"
+                        "background_image": "assets/images/special/stadtplan.png"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -559,6 +535,28 @@
                         "background_image": "random"
                     }
                 },
+                "Überblick": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Überblick",
+                        "subtitle": "Überblick"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/sitzungen/überblick.png"
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/sitzungen/überblick2.png"
+                    },
+                    "page_4": {
+                        "background_image": "assets/images/sitzungen/überblick3.png"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    }
+                },
                 "Ablauf & Ziele": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
@@ -566,7 +564,7 @@
                         "subtitle": "Ablauf & Ziele"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/sitzungen/01.png"
                     },
                     "page_3": {
                         "background_image": "random"
@@ -575,10 +573,121 @@
                         "background_image": "random"
                     },
                     "page_5": {
-                        "background_image": "assets/images/special/hinrichtungsrede.png"
+                        "background_image": "random"
                     },
                     "page_6": {
+                        "background_image": "random"
+                    },
+                    "page_7": {
+                        "background_image": "assets/images/special/hinrichtungsrede.png"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
+                    },
+                    "page_11": {
                         "background_image": "assets/images/special/tod_seneshall_sehen.png"
+                    },
+                    "page_12": {
+                        "background_image": "random"
+                    },
+                    "page_13": {
+                        "background_image": "random"
+                    },
+                    "page_14": {
+                        "background_image": "assets/images/sitzungen/02.png"
+                    },
+                    "page_15": {
+                        "background_image": "random"
+                    },
+                    "page_16": {
+                        "background_image": "random"
+                    },
+                    "page_17": {
+                        "background_image": "random"
+                    },
+                    "page_18": {
+                        "background_image": "random"
+                    },
+                    "page_19": {
+                        "background_image": "assets/images/sitzungen/03.png"
+                    },
+                    "page_20": {
+                        "background_image": "random"
+                    },
+                    "page_21": {
+                        "background_image": "random"
+                    },
+                    "page_22": {
+                        "background_image": "random"
+                    },
+                    "page_23": {
+                        "background_image": "random"
+                    },
+                    "page_24": {
+                        "background_image": "assets/images/sitzungen/04.png"
+                    },
+                    "page_25": {
+                        "background_image": "random"
+                    },
+                    "page_26": {
+                        "background_image": "random"
+                    },
+                    "page_27": {
+                        "background_image": "random"
+                    },
+                    "page_28": {
+                        "background_image": "random"
+                    },
+                    "page_29": {
+                        "background_image": "assets/images/sitzungen/05.png"
+                    },
+                    "page_30": {
+                        "background_image": "random"
+                    },
+                    "page_31": {
+                        "background_image": "random"
+                    },
+                    "page_32": {
+                        "background_image": "random"
+                    },
+                    "page_33": {
+                        "background_image": "random"
+                    },
+                    "page_34": {
+                        "background_image": "assets/images/sitzungen/06.png"
+                    },
+                    "page_35": {
+                        "background_image": "random"
+                    },
+                    "page_36": {
+                        "background_image": "random"
+                    },
+                    "page_37": {
+                        "background_image": "random"
+                    },
+                    "page_38": {
+                        "background_image": "random"
+                    },
+                    "page_39": {
+                        "background_image": "assets/images/sitzungen/07.png"
+                    },
+                    "page_40": {
+                        "background_image": "random"
+                    },
+                    "page_41": {
+                        "background_image": "random"
+                    },
+                    "page_42": {
+                        "background_image": "random"
+                    },
+                    "page_43": {
+                        "background_image": "random"
                     }
                 },
                 "Schlüsselinformationen": {
@@ -647,7 +756,7 @@
                 }
             },
             "Handouts": {
-                "Aktuelle Sitzung": {
+                "Geplante Sitzung": {
                     "page_1": {
                         "background_image": "assets/images/sitzungen/aktuelle_sitzung.png"
                     },
@@ -669,7 +778,7 @@
                         "background_image": "random"
                     }
                 },
-                "Allgemein": {
+                "Verschiedene": {
                     "page_1": {
                         "background_image": "assets/images/sitzungen/allgemein.png"
                     },
@@ -978,15 +1087,24 @@
                             "background_image": "assets/images/special/ämter.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/special/rat.png"
                         },
                         "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_5": {
-                            "background_image": "random"
+                            "background_image": "assets/images/special/hueter.png"
                         },
                         "page_4": {
+                            "background_image": "assets/images/special/hounds.png"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/special/harpyien.png"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        },
+                        "page_8": {
                             "background_image": "random"
                         }
                     },
@@ -4619,7 +4737,7 @@
                             "background_image": "assets/images/special/rasha_marco_2.png"
                         },
                         "page_3": {
-                            "background_image": "assets/images/special/rosellini_rasha_1.png"
+                            "background_image": "assets/images/special/rosellini_rasha.png"
                         },
                         "page_4": {
                             "background_image": "assets/images/special/rosellini_rasha_2.png"
@@ -4750,21 +4868,27 @@
                 "Ziele & Ambitionen": {
                     "Camarilla": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/goals/05.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/goals/6.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/goals/07.png"
                         },
                         "page_4": {
+                            "background_image": "random"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
                             "background_image": "random"
                         }
                     },
                     "Sabbat": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/goals/01.png"
                         },
                         "page_2": {
                             "background_image": "random"
@@ -4773,20 +4897,32 @@
                             "background_image": "random"
                         },
                         "page_4": {
+                            "background_image": "random"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
                             "background_image": "random"
                         }
                     },
                     "Unabhängige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/goals/02.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/goals/03.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/goals/04.png"
                         },
                         "page_4": {
+                            "background_image": "random"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
                             "background_image": "random"
                         }
                     },
@@ -4879,6 +5015,380 @@
                         }
                     },
                     "Nächste Eskalationsstufe": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                }
+            },
+            "Orte": {
+                "Elysien": {
+                    "Brujah": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Gangrel": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Malkavian": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Nosferatu": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Toreador": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Tremere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Ventrue": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Zufluchten": {
+                    "Brujah": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Gangrel": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Malkavian": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Nosferatu": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Toreador": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Tremere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Ventrue": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Safehäuser": {
+                    "Brujah": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Gangrel": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Malkavian": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Nosferatu": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Toreador": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Tremere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Ventrue": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sonstige": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Garou Orte": {
+                    "Feindlicher Stamm": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Neutraler Stamm": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sonstige": {
                         "page_1": {
                             "background_image": "random"
                         },

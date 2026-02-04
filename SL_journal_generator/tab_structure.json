@@ -76,7 +76,7 @@
                 },
                 {
                     "name": "Ziele & Ambitionen",
-                    "page_count": 4,
+                    "page_count": 6,
                     "seconnd_subsections_left_tabs": [
                         "Camarilla",
                         "Sabbat",
@@ -109,7 +109,7 @@
                 },
                 {
                     "name": "Gerüchte",
-                    "page_count": 4,
+                    "page_count": 6,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
@@ -129,12 +129,17 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Kalender",
-                    "page_count": 4,
+                    "page_count": 6,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Überblick",
+                    "page_count": 6,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Ablauf & Ziele",
-                    "page_count": 4,
+                    "page_count": 43,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
@@ -267,8 +272,15 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Elysien",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [
+                        "Brujah",
+                        "Gangrel",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Toreador",
+                        "Tremere",
+                        "Ventrue"
+                    ]
                 },
                 {
                     "name": "Offiziele Gebäude",
@@ -277,13 +289,29 @@
                 },
                 {
                     "name": "Zufluchten",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [
+                        "Brujah",
+                        "Gangrel",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Toreador",
+                        "Tremere",
+                        "Ventrue",
+                        "Sonstige"
+                    ]
                 },
                 {
                     "name": "Safehäuser",
-                    "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [
+                        "Brujah",
+                        "Gangrel",
+                        "Malkavian",
+                        "Nosferatu",
+                        "Toreador",
+                        "Tremere",
+                        "Ventrue",
+                        "Sonstige"
+                    ]
                 },
                 {
                     "name": "Clubs & Nachtleben",
@@ -318,7 +346,11 @@
                 {
                     "name": "Garou Orte",
                     "page_count": 4,
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [
+                        "Feindlicher Stamm",
+                        "Neutraler Stamm",
+                        "Sonstige"
+                    ]
                 },
                 {
                     "name": "Sonstige Orte",
@@ -376,7 +408,7 @@
             "page_count": 6,
             "subsections_left_top_tabs": [
                 {
-                    "name": "Aktuelle Sitzung",
+                    "name": "Geplante Sitzung",
                     "page_count": 3,
                     "seconnd_subsections_left_tabs": []
                 },
@@ -386,7 +418,7 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Allgemein",
+                    "name": "Verschiedene",
                     "page_count": 3,
                     "seconnd_subsections_left_tabs": []
                 }
@@ -443,11 +475,11 @@
                 {
                     "name": "Gesellschaft & Politik",
                     "sub_subsections": [
+                        "Ämter",
                         "Elysium & Etikette",
-                        "Status",
                         "Domänen",
-                        "Gefallen",
-                        "Ämter"
+                        "Status",
+                        "Gefallen"
                     ]
                 },
                 {

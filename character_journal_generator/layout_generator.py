@@ -1142,6 +1142,33 @@ class LayoutGenerator:
                     # Fallback to basic.png if no other backgrounds found
                     bg_image_path = os.path.join(background_dir, "basic.png")
         
+        # Handle "random_npc" background_image - use random background from assets/images/NPCs/
+        if bg_image_path == "random_npc":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            npc_dir = os.path.join(script_dir, "assets", "images", "NPCs")
+            if not os.path.exists(npc_dir):
+                npc_dir = os.path.join(os.getcwd(), "assets", "images", "NPCs")
+            
+            # Find all NPC images (excluding subdirectories like vampire/)
+            npc_images = []
+            if os.path.exists(npc_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(npc_dir, ext))
+                    # Filter out subdirectories (like vampire/) - only use direct NPCs directory
+                    npc_images.extend([img for img in all_images 
+                                      if os.path.dirname(img) == npc_dir])
+                npc_images.sort()
+            
+            if npc_images:
+                bg_image_path = random.choice(npc_images)
+            else:
+                # Fallback to random background if no NPC images found
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
         # Handle "random_npc_vampire" background_image - use random background from assets/images/NPCs/vampire/
         if bg_image_path == "random_npc_vampire":
             script_dir = os.path.dirname(os.path.abspath(__file__))

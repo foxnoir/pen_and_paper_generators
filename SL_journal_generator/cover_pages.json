@@ -1416,16 +1416,16 @@
                     },
                     "Gefallen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         }
                     }
                 }
@@ -4771,30 +4771,30 @@
                     },
                     "Gefallen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         }
                     },
                     "Schulden": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_gefallen"
                         }
                     },
                     "Sonstiges": {

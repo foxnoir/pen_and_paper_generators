@@ -18,18 +18,20 @@
                     ]
                 },
                 {
-                    "name": "Beessere Name",
+                    "name": "Beziehungen",
                     "seconnd_subsections_left_tabs": [
                         "Verbündete",
                         "Feinde",
-                        "Kontakte"
+                        "Kontakte",
+                        "Andere"
                     ]
                 },
                 {
-                    "name": "Beessere Name",
+                    "name": "Verstrickungen",
                     "seconnd_subsections_left_tabs": [
-                        "Gefallen",
                         "Aufträge & Aufgaben",
+                        "Gefallen",
+                        "Schulden",
                         "Ziele"
                     ]
                 }
@@ -53,6 +55,7 @@
                     "name": "Blut & Jagd",
                     "seconnd_subsections_left_tabs": [
                         "Jagdgebiete",
+                        "Jagdregeln / Tabus",
                         "Konflikte um Beute",
                         "Blutversorgung"
                     ]
@@ -125,7 +128,7 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
-                    "name": "Ablauf",
+                    "name": "Ereignisse",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
                 },

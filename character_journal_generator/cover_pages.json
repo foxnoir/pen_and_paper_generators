@@ -1,5 +1,11 @@
 {
     "cover_pages": {
+        "Charakter": {
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Charakter",
+            "subtitle": "Charakter",
+            "description": "Persönliche Informationen, Hintergrund und Details des Charakters."
+        },
         "Domäne": {
             "background_image": "assets/images/special/boston.png"
         },
@@ -98,12 +104,24 @@
             "subtitle": "Kompakte Übersicht der Regeln"
         },
         "subsections": {
-            "Domäne": {
-                "Chronologie & Kernkonflikt": {
+            "Charakter": {
+                "Details": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Chronologie & Kernkonflikt",
-                    "subtitle": "Chronologie & Kernkonflikt"
+                    "title": "Details",
+                    "subtitle": "Details"
                 },
+                "Beziehungen": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Beziehungen",
+                    "subtitle": "Beziehungen"
+                },
+                "Verstrickungen": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Verstrickungen",
+                    "subtitle": "Verstrickungen"
+                }
+            },
+            "Domäne": {
                 "Macht & Kontrolle": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
                     "title": "Macht & Kontrolle",
@@ -113,16 +131,6 @@
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
                     "title": "Blut & Jagd",
                     "subtitle": "Blut & Jagd"
-                },
-                "Eskalationspotenzial": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Eskalationspotenzial",
-                    "subtitle": "Eskalationspotenzial"
-                },
-                "SCs": {
-                    "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "SCs",
-                    "subtitle": "SCs"
                 }
             },
             "Intrigen & Interessen": {
@@ -179,54 +187,6 @@
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
                         "title": "Geheimnisse & Informationen",
                         "subtitle": "Geheimnisse & Informationen"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Gerüchte": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Gerüchte",
-                        "subtitle": "Gerüchte"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Intrigenverläufe": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Intrigenverläufe",
-                        "subtitle": "Intrigenverläufe"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Sonstiges": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Sonstiges",
-                        "subtitle": "Sonstiges"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -551,41 +511,13 @@
                     },
                     "page_4": {
                         "background_image": "random"
-                    },
-                    "page_5": {
-                        "background_image": "random"
-                    },
-                    "page_6": {
-                        "background_image": "random"
                     }
                 },
-                "Ablauf & Ziele": {
+                "Plan & Ziele": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Ablauf & Ziele",
-                        "subtitle": "Ablauf & Ziele"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    },
-                    "page_5": {
-                        "background_image": "assets/images/special/hinrichtungsrede.png"
-                    },
-                    "page_6": {
-                        "background_image": "assets/images/special/tod_seneshall_sehen.png"
-                    }
-                },
-                "Schlüsselinformationen": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Schlüsselinformationen",
-                        "subtitle": "Schlüsselinformationen"
+                        "title": "Plan & Ziele",
+                        "subtitle": "Plan & Ziele"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -597,27 +529,11 @@
                         "background_image": "random"
                     }
                 },
-                "Notizen": {
+                "Ereignisse": {
                     "page_1": {
                         "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Notizen",
-                        "subtitle": "Notizen"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    }
-                },
-                "Storystränge": {
-                    "page_1": {
-                        "background_image": "assets/images/section_cover/sub_section_cover.png",
-                        "title": "Storystränge",
-                        "subtitle": "Storystränge"
+                        "title": "Ereignisse",
+                        "subtitle": "Ereignisse"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -891,75 +807,95 @@
             }
         },
         "sub_subsections": {
-            "Domäne": {
-                "Chronologie & Kernkonflikt": {
+            "Charakter": {
+                "Details": {
                     "Vorgeschichte": {
                         "page_1": {
-                            "background_image": "assets/images/special/strahl.png"
+                            "background_image": "random"
                         },
                         "page_2": {
-                            "background_image": "assets/images/special/main_conflict_1.png"
+                            "background_image": "random"
                         },
                         "page_3": {
-                            "background_image": "assets/images/special/main_conflict_2.png"
+                            "background_image": "random"
                         },
                         "page_4": {
-                            "background_image": "assets/images/special/main_conflict_3.png"
-                        },
-                        "page_5": {
-                            "background_image": "random"
-                        },
-                        "page_6": {
-                            "background_image": "random"
-                        },
-                        "page_7": {
-                            "background_image": "random"
-                        },
-                        "page_8": {
                             "background_image": "random"
                         }
                     },
-                    "Wichtige Ereignisse": {
+                    "Charakterbogen": {
                         "page_1": {
-                            "background_image": "assets/images/special/putsch_1.png"
+                            "background_image": "random"
                         },
                         "page_2": {
-                            "background_image": "assets/images/special/putsch_2.png"
+                            "background_image": "random"
                         },
                         "page_3": {
-                            "background_image": "assets/images/special/putsch_3.png"
+                            "background_image": "random"
                         },
                         "page_4": {
-                            "background_image": "assets/images/special/putsch_4.png"
-                        },
-                        "page_5": {
-                            "background_image": "assets/images/special/putch_5.png"
-                        },
-                        "page_6": {
-                            "background_image": "assets/images/special/exil1.png"
-                        },
-                        "page_7": {
-                            "background_image": "assets/images/special/exil2.png"
-                        },
-                        "page_8": {
-                            "background_image": "assets/images/special/exil3.png"
-                        },
-                        "page_9": {
-                            "background_image": "random"
-                        },
-                        "page_10": {
-                            "background_image": "random"
-                        },
-                        "page_11": {
-                            "background_image": "random"
-                        },
-                        "page_12": {
                             "background_image": "random"
                         }
                     },
-                    "Historische Konflikte": {
+                    "Disziplinen": {
                         "page_1": {
-                            "background_image": "assets/images/special/vergangene_konflikte.png"
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Vor- & Nachteile": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Inventar": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Zufluchten": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Ghule & Blutsgebundene": {
+                        "page_1": {
+                            "background_image": "random"
                         },
                         "page_2": {
                             "background_image": "random"
@@ -972,6 +908,124 @@
                         }
                     }
                 },
+                "Beziehungen": {
+                    "Verbündete": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Feinde": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Kontakte": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Andere": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Verstrickungen": {
+                    "Aufträge & Aufgaben": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Gefallen": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Schulden": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Ziele": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        }
+                    }
+                }
+            },
+            "Domäne": {
                 "Macht & Kontrolle": {
                     "Ämter & Machtstruktur": {
                         "page_1": {
@@ -4567,7 +4621,7 @@
                             "background_image": "random"
                         }
                     },
-                    "Erpressung": {
+                    "Erpressungen": {
                         "page_1": {
                             "background_image": "random"
                         },
@@ -4695,26 +4749,31 @@
                     }
                 },
                 "Geheimnisse & Informationen": {
-                    "SL-Geheimnisse": {
+                    "Gerüchte": {
                         "page_1": {
-                            "background_image": "assets/images/special/tod_seneshall.png"
+                            "background_image": "random"
                         },
                         "page_2": {
-                            "background_image": "assets/images/special/giovanni1.png"
+                            "background_image": "random"
                         },
                         "page_3": {
-                            "background_image": "assets/images/special/giovanni2.png"
+                            "background_image": "random"
                         },
                         "page_4": {
-                            "background_image": "assets/images/special/giovanni3.png"
-                        },
-                        "page_5": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Geheimnisse": {
+                        "page_1": {
                             "background_image": "random"
                         },
-                        "page_6": {
+                        "page_2": {
                             "background_image": "random"
                         },
-                        "page_7": {
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
                             "background_image": "random"
                         }
                     },
@@ -4732,7 +4791,7 @@
                             "background_image": "random"
                         }
                     },
-                    "Gezielte Lügen": {
+                    "Lügen": {
                         "page_1": {
                             "background_image": "random"
                         },
@@ -4819,66 +4878,6 @@
                         }
                     },
                     "Andere Fraktionen": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    }
-                }
-            },
-            "Sitzungen": {
-                "Storystränge": {
-                    "Aktueller Stand": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Mögliche Entwicklungen & Konsequenzen": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Was passiert, wenn nichts passiert": {
-                        "page_1": {
-                            "background_image": "random"
-                        },
-                        "page_2": {
-                            "background_image": "random"
-                        },
-                        "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
-                        }
-                    },
-                    "Nächste Eskalationsstufe": {
                         "page_1": {
                             "background_image": "random"
                         },

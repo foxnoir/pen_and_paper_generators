@@ -92,7 +92,7 @@
                 },
                 {
                     "name": "Dokumente & Verpflichtungen",
-                    "page_count": 4,
+                    "page_count": 7,
                     "seconnd_subsections_left_tabs": [
                         "Aufträge",
                         "Verträge",
@@ -123,6 +123,11 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
+                    "name": "Überblick",
+                    "page_count": 4,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
                     "name": "Plan & Ziele",
                     "page_count": 4,
                     "seconnd_subsections_left_tabs": []
@@ -145,41 +150,48 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Camarilla",
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 },
                 {
                     "name": "Sabbat",
-                    "seconnd_subsections_left_tabs": [
-                        "Sonstige"
-                    ]
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 },
                 {
                     "name": "Anarchen",
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 },
                 {
                     "name": "Unabhängige",
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 },
                 {
                     "name": "Blutlinien",
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 },
                 {
                     "name": "Garou",
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 },
                 {
                     "name": "Ghule",
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 },
                 {
                     "name": "Menschen",
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 },
                 {
                     "name": "Andere",
-                    "seconnd_subsections_left_tabs": []
+                    "seconnd_subsections_left_tabs": [],
+                    "page_count": 10
                 }
             ]
         },

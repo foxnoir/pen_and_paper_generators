@@ -1426,6 +1426,15 @@
                         },
                         "page_4": {
                             "background_image": "random_gefallen"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
                         }
                     }
                 }
@@ -4781,6 +4790,15 @@
                         },
                         "page_4": {
                             "background_image": "random_gefallen"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
                         }
                     },
                     "Schulden": {
@@ -4795,6 +4813,15 @@
                         },
                         "page_4": {
                             "background_image": "random_gefallen"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
                         }
                     },
                     "Sonstiges": {

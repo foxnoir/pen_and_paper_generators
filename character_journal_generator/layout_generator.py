@@ -1068,102 +1068,109 @@ class LayoutGenerator:
         # Load background image if specified
         bg_image_path = cover_config.get("background_image")
         
-        # Handle "random_gefallen" background_image - use random background from assets/images/gefallen/
-        if bg_image_path == "random_gefallen":
+        # Handle "random_favors" background_image - use random background from assets/images/favors/
+        # Note: "random_gefallen" is kept for backward compatibility
+        if bg_image_path in ("random_favors", "random_gefallen"):
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            gefallen_dir = os.path.join(script_dir, "assets", "images", "gefallen")
-            if not os.path.exists(gefallen_dir):
-                gefallen_dir = os.path.join(os.getcwd(), "assets", "images", "gefallen")
+            favors_dir = os.path.join(script_dir, "assets", "images", "favors")
+            if not os.path.exists(favors_dir):
+                favors_dir = os.path.join(os.getcwd(), "assets", "images", "favors")
             
-            # Find all gefallen images
-            gefallen_images = []
-            if os.path.exists(gefallen_dir):
+            # Find all favors images
+            favors_images = []
+            if os.path.exists(favors_dir):
                 for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
-                    all_images = glob.glob(os.path.join(gefallen_dir, ext))
-                    gefallen_images.extend(all_images)
-                gefallen_images.sort()
+                    all_images = glob.glob(os.path.join(favors_dir, ext))
+                    favors_images.extend(all_images)
+                favors_images.sort()
             
-            if gefallen_images:
-                bg_image_path = random.choice(gefallen_images)
+            if favors_images:
+                bg_image_path = random.choice(favors_images)
             else:
-                # Fallback to regular background directory if no gefallen images found
+                # Fallback to regular background directory if no favors images found
                 background_dir = os.path.join(script_dir, "assets", "images", "background")
                 if not os.path.exists(background_dir):
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
                 
-        if bg_image_path == "random_meine_aufträge":
+        # Handle "random_my_missions" background_image - use random background from assets/images/my_missions/
+        # Note: "random_meine_aufträge" is kept for backward compatibility
+        if bg_image_path in ("random_my_missions", "random_meine_aufträge"):
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            auftraege_dir = os.path.join(script_dir, "assets", "images", "meine_aufträge")
-            if not os.path.exists(auftraege_dir):
-                auftraege_dir = os.path.join(os.getcwd(), "assets", "images", "meine_aufträge")
+            my_missions_dir = os.path.join(script_dir, "assets", "images", "my_missions")
+            if not os.path.exists(my_missions_dir):
+                my_missions_dir = os.path.join(os.getcwd(), "assets", "images", "my_missions")
             
-            # Find all gefallen images
-            auftraege_images = []
-            if os.path.exists(auftraege_dir):
+            # Find all my missions images
+            my_missions_images = []
+            if os.path.exists(my_missions_dir):
                 for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
-                    all_images = glob.glob(os.path.join(auftraege_dir, ext))
-                    auftraege_images.extend(all_images)
-                auftraege_images.sort()
+                    all_images = glob.glob(os.path.join(my_missions_dir, ext))
+                    my_missions_images.extend(all_images)
+                my_missions_images.sort()
             
-            if auftraege_images:
-                bg_image_path = random.choice(auftraege_images)
+            if my_missions_images:
+                bg_image_path = random.choice(my_missions_images)
             else:
-                # Fallback to regular background directory if no gefallen images found
+                # Fallback to regular background directory if no my missions images found
                 background_dir = os.path.join(script_dir, "assets", "images", "background")
                 if not os.path.exists(background_dir):
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
                 
                 
-        if bg_image_path == "random_aufträge":
+        # Handle "random_missions" background_image - use random background from assets/images/missions/
+        # Note: "random_aufträge" is kept for backward compatibility
+        if bg_image_path in ("random_missions", "random_aufträge"):
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            auftraege_dir = os.path.join(script_dir, "assets", "images", "aufträge")
-            if not os.path.exists(auftraege_dir):
-                auftraege_dir = os.path.join(os.getcwd(), "assets", "images", "aufträge")
+            missions_dir = os.path.join(script_dir, "assets", "images", "missions")
+            if not os.path.exists(missions_dir):
+                missions_dir = os.path.join(os.getcwd(), "assets", "images", "missions")
             
-            # Find all gefallen images
-            auftraege_images = []
-            if os.path.exists(auftraege_dir):
+            # Find all missions images
+            missions_images = []
+            if os.path.exists(missions_dir):
                 for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
-                    all_images = glob.glob(os.path.join(auftraege_dir, ext))
-                    auftraege_images.extend(all_images)
-                auftraege_images.sort()
+                    all_images = glob.glob(os.path.join(missions_dir, ext))
+                    missions_images.extend(all_images)
+                missions_images.sort()
             
-            if auftraege_images:
-                bg_image_path = random.choice(auftraege_images)
+            if missions_images:
+                bg_image_path = random.choice(missions_images)
             else:
-                # Fallback to regular background directory if no gefallen images found
+                # Fallback to regular background directory if no missions images found
                 background_dir = os.path.join(script_dir, "assets", "images", "background")
                 if not os.path.exists(background_dir):
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
                 
-        if bg_image_path == "random_meine_gefallen":
+        # Handle "random_my_favors" background_image - use random background from assets/images/my_favors/
+        # Note: "random_meine_gefallen" is kept for backward compatibility
+        if bg_image_path in ("random_my_favors", "random_meine_gefallen"):
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            gefallen_dir = os.path.join(script_dir, "assets", "images", "meine_gefallen")
-            if not os.path.exists(gefallen_dir):
-                gefallen_dir = os.path.join(os.getcwd(), "assets", "images", "meine_gefallen")
+            my_favors_dir = os.path.join(script_dir, "assets", "images", "my_favors")
+            if not os.path.exists(my_favors_dir):
+                my_favors_dir = os.path.join(os.getcwd(), "assets", "images", "my_favors")
             
-            # Find all gefallen images
-            gefallen_images = []
-            if os.path.exists(gefallen_dir):
+            # Find all my favors images
+            my_favors_images = []
+            if os.path.exists(my_favors_dir):
                 for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
-                    all_images = glob.glob(os.path.join(gefallen_dir, ext))
-                    gefallen_images.extend(all_images)
-                gefallen_images.sort()
+                    all_images = glob.glob(os.path.join(my_favors_dir, ext))
+                    my_favors_images.extend(all_images)
+                my_favors_images.sort()
             
-            if gefallen_images:
-                bg_image_path = random.choice(gefallen_images)
+            if my_favors_images:
+                bg_image_path = random.choice(my_favors_images)
             else:
-                # Fallback to regular background directory if no gefallen images found
+                # Fallback to regular background directory if no my favors images found
                 background_dir = os.path.join(script_dir, "assets", "images", "background")
                 if not os.path.exists(background_dir):
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
         
         # Handle "random" background_image - use random background from assets/images/background/
-        # Special handling for "Gefallen" sub-subsection: use assets/images/gefallen/
+        # Special handling for "Favors" sub-subsection: use assets/images/favors/
         elif bg_image_path == "random":
             script_dir = os.path.dirname(os.path.abspath(__file__))
             

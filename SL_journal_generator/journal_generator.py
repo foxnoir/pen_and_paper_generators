@@ -174,6 +174,8 @@ class DynamicPDFGenerator:
                         current_page += 1
                 elif is_garou_subsection:
                     # Read pages from cover_pages.json subsections config
+                    # Garou has info pages (page_1, page_2) but also has sub-subsections
+                    # So we generate the info pages but DON'T skip sub-subsections
                     if subsections_config:
                         tab_config = subsections_config.get(tab_name, {})
                         subsection_config = tab_config.get(subsection_name, {})
@@ -199,16 +201,17 @@ class DynamicPDFGenerator:
                                             "page_index": page_idx
                                         }
                                         current_page += 1
-                                    continue
-                    # Fallback: Generate 2 pages if config not found
-                    for page_idx in range(1, 3):  # page_index 1-2
-                        page_structure[current_page] = {
-                            "tab_name": tab_name,
-                            "subsection": subsection_name,
-                            "sub_subsection": None,
-                            "page_index": page_idx
-                        }
-                        current_page += 1
+                                    # DON'T continue here - we need to process sub-subsections!
+                    else:
+                        # Fallback: Generate 2 pages if config not found
+                        for page_idx in range(1, 3):  # page_index 1-2
+                            page_structure[current_page] = {
+                                "tab_name": tab_name,
+                                "subsection": subsection_name,
+                                "sub_subsection": None,
+                                "page_index": page_idx
+                            }
+                            current_page += 1
                 else:
                     # First page for subsection itself
                     page_structure[current_page] = {
@@ -258,15 +261,16 @@ class DynamicPDFGenerator:
                             current_page += 1
                     elif is_garou_sub_subsection:
                         # Generate pages for each Garou sub-subsection (read from config)
-                        # page_1,3,5,7,9: garou.png sheet (as image with basic.png background)
-                        # page_2,4,6,8,10: basic_npc (page_10 without upper tabs)
-                        for page_idx in range(1, 11):  # page_index 1-10
+                        # page_1: garou.png (info page)
+                        # page_2-11: random_notes -> basic_npc pattern (5x repeated = 10 pages)
+                        # Total: 11 pages per Garou sub-subsection
+                        for page_idx in range(1, 12):  # page_index 1-11
                             page_structure[current_page] = {
                                 "tab_name": tab_name,
                                 "subsection": subsection_name,
                                 "sub_subsection": sub_subsection,
                                 "page_index": page_idx,
-                                "no_upper_tabs": (page_idx == 10)  # Last page has no upper tabs
+                                "no_upper_tabs": (page_idx in [3, 5, 7, 9, 11])  # basic_npc pages have no upper tabs
                             }
                             current_page += 1
                     else:

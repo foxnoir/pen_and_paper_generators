@@ -846,25 +846,25 @@
             "Sitzungen": {
                 "Kalender": {
                     "page_1": {
-                        "background_image": "assets/images/calender/01.png"
+                        "background_image": "assets/images/calendar/01.png"
                     },
                     "page_2": {
-                        "background_image": "assets/images/calender/02.png"
+                        "background_image": "assets/images/calendar/02.png"
                     },
                     "page_3": {
-                        "background_image": "assets/images/calender/03.png"
+                        "background_image": "assets/images/calendar/03.png"
                     },
                     "page_4": {
-                        "background_image": "assets/images/calender/01.png"
+                        "background_image": "assets/images/calendar/01.png"
                     },
                     "page_5": {
-                        "background_image": "assets/images/sitzungen/überblick.png"
+                        "background_image": "assets/images/sessions/überblick.png"
                     },
                     "page_6": {
-                        "background_image": "assets/images/sitzungen/überblick2.png"
+                        "background_image": "assets/images/sessions/überblick2.png"
                     },
                     "page_7": {
-                        "background_image": "assets/images/sitzungen/überblick3.png"
+                        "background_image": "assets/images/sessions/überblick3.png"
                     },
                     "page_8": {
                         "background_image": "random"
@@ -883,40 +883,40 @@
                         "subtitle": "Plan & Ziele"
                     },
                     "page_2": {
-                        "background_image": "assets/images/sitzungen/01.png"
+                        "background_image": "assets/images/sessions/01.png"
                     },
                     "page_3": {
-                        "background_image": "assets/images/sitzungen/01_1.png"
+                        "background_image": "assets/images/sessions/01_1.png"
                     },
                     "page_4": {
-                        "background_image": "assets/images/sitzungen/04.png"
+                        "background_image": "assets/images/sessions/04.png"
                     },
                     "page_5": {
-                        "background_image": "assets/images/sitzungen/04_1.png"
+                        "background_image": "assets/images/sessions/04_1.png"
                     },
                     "page_6": {
-                        "background_image": "assets/images/sitzungen/05.png"
+                        "background_image": "assets/images/sessions/05.png"
                     },
                     "page_7": {
-                        "background_image": "assets/images/sitzungen/05_1.png"
+                        "background_image": "assets/images/sessions/05_1.png"
                     },
                     "page_8": {
-                        "background_image": "assets/images/sitzungen/01.png"
+                        "background_image": "assets/images/sessions/01.png"
                     },
                     "page_9": {
-                        "background_image": "assets/images/sitzungen/01_1.png"
+                        "background_image": "assets/images/sessions/01_1.png"
                     },
                     "page_10": {
-                        "background_image": "assets/images/sitzungen/03.png"
+                        "background_image": "assets/images/sessions/03.png"
                     },
                     "page_11": {
-                        "background_image": "assets/images/sitzungen/03_1.png"
+                        "background_image": "assets/images/sessions/03_1.png"
                     },
                     "page_12": {
-                        "background_image": "assets/images/sitzungen/02.png"
+                        "background_image": "assets/images/sessions/02.png"
                     },
                     "page_13": {
-                        "background_image": "assets/images/sitzungen/02_1.png"
+                        "background_image": "assets/images/sessions/02_1.png"
                     }
                 },
                 "Ereignisse": {
@@ -955,7 +955,7 @@
             "Handouts": {
                 "Aktuelle Sitzung": {
                     "page_1": {
-                        "background_image": "assets/images/sitzungen/aktuelle_sitzung.png"
+                        "background_image": "assets/images/sessions/aktuelle_sitzung.png"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -966,7 +966,7 @@
                 },
                 "Ausgehändigt": {
                     "page_1": {
-                        "background_image": "assets/images/sitzungen/ausgegeben.png"
+                        "background_image": "assets/images/sessions/ausgegeben.png"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -977,7 +977,7 @@
                 },
                 "Allgemein": {
                     "page_1": {
-                        "background_image": "assets/images/sitzungen/allgemein.png"
+                        "background_image": "assets/images/sessions/allgemein.png"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -1653,16 +1653,16 @@
                 "Verstrickungen": {
                     "Aufträge & Aufgaben": {
                         "page_1": {
-                            "background_image": "random_meine_aufträge"
+                            "background_image": "random_my_missions"
                         },
                         "page_2": {
-                            "background_image": "random_meine_aufträge"
+                            "background_image": "random_my_missions"
                         },
                         "page_3": {
-                            "background_image": "random_meine_aufträge"
+                            "background_image": "random_my_missions"
                         },
                         "page_4": {
-                            "background_image": "random_meine_aufträge"
+                            "background_image": "random_my_missions"
                         },
                         "page_5": {
                             "background_image": "random"
@@ -1676,16 +1676,16 @@
                     },
                     "Gefallen": {
                         "page_1": {
-                            "background_image": "random_meine_gefallen"
+                            "background_image": "random_my_favors"
                         },
                         "page_2": {
-                            "background_image": "random_meine_gefallen"
+                            "background_image": "random_my_favors"
                         },
                         "page_3": {
-                            "background_image": "random_meine_gefallen"
+                            "background_image": "random_my_favors"
                         },
                         "page_4": {
-                            "background_image": "random_meine_gefallen"
+                            "background_image": "random_my_favors"
                         },
                         "page_5": {
                             "background_image": "random"
@@ -1699,16 +1699,16 @@
                     },
                     "Schulden": {
                         "page_1": {
-                            "background_image": "random_meine_gefallen"
+                            "background_image": "random_my_favors"
                         },
                         "page_2": {
-                            "background_image": "random_meine_gefallen"
+                            "background_image": "random_my_favors"
                         },
                         "page_3": {
-                            "background_image": "random_meine_gefallen"
+                            "background_image": "random_my_favors"
                         },
                         "page_4": {
-                            "background_image": "random_meine_gefallen"
+                            "background_image": "random_my_favors"
                         },
                         "page_5": {
                             "background_image": "random"
@@ -2115,16 +2115,16 @@
                 "Dokumente & Verpflichtungen": {
                     "Aufträge": {
                         "page_1": {
-                            "background_image": "random_aufträge"
+                            "background_image": "random_missions"
                         },
                         "page_2": {
-                            "background_image": "random_aufträge"
+                            "background_image": "random_missions"
                         },
                         "page_3": {
-                            "background_image": "random_aufträge"
+                            "background_image": "random_missions"
                         },
                         "page_4": {
-                            "background_image": "random_aufträge"
+                            "background_image": "random_missions"
                         },
                         "page_5": {
                             "background_image": "random"
@@ -2191,16 +2191,16 @@
                     },
                     "Gefallen": {
                         "page_1": {
-                            "background_image": "random_gefallen"
+                            "background_image": "random_favors"
                         },
                         "page_2": {
-                            "background_image": "random_gefallen"
+                            "background_image": "random_favors"
                         },
                         "page_3": {
-                            "background_image": "random_gefallen"
+                            "background_image": "random_favors"
                         },
                         "page_4": {
-                            "background_image": "random_gefallen"
+                            "background_image": "random_favors"
                         },
                         "page_5": {
                             "background_image": "random"
@@ -2234,16 +2234,16 @@
                     },
                     "Schulden": {
                         "page_1": {
-                            "background_image": "random_gefallen"
+                            "background_image": "random_favors"
                         },
                         "page_2": {
-                            "background_image": "random_gefallen"
+                            "background_image": "random_favors"
                         },
                         "page_3": {
-                            "background_image": "random_gefallen"
+                            "background_image": "random_favors"
                         },
                         "page_4": {
-                            "background_image": "random_gefallen"
+                            "background_image": "random_favors"
                         },
                         "page_5": {
                             "background_image": "random"
@@ -2438,7 +2438,7 @@
                     },
                     "Schwierigkeiten": {
                         "page_1": {
-                            "background_image": "assets/images/rules/schwierigkeiten/01.png"
+                            "background_image": "assets/images/rules/difficulties/01.png"
                         }
                     },
                     "Willenskraft": {
@@ -2448,20 +2448,20 @@
                     },
                     "Gesundheit & Schaden": {
                         "page_1": {
-                            "background_image": "assets/images/rules/gesundheit/01.png"
+                            "background_image": "assets/images/rules/health/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/gesundheit/02.png"
+                            "background_image": "assets/images/rules/health/02.png"
                         }
                     }
                 },
                 "Charakter & Blut": {
                     "Menschlichkeit & Pfade": {
                         "page_1": {
-                            "background_image": "assets/images/rules/menschlichkeit/01.png"
+                            "background_image": "assets/images/rules/humanity/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/menschlichkeit/02.png"
+                            "background_image": "assets/images/rules/humanity/02.png"
                         }
                     },
                     "Blut & Hunger": {
@@ -2477,10 +2477,10 @@
                     },
                     "Blutpunkte": {
                         "page_1": {
-                            "background_image": "assets/images/rules/blutpunkte/01.png"
+                            "background_image": "assets/images/rules/blood_points/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/blutpunkte/02.png"
+                            "background_image": "assets/images/rules/blood_points/02.png"
                         }
                     },
                     "Raserei": {
@@ -2496,28 +2496,28 @@
                     },
                     "Erzeugung & Generation": {
                         "page_1": {
-                            "background_image": "assets/images/rules/erzeugung/01.png"
+                            "background_image": "assets/images/rules/generation/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/erzeugung/02.png"
+                            "background_image": "assets/images/rules/generation/02.png"
                         }
                     }
                 },
                 "Disziplinen": {
                     "Überblick": {
                         "page_1": {
-                            "background_image": "assets/images/rules/disziplinen_überblick/01.png"
+                            "background_image": "assets/images/rules/disciplines_overview/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/disziplinen_überblick/02.png"
+                            "background_image": "assets/images/rules/disciplines_overview/02.png"
                         }
                     },
                     "Grundregeln": {
                         "page_1": {
-                            "background_image": "assets/images/rules/disziplinen_grundregeln/01.png"
+                            "background_image": "assets/images/rules/disciplines_basic_rules/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/disziplinen_grundregeln/02.png"
+                            "background_image": "assets/images/rules/disciplines_basic_rules/02.png"
                         }
                     },
                     "Einzelne Disziplinen": {
@@ -2539,10 +2539,10 @@
                     },
                     "Thaumaturgie": {
                         "page_1": {
-                            "background_image": "assets/images/rules/thaumaturgie/01.png"
+                            "background_image": "assets/images/rules/thaumaturgy/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/thaumaturgie/02.png"
+                            "background_image": "assets/images/rules/thaumaturgy/02.png"
                         }
                     },
                     "Nekromantie": {
@@ -2555,10 +2555,10 @@
                     },
                     "Zusammenfassung": {
                         "page_1": {
-                            "background_image": "assets/images/rules/disziplinen_Zusammenfassung/01.png"
+                            "background_image": "assets/images/rules/disciplines_summary/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/disziplinen_Zusammenfassung/02.png"
+                            "background_image": "assets/images/rules/disciplines_summary/02.png"
                         }
                     }
                 },
@@ -2573,10 +2573,10 @@
                     },
                     "Nah- / Fernkampf": {
                         "page_1": {
-                            "background_image": "assets/images/rules/nah_fernfampf/01.png"
+                            "background_image": "assets/images/rules/melee_ranged_combat/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/nah_fernfampf/02.png"
+                            "background_image": "assets/images/rules/melee_ranged_combat/02.png"
                         }
                     },
                     "Schadenstypen": {
@@ -2589,10 +2589,10 @@
                     },
                     "Heilung & Tod": {
                         "page_1": {
-                            "background_image": "assets/images/rules/Heilung/01.png"
+                            "background_image": "assets/images/rules/healing/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/Heilung/02.png"
+                            "background_image": "assets/images/rules/healing/02.png"
                         }
                     }
                 },
@@ -2615,18 +2615,18 @@
                     },
                     "Domänen": {
                         "page_1": {
-                            "background_image": "assets/images/rules/domänen/01.png"
+                            "background_image": "assets/images/rules/domains/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/domänen/02.png"
+                            "background_image": "assets/images/rules/domains/02.png"
                         }
                     },
                     "Gefallen": {
                         "page_1": {
-                            "background_image": "assets/images/rules/meine_gefallen/01.png"
+                            "background_image": "assets/images/rules/my_favors/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/meine_gefallen/02.png"
+                            "background_image": "assets/images/rules/my_favors/02.png"
                         }
                     },
                     "Ämter": {
@@ -2641,10 +2641,10 @@
                 "Maskerade": {
                     "Grundprinzip": {
                         "page_1": {
-                            "background_image": "assets/images/rules/maskerade_grundprinzip/01.png"
+                            "background_image": "assets/images/rules/masquerade_basic_principle/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/maskerade_grundprinzip/02.png"
+                            "background_image": "assets/images/rules/masquerade_basic_principle/02.png"
                         }
                     },
                     "Traditionen": {
@@ -2657,10 +2657,10 @@
                     },
                     "Maskeradebrüche": {
                         "page_1": {
-                            "background_image": "assets/images/rules/maskeradebrüche/01.png"
+                            "background_image": "assets/images/rules/masquerade_breaches/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/maskeradebrüche/02.png"
+                            "background_image": "assets/images/rules/masquerade_breaches/02.png"
                         }
                     },
                     "Zeugen & Vertuschung": {
@@ -2673,10 +2673,10 @@
                     },
                     "Jäger & Aufmerksamkeit": {
                         "page_1": {
-                            "background_image": "assets/images/rules/jäger/01.png"
+                            "background_image": "assets/images/rules/hunters/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/jäger/02.png"
+                            "background_image": "assets/images/rules/hunters/02.png"
                         }
                     },
                     "Eskalation": {

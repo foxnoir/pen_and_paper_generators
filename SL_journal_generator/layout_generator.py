@@ -1086,6 +1086,13 @@ class LayoutGenerator:
         # Load background image if specified
         bg_image_path = cover_config.get("background_image")
         
+        # For clan sheets (transparent PNGs), automatically use basic.png as background if not specified
+        is_clan_sheet = cover_config.get("image") is not None
+        if is_clan_sheet and not bg_image_path:
+            # Automatically set basic.png as background for clan sheets
+            bg_image_path = "assets/images/basic.png"
+            cover_config["background_image"] = bg_image_path
+        
         # Handle "random_favors" background_image - use random background from assets/images/favors/
         # Note: "random_gefallen" is kept for backward compatibility
         if bg_image_path in ("random_favors", "random_gefallen"):
@@ -1277,6 +1284,7 @@ class LayoutGenerator:
         is_basic_png = bg_image_path and "basic.png" in bg_image_path
         
         # For clan sheets, ensure basic.png path points to the correct location
+        # Note: We normalize the path BEFORE resolving it, so the path resolution can find it
         if is_basic_png and is_clan_sheet:
             # Normalize path: assets/images/basic.png -> assets/images/background/basic.png
             if "background" not in bg_image_path:
@@ -1313,6 +1321,15 @@ class LayoutGenerator:
                     os.path.join(script_dir, bg_image_path),  # Relative to script
                     os.path.join(os.getcwd(), bg_image_path)  # Relative to cwd
                 ]
+                # For clan sheets with basic.png, also try the original path without "background" folder
+                # in case the file exists in assets/images/basic.png instead
+                if is_clan_sheet and is_basic_png and "background" in bg_image_path:
+                    original_path = bg_image_path.replace("images/background/basic.png", "images/basic.png")
+                    original_path = original_path.replace("assets/images/background/basic.png", "assets/images/basic.png")
+                    possible_paths.insert(1, original_path)  # Try original path early
+                    possible_paths.insert(2, os.path.join(script_dir, original_path))
+                    possible_paths.insert(3, os.path.join(os.getcwd(), original_path))
+                
                 bg_image_path = None
                 for path in possible_paths:
                     if os.path.exists(path):
@@ -1358,6 +1375,8 @@ class LayoutGenerator:
                     traceback.print_exc()
             else:
                 print(f"Warning: Background image path not found: {bg_image_path}")
+                if is_clan_sheet:
+                    print(f"  This is a clan sheet - checking for basic.png in alternative locations...")
                 # Try to find the file with different normalizations
                 script_dir = os.path.dirname(os.path.abspath(__file__))
                 possible_base_paths = [
@@ -1365,12 +1384,45 @@ class LayoutGenerator:
                     os.path.join(script_dir, bg_image_path),
                     os.path.join(os.getcwd(), bg_image_path)
                 ]
+                # For clan sheets, also try original path without "background"
+                if is_clan_sheet and is_basic_png and "background" in bg_image_path:
+                    original_path = bg_image_path.replace("images/background/basic.png", "images/basic.png")
+                    original_path = original_path.replace("assets/images/background/basic.png", "assets/images/basic.png")
+                    possible_base_paths.extend([
+                        original_path,
+                        os.path.join(script_dir, original_path),
+                        os.path.join(os.getcwd(), original_path)
+                    ])
+                found_path = None
                 for base_path in possible_base_paths:
+                    if os.path.exists(base_path):
+                        found_path = base_path
+                        break
                     for norm in ['NFC', 'NFD']:
                         normalized = unicodedata.normalize(norm, base_path)
                         if os.path.exists(normalized):
+                            found_path = normalized
                             print(f"  Found with {norm} normalization: {normalized}")
                             break
+                    if found_path:
+                        break
+                if found_path:
+                    bg_image_path = found_path
+                    # Retry inserting the image
+                    try:
+                        compressed_path = self._compress_image(bg_image_path)
+                        img_rect = fitz.Rect(0, 0, page_width, page_height)
+                        page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
+                        if compressed_path != bg_image_path and os.path.exists(compressed_path):
+                            try:
+                                os.unlink(compressed_path)
+                            except:
+                                pass
+                        print(f"  ✓ Successfully inserted background image after path correction: {bg_image_path}")
+                    except Exception as e:
+                        print(f"  ✗ Warning: Could not load background image even after path correction: {e}")
+                else:
+                    print(f"  ✗ Could not find background image in any of the tried paths")
         
         # Load optional center image (for subsections/sub-subsections)
         center_image_path = cover_config.get("image")
@@ -1750,6 +1802,10 @@ class LayoutGenerator:
                                                 cover_config["image"] = subsection_config[page_key]["image"]
                                             if "full_page" in subsection_config[page_key]:
                                                 cover_config["full_page"] = subsection_config[page_key]["full_page"]
+                                            # For transparent PNGs (like clan sheets), automatically use basic.png as background if not specified
+                                            is_clan_sheet = cover_config.get("image") is not None
+                                            if is_clan_sheet and "background_image" not in cover_config:
+                                                cover_config["background_image"] = "assets/images/basic.png"
                                             # Preserve no_upper_tabs flag if present, or set it if background is basic_npc.png
                                             bg_image = cover_config.get("background_image", "")
                                             if "no_upper_tabs" in subsection_config[page_key]:
@@ -1789,6 +1845,10 @@ class LayoutGenerator:
                                     if 0 <= page_num < total_pages:
                                         cover_config = subsection_config.copy()
                                         # Merge with defaults
+                                        # For transparent PNGs (like clan sheets), automatically use basic.png as background if not specified
+                                        is_clan_sheet = cover_config.get("image") is not None
+                                        if is_clan_sheet and "background_image" not in cover_config:
+                                            cover_config["background_image"] = "assets/images/basic.png"
                                         if default_bg and "background_image" not in cover_config:
                                             cover_config["background_image"] = process_background_image(default_bg)
                                         elif "background_image" in cover_config:
@@ -1838,6 +1898,9 @@ class LayoutGenerator:
                                                 # Ensure image field is preserved
                                                 if "image" in page_config:
                                                     cover_config["image"] = page_config["image"]
+                                                # For clan sheets (transparent PNGs), automatically use basic.png as background if not specified
+                                                if is_clan_sheet and "background_image" not in cover_config:
+                                                    cover_config["background_image"] = "assets/images/basic.png"
                                                 # Preserve no_upper_tabs flag if present, or set it if background is basic_npc.png
                                                 bg_image = cover_config.get("background_image", "")
                                                 if "no_upper_tabs" in page_config:
@@ -1881,6 +1944,9 @@ class LayoutGenerator:
                                             # Merge with defaults
                                             # Clan sheets (sub-subsections) should always use basic.png, not random
                                             is_clan_sheet = cover_config.get("image") is not None
+                                            # For clan sheets (transparent PNGs), automatically use basic.png as background if not specified
+                                            if is_clan_sheet and "background_image" not in cover_config:
+                                                cover_config["background_image"] = "assets/images/basic.png"
                                             if default_bg and "background_image" not in cover_config:
                                                 cover_config["background_image"] = process_background_image(default_bg, is_clan_sheet=is_clan_sheet)
                                             elif "background_image" in cover_config:

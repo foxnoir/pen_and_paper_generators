@@ -949,62 +949,16 @@
                 },
                 "Andere": {
                     "page_1": {
-                        "background_image": "random_npc_vampire"
+                        "background_image": "random"
                     },
                     "page_2": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
+                        "background_image": "random"
                     },
                     "page_3": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
+                        "background_image": "random"
                     },
                     "page_4": {
-                        "background_image": "random_npc_vampire"
-                    },
-                    "page_5": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
-                    },
-                    "page_6": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
-                    },
-                    "page_7": {
-                        "background_image": "random_npc_vampire"
-                    },
-                    "page_8": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
-                    },
-                    "page_9": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
-                    },
-                    "page_10": {
-                        "background_image": "random_npc_vampire"
-                    },
-                    "page_11": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
-                    },
-                    "page_12": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
-                    },
-                    "page_13": {
-                        "background_image": "random_npc_vampire"
-                    },
-                    "page_14": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
-                    },
-                    "page_15": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
-                    },
-                    "page_16": {
-                        "background_image": "random_npc_vampire"
+                        "background_image": "random"
                     }
                 }
             }
@@ -1362,16 +1316,16 @@
                     },
                     "Einstiegspunkte": {
                         "page_1": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_2": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_3": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_4": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         }
                     },
                     "Aufträge und Aufgaben": {
@@ -1382,58 +1336,58 @@
                             "background_image": "assets/images/special/auftrag_2.png"
                         },
                         "page_3": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_4": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_5": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_6": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         }
                     },
                     "Beziehungen zu Fraktionen / NPCs": {
                         "page_1": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_2": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_3": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_4": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         }
                     },
                     "Bekanntes Wissen": {
                         "page_1": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_2": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_3": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_4": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         }
                     },
                     "Annahmen & Fehlschlüsse": {
                         "page_1": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_2": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_3": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_4": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         }
                     },
                     "Gefallen": {
@@ -1450,13 +1404,13 @@
                             "background_image": "random_favors"
                         },
                         "page_5": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_6": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         },
                         "page_7": {
-                            "background_image": "random_scs"
+                            "background_image": "random"
                         }
                     }
                 }
@@ -4409,20 +4363,18 @@
                             "no_upper_tabs": true
                         },
                         "page_4": {
-                            "background_image": "random_notes",
-                            "no_upper_tabs": false
+                            "background_image": "assets/images/NPCs/garou.png"
                         },
                         "page_5": {
-                            "background_image": "assets/images/NPCs/basic_npc.png",
-                            "no_upper_tabs": true
-                        },
-                        "page_6": {
                             "background_image": "random_notes",
                             "no_upper_tabs": false
                         },
-                        "page_7": {
+                        "page_6": {
                             "background_image": "assets/images/NPCs/basic_npc.png",
                             "no_upper_tabs": true
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/garou.png"
                         },
                         "page_8": {
                             "background_image": "random_notes",
@@ -4433,10 +4385,13 @@
                             "no_upper_tabs": true
                         },
                         "page_10": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_11": {
                             "background_image": "random_notes",
                             "no_upper_tabs": false
                         },
-                        "page_11": {
+                        "page_12": {
                             "background_image": "assets/images/NPCs/basic_npc.png",
                             "no_upper_tabs": true
                         }
@@ -4454,20 +4409,18 @@
                             "no_upper_tabs": true
                         },
                         "page_4": {
-                            "background_image": "random_notes",
-                            "no_upper_tabs": false
+                            "background_image": "assets/images/NPCs/garou.png"
                         },
                         "page_5": {
-                            "background_image": "assets/images/NPCs/basic_npc.png",
-                            "no_upper_tabs": true
-                        },
-                        "page_6": {
                             "background_image": "random_notes",
                             "no_upper_tabs": false
                         },
-                        "page_7": {
+                        "page_6": {
                             "background_image": "assets/images/NPCs/basic_npc.png",
                             "no_upper_tabs": true
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/garou.png"
                         },
                         "page_8": {
                             "background_image": "random_notes",
@@ -4478,10 +4431,13 @@
                             "no_upper_tabs": true
                         },
                         "page_10": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_11": {
                             "background_image": "random_notes",
                             "no_upper_tabs": false
                         },
-                        "page_11": {
+                        "page_12": {
                             "background_image": "assets/images/NPCs/basic_npc.png",
                             "no_upper_tabs": true
                         }
@@ -4499,20 +4455,18 @@
                             "no_upper_tabs": true
                         },
                         "page_4": {
-                            "background_image": "random_notes",
-                            "no_upper_tabs": false
+                            "background_image": "assets/images/NPCs/garou.png"
                         },
                         "page_5": {
-                            "background_image": "assets/images/NPCs/basic_npc.png",
-                            "no_upper_tabs": true
-                        },
-                        "page_6": {
                             "background_image": "random_notes",
                             "no_upper_tabs": false
                         },
-                        "page_7": {
+                        "page_6": {
                             "background_image": "assets/images/NPCs/basic_npc.png",
                             "no_upper_tabs": true
+                        },
+                        "page_7": {
+                            "background_image": "assets/images/NPCs/garou.png"
                         },
                         "page_8": {
                             "background_image": "random_notes",
@@ -4523,10 +4477,13 @@
                             "no_upper_tabs": true
                         },
                         "page_10": {
+                            "background_image": "assets/images/NPCs/garou.png"
+                        },
+                        "page_11": {
                             "background_image": "random_notes",
                             "no_upper_tabs": false
                         },
-                        "page_11": {
+                        "page_12": {
                             "background_image": "assets/images/NPCs/basic_npc.png",
                             "no_upper_tabs": true
                         }
@@ -4534,62 +4491,16 @@
                 },
                 "Andere": {
                     "page_1": {
-                        "background_image": "random_npc_vampire"
+                        "background_image": "random"
                     },
                     "page_2": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
+                        "background_image": "random"
                     },
                     "page_3": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
+                        "background_image": "random"
                     },
                     "page_4": {
-                        "background_image": "random_npc_vampire"
-                    },
-                    "page_5": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
-                    },
-                    "page_6": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
-                    },
-                    "page_7": {
-                        "background_image": "random_npc_vampire"
-                    },
-                    "page_8": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
-                    },
-                    "page_9": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
-                    },
-                    "page_10": {
-                        "background_image": "random_npc_vampire"
-                    },
-                    "page_11": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
-                    },
-                    "page_12": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
-                    },
-                    "page_13": {
-                        "background_image": "random_npc_vampire"
-                    },
-                    "page_14": {
-                        "background_image": "random_notes",
-                        "no_upper_tabs": false
-                    },
-                    "page_15": {
-                        "background_image": "assets/images/NPCs/basic_npc.png",
-                        "no_upper_tabs": true
-                    },
-                    "page_16": {
-                        "background_image": "random_npc_vampire"
+                        "background_image": "random"
                     }
                 }
             },

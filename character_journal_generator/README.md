@@ -20,7 +20,7 @@
   </p>
 </div>
 
-<details>
+<Dossier>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -47,7 +47,7 @@
       <a href="#file-structure">File Structure</a>
     </li>
     <li>
-      <a href="#technical-details">Technical Details</a>
+      <a href="#technical-Dossier">Technical Dossier</a>
     </li>
     <li>
       <a href="#customization">Customization</a>
@@ -56,7 +56,7 @@
       <a href="#troubleshooting">Troubleshooting</a>
     </li>
   </ol>
-</details>
+</Dossier>
 
 ## About The Project
 
@@ -258,7 +258,7 @@ character_journal_generator/
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
-## Technical Details
+## Technical Dossier
 
 - **PDF Library**: PyMuPDF (fitz)
 - **Page Format**: A4 (595.28 x 841.89 points)
@@ -300,7 +300,7 @@ self.tab_colors = {
 
 ## License
 
-See [LICENSE](../LICENSE) file for details.
+See [LICENSE](../LICENSE) file for Dossier.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 

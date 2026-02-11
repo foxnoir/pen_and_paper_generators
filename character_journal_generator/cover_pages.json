@@ -73,10 +73,10 @@
         },
         "subsections": {
             "Charakter": {
-                "Details": {
+                "Dossier": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
-                    "title": "Details",
-                    "subtitle": "Details"
+                    "title": "Dossier",
+                    "subtitle": "Dossier"
                 },
                 "Persönliches Netzwerk": {
                     "background_image": "assets/images/section_cover/sub_section_cover.png",
@@ -1440,7 +1440,7 @@
         },
         "sub_subsections": {
             "Charakter": {
-                "Details": {
+                "Dossier": {
                     "Vorgeschichte": {
                         "page_1": {
                             "background_image": "random"

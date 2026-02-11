@@ -6,21 +6,19 @@
         "Intrigen & Interessen": {
             "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Intrigen & Interessen",
-            "subtitle": "Intrigen & Interessen",
-            "description": "Übersicht über alle Intrigen, Interessen und die komplexen Beziehungen zwischen den Charakteren."
+            "subtitle": "Intrigen & Interessen"
         },
         "Sitzungen": {
             "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Sitzungen",
-            "subtitle": "Chronik der Ereignisse",
-            "description": "Detaillierte Aufzeichnungen aller Runden und wichtigen Ereignisse der Kampagne."
+            "subtitle": "Chronik der Ereignisse"
         },
         "NPCs": {
             "page_1": {
                 "background_image": "assets/images/section_cover/npc.png"
             },
             "page_2": {
-                "background_image": "assets/images/section_cover/npc_2.png"
+                "background_image": "assets/images/section_cover/npc.png"
             },
             "page_3": {
                 "background_image": "assets/images/section_cover/npc_2.png"
@@ -38,8 +36,7 @@
         "Orte": {
             "background_image": "assets/images/section_cover/main_cover.png",
             "title": "Orte",
-            "subtitle": "Schauplätze und Grundrisse",
-            "description": "Beschreibungen aller wichtigen Orte, von Clubs über Elysien bis hin zu privaten Domänen."
+            "subtitle": "Schauplätze und Grundrisse"
         },
         "Karten": {
             "background_image": "assets/images/section_cover/main_cover.png",
@@ -50,8 +47,7 @@
             "page_1": {
                 "background_image": "assets/images/section_cover/main_cover.png",
                 "title": "Handouts",
-                "subtitle": "Materialien und Dokumente",
-                "description": "Alle Handouts, Dokumente und Materialien für die Spieler."
+                "subtitle": "Materialien und Dokumente"
             },
             "page_2": {
                 "background_image": "random"
@@ -73,8 +69,7 @@
             "page_1": {
                 "background_image": "assets/images/section_cover/main_cover.png",
                 "title": "Notizen",
-                "subtitle": "Persönliche Aufzeichnungen",
-                "description": "Private Notizen, Ideen und Gedanken für die Kampagne."
+                "subtitle": "Persönliche Aufzeichnungen"
             },
             "page_2": {
                 "background_image": "random"
@@ -261,13 +256,13 @@
                         "subtitle": "Offiziele Gebäude"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Zufluchten": {
@@ -287,13 +282,13 @@
                         "subtitle": "Clubs & Nachtleben"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Industrie & Verfall": {
@@ -303,13 +298,13 @@
                         "subtitle": "Industrie & Verfall"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Kultur & Öffentlichkeit": {
@@ -319,13 +314,13 @@
                         "subtitle": "Kultur & Öffentlichkeit"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Menschliche Infrastruktur": {
@@ -335,13 +330,13 @@
                         "subtitle": "Menschliche Infrastruktur"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Freies Gelände": {
@@ -351,13 +346,13 @@
                         "subtitle": "Freies Gelände"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Sabbat Orte": {
@@ -367,13 +362,13 @@
                         "subtitle": "Sabbat Orte"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Garou Orte": {
@@ -383,13 +378,13 @@
                         "subtitle": "Garou Orte"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Sonstige Orte": {
@@ -399,13 +394,13 @@
                         "subtitle": "Sonstige Orte"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 }
             },
@@ -517,13 +512,13 @@
             "Sitzungen": {
                 "Kalender": {
                     "page_1": {
-                        "background_image": "assets/images/special/calendar_2.png"
+                        "background_image": "assets/images/special/calender_2.png"
                     },
                     "page_2": {
-                        "background_image": "assets/images/special/calendar_3.png"
+                        "background_image": "assets/images/special/calender_3.png"
                     },
                     "page_3": {
-                        "background_image": "assets/images/special/calendar_4.png"
+                        "background_image": "assets/images/special/calender_4.png"
                     },
                     "page_4": {
                         "background_image": "random"
@@ -758,7 +753,9 @@
             "Handouts": {
                 "Geplante Sitzung": {
                     "page_1": {
-                        "background_image": "assets/images/sessions/aktuelle_sitzung.png"
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Geplante Sitzung",
+                        "subtitle": "Geplante Sitzung"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -803,56 +800,11 @@
                         "background_image": "random"
                     }
                 },
-                "Ausgehändigt": {
+                "Archiv": {
                     "page_1": {
-                        "background_image": "assets/images/sessions/ausgegeben.png"
-                    },
-                    "page_2": {
-                        "background_image": "random"
-                    },
-                    "page_3": {
-                        "background_image": "random"
-                    },
-                    "page_4": {
-                        "background_image": "random"
-                    },
-                    "page_5": {
-                        "background_image": "random"
-                    },
-                    "page_6": {
-                        "background_image": "random"
-                    },
-                    "page_7": {
-                        "background_image": "random"
-                    },
-                    "page_8": {
-                        "background_image": "random"
-                    },
-                    "page_9": {
-                        "background_image": "random"
-                    },
-                    "page_10": {
-                        "background_image": "random"
-                    },
-                    "page_11": {
-                        "background_image": "random"
-                    },
-                    "page_12": {
-                        "background_image": "random"
-                    },
-                    "page_13": {
-                        "background_image": "random"
-                    },
-                    "page_14": {
-                        "background_image": "random"
-                    },
-                    "page_15": {
-                        "background_image": "random"
-                    }
-                },
-                "Verschiedene": {
-                    "page_1": {
-                        "background_image": "assets/images/sessions/allgemein.png"
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Archiv",
+                        "subtitle": "Archiv"
                     },
                     "page_2": {
                         "background_image": "random"
@@ -1404,33 +1356,45 @@
                             "background_image": "assets/images/SCs/2.png"
                         },
                         "page_3": {
-                            "background_image": "assets/images/SCs/sheet1.png"
-                        },
-                        "page_4": {
-                            "background_image": "assets/images/SCs/3.png"
-                        },
-                        "page_5": {
-                            "background_image": "assets/images/SCs/4.png"
-                        },
-                        "page_6": {
                             "background_image": "assets/images/SCs/sheet2.png"
                         },
+                        "page_4": {
+                            "background_image": "random_notes",
+                            "no_upper_tabs": false
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/SCs/3.png"
+                        },
+                        "page_6": {
+                            "background_image": "assets/images/SCs/4.png"
+                        },
                         "page_7": {
-                            "background_image": "assets/images/SCs/5.png"
+                            "background_image": "assets/images/SCs/sheet1.png"
                         },
                         "page_8": {
-                            "background_image": "assets/images/SCs/6.png"
+                            "background_image": "random_notes",
+                            "no_upper_tabs": false
                         },
                         "page_9": {
-                            "background_image": "assets/images/SCs/sheet3.png"
+                            "background_image": "assets/images/SCs/5.png"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/6.png"
                         },
                         "page_11": {
-                            "background_image": "random"
+                            "background_image": "assets/images/SCs/sheet3.png"
                         },
                         "page_12": {
+                            "background_image": "random_notes",
+                            "no_upper_tabs": false
+                        },
+                        "page_13": {
+                            "background_image": "random"
+                        },
+                        "page_14": {
+                            "background_image": "random"
+                        },
+                        "page_15": {
                             "background_image": "random"
                         }
                     },
@@ -1521,15 +1485,12 @@
                             "background_image": "random_favors"
                         },
                         "page_4": {
-                            "background_image": "random_favors"
+                            "background_image": "random"
                         },
                         "page_5": {
                             "background_image": "random"
                         },
                         "page_6": {
-                            "background_image": "random"
-                        },
-                        "page_7": {
                             "background_image": "random"
                         }
                     }
@@ -4718,15 +4679,24 @@
                 "Dokumente & Verpflichtungen": {
                     "Aufträge": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_missions"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_missions"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_missions"
                         },
                         "page_4": {
+                            "background_image": "random_missions"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
                             "background_image": "random"
                         }
                     },
@@ -4744,7 +4714,7 @@
                             "background_image": "assets/images/special/rosellini_rasha_2.png"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "assets/images/special/vertrag.png"
                         },
                         "page_6": {
                             "background_image": "random"
@@ -4783,12 +4753,15 @@
                     },
                     "Recherchen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/recherche/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/recherche/02.png"
                         },
                         "page_3": {
+                            "background_image": "assets/images/recherche/03.png"
+                        },
+                        "page_4": {
                             "background_image": "random"
                         }
                     },
@@ -4823,15 +4796,12 @@
                             "background_image": "random_favors"
                         },
                         "page_4": {
-                            "background_image": "random_favors"
+                            "background_image": "random"
                         },
                         "page_5": {
                             "background_image": "random"
                         },
                         "page_6": {
-                            "background_image": "random"
-                        },
-                        "page_7": {
                             "background_image": "random"
                         }
                     },
@@ -4846,15 +4816,12 @@
                             "background_image": "random_favors"
                         },
                         "page_4": {
-                            "background_image": "random_favors"
+                            "background_image": "random"
                         },
                         "page_5": {
                             "background_image": "random"
                         },
                         "page_6": {
-                            "background_image": "random"
-                        },
-                        "page_7": {
                             "background_image": "random"
                         }
                     },
@@ -5098,100 +5065,100 @@
                 "Elysien": {
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     }
                 },
@@ -5202,284 +5169,275 @@
                         "subtitle": "Offiziele Gebäude"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/01.png"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/02.png"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "assets/images/locations/03.png"
                     }
                 },
                 "Zufluchten": {
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Sonstige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         }
                     }
                 },
                 "Safehäuser": {
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Sonstige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         }
                     }
                 },
                 "Garou Orte": {
                     "Feindlicher Stamm": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Neutraler Stamm": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         }
                     },
                     "Sonstige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/01.png"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/02.png"
                         },
                         "page_3": {
-                            "background_image": "random"
-                        },
-                        "page_4": {
-                            "background_image": "random"
+                            "background_image": "assets/images/locations/03.png"
                         }
                     }
                 }
@@ -5763,12 +5721,10 @@
     "default_background": "assets/images/section_cover/main_cover.png",
     "default_font": {
         "title_size": 48,
-        "subtitle_size": 24,
-        "description_size": 14
+        "subtitle_size": 24
     },
     "text_position": {
         "title_y_offset": -100,
-        "subtitle_y_offset": -50,
-        "description_y_offset": 50
+        "subtitle_y_offset": -50
     }
 }

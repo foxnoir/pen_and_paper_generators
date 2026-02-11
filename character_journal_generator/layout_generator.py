@@ -1169,6 +1169,30 @@ class LayoutGenerator:
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
         
+        # Handle "random_dossier" background_image - use random background from assets/images/dossier/
+        if bg_image_path == "random_dossier":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            dossier_dir = os.path.join(script_dir, "assets", "images", "dossier")
+            if not os.path.exists(dossier_dir):
+                dossier_dir = os.path.join(os.getcwd(), "assets", "images", "dossier")
+            
+            # Find all dossier images
+            dossier_images = []
+            if os.path.exists(dossier_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(dossier_dir, ext))
+                    dossier_images.extend(all_images)
+                dossier_images.sort()
+            
+            if dossier_images:
+                bg_image_path = random.choice(dossier_images)
+            else:
+                # Fallback to regular background directory if no dossier images found
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
         # Handle "random" background_image - use random background from assets/images/background/
         # Special handling for "Favors" sub-subsection: use assets/images/favors/
         elif bg_image_path == "random":

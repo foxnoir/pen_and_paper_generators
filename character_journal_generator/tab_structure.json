@@ -8,14 +8,14 @@
                 {
                     "name": "Dossier",
                     "seconnd_subsections_left_tabs": [
-                        "Vorgeschichte",
-                        "Persönliche Ziele",
                         "Charakterbogen",
                         "Disziplinen",
                         "Vor- & Nachteile",
                         "Inventar",
                         "Zufluchten",
-                        "Ghule & Blutsgebundene"
+                        "Ghule & Blutsgebundene",
+                        "Vorgeschichte",
+                        "Persönliche Ziele"
                     ]
                 },
                 {

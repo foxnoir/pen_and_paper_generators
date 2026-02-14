@@ -9,6 +9,8 @@
                     "name": "Dossier",
                     "seconnd_subsections_left_tabs": [
                         "Charakterbogen",
+                        "Steckbrief",
+                        "Charakterbild",
                         "Disziplinen",
                         "Vor- & Nachteile",
                         "Inventar",

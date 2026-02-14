@@ -1193,6 +1193,76 @@ class LayoutGenerator:
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
         
+        # Handle "random_allies" background_image - use random background from assets/images/allies/
+        if bg_image_path == "random_allies":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            allies_dir = os.path.join(script_dir, "assets", "images", "allies")
+            if not os.path.exists(allies_dir):
+                allies_dir = os.path.join(os.getcwd(), "assets", "images", "allies")
+            
+            # Find all allies images
+            allies_images = []
+            if os.path.exists(allies_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(allies_dir, ext))
+                    allies_images.extend(all_images)
+                allies_images.sort()
+            
+            if allies_images:
+                bg_image_path = random.choice(allies_images)
+            else:
+                # Fallback to regular background directory if no allies images found
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
+        # Handle "random_enemies" background_image - use random background from assets/images/enemies/
+        if bg_image_path == "random_enemies":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            enemies_dir = os.path.join(script_dir, "assets", "images", "enemies")
+            if not os.path.exists(enemies_dir):
+                enemies_dir = os.path.join(os.getcwd(), "assets", "images", "enemies")
+            
+            # Find all enemies images
+            enemies_images = []
+            if os.path.exists(enemies_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(enemies_dir, ext))
+                    enemies_images.extend(all_images)
+                enemies_images.sort()
+            
+            if enemies_images:
+                bg_image_path = random.choice(enemies_images)
+            else:
+                # Fallback to regular background directory if no enemies images found
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
+        # Handle "random_locations" background_image - use random background from assets/images/locations/
+        if bg_image_path == "random_locations":
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            locations_dir = os.path.join(script_dir, "assets", "images", "locations")
+            if not os.path.exists(locations_dir):
+                locations_dir = os.path.join(os.getcwd(), "assets", "images", "locations")
+            
+            locations_images = []
+            if os.path.exists(locations_dir):
+                for ext in ['*.png', '*.PNG', '*.jpg', '*.JPG', '*.jpeg', '*.JPEG']:
+                    all_images = glob.glob(os.path.join(locations_dir, ext))
+                    locations_images.extend(all_images)
+                locations_images.sort()
+            
+            if locations_images:
+                bg_image_path = random.choice(locations_images)
+            else:
+                background_dir = os.path.join(script_dir, "assets", "images", "background")
+                if not os.path.exists(background_dir):
+                    background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                bg_image_path = os.path.join(background_dir, "basic.png")
+        
         # Handle "random" background_image - use random background from assets/images/background/
         # Special handling for "Favors" sub-subsection: use assets/images/favors/
         elif bg_image_path == "random":

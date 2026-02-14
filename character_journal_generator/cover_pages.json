@@ -309,114 +309,114 @@
                     },
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Andere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     }
                 },
@@ -427,13 +427,13 @@
                         "subtitle": "Offiziele Gebäude"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_locations"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_locations"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_locations"
                     }
                 },
                 "Zufluchten und Verstecke": {
@@ -444,128 +444,128 @@
                     },
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Sonstige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Andere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     }
                 },
@@ -577,114 +577,114 @@
                     },
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Sonstige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     }
                 },
@@ -696,44 +696,44 @@
                     },
                     "Feindlicher Stamm": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Neutraler Stamm": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     },
                     "Sonstige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_locations"
                         }
                     }
                 }
@@ -1455,6 +1455,16 @@
                             "background_image": "random_dossier"
                         }
                     },
+                    "Charakterbild": {
+                        "page_1": {
+                            "background_image": "assets/images/special/char_pic.png"
+                        }
+                    },
+                    "Steckbrief": {
+                        "page_1": {
+                            "background_image": "assets/images/special/steckbrief.png"
+                        }
+                    },
                     "Persönliche Ziele": {
                         "page_1": {
                             "background_image": "random_dossier"
@@ -1471,16 +1481,7 @@
                     },
                     "Charakterbogen": {
                         "page_1": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_2": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_3": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_4": {
-                            "background_image": "random_dossier"
+                            "background_image": "assets/images/special/char.png"
                         }
                     },
                     "Disziplinen": {
@@ -1541,46 +1542,46 @@
                     },
                     "Ghule & Blutsgebundene": {
                         "page_1": {
-                            "background_image": "random_dossier"
+                            "background_image": "assets/images/special/humans.png"
                         },
                         "page_2": {
-                            "background_image": "random_dossier"
+                            "background_image": "assets/images/special/humans.png"
                         },
                         "page_3": {
-                            "background_image": "random_dossier"
+                            "background_image": "assets/images/special/humans.png"
                         },
                         "page_4": {
-                            "background_image": "random_dossier"
+                            "background_image": "assets/images/special/humans.png"
                         }
                     }
                 },
                 "Persönliches Netzwerk": {
                     "Verbündete": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_allies"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_allies"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_allies"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_allies"
                         }
                     },
                     "Feinde": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_enemies"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_enemies"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_enemies"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_enemies"
                         }
                     },
                     "Kontakte": {

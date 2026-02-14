@@ -231,3 +231,5 @@ Icon?
 # Assets directory
 assets/
 **/assets/
+
+*.csv

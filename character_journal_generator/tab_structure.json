@@ -11,13 +11,12 @@
                         "Charakterbogen",
                         "Steckbrief",
                         "Charakterbild",
+                        "Charakteristika",
                         "Disziplinen",
                         "Vor- & Nachteile",
                         "Inventar",
                         "Zufluchten",
-                        "Ghule & Blutsgebundene",
-                        "Vorgeschichte",
-                        "Persönliche Ziele"
+                        "Ghule & Blutsgebundene"
                     ]
                 },
                 {
@@ -39,6 +38,16 @@
                         "Ziele",
                         "Erpressungen"
                     ]
+                },
+                {
+                    "name": "Vorgeschichte",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Sonstiges",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
                 }
             ]
         },
@@ -51,32 +60,38 @@
                     "seconnd_subsections_left_tabs": []
                 },
                 {
+                    "name": "Akteure & Fraktionen",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
                     "name": "Einfluss & Territorien",
-                    "page_count": 6,
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Beziehungen",
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Blut & Jagd",
-                    "page_count": 6,
-                    "seconnd_subsections_left_tabs": []
-                },
-                {
-                    "name": "Akteure & Fraktionen",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Kontrollierte Institutionen",
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Maskerade & Öffentlichkeit",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Sonstiges",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 }
             ]
@@ -86,7 +101,7 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Beziehungen",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": [
                         "Übersicht",
                         "Verbündete",
@@ -99,7 +114,7 @@
                 },
                 {
                     "name": "Ziele & Ambitionen",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": [
                         "Camarilla",
                         "Sabbat",
@@ -111,7 +126,7 @@
                 },
                 {
                     "name": "Dokumente & Verpflichtungen",
-                    "page_count": 7,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": [
                         "Aufträge",
                         "Verträge",
@@ -126,7 +141,7 @@
                 },
                 {
                     "name": "Geheimnisse & Informationen",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": [
                         "Gerüchte",
                         "Geheimnisse",
@@ -151,17 +166,22 @@
                 },
                 {
                     "name": "Ereignisse",
-                    "page_count": 4,
+                    "page_count": 30,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Entwicklung & Konsequenzen",
-                    "page_count": 4,
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Erfahrungspunkte",
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Sonstiges",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 }
             ]
@@ -234,7 +254,7 @@
                 },
                 {
                     "name": "Offiziele Gebäude",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
@@ -265,32 +285,32 @@
                 },
                 {
                     "name": "Clubs & Nachtleben",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Kultur & Öffentlichkeit",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Industrie & Verfall",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Menschliche Infrastruktur",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Freies Gelände",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Sabbat Orte",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
@@ -303,7 +323,7 @@
                 },
                 {
                     "name": "Sonstige Orte",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 }
             ]
@@ -313,41 +333,42 @@
             "subsections_left_top_tabs": [
                 {
                     "name": "Stadtplan",
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Domänen",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Lagepläne",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Kanalisation",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Stromversorgung",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Wasserversorgung",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Überwachungspläne",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 },
                 {
                     "name": "Technische Infrastruktur",
-                    "page_count": 4,
+                    "page_count": 10,
                     "seconnd_subsections_left_tabs": []
                 }
             ]

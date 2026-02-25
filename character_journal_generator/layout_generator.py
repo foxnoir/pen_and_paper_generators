@@ -1511,7 +1511,72 @@ class LayoutGenerator:
                         normalized = unicodedata.normalize(norm, base_path)
                         if os.path.exists(normalized):
                             print(f"  Found with {norm} normalization: {normalized}")
+                            bg_image_path = normalized
                             break
+                    if bg_image_path and os.path.exists(bg_image_path):
+                        break
+                
+                # If still not found, use fallback background
+                if not bg_image_path or not os.path.exists(bg_image_path):
+                    script_dir = os.path.dirname(os.path.abspath(__file__))
+                    background_dir = os.path.join(script_dir, "assets", "images", "background")
+                    if not os.path.exists(background_dir):
+                        background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+                    fallback_path = os.path.join(background_dir, "basic.png")
+                    if os.path.exists(fallback_path):
+                        bg_image_path = fallback_path
+                        print(f"  Using fallback background: {bg_image_path}")
+                    else:
+                        # Try default_background from config if available
+                        default_bg = cover_config.get("default_background")
+                        if default_bg:
+                            script_dir = os.path.dirname(os.path.abspath(__file__))
+                            possible_paths = [
+                                default_bg,
+                                os.path.join(script_dir, default_bg),
+                                os.path.join(os.getcwd(), default_bg)
+                            ]
+                            for path in possible_paths:
+                                if os.path.exists(path):
+                                    bg_image_path = path
+                                    print(f"  Using default_background: {bg_image_path}")
+                                    break
+                
+                # If we now have a valid bg_image_path, try to insert it
+                if bg_image_path and os.path.exists(bg_image_path):
+                    try:
+                        compressed_path = self._compress_image(bg_image_path)
+                        img_rect = fitz.Rect(0, 0, page_width, page_height)
+                        page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
+                        if compressed_path != bg_image_path and os.path.exists(compressed_path):
+                            try:
+                                os.unlink(compressed_path)
+                            except:
+                                pass
+                    except Exception as e:
+                        print(f"Warning: Could not load fallback background image: {e}")
+        
+        # If bg_image_path is still None or empty, use default fallback
+        if not bg_image_path:
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            background_dir = os.path.join(script_dir, "assets", "images", "background")
+            if not os.path.exists(background_dir):
+                background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
+            fallback_path = os.path.join(background_dir, "basic.png")
+            if os.path.exists(fallback_path):
+                bg_image_path = fallback_path
+                try:
+                    compressed_path = self._compress_image(bg_image_path)
+                    img_rect = fitz.Rect(0, 0, page_width, page_height)
+                    page.insert_image(img_rect, filename=compressed_path, keep_proportion=False)
+                    if compressed_path != bg_image_path and os.path.exists(compressed_path):
+                        try:
+                            os.unlink(compressed_path)
+                        except:
+                            pass
+                    print(f"  Using default fallback background: {bg_image_path}")
+                except Exception as e:
+                    print(f"Warning: Could not load default fallback background: {e}")
         
         # Load optional center image (for subsections/sub-subsections)
         center_image_path = cover_config.get("image")

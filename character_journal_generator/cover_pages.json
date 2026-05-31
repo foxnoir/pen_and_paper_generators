@@ -111,15 +111,6 @@
                     },
                     "page_7": {
                         "background_image": "random"
-                    },
-                    "page_8": {
-                        "background_image": "random"
-                    },
-                    "page_9": {
-                        "background_image": "random"
-                    },
-                    "page_10": {
-                        "background_image": "random"
                     }
                 },
                 "Sonstiges": {
@@ -144,15 +135,6 @@
                         "background_image": "random"
                     },
                     "page_7": {
-                        "background_image": "random"
-                    },
-                    "page_8": {
-                        "background_image": "random"
-                    },
-                    "page_9": {
-                        "background_image": "random"
-                    },
-                    "page_10": {
                         "background_image": "random"
                     }
                 }
@@ -218,15 +200,6 @@
                     },
                     "page_7": {
                         "background_image": "random"
-                    },
-                    "page_8": {
-                        "background_image": "random"
-                    },
-                    "page_9": {
-                        "background_image": "random"
-                    },
-                    "page_10": {
-                        "background_image": "random"
                     }
                 },
                 "Blut & Jagd": {
@@ -252,15 +225,6 @@
                     },
                     "page_7": {
                         "background_image": "random"
-                    },
-                    "page_8": {
-                        "background_image": "random"
-                    },
-                    "page_9": {
-                        "background_image": "random"
-                    },
-                    "page_10": {
-                        "background_image": "random"
                     }
                 },
                 "Akteure & Fraktionen": {
@@ -285,15 +249,6 @@
                         "background_image": "random"
                     },
                     "page_7": {
-                        "background_image": "random"
-                    },
-                    "page_8": {
-                        "background_image": "random"
-                    },
-                    "page_9": {
-                        "background_image": "random"
-                    },
-                    "page_10": {
                         "background_image": "random"
                     }
                 },
@@ -1213,35 +1168,93 @@
                         "title": "Ereignisse",
                         "subtitle": "Ereignisse"
                     },
-                    "page_2": { "background_image": "random" },
-                    "page_3": { "background_image": "random" },
-                    "page_4": { "background_image": "random" },
-                    "page_5": { "background_image": "random" },
-                    "page_6": { "background_image": "random" },
-                    "page_7": { "background_image": "random" },
-                    "page_8": { "background_image": "random" },
-                    "page_9": { "background_image": "random" },
-                    "page_10": { "background_image": "random" },
-                    "page_11": { "background_image": "random" },
-                    "page_12": { "background_image": "random" },
-                    "page_13": { "background_image": "random" },
-                    "page_14": { "background_image": "random" },
-                    "page_15": { "background_image": "random" },
-                    "page_16": { "background_image": "random" },
-                    "page_17": { "background_image": "random" },
-                    "page_18": { "background_image": "random" },
-                    "page_19": { "background_image": "random" },
-                    "page_20": { "background_image": "random" },
-                    "page_21": { "background_image": "random" },
-                    "page_22": { "background_image": "random" },
-                    "page_23": { "background_image": "random" },
-                    "page_24": { "background_image": "random" },
-                    "page_25": { "background_image": "random" },
-                    "page_26": { "background_image": "random" },
-                    "page_27": { "background_image": "random" },
-                    "page_28": { "background_image": "random" },
-                    "page_29": { "background_image": "random" },
-                    "page_30": { "background_image": "random" }
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    },
+                    "page_7": {
+                        "background_image": "random"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
+                    },
+                    "page_11": {
+                        "background_image": "random"
+                    },
+                    "page_12": {
+                        "background_image": "random"
+                    },
+                    "page_13": {
+                        "background_image": "random"
+                    },
+                    "page_14": {
+                        "background_image": "random"
+                    },
+                    "page_15": {
+                        "background_image": "random"
+                    },
+                    "page_16": {
+                        "background_image": "random"
+                    },
+                    "page_17": {
+                        "background_image": "random"
+                    },
+                    "page_18": {
+                        "background_image": "random"
+                    },
+                    "page_19": {
+                        "background_image": "random"
+                    },
+                    "page_20": {
+                        "background_image": "random"
+                    },
+                    "page_21": {
+                        "background_image": "random"
+                    },
+                    "page_22": {
+                        "background_image": "random"
+                    },
+                    "page_23": {
+                        "background_image": "random"
+                    },
+                    "page_24": {
+                        "background_image": "random"
+                    },
+                    "page_25": {
+                        "background_image": "random"
+                    },
+                    "page_26": {
+                        "background_image": "random"
+                    },
+                    "page_27": {
+                        "background_image": "random"
+                    },
+                    "page_28": {
+                        "background_image": "random"
+                    },
+                    "page_29": {
+                        "background_image": "random"
+                    },
+                    "page_30": {
+                        "background_image": "random"
+                    }
                 },
                 "Erfahrungspunkte": {
                     "page_1": {
@@ -1401,15 +1414,6 @@
                     },
                     "page_7": {
                         "background_image": "random"
-                    },
-                    "page_8": {
-                        "background_image": "random"
-                    },
-                    "page_9": {
-                        "background_image": "random"
-                    },
-                    "page_10": {
-                        "background_image": "random"
                     }
                 },
                 "Allgemein": {
@@ -1434,15 +1438,6 @@
                         "background_image": "random"
                     },
                     "page_7": {
-                        "background_image": "random"
-                    },
-                    "page_8": {
-                        "background_image": "random"
-                    },
-                    "page_9": {
-                        "background_image": "random"
-                    },
-                    "page_10": {
                         "background_image": "random"
                     }
                 }
@@ -1958,6 +1953,12 @@
                     "Charakterbild": {
                         "page_1": {
                             "background_image": "assets/images/special/char_pic.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/special/char_pic_2.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/special/char_pic_3.png"
                         }
                     },
                     "Steckbrief": {
@@ -3682,13 +3683,13 @@
                     },
                     "Raserei": {
                         "page_1": {
-                            "background_image": "assets/images/rules/raserei/01.png"
+                            "background_image": "assets/images/rules/frenzy/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/raserei/02.png"
+                            "background_image": "assets/images/rules/frenzy/02.png"
                         },
                         "page_3": {
-                            "background_image": "assets/images/rules/raserei/03.png"
+                            "background_image": "assets/images/rules/frenzy/03.png"
                         }
                     },
                     "Erzeugung & Generation": {
@@ -3762,10 +3763,10 @@
                 "Kampf & Konflikt": {
                     "Kampfablauf": {
                         "page_1": {
-                            "background_image": "assets/images/rules/kampfablauf/01.png"
+                            "background_image": "assets/images/rules/combat_flow/01.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/rules/kampfablauf/02.png"
+                            "background_image": "assets/images/rules/combat_flow/02.png"
                         }
                     },
                     "Nah- / Fernkampf": {

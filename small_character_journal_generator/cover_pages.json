@@ -1,0 +1,1240 @@
+{
+    "cover_pages": {
+        "Domäne": {
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Domäne"
+        },
+        "Charakter": {
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Charakter"
+        },
+        "Charakterbogen": {
+            "full_page": true,
+            "image": "assets/images/special/char.png"
+        },
+        "Sitzungen": {
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Sitzungen"
+        },
+        "Netzwerk": {
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Netzwerk"
+        },
+        "Impressionen": {
+            "page_1": {
+                "background_image": "assets/images/section_cover/main_cover.png",
+                "title": "Impressionen"
+            }
+        },
+        "Gefallen": {
+            "background_image": "assets/images/section_cover/main_cover.png",
+            "title": "Gefallen"
+        },
+        "Offene Fragen": {
+            "page_1": {
+                "background_image": "assets/images/section_cover/main_cover.png",
+                "title": "Offene Fragen"
+            },
+            "page_2": {
+                "background_image": "random"
+            },
+            "page_3": {
+                "background_image": "random"
+            },
+            "page_4": {
+                "background_image": "random"
+            },
+            "page_5": {
+                "background_image": "random"
+            },
+            "page_6": {
+                "background_image": "random"
+            },
+            "page_7": {
+                "background_image": "random"
+            },
+            "page_8": {
+                "background_image": "random"
+            },
+            "page_9": {
+                "background_image": "random"
+            },
+            "page_10": {
+                "background_image": "random"
+            },
+            "page_11": {
+                "background_image": "random"
+            }
+        },
+        "subsections": {
+            "Charakter": {
+                "Dossier": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Dossier"
+                },
+                "Ressourcen": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Ressourcen"
+                },
+                "Vorgeschichte": {
+                    "background_image": "assets/images/section_cover/sub_section_cover.png",
+                    "title": "Vorgeschichte"
+                },
+                "Sonstiges": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Sonstiges"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    },
+                    "page_7": {
+                        "background_image": "random"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
+                    },
+                    "page_11": {
+                        "background_image": "random"
+                    }
+                }
+            },
+            "Sitzungen": {
+                "Kalender": {
+                    "page_1": {
+                        "background_image": "assets/images/calendar/01.png"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/calendar/02.png"
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/calendar/3.png"
+                    },
+                    "page_4": {
+                        "background_image": "assets/images/calendar/01.png"
+                    }
+                },
+                "Plan & Ziele": {
+                    "page_1": {
+                        "background_image": "random"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    },
+                    "page_7": {
+                        "background_image": "random"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
+                    },
+                    "page_11": {
+                        "background_image": "random"
+                    },
+                    "page_12": {
+                        "background_image": "random"
+                    },
+                    "page_13": {
+                        "background_image": "random"
+                    },
+                    "page_14": {
+                        "background_image": "random"
+                    },
+                    "page_15": {
+                        "background_image": "random"
+                    },
+                    "page_16": {
+                        "background_image": "random"
+                    },
+                    "page_17": {
+                        "background_image": "random"
+                    },
+                    "page_18": {
+                        "background_image": "random"
+                    },
+                    "page_19": {
+                        "background_image": "random"
+                    },
+                    "page_20": {
+                        "background_image": "random"
+                    },
+                    "page_21": {
+                        "background_image": "random"
+                    },
+                    "page_22": {
+                        "background_image": "random"
+                    },
+                    "page_23": {
+                        "background_image": "random"
+                    },
+                    "page_24": {
+                        "background_image": "random"
+                    },
+                    "page_25": {
+                        "background_image": "random"
+                    },
+                    "page_26": {
+                        "background_image": "random"
+                    },
+                    "page_27": {
+                        "background_image": "random"
+                    },
+                    "page_28": {
+                        "background_image": "random"
+                    },
+                    "page_29": {
+                        "background_image": "random"
+                    },
+                    "page_30": {
+                        "background_image": "random"
+                    },
+                    "page_31": {
+                        "background_image": "random"
+                    },
+                    "page_32": {
+                        "background_image": "random"
+                    },
+                    "page_33": {
+                        "background_image": "random"
+                    },
+                    "page_34": {
+                        "background_image": "random"
+                    },
+                    "page_35": {
+                        "background_image": "random"
+                    },
+                    "page_36": {
+                        "background_image": "random"
+                    },
+                    "page_37": {
+                        "background_image": "random"
+                    },
+                    "page_38": {
+                        "background_image": "random"
+                    },
+                    "page_39": {
+                        "background_image": "random"
+                    },
+                    "page_40": {
+                        "background_image": "random"
+                    },
+                    "page_41": {
+                        "background_image": "random"
+                    },
+                    "page_42": {
+                        "background_image": "random"
+                    },
+                    "page_43": {
+                        "background_image": "random"
+                    },
+                    "page_44": {
+                        "background_image": "random"
+                    },
+                    "page_45": {
+                        "background_image": "random"
+                    },
+                    "page_46": {
+                        "background_image": "random"
+                    },
+                    "page_47": {
+                        "background_image": "random"
+                    },
+                    "page_48": {
+                        "background_image": "random"
+                    },
+                    "page_49": {
+                        "background_image": "random"
+                    },
+                    "page_50": {
+                        "background_image": "random"
+                    }
+                },
+                "Ereignisse": {
+                    "page_1": {
+                        "background_image": "random"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    },
+                    "page_7": {
+                        "background_image": "random"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
+                    },
+                    "page_11": {
+                        "background_image": "random"
+                    },
+                    "page_12": {
+                        "background_image": "random"
+                    },
+                    "page_13": {
+                        "background_image": "random"
+                    },
+                    "page_14": {
+                        "background_image": "random"
+                    },
+                    "page_15": {
+                        "background_image": "random"
+                    },
+                    "page_16": {
+                        "background_image": "random"
+                    },
+                    "page_17": {
+                        "background_image": "random"
+                    },
+                    "page_18": {
+                        "background_image": "random"
+                    },
+                    "page_19": {
+                        "background_image": "random"
+                    },
+                    "page_20": {
+                        "background_image": "random"
+                    },
+                    "page_21": {
+                        "background_image": "random"
+                    },
+                    "page_22": {
+                        "background_image": "random"
+                    },
+                    "page_23": {
+                        "background_image": "random"
+                    },
+                    "page_24": {
+                        "background_image": "random"
+                    },
+                    "page_25": {
+                        "background_image": "random"
+                    },
+                    "page_26": {
+                        "background_image": "random"
+                    },
+                    "page_27": {
+                        "background_image": "random"
+                    },
+                    "page_28": {
+                        "background_image": "random"
+                    },
+                    "page_29": {
+                        "background_image": "random"
+                    },
+                    "page_30": {
+                        "background_image": "random"
+                    },
+                    "page_31": {
+                        "background_image": "random"
+                    },
+                    "page_32": {
+                        "background_image": "random"
+                    },
+                    "page_33": {
+                        "background_image": "random"
+                    },
+                    "page_34": {
+                        "background_image": "random"
+                    },
+                    "page_35": {
+                        "background_image": "random"
+                    },
+                    "page_36": {
+                        "background_image": "random"
+                    },
+                    "page_37": {
+                        "background_image": "random"
+                    },
+                    "page_38": {
+                        "background_image": "random"
+                    },
+                    "page_39": {
+                        "background_image": "random"
+                    },
+                    "page_40": {
+                        "background_image": "random"
+                    },
+                    "page_41": {
+                        "background_image": "random"
+                    },
+                    "page_42": {
+                        "background_image": "random"
+                    },
+                    "page_43": {
+                        "background_image": "random"
+                    },
+                    "page_44": {
+                        "background_image": "random"
+                    },
+                    "page_45": {
+                        "background_image": "random"
+                    },
+                    "page_46": {
+                        "background_image": "random"
+                    },
+                    "page_47": {
+                        "background_image": "random"
+                    },
+                    "page_48": {
+                        "background_image": "random"
+                    },
+                    "page_49": {
+                        "background_image": "random"
+                    },
+                    "page_50": {
+                        "background_image": "random"
+                    }
+                },
+                "Aufnahmen": {
+                    "page_1": {
+                        "background_image": "random_audio"
+                    },
+                    "page_2": {
+                        "background_image": "random_audio"
+                    },
+                    "page_3": {
+                        "background_image": "random_audio"
+                    },
+                    "page_4": {
+                        "background_image": "random_audio"
+                    },
+                    "page_5": {
+                        "background_image": "random_audio"
+                    },
+                    "page_6": {
+                        "background_image": "random_audio"
+                    },
+                    "page_7": {
+                        "background_image": "random_audio"
+                    },
+                    "page_8": {
+                        "background_image": "random_audio"
+                    },
+                    "page_9": {
+                        "background_image": "random_audio"
+                    },
+                    "page_10": {
+                        "background_image": "random_audio"
+                    }
+                },
+                "Erfahrungspunkte": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Erfahrungspunkte"
+                    },
+                    "page_2": {
+                        "background_image": "assets/images/eps/4.png"
+                    },
+                    "page_3": {
+                        "background_image": "assets/images/eps/2.png"
+                    },
+                    "page_4": {
+                        "background_image": "assets/images/eps/3.png"
+                    },
+                    "page_5": {
+                        "background_image": "assets/images/eps/1.png"
+                    },
+                    "page_6": {
+                        "background_image": "assets/images/eps/4.png"
+                    }
+                },
+                "Sonstiges": {
+                    "page_1": {
+                        "background_image": "assets/images/section_cover/sub_section_cover.png",
+                        "title": "Sonstiges"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    },
+                    "page_7": {
+                        "background_image": "random"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
+                    },
+                    "page_11": {
+                        "background_image": "random"
+                    }
+                }
+            },
+            "Netzwerk": {
+                "Kontakte": {
+                    "page_1": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_2": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_3": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_4": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_5": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_6": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_7": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_8": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_9": {
+                        "background_image": "random_contacts"
+                    },
+                    "page_10": {
+                        "background_image": "random_contacts"
+                    }
+                },
+                "Verbündete": {
+                    "page_1": {
+                        "background_image": "random_allies"
+                    },
+                    "page_2": {
+                        "background_image": "random_allies"
+                    },
+                    "page_3": {
+                        "background_image": "random_allies"
+                    },
+                    "page_4": {
+                        "background_image": "random_allies"
+                    },
+                    "page_5": {
+                        "background_image": "random_allies"
+                    },
+                    "page_6": {
+                        "background_image": "random_allies"
+                    },
+                    "page_7": {
+                        "background_image": "random_allies"
+                    },
+                    "page_8": {
+                        "background_image": "random_allies"
+                    },
+                    "page_9": {
+                        "background_image": "random_allies"
+                    },
+                    "page_10": {
+                        "background_image": "random_allies"
+                    }
+                },
+                "Feinde": {
+                    "page_1": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_2": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_3": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_4": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_5": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_6": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_7": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_8": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_9": {
+                        "background_image": "random_enemies"
+                    },
+                    "page_10": {
+                        "background_image": "random_enemies"
+                    }
+                }
+            },
+            "Domäne": {
+                "Ämter": {
+                    "page_1": {
+                        "background_image": "assets/images/domain/1.png"
+                    }
+                },
+                "Primogenrat": {
+                    "page_1": {
+                        "background_image": "assets/images/domain/2.png"
+                    }
+                },
+                "Hüter": {
+                    "page_1": {
+                        "background_image": "assets/images/domain/3.png"
+                    }
+                },
+                "Hounds": {
+                    "page_1": {
+                        "background_image": "assets/images/domain/4.png"
+                    }
+                },
+                "Harpyien": {
+                    "page_1": {
+                        "background_image": "assets/images/domain/5.png"
+                    }
+                },
+                "Sonstiges": {
+                    "page_1": {
+                        "background_image": "random"
+                    },
+                    "page_2": {
+                        "background_image": "random"
+                    },
+                    "page_3": {
+                        "background_image": "random"
+                    },
+                    "page_4": {
+                        "background_image": "random"
+                    },
+                    "page_5": {
+                        "background_image": "random"
+                    },
+                    "page_6": {
+                        "background_image": "random"
+                    },
+                    "page_7": {
+                        "background_image": "random"
+                    },
+                    "page_8": {
+                        "background_image": "random"
+                    },
+                    "page_9": {
+                        "background_image": "random"
+                    },
+                    "page_10": {
+                        "background_image": "random"
+                    }
+                }
+            },
+            "Gefallen": {
+                "Ansprüche": {
+                    "page_1": {
+                        "background_image": "random_favors"
+                    },
+                    "page_2": {
+                        "background_image": "random_favors"
+                    },
+                    "page_3": {
+                        "background_image": "random_favors"
+                    },
+                    "page_4": {
+                        "background_image": "random_favors"
+                    },
+                    "page_5": {
+                        "background_image": "random_favors"
+                    },
+                    "page_6": {
+                        "background_image": "random_favors"
+                    },
+                    "page_7": {
+                        "background_image": "random_favors"
+                    },
+                    "page_8": {
+                        "background_image": "random_favors"
+                    },
+                    "page_9": {
+                        "background_image": "random_favors"
+                    },
+                    "page_10": {
+                        "background_image": "random_favors"
+                    }
+                },
+                "Verpflichtungen": {
+                    "page_1": {
+                        "background_image": "random_favors"
+                    },
+                    "page_2": {
+                        "background_image": "random_favors"
+                    },
+                    "page_3": {
+                        "background_image": "random_favors"
+                    },
+                    "page_4": {
+                        "background_image": "random_favors"
+                    },
+                    "page_5": {
+                        "background_image": "random_favors"
+                    },
+                    "page_6": {
+                        "background_image": "random_favors"
+                    },
+                    "page_7": {
+                        "background_image": "random_favors"
+                    },
+                    "page_8": {
+                        "background_image": "random_favors"
+                    },
+                    "page_9": {
+                        "background_image": "random_favors"
+                    },
+                    "page_10": {
+                        "background_image": "random_favors"
+                    }
+                }
+            }
+        },
+        "sub_subsections": {
+            "Charakter": {
+                "Dossier": {
+                    "Charakterbild": {
+                        "page_1": {
+                            "background_image": "assets/images/special/char_pic.png"
+                        }
+                    },
+                    "Steckbrief": {
+                        "page_1": {
+                            "background_image": "assets/images/special/profile.png"
+                        }
+                    },
+                    "Charakteristika": {
+                        "page_1": {
+                            "background_image": "assets/images/charakteristika /1.png"
+                        }
+                    },
+                    "Fähigkeiten": {
+                        "page_1": {
+                            "background_image": "assets/images/skills/1.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/skills/2.png"
+                        },
+                        "page_3": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_4": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_5": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_6": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_7": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_8": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_9": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_10": {
+                            "background_image": "random_dossier"
+                        }
+                    },
+                    "Disziplinen": {
+                        "page_1": {
+                            "background_image": "assets/images/disziplinen/1.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/disziplinen/2.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/disziplinen/3.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/disziplinen/4.png"
+                        },
+                        "page_5": {
+                            "background_image": "assets/images/disziplinen/5.png"
+                        },
+                        "page_6": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_7": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_8": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_9": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_10": {
+                            "background_image": "random_dossier"
+                        }
+                    },
+                    "Vor- & Nachteile": {
+                        "page_1": {
+                            "background_image": "assets/images/advantage/1.png"
+                        }
+                    },
+                    "Wahnsinn": {
+                        "page_1": {
+                            "background_image": "assets/images/crazy/1.png"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        },
+                        "page_8": {
+                            "background_image": "random"
+                        },
+                        "page_9": {
+                            "background_image": "random"
+                        },
+                        "page_10": {
+                            "background_image": "random"
+                        },
+                        "page_11": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Inspiration": {
+                        "page_1": {
+                            "background_image": "assets/images/section_cover/sub_section_cover.png",
+                            "title": "Inspiration"
+                        },
+                        "Ja": {
+                            "page_1": {
+                                "background_image": "assets/images/inspiration/yes_1.png"
+                            },
+                            "page_2": {
+                                "background_image": "assets/images/inspiration/yes_2.png"
+                            }
+                        },
+                        "Nein": {
+                            "page_1": {
+                                "background_image": "assets/images/inspiration/no_1.png"
+                            },
+                            "page_2": {
+                                "background_image": "assets/images/inspiration/no_2.png"
+                            }
+                        },
+                        "Vielleicht": {
+                            "page_1": {
+                                "background_image": "assets/images/inspiration/maybe_1.png"
+                            },
+                            "page_2": {
+                                "background_image": "assets/images/inspiration/maybe_2.png"
+                            }
+                        },
+                        "Schuld": {
+                            "page_1": {
+                                "background_image": "assets/images/inspiration/guilt_1.png"
+                            }
+                        },
+                        "Loyalität": {
+                            "page_1": {
+                                "background_image": "assets/images/inspiration/loyalty_1.png"
+                            }
+                        },
+                        "Sonstiges": {
+                            "page_1": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_2": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_3": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_4": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_5": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_6": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_7": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_8": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_9": {
+                                "background_image": "random_dossier"
+                            },
+                            "page_10": {
+                                "background_image": "random_dossier"
+                            }
+                        }
+                    }
+                },
+                "Ressourcen": {
+                    "Inventar": {
+                        "page_1": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_2": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_3": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_4": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_5": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_6": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_7": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_8": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_9": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_10": {
+                            "background_image": "random_dossier"
+                        }
+                    },
+                    "Waffen": {
+                        "page_1": {
+                            "background_image": "assets/images/weapons/1.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/weapons/2.png"
+                        }
+                    },
+                    "Finanzen": {
+                        "page_1": {
+                            "background_image": "assets/images/finance/1.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/finance/2.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/finance/3.png"
+                        }
+                    },
+                    "Materialien & Gegenstände": {
+                        "page_1": {
+                            "background_image": "assets/images/materials/1.png"
+                        },
+                        "page_2": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_3": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_4": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_5": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_6": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_7": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_8": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_9": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_10": {
+                            "background_image": "random_dossier"
+                        }
+                    },
+                    "Fahrzeuge": {
+                        "page_1": {
+                            "background_image": "assets/images/ressourcen/car.PNG"
+                        },
+                        "page_2": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_3": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_4": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_5": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_6": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_7": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_8": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_9": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_10": {
+                            "background_image": "random_dossier"
+                        }
+                    },
+                    "Outfits": {
+                        "page_1": {
+                            "background_image": "assets/images/ressourcen/outfit_1.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/ressourcen/outfit_4.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/ressourcen/outfit_2.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/ressourcen/outfit_3.png"
+                        },
+                        "page_5": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_6": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_7": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_8": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_9": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_10": {
+                            "background_image": "random_dossier"
+                        }
+                    },
+                    "Zufluchten": {
+                        "page_1": {
+                            "background_image": "assets/images/refuge/1.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/refuge/2.png"
+                        },
+                        "page_3": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_4": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_5": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_6": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_7": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_8": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_9": {
+                            "background_image": "random_dossier"
+                        },
+                        "page_10": {
+                            "background_image": "random_dossier"
+                        }
+                    },
+                    "Ghule & Blutsgebundene": {
+                        "page_1": {
+                            "background_image": "assets/images/special/humans.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/special/humans.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/special/humans.png"
+                        },
+                        "page_4": {
+                            "background_image": "assets/images/special/humans.png"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        },
+                        "page_8": {
+                            "background_image": "random"
+                        },
+                        "page_9": {
+                            "background_image": "random"
+                        }
+                    },
+                    "Sonstiges": {
+                        "page_1": {
+                            "background_image": "random"
+                        },
+                        "page_2": {
+                            "background_image": "random"
+                        },
+                        "page_3": {
+                            "background_image": "random"
+                        },
+                        "page_4": {
+                            "background_image": "random"
+                        },
+                        "page_5": {
+                            "background_image": "random"
+                        },
+                        "page_6": {
+                            "background_image": "random"
+                        },
+                        "page_7": {
+                            "background_image": "random"
+                        },
+                        "page_8": {
+                            "background_image": "random"
+                        },
+                        "page_9": {
+                            "background_image": "random"
+                        },
+                        "page_10": {
+                            "background_image": "random"
+                        }
+                    }
+                },
+                "Vorgeschichte": {
+                    "Mirei": {
+                        "page_1": {
+                            "background_image": "assets/images/char_background/bg_1.png"
+                        }
+                    },
+                    "Christopherus": {
+                        "page_1": {
+                            "background_image": "assets/images/char_background/bg_2.png"
+                        }
+                    },
+                    "Peyton": {
+                        "page_1": {
+                            "background_image": "assets/images/char_background/bg_5.png"
+                        }
+                    },
+                    "Lucien": {
+                        "page_1": {
+                            "background_image": "assets/images/char_background/bg_3.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/char_background/bg_4.png"
+                        }
+                    },
+                    "Archiv": {
+                        "page_1": {
+                            "background_image": "assets/images/research/1.png"
+                        },
+                        "page_2": {
+                            "background_image": "assets/images/research/2.png"
+                        },
+                        "page_3": {
+                            "background_image": "assets/images/research/3.png"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "default_background": "assets/images/section_cover/main_cover.png",
+    "default_font": {
+        "title_size": 48,
+        "subtitle_size": 24,
+        "description_size": 14
+    },
+    "text_position": {
+        "title_y_offset": 0,
+        "subtitle_y_offset": 40,
+        "description_y_offset": 85
+    }
+}

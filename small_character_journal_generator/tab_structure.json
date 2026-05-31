@@ -1,0 +1,194 @@
+{
+    "right_tabs": [
+        {
+            "name": "Charakter",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Dossier",
+                    "seconnd_subsections_left_tabs": [
+                        "Steckbrief",
+                        "Charakterbild",
+                        "Charakteristika",
+                        "Fähigkeiten",
+                        "Disziplinen",
+                        "Vor- & Nachteile",
+                        "Wahnsinn",
+                        {
+                            "name": "Inspiration",
+                            "seconnd_subsections_left_tabs": [
+                                "Ja",
+                                "Nein",
+                                "Vielleicht",
+                                "Schuld",
+                                "Loyalität",
+                                "Sonstiges"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Ressourcen",
+                    "seconnd_subsections_left_tabs": [
+                        "Inventar",
+                        "Waffen",
+                        "Finanzen",
+                        "Materialien & Gegenstände",
+                        "Fahrzeuge",
+                        "Outfits",
+                        "Zufluchten",
+                        "Ghule & Blutsgebundene",
+                        "Sonstiges"
+                    ]
+                },
+                {
+                    "name": "Vorgeschichte",
+                    "seconnd_subsections_left_tabs": [
+                        "Mirei",
+                        "Christopherus",
+                        "Peyton",
+                        "Lucien",
+                        "Archiv"
+                    ]
+                },
+                {
+                    "name": "Sonstiges",
+                    "page_count": 11,
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Charakterbogen",
+            "subsections_left_top_tabs": []
+        },
+        {
+            "name": "Netzwerk",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Kontakte",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Verbündete",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Feinde",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Domäne",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Ämter",
+                    "page_count": 1,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Primogenrat",
+                    "page_count": 1,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Hüter",
+                    "page_count": 1,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Hounds",
+                    "page_count": 1,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Harpyien",
+                    "page_count": 1,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Sonstige",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Sitzungen",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Kalender",
+                    "page_count": 3,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Plan & Ziele",
+                    "page_count": 50,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Ereignisse",
+                    "page_count": 50,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Aufnahmen",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Erfahrungspunkte",
+                    "page_count": 5,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Sonstiges",
+                    "page_count": 11,
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Impressionen",
+            "page_count": 19,
+            "subsections_left_top_tabs": []
+        },
+        {
+            "name": "Gefallen",
+            "subsections_left_top_tabs": [
+                {
+                    "name": "Ansprüche",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                },
+                {
+                    "name": "Verpflichtungen",
+                    "page_count": 10,
+                    "seconnd_subsections_left_tabs": []
+                }
+            ]
+        },
+        {
+            "name": "Offene Fragen",
+            "page_count": 11,
+            "subsections_left_top_tabs": []
+        }
+    ],
+    "upper_tabs": [],
+    "metadata": {
+        "page_width": 595.2755737304688,
+        "page_height": 841.8897705078125,
+        "tab_width": 35.0,
+        "right_tab_x_position": 560.2755737304688,
+        "right_tab_start_y": 65.0,
+        "right_tab_spacing": 8.0,
+        "upper_tabs_position": {
+            "x": 10.0,
+            "y": 20.0
+        },
+        "description": "Small character journal: cover page + Charakter, Charakterbogen, Netzwerk, Domäne, Sitzungen, Impressionen, Gefallen, Offene Fragen"
+    }
+}

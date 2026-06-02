@@ -51,19 +51,19 @@
                 "subtitle": "Materialien und Dokumente"
             },
             "page_2": {
-                "background_image": "random"
+                "background_image": "random_background"
             },
             "page_3": {
-                "background_image": "random"
+                "background_image": "random_background"
             },
             "page_4": {
-                "background_image": "random"
+                "background_image": "random_background"
             },
             "page_5": {
-                "background_image": "random"
+                "background_image": "random_background"
             },
             "page_6": {
-                "background_image": "random"
+                "background_image": "random_background"
             }
         },
         "Regeln": {
@@ -95,22 +95,22 @@
                         "subtitle": "Vorgeschichte"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Sonstiges": {
@@ -120,22 +120,22 @@
                         "subtitle": "Sonstiges"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 }
             },
@@ -165,16 +165,16 @@
                         "background_image": "assets/images/special/harpyien.png"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Einfluss & Territorien": {
@@ -184,22 +184,22 @@
                         "subtitle": "Einfluss & Territorien"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Blut & Jagd": {
@@ -209,22 +209,22 @@
                         "subtitle": "Blut & Jagd"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Akteure & Fraktionen": {
@@ -234,22 +234,22 @@
                         "subtitle": "Akteure & Fraktionen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Beziehungen": {
@@ -259,22 +259,22 @@
                         "subtitle": "Beziehungen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Kontrollierte Institutionen": {
@@ -284,31 +284,31 @@
                         "subtitle": "Kontrollierte Institutionen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Maskerade & Öffentlichkeit": {
@@ -318,31 +318,31 @@
                         "subtitle": "Maskerade & Öffentlichkei"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Sonstiges": {
@@ -352,31 +352,31 @@
                         "subtitle": "Sonstiges"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 }
             },
@@ -388,31 +388,31 @@
                         "subtitle": "Beziehungen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Ziele & Ambitionen": {
@@ -422,31 +422,31 @@
                         "subtitle": "Ziele & Ambitionen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Dokumente & Verpflichtungen": {
@@ -456,31 +456,31 @@
                         "subtitle": "Dokumente & Verpflichtungen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Geheimnisse & Informationen": {
@@ -490,31 +490,31 @@
                         "subtitle": "Geheimnisse & Informationen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 }
             },
@@ -531,31 +531,31 @@
                         "subtitle": "Offiziele Gebäude"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Zufluchten und Verstecke": {
@@ -580,31 +580,31 @@
                         "subtitle": "Clubs & Nachtleben"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Kultur & Öffentlichkeit": {
@@ -614,31 +614,31 @@
                         "subtitle": "Kultur & Öffentlichkeit"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Industrie & Verfall": {
@@ -648,31 +648,31 @@
                         "subtitle": "Industrie & Verfall"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Menschliche Infrastruktur": {
@@ -682,31 +682,31 @@
                         "subtitle": "Menschliche Infrastruktur"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Freies Gelände": {
@@ -716,31 +716,31 @@
                         "subtitle": "Freies Gelände"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Sabbat Orte": {
@@ -750,31 +750,31 @@
                         "subtitle": "Sabbat Orte"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Sonstige Orte": {
@@ -784,31 +784,31 @@
                         "subtitle": "Sonstige Orte"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 }
             },
@@ -820,31 +820,31 @@
                         "subtitle": "Stadtplan"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Domänen": {
@@ -854,31 +854,31 @@
                         "subtitle": "Domänen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Lagepläne": {
@@ -888,31 +888,31 @@
                         "subtitle": "Lagepläne"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Kanalisation": {
@@ -922,31 +922,31 @@
                         "subtitle": "Kanalisation"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Stromversorgung": {
@@ -956,31 +956,31 @@
                         "subtitle": "Stromversorgung"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Wasserversorgung": {
@@ -990,31 +990,31 @@
                         "subtitle": "Wasserversorgung"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Überwachungspläne": {
@@ -1024,31 +1024,31 @@
                         "subtitle": "Überwachungspläne"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Technische Infrastruktur": {
@@ -1058,31 +1058,31 @@
                         "subtitle": "Technische Infrastruktur"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 }
             },
@@ -1110,13 +1110,13 @@
                         "background_image": "assets/images/sessions/überblick3.png"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Plan & Ziele": {
@@ -1169,91 +1169,91 @@
                         "subtitle": "Ereignisse"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_11": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_12": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_13": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_14": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_15": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_16": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_17": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_18": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_19": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_20": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_21": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_22": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_23": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_24": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_25": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_26": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_27": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_28": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_29": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_30": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Erfahrungspunkte": {
@@ -1294,31 +1294,31 @@
                         "subtitle": "Entwicklung & Konsequenzen"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Sonstiges": {
@@ -1328,31 +1328,31 @@
                         "subtitle": "Sonstiges"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 }
             },
@@ -1364,31 +1364,31 @@
                         "subtitle": "Aktuelle Sitzung"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Ausgehändigt": {
@@ -1398,22 +1398,22 @@
                         "subtitle": "Ausgehändigt"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Allgemein": {
@@ -1423,22 +1423,22 @@
                         "subtitle": "Allgemein"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 }
             },
@@ -2177,16 +2177,16 @@
                             "background_image": "assets/images/contacts/03.png"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Kontaktaufnahmen": {
@@ -2209,48 +2209,48 @@
                             "background_image": "assets/images/my_approach/06.png"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Andere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 },
@@ -2269,22 +2269,22 @@
                             "background_image": "random_my_missions"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Gefallen": {
@@ -2301,13 +2301,13 @@
                             "background_image": "random_my_favors"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Schulden": {
@@ -2324,68 +2324,68 @@
                             "background_image": "random_my_favors"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Ziele": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Erpressungen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 }
@@ -2655,118 +2655,118 @@
                 "Beziehungen": {
                     "Übersicht": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Verbündete": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Feinde": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Konflikte": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Komplotte": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Erpressungen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Sonstiges": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 },
@@ -2785,13 +2785,13 @@
                             "background_image": "random_missions"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Verträge": {
@@ -2816,25 +2816,25 @@
                             "background_image": "assets/images/articles/02.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Recherchen": {
@@ -2848,25 +2848,25 @@
                             "background_image": "assets/images/recherche/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Dokumente": {
@@ -2880,7 +2880,7 @@
                             "background_image": "assets/images/documents/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Gefallen": {
@@ -2897,22 +2897,22 @@
                             "background_image": "random_favors"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Kontaktaufnahmen": {
@@ -2926,13 +2926,13 @@
                             "background_image": "assets/images/approach/03.png"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Schulden": {
@@ -2949,270 +2949,270 @@
                             "background_image": "random_favors"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Sonstiges": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 },
                 "Geheimnisse & Informationen": {
                     "Gerüchte": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Geheimnisse": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Informationen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Lügen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 },
                 "Ziele & Ambitionen": {
                     "Camarilla": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Sabbat": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Unabhängige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Anarchen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Garou": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Andere Fraktionen": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_5": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_6": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_7": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_8": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_9": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_10": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 }
@@ -3221,97 +3221,97 @@
                 "Elysien": {
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 },
@@ -3322,293 +3322,293 @@
                         "subtitle": "Offiziele Gebäude"
                     },
                     "page_2": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_3": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_4": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_5": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_6": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_7": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_8": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_9": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     },
                     "page_10": {
-                        "background_image": "random"
+                        "background_image": "random_background"
                     }
                 },
                 "Zufluchten und Verstecke": {
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Andere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 },
                 "Safehäuser": {
                     "Brujah": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Gangrel": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Malkavian": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Nosferatu": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Toreador": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Tremere": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Ventrue": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Sonstige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 },
                 "Garou Orte": {
                     "Feindlicher Stamm": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Neutraler Stamm": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_4": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     },
                     "Sonstige": {
                         "page_1": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_2": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         },
                         "page_3": {
-                            "background_image": "random"
+                            "background_image": "random_background"
                         }
                     }
                 }

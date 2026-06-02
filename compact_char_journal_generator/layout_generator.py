@@ -66,7 +66,6 @@ class LayoutGenerator:
         }
     
     RANDOM_FOLDER_MAP = {
-        "random": ("dossier",),
         "random_dossier": ("dossier",),
         "random_favors": ("favors",),
         "random_gefallen": ("favors",),
@@ -258,7 +257,7 @@ class LayoutGenerator:
             imp[f"page_{i}"] = {"background_image": "impressions_once"}
         dossier_start = n + 2
         for i in range(dossier_start, dossier_start + self.IMPRESSIONS_DOSSIER_EXTRA_PAGES):
-            imp[f"page_{i}"] = {"background_image": "random"}
+            imp[f"page_{i}"] = {"background_image": "random_dossier"}
         cover_pages["Impressionen"] = imp
 
     def _next_impressions_once(self) -> str:
@@ -1373,7 +1372,9 @@ class LayoutGenerator:
             bg_image_path = self._next_impressions_once()
         elif bg_image_path == "refuge_once":
             bg_image_path = self._next_refuge_once()
-        elif bg_image_path in self.RANDOM_FOLDER_MAP:
+        elif bg_image_path in ("random", "random_dossier") or bg_image_path in self.RANDOM_FOLDER_MAP:
+            if bg_image_path == "random":
+                bg_image_path = "random_dossier"
             bg_image_path = self._pick_random_folder_background(*self.RANDOM_FOLDER_MAP[bg_image_path])
         
                 # If basic.png is specified, use random background from assets/images/background/ instead
@@ -1625,9 +1626,12 @@ class LayoutGenerator:
                 traceback.print_exc()
         
         # Get text configuration
-        # If background_image is "random", don't show any text (no title, subtitle, description)
+        # Filler backgrounds: no title, subtitle, or description
         bg_image_path = cover_config.get("background_image")
-        is_random_background = bg_image_path == "random"
+        is_random_background = bg_image_path in (
+            "random",
+            "random_dossier",
+        )
         
         title = "" if is_random_background else cover_config.get("title", "")
         subtitle = "" if is_random_background else cover_config.get("subtitle", "")

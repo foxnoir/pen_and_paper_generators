@@ -148,7 +148,7 @@ Defines backgrounds and cover pages per section:
 - **`cover_pages`**: Main tab covers, subsection covers, and per-page `page_1` … `page_N` entries
 - **`sub_subsections`**: Background images for each sub-subsection page
 - **`default_font`** / **`text_position`**: Cover title sizing and placement
-- **Background keywords**: `random`, `random_dossier`, `random_contacts`, `random_audio`, `refuge_once`, `impressions_once`, or explicit paths like `assets/images/refuge/1.png`
+- **Background keywords**: `random_dossier`, `random_contacts`, `random_audio`, `refuge_once`, `impressions_once`, or explicit paths like `assets/images/refuge/1.png`
 
 #### JSON Structure
 
@@ -263,7 +263,7 @@ Impressionen page count is synced automatically from `assets/images/impressions/
 **Backgrounds** in `cover_pages.json`:
 - Explicit paths: `"background_image": "assets/images/eps/1.png"`
 - Folder random: `"background_image": "random_contacts"` → `assets/images/contacts/`
-- Dossier random: `"random"` or `"random_dossier"` → `assets/images/dossier/`
+- Dossier random: `"random_dossier"` → `assets/images/dossier/`
 - Sequences: `"impressions_once"`, `"refuge_once"`
 
 **Image folders** (add PNG/JPG files; the generator picks them up dynamically):

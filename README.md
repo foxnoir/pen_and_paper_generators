@@ -63,6 +63,10 @@
 
 Pen and Paper Generators is a collection of Python tools designed to help players and game masters create professional materials for tabletop role-playing games. Each generator focuses on a specific aspect of game preparation, making it easier to create high-quality reference sheets, character materials, and other game resources.
 
+[![Python](assets/badges/python.svg)](https://www.python.org/)
+[![PDF](assets/badges/pdf.svg)](https://www.iso.org/standard/75839.html)
+[![PNG](assets/badges/png.svg)](https://www.libpng.org/pub/png/)
+
 **Key Features:**
 - Multiple specialized generators for different game systems
 - Professional output formats (PNG, PDF)
@@ -80,13 +84,17 @@ Pen and Paper Generators is a collection of Python tools designed to help player
 - Additional customization options
 - Template library
 
+The root README stays short: a link and a rough summary per generator. Getting started and the detailed notes live in the README of that generator.
+
 <p align="right"><a href="#readme-top">back to top</a></p>
 
 ---
 
 ## Available Generators
 
-### Clan Sheet Generator
+<h3>
+  <a href="clan_sheet_generator/">Clan Sheet Generator »</a>
+</h3>
 
 Generate beautiful clan reference sheets for **Vampire: The Masquerade** (2nd/3rd edition). Create professional-looking reference sheets for any clan with customizable content.
 
@@ -104,9 +112,11 @@ cd clan_sheet_generator
 python3 clan_sheet_gen.py --clan BRUJAH --quick
 ```
 
-For detailed documentation, see the [Clan Sheet Generator README](clan_sheet_generator/README.md).
+[README »](clan_sheet_generator/README.md)
 
-### SL Journal Generator
+<h3>
+  <a href="SL_journal_generator/">SL Journal Generator »</a>
+</h3>
 
 Generate dynamic PDF journals with interactive navigation tabs for **Vampire: The Masquerade** sessions. Create professional-looking session journals with customizable structure and clickable navigation.
 
@@ -123,9 +133,11 @@ cd SL_journal_generator
 python3 journal_generator.py
 ```
 
-For detailed documentation, see the [SL Journal Generator README](SL_journal_generator/README.md).
+[README »](SL_journal_generator/README.md)
 
-### Character Journal Generator
+<h3>
+  <a href="character_journal_generator/">Character Journal Generator »</a>
+</h3>
 
 Generate dynamic PDF journals with interactive navigation tabs for **character journals**. Create professional-looking character journals with customizable structure and clickable navigation.
 
@@ -142,7 +154,7 @@ cd character_journal_generator
 python3 journal_generator.py
 ```
 
-For detailed documentation, see the [Character Journal Generator README](character_journal_generator/README.md).
+[README »](character_journal_generator/README.md)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 

@@ -2,25 +2,35 @@
 
 <!-- Top Links Bar -->
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![Instagram][instagram-shield]][instagram-url]
+[![LinkedIn](../assets/badges/linkedin.svg)](https://www.linkedin.com/in/tanja-polz-5636401a5/)
+[![X](../assets/badges/x.svg)](https://twitter.com/_foxnoir_?lang=de)
+[![Instagram](../assets/badges/instagram.svg)](https://www.instagram.com/codeincouture/)
 
 <!-- PROJECT LOGO -->
 <br />
 
 <div align="center">
-  <img src="../images/logo.png" alt="Logo" width="80" height="80">
+  <img src="../assets/logo.png" alt="Logo" width="179" height="179">
   <h1 align="center">Small Character Journal Generator</h1>
-
-  <p align="center">
+  <p>
     Generate dynamic PDF journals with interactive navigation for compact character journals
-    <br />
-    <a href="https://github.com/foxnoir/pen_and_paper_generators"><strong>Explore the project »</strong></a>
-    <br />
   </p>
 </div>
 
-<Dossier>
+---
+
+<div align="left">
+
+[![Python](../assets/badges/python.svg)](https://www.python.org/)
+[![PyMuPDF](../assets/badges/pymupdf.svg)](https://pymupdf.readthedocs.io/)
+[![PDF](../assets/badges/pdf.svg)](https://www.iso.org/standard/75839.html)
+[![macOS](../assets/badges/macos.svg)](https://www.apple.com/macos/)
+[![Linux](../assets/badges/linux.svg)](https://www.kernel.org/)
+[![Windows](../assets/badges/windows.svg)](https://www.microsoft.com/windows)
+
+</div>
+
+<details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -47,7 +57,7 @@
       <a href="#file-structure">File Structure</a>
     </li>
     <li>
-      <a href="#technical-Dossier">Technical Dossier</a>
+      <a href="#technical-details">Technical Details</a>
     </li>
     <li>
       <a href="#customization">Customization</a>
@@ -56,7 +66,7 @@
       <a href="#troubleshooting">Troubleshooting</a>
     </li>
   </ol>
-</Dossier>
+</details>
 
 ## About The Project
 
@@ -323,7 +333,7 @@ small_character_journal_generator/
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
-## Technical Dossier
+## Technical Details
 
 - **PDF Library**: PyMuPDF (fitz)
 - **Image Processing**: Pillow (compression before embed)
@@ -420,15 +430,7 @@ Then reference them in `cover_pages.json` as `"background_image": "random_refuge
 
 ## License
 
-See [LICENSE](../LICENSE) file for Dossier.
+See [LICENSE](../LICENSE) file for details.
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/tanja-polz-5636401a5/
-[twitter-shield]: https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white
-[twitter-url]: https://twitter.com/_foxnoir_?lang=de
-[instagram-shield]: https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white
-[instagram-url]: https://www.instagram.com/codeincouture/

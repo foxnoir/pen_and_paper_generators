@@ -42,6 +42,7 @@
         <li><a href="#clan-sheet-generator">Clan Sheet Generator</a></li>
         <li><a href="#sl-journal-generator">SL Journal Generator</a></li>
         <li><a href="#character-journal-generator">Character Journal Generator</a></li>
+        <li><a href="#small-character-journal-generator">Small Character Journal Generator</a></li>
       </ul>
     </li>
     <li>
@@ -78,6 +79,7 @@ Pen and Paper Generators is a collection of Python tools designed to help player
 - **[Clan Sheet Generator](clan_sheet_generator/README.md)** - Generate clan reference sheets for Vampire: The Masquerade (2nd/3rd edition)
 - **[SL Journal Generator](SL_journal_generator/README.md)** - Generate dynamic PDF journals with interactive navigation for Vampire: The Masquerade sessions
 - **[Character Journal Generator](character_journal_generator/README.md)** - Generate dynamic PDF journals with interactive navigation for character journals
+- **[Small Character Journal Generator](compact_char_journal_generator/README.md)** - Compact variant with modular tabs and folder-based background images
 
 **Coming Soon:**
 - More generators for various RPG systems
@@ -155,6 +157,27 @@ python3 journal_generator.py
 ```
 
 [README »](character_journal_generator/README.md)
+
+<h3>
+  <a href="compact_char_journal_generator/">Small Character Journal Generator »</a>
+</h3>
+
+Generate a compact, fully navigable PDF character journal from JSON configuration and uploaded background images. Modular tab system, dedicated image folders, and configurable cover typography.
+
+**Key Features:**
+- Dynamic PDF generation from `tab_structure.json` and `cover_pages.json`
+- Interactive navigation (right-side vertical tabs and top-left horizontal tabs)
+- Background images from `assets/images/` (folder-based random picks and fixed sequences)
+- Custom cover fonts and colors
+- Hyperlink support for easy navigation
+
+**Quick Start:**
+```bash
+cd compact_char_journal_generator
+python3 journal_generator.py
+```
+
+[README »](compact_char_journal_generator/README.md)
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 

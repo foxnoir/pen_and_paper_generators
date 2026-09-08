@@ -1263,8 +1263,9 @@ class LayoutGenerator:
                     background_dir = os.path.join(os.getcwd(), "assets", "images", "background")
                 bg_image_path = os.path.join(background_dir, "basic.png")
         
-        # Handle "random_background" (legacy alias: "random") from assets/images/background/
-        elif bg_image_path in ("random_background", "random"):
+        # Handle "random" background_image - use random background from assets/images/background/
+        # Special handling for "Favors" sub-subsection: use assets/images/favors/
+        elif bg_image_path == "random":
             script_dir = os.path.dirname(os.path.abspath(__file__))
             
             
@@ -1672,13 +1673,9 @@ class LayoutGenerator:
                 traceback.print_exc()
         
         # Get text configuration
-        # Filler backgrounds: no title, subtitle, or description
+        # If background_image is "random", don't show any text (no title, subtitle, description)
         bg_image_path = cover_config.get("background_image")
-        is_random_background = bg_image_path in (
-            "random",
-            "random_background",
-            "random_dossier",
-        )
+        is_random_background = bg_image_path == "random"
         
         title = "" if is_random_background else cover_config.get("title", "")
         subtitle = "" if is_random_background else cover_config.get("subtitle", "")

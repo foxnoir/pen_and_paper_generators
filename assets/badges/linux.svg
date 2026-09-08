@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="28" role="img" aria-label="Linux">
+  <title>Linux</title>
+  <defs>
+    <linearGradient id="fill-linux" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#17564F"/>
+      <stop offset="50%" stop-color="#2A9D8F"/>
+      <stop offset="100%" stop-color="#90CCC5"/>
+    </linearGradient>
+  </defs>
+  <rect width="72" height="28" fill="url(#fill-linux)"/>
+  <text x="36.0" y="18" text-anchor="middle" fill="#fff" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11" font-weight="700">Linux</text>
+</svg>

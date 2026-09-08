@@ -1,0 +1,68 @@
+[
+  {
+    "image": "python",
+    "file": "python.svg",
+    "url": "python-url",
+    "href": "https://www.python.org/"
+  },
+  {
+    "image": "pillow",
+    "file": "pillow.svg",
+    "url": "pillow-url",
+    "href": "https://pillow.readthedocs.io/"
+  },
+  {
+    "image": "pymupdf",
+    "file": "pymupdf.svg",
+    "url": "pymupdf-url",
+    "href": "https://pymupdf.readthedocs.io/"
+  },
+  {
+    "image": "pdf",
+    "file": "pdf.svg",
+    "url": "pdf-url",
+    "href": "https://www.iso.org/standard/75839.html"
+  },
+  {
+    "image": "png",
+    "file": "png.svg",
+    "url": "png-url",
+    "href": "https://www.libpng.org/pub/png/"
+  },
+  {
+    "image": "macos",
+    "file": "macos.svg",
+    "url": "macos-url",
+    "href": "https://www.apple.com/macos/"
+  },
+  {
+    "image": "linux",
+    "file": "linux.svg",
+    "url": "linux-url",
+    "href": "https://www.kernel.org/"
+  },
+  {
+    "image": "windows",
+    "file": "windows.svg",
+    "url": "windows-url",
+    "href": "https://www.microsoft.com/windows"
+  },
+  {
+    "image": "linkedin-shield",
+    "file": "linkedin.svg",
+    "url": "linkedin-url",
+    "href": "https://www.linkedin.com/in/tanja-polz-5636401a5/"
+  },
+  {
+    "image": "instagram-shield",
+    "file": "instagram.svg",
+    "url": "instagram-url",
+    "href": "https://www.instagram.com/codeincouture/"
+  },
+  {
+    "image": "x-shield",
+    "file": "x.svg",
+    "url": "x-url",
+    "href": "https://twitter.com/_foxnoir_?lang=de"
+  }
+]

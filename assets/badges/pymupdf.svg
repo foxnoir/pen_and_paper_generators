@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="78" height="28" role="img" aria-label="PyMuPDF">
+  <title>PyMuPDF</title>
+  <defs>
+    <linearGradient id="fill-pymupdf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#012F55"/>
+      <stop offset="50%" stop-color="#02569B"/>
+      <stop offset="100%" stop-color="#7BA7CB"/>
+    </linearGradient>
+  </defs>
+  <rect width="78" height="28" fill="url(#fill-pymupdf)"/>
+  <text x="39.0" y="18" text-anchor="middle" fill="#fff" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11" font-weight="700">PyMuPDF</text>
+</svg>

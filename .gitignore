@@ -228,8 +228,14 @@ Icon?
 # PDF files
 *.pdf
 
-# Assets directory
+# Assets directory (generator image packs — large, keep local)
 assets/
 **/assets/
+
+# Exception: root README logo + badges (must be on GitHub)
+!/assets/
+!/assets/logo.png
+!/assets/badges/
+!/assets/badges/**
 
 *.csv

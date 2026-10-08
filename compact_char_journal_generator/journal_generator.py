@@ -223,8 +223,13 @@ class DynamicPDFGenerator:
                     }
                     current_page += 1
                     
-                    # Check if subsection has page_count > 1 (for multiple pages like Kalender)
+                    # Check if subsection has page_count > 1 (for multiple pages like Kalender).
+                    # A from_folder section expands to one page per image, so that count wins.
                     page_count = subsection.get("page_count", 1)
+                    if subsections_config:
+                        cover_subsection = subsections_config.get(tab_name, {}).get(subsection_name, {})
+                        if LayoutGenerator.is_folder_page_set(cover_subsection):
+                            page_count = LayoutGenerator.page_count_from_config(cover_subsection)
                     if page_count > 1:
                         # Add additional pages for this subsection
                         for page_idx in range(2, page_count + 1):

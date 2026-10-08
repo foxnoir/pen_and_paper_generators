@@ -271,7 +271,7 @@ Impressionen page count is synced automatically from `assets/images/impressions/
 - `page_count`: For tabs without subsections
 
 **Backgrounds** in `cover_pages.json`:
-- Explicit paths: `"background_image": "assets/images/eps/1.png"`
+- Explicit paths: `"background_image": "assets/images/xp/1.png"`
 - Folder random: `"background_image": "random_contacts"` → `assets/images/contacts/`
 - Dossier random: `"random"` or `"random_dossier"` → `assets/images/dossier/`
 - Sequences: `"impressions_once"`, `"refuge_once"`
@@ -327,7 +327,7 @@ small_character_journal_generator/
 │       ├── impressions/       # Impressionen
 │       ├── research/          # Archiv
 │       ├── section_cover/     # main_cover.png, sub_section_cover.png
-│       └── …                  # calendar, crazy, eps, domain, etc.
+│       └── …                  # calendar, crazy, xp, domain, etc.
 └── requirements.txt           # Python dependencies
 ```
 

@@ -10,7 +10,7 @@
         },
         "Charakterbogen": {
             "full_page": true,
-            "image": "assets/images/special/char.png"
+            "image": "assets/images/character/char.png"
         },
         "Sitzungen": {
             "background_image": "assets/images/section_cover/main_cover.png",
@@ -474,19 +474,19 @@
                         "title": "Erfahrungspunkte"
                     },
                     "page_2": {
-                        "background_image": "assets/images/eps/4.png"
+                        "background_image": "assets/images/xp/4.png"
                     },
                     "page_3": {
-                        "background_image": "assets/images/eps/2.png"
+                        "background_image": "assets/images/xp/2.png"
                     },
                     "page_4": {
-                        "background_image": "assets/images/eps/3.png"
+                        "background_image": "assets/images/xp/3.png"
                     },
                     "page_5": {
-                        "background_image": "assets/images/eps/1.png"
+                        "background_image": "assets/images/xp/1.png"
                     },
                     "page_6": {
-                        "background_image": "assets/images/eps/4.png"
+                        "background_image": "assets/images/xp/4.png"
                     }
                 },
                 "Sonstiges": {
@@ -560,36 +560,7 @@
                     }
                 },
                 "Verbündete": {
-                    "page_1": {
-                        "background_image": "random_allies"
-                    },
-                    "page_2": {
-                        "background_image": "random_allies"
-                    },
-                    "page_3": {
-                        "background_image": "random_allies"
-                    },
-                    "page_4": {
-                        "background_image": "random_allies"
-                    },
-                    "page_5": {
-                        "background_image": "random_allies"
-                    },
-                    "page_6": {
-                        "background_image": "random_allies"
-                    },
-                    "page_7": {
-                        "background_image": "random_allies"
-                    },
-                    "page_8": {
-                        "background_image": "random_allies"
-                    },
-                    "page_9": {
-                        "background_image": "random_allies"
-                    },
-                    "page_10": {
-                        "background_image": "random_allies"
-                    }
+                    "from_folder": "assets/images/allies"
                 },
                 "Feinde": {
                     "page_1": {
@@ -760,12 +731,12 @@
                     },
                     "Steckbrief": {
                         "page_1": {
-                            "background_image": "assets/images/special/profile.png"
+                            "background_image": "assets/images/character/profile.png"
                         }
                     },
                     "Charakteristika": {
                         "page_1": {
-                            "background_image": "assets/images/charakteristika /1.png"
+                            "background_image": "assets/images/characteristics/1.png"
                         }
                     },
                     "Fähigkeiten": {
@@ -980,16 +951,30 @@
                     },
                     "Finanzen": {
                         "page_1": {
-                            "background_image": "assets/images/finance/1.png"
+                            "background_image": "assets/images/section_cover/sub_section_cover.png",
+                            "title": "Finanzen"
                         },
-                        "page_2": {
-                            "background_image": "assets/images/finance/2.png"
+                        "Übersicht": {
+                            "page_1": {
+                                "background_image": "assets/images/finance/1.png"
+                            },
+                            "page_2": {
+                                "background_image": "assets/images/finance/2.png"
+                            },
+                            "page_3": {
+                                "background_image": "assets/images/finance/3.png"
+                            }
                         },
-                        "page_3": {
-                            "background_image": "assets/images/finance/3.png"
+                        "Anlagen": {
+                            "from_folder": "assets/images/finance/assets",
+                            "random_after": 10
+                        },
+                        "Investitionen": {
+                            "from_folder": "assets/images/finance/investments",
+                            "random_after": 10
                         }
                     },
-                    "Materialien & Gegenstände": {
+                    "Gegenstände": {
                         "page_1": {
                             "background_image": "assets/images/materials/1.png"
                         },
@@ -1023,7 +1008,7 @@
                     },
                     "Fahrzeuge": {
                         "page_1": {
-                            "background_image": "assets/images/ressourcen/car.PNG"
+                            "background_image": "assets/images/resources/car.PNG"
                         },
                         "page_2": {
                             "background_image": "random_dossier"
@@ -1064,31 +1049,31 @@
                     },
                     "Outfits": {
                         "page_1": {
-                            "background_image": "assets/images/ressourcen/outfit_1.png"
+                            "background_image": "assets/images/resources/outfit_1.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/ressourcen/outfit_2.png"
+                            "background_image": "assets/images/resources/outfit_2.png"
                         },
                         "page_3": {
-                            "background_image": "assets/images/ressourcen/outfit_3.png"
+                            "background_image": "assets/images/resources/outfit_3.png"
                         },
                         "page_4": {
-                            "background_image": "assets/images/ressourcen/outfit_8.png"
+                            "background_image": "assets/images/resources/outfit_8.png"
                         },
                         "page_5": {
-                            "background_image": "assets/images/ressourcen/outfit_4.png"
+                            "background_image": "assets/images/resources/outfit_4.png"
                         },
                         "page_6": {
-                            "background_image": "assets/images/ressourcen/outfit_5.png"
+                            "background_image": "assets/images/resources/outfit_5.png"
                         },
                         "page_7": {
-                            "background_image": "assets/images/ressourcen/outfit_6.png"
+                            "background_image": "assets/images/resources/outfit_6.png"
                         },
                         "page_8": {
-                            "background_image": "assets/images/ressourcen/outfit_9.png"
+                            "background_image": "assets/images/resources/outfit_9.png"
                         },
                         "page_9": {
-                            "background_image": "assets/images/ressourcen/outfit_7.png"
+                            "background_image": "assets/images/resources/outfit_7.png"
                         },
                         "page_10": {
                             "background_image": "random_dossier"
@@ -1114,57 +1099,30 @@
                     },
                     "Zufluchten": {
                         "page_1": {
-                            "background_image": "assets/images/refuge/1.png"
+                            "background_image": "assets/images/section_cover/sub_section_cover.png",
+                            "title": "Zufluchten"
                         },
-                        "page_2": {
-                            "background_image": "assets/images/refuge/2.png"
+                        "Philadelphia": {
+                            "from_folder": "assets/images/refuge/philadelphia",
+                            "random_after": 10
                         },
-                        "page_3": {
-                            "background_image": "assets/images/refuge/3.png"
-                        },
-                        "page_4": {
-                            "background_image": "assets/images/refuge/4.png"
-                        },
-                        "page_5": {
-                            "background_image": "assets/images/refuge/5.png"
-                        },
-                        "page_6": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_7": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_8": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_9": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_10": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_11": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_12": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_13": {
-                            "background_image": "random_dossier"
+                        "Other City": {
+                            "from_folder": "assets/images/refuge/other_city",
+                            "random_after": 10
                         }
                     },
                     "Ghule & Blutsgebundene": {
                         "page_1": {
-                            "background_image": "assets/images/special/humans.png"
+                            "background_image": "assets/images/character/humans.png"
                         },
                         "page_2": {
-                            "background_image": "assets/images/special/humans.png"
+                            "background_image": "assets/images/character/humans.png"
                         },
                         "page_3": {
-                            "background_image": "assets/images/special/humans.png"
+                            "background_image": "assets/images/character/humans.png"
                         },
                         "page_4": {
-                            "background_image": "assets/images/special/humans.png"
+                            "background_image": "assets/images/character/humans.png"
                         },
                         "page_5": {
                             "background_image": "random_dossier"

@@ -41,11 +41,24 @@
                     "seconnd_subsections_left_tabs": [
                         "Inventar",
                         "Waffen",
-                        "Finanzen",
-                        "Materialien & Gegenstände",
+                        {
+                            "name": "Finanzen",
+                            "seconnd_subsections_left_tabs": [
+                                "Übersicht",
+                                "Anlagen",
+                                "Investitionen"
+                            ]
+                        },
+                        "Gegenstände",
                         "Fahrzeuge",
                         "Outfits",
-                        "Zufluchten",
+                        {
+                            "name": "Zufluchten",
+                            "seconnd_subsections_left_tabs": [
+                                "Philadelphia",
+                                "Other City"
+                            ]
+                        },
                         "Ghule & Blutsgebundene",
                         "Sonstiges"
                     ]
@@ -81,7 +94,7 @@
                 },
                 {
                     "name": "Verbündete",
-                    "page_count": 10,
+                    "page_count": 5,
                     "seconnd_subsections_left_tabs": []
                 },
                 {

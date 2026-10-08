@@ -121,23 +121,40 @@ class LayoutGenerator:
                     pass
         return max(page_numbers) if page_numbers else 0
 
+    @staticmethod
+    def is_folder_page_set(config: Dict) -> bool:
+        """True when expand_from_folder_pages built this section from a folder."""
+        return isinstance(config, dict) and bool(config.get("_from_folder"))
+
     def expand_from_folder_pages(self, node: Dict) -> None:
         """Turn each {from_folder: path} into page_1..page_N, one page per image.
 
-        Images are used in filename order. An empty folder stays as from_folder
-        so the generator does not invent extra blank pages.
+        Images are used in filename order. random_after appends that many
+        random_dossier pages after the folder images. An empty folder with no
+        random_after stays as from_folder so the generator does not invent pages.
         """
         if not isinstance(node, dict):
             return
         folder = node.get("from_folder")
         if isinstance(folder, str):
             images = self._images_from_config_folder(folder)
-            if not images:
+            random_after = node.get("random_after") or 0
+            try:
+                random_after = int(random_after)
+            except (TypeError, ValueError):
+                random_after = 0
+            if random_after < 0:
+                random_after = 0
+            if not images and random_after <= 0:
                 return
             expanded = {
                 f"page_{index}": {"background_image": path}
                 for index, path in enumerate(images, start=1)
             }
+            start = len(images) + 1
+            for offset in range(random_after):
+                expanded[f"page_{start + offset}"] = {"background_image": "random_dossier"}
+            expanded["_from_folder"] = True
             node.clear()
             node.update(expanded)
             return

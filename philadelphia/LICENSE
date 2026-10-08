@@ -1,0 +1,44 @@
+LICENSE
+
+Font License - Lilith Font
+===========================
+
+The Lilith font family used in this project is provided under the following terms:
+
+Copyright Information:
+- Font Name: Lilith
+- Source: fontsgeek.com
+- License: Free for personal and commercial use
+
+The Lilith font files are located in:
+- assets/fonts/Lilith/Lilith Plain/Lilith Plain.ttf
+- assets/fonts/Lilith/Lilith Bold/Lilith Bold.ttf
+- assets/fonts/Lilith/Lilith Italic/Lilith Italic.ttf
+- assets/fonts/Lilith/Lilith Regular/Lilith Regular.ttf
+
+This font was downloaded from fontsgeek.com and is used in the cover page titles
+of the generated PDF documents.
+
+For more information about the font, visit:
+https://fontsgeek.com/lilith-font
+
+---
+
+Project License
+===============
+
+This project generates PDF documents for tabletop role-playing games.
+
+Vampire: The Masquerade is a trademark of White Wolf Entertainment AB.
+This tool is not affiliated with or endorsed by White Wolf Entertainment AB.
+
+Game assets (images, logos, watermarks) are property of their respective owners.
+
+---
+
+Copyright Notice
+================
+
+All code, scripts, and generated content in this project are provided as-is
+for personal and educational use. Please respect the intellectual property
+rights of font creators, game publishers, and asset owners.

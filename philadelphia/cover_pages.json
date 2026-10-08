@@ -755,7 +755,7 @@
                 "Dossier": {
                     "Charakterbild": {
                         "page_1": {
-                            "background_image": "assets/images/char_pics/char_pic.png"
+                            "background_image": "assets/images/special/char_pic.png"
                         }
                     },
                     "Steckbrief": {

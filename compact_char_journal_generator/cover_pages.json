@@ -802,34 +802,26 @@
                     },
                     "Disziplinen": {
                         "page_1": {
-                            "background_image": "assets/images/disziplinen/1.png"
+                            "background_image": "assets/images/section_cover/sub_section_cover.png",
+                            "title": "Disziplinen"
                         },
-                        "page_2": {
-                            "background_image": "assets/images/disziplinen/2.png"
+                        "Auspex": {
+                            "from_folder": "assets/images/disciplines/auspex"
                         },
-                        "page_3": {
-                            "background_image": "assets/images/disziplinen/3.png"
+                        "Geschwindigkeit": {
+                            "from_folder": "assets/images/disciplines/celerity"
                         },
-                        "page_4": {
-                            "background_image": "assets/images/disziplinen/4.png"
+                        "Irrsinn": {
+                            "from_folder": "assets/images/disciplines/dementation"
                         },
-                        "page_5": {
-                            "background_image": "assets/images/disziplinen/5.png"
+                        "Präsenz": {
+                            "from_folder": "assets/images/disciplines/presence"
                         },
-                        "page_6": {
-                            "background_image": "random_dossier"
+                        "Tierhaftigkeit": {
+                            "from_folder": "assets/images/disciplines/animalism"
                         },
-                        "page_7": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_8": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_9": {
-                            "background_image": "random_dossier"
-                        },
-                        "page_10": {
-                            "background_image": "random_dossier"
+                        "Verdunklung": {
+                            "from_folder": "assets/images/disciplines/obfuscate"
                         }
                     },
                     "Vor- & Nachteile": {

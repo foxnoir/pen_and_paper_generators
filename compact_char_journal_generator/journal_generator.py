@@ -55,6 +55,7 @@ class DynamicPDFGenerator:
         sub_subsections_config = None
         subsections_config = None
         if cover_pages_config:
+            self.layout_generator.expand_from_folder_pages(cover_pages_config)
             sub_subsections_config = cover_pages_config.get("cover_pages", {}).get("sub_subsections", {})
             subsections_config = cover_pages_config.get("cover_pages", {}).get("subsections", {})
         
@@ -260,6 +261,8 @@ class DynamicPDFGenerator:
                             child_config = group_config.get(child_name, {})
                             child_page_count = LayoutGenerator.page_count_from_config(child_config)
                             if child_page_count <= 0:
+                                if isinstance(child_config, dict) and "from_folder" in child_config:
+                                    continue
                                 child_page_count = 4
                             for page_idx in range(1, child_page_count + 1):
                                 page_structure[current_page] = {

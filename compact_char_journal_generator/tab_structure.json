@@ -10,7 +10,17 @@
                         "Charakterbild",
                         "Charakteristika",
                         "Fähigkeiten",
-                        "Disziplinen",
+                        {
+                            "name": "Disziplinen",
+                            "seconnd_subsections_left_tabs": [
+                                "Auspex",
+                                "Geschwindigkeit",
+                                "Irrsinn",
+                                "Präsenz",
+                                "Tierhaftigkeit",
+                                "Verdunklung"
+                            ]
+                        },
                         "Vor- & Nachteile",
                         "Wahnsinn",
                         {
@@ -186,8 +196,8 @@
         "right_tab_start_y": 65.0,
         "right_tab_spacing": 8.0,
         "upper_tabs_position": {
-            "x": 10.0,
-            "y": 14.0
+            "x": 12.0,
+            "y": 0.0
         },
         "description": "Small character journal: cover page + Charakter, Charakterbogen, Netzwerk, Domäne, Sitzungen, Impressionen, Gefallen, Offene Fragen"
     }

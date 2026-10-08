@@ -121,6 +121,48 @@ class LayoutGenerator:
                     pass
         return max(page_numbers) if page_numbers else 0
 
+    def expand_from_folder_pages(self, node: Dict) -> None:
+        """Turn each {from_folder: path} into page_1..page_N, one page per image.
+
+        Images are used in filename order. An empty folder stays as from_folder
+        so the generator does not invent extra blank pages.
+        """
+        if not isinstance(node, dict):
+            return
+        folder = node.get("from_folder")
+        if isinstance(folder, str):
+            images = self._images_from_config_folder(folder)
+            if not images:
+                return
+            expanded = {
+                f"page_{index}": {"background_image": path}
+                for index, path in enumerate(images, start=1)
+            }
+            node.clear()
+            node.update(expanded)
+            return
+        for value in list(node.values()):
+            if isinstance(value, dict):
+                self.expand_from_folder_pages(value)
+
+    def _images_from_config_folder(self, folder: str) -> List[str]:
+        """Sorted image paths in a config folder, relative to this project."""
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        path = folder if os.path.isabs(folder) else os.path.join(script_dir, folder)
+        images: List[str] = []
+        if os.path.isdir(path):
+            for ext in ("*.png", "*.PNG", "*.jpg", "*.JPG", "*.jpeg", "*.JPEG"):
+                found = glob.glob(os.path.join(path, ext))
+                images.extend(img for img in found if os.path.dirname(img) == path)
+            images.sort()
+        relative: List[str] = []
+        for img in images:
+            try:
+                relative.append(os.path.relpath(img, script_dir))
+            except ValueError:
+                relative.append(img)
+        return relative
+
     @staticmethod
     def is_nested_group_config(config: Dict) -> bool:
         if not isinstance(config, dict):
